@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "sourceMap": true,
+        "inlineSources": true,
+        "baseUrl": "./TypeScript/",
+        "typeRoots": [
+            "Plugins/Puerts/Typing",
+            "Plugins/ReactUMG/Typing",
+            "./node_modules/@types"
+        ],
+    },
+    "include": ["TypeScript"],
+	"exclude": ["node_modules", "dist"]
+}
