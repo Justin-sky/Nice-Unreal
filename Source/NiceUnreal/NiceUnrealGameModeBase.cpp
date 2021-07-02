@@ -3,3 +3,7 @@
 
 #include "NiceUnrealGameModeBase.h"
 
+ANiceUnrealGameModeBase::ANiceUnrealGameModeBase()
+{
+	
+}

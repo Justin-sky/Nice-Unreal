@@ -13,5 +13,7 @@ UCLASS()
 class NICEUNREAL_API ANiceUnrealGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	public:
+		ANiceUnrealGameModeBase();
 };
