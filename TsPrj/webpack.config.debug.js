@@ -7,7 +7,7 @@ const externals = {
 };
 
 module.exports = {
-	entry: './TypeScript/GameMain.ts',
+	entry: './src/GameMain.ts',
 	devtool: 'inline-source-map',
 	mode: 'development',
 	module: {
@@ -15,7 +15,7 @@ module.exports = {
 		{
 			test: /\.tsx?$/,
 			use: 'ts-loader',
-			exclude: /node_modules/
+			exclude: '/node_modules/'
 		}
 		]
 	},
@@ -26,7 +26,6 @@ module.exports = {
 	},
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, './Content/JavaScript')
-	},
-	externals
+		path: path.resolve(__dirname, '../Content/JavaScript')
+	}	
 };
