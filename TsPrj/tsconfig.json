@@ -9,9 +9,9 @@
         "inlineSources": true,
         "baseUrl": "./src/",
         "typeRoots": [
-            "../Plugins/Puerts/Typing",
-            "../Plugins/ReactUMG/Typing",
-            "../node_modules/@types"
+            "./../Plugins/Puerts/Typing",
+            "./../Plugins/ReactUMG/Typing",
+            "./node_modules/@types"
         ],
     },
     "include": ["src"],

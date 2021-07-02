@@ -2,8 +2,9 @@ const path = require('path');
 
 /** 忽略编辑的第三方库 */
 const externals = {
-	csharp: 'commonjs2 csharp',
-	puerts: 'commonjs2 puerts',
+	'ue': 'commonjs2 ue',
+	'react-umg': 'commonjs2 react-umg',
+	'puerts': 'commonjs2 puerts',
 };
 
 module.exports = {
@@ -27,5 +28,6 @@ module.exports = {
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, '../Content/JavaScript')
-	}	
+	},
+	externals
 };
