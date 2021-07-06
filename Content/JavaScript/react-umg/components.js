@@ -61,3 +61,5 @@ exports.EditorUtilityWidget = 'EditorUtilityWidget';
 exports.ReactWidget = 'ReactWidget';
 exports.Synth2DSlider = 'Synth2DSlider';
 exports.SynthKnob = 'SynthKnob';
+exports.BP_LoginPage_C = 'BP_LoginPage_C';
+exports.lazyloadComponents.BP_LoginPage_C = '/Game/Blueprints/UI/BP_LoginPage.BP_LoginPage_C';

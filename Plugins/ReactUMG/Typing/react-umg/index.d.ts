@@ -1299,6 +1299,11 @@ declare module "react-umg" {
 
     class SynthKnob extends React.Component<SynthKnobProps> {}
 
+    interface BP_LoginPage_CProps extends UserWidgetProps {
+    }
+
+    class BP_LoginPage_C extends React.Component<BP_LoginPage_CProps> {}
+
 
     interface Root {
         removeFromViewport() : void;

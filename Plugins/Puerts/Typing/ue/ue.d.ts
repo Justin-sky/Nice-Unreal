@@ -62299,4 +62299,98 @@ declare module "ue" {
         static Load(InName: string): LevelEditorOverview_C;
     }
     
+    class BP_GameMode_C extends GameModeBase {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DefaultSceneRoot: SceneComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BP_GameMode_C;
+        static Load(InName: string): BP_GameMode_C;
+    }
+    
+    class StandardMacros_C extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): StandardMacros_C;
+        static Load(InName: string): StandardMacros_C;
+    }
+    
+    class Tutorial_BP_MacroLib_C extends EditorTutorial {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): Tutorial_BP_MacroLib_C;
+        static Load(InName: string): Tutorial_BP_MacroLib_C;
+    }
+    
+    enum EIntTypes { int, int2, int3, int4, EIntTypes_MAX}
+    class RenderToTextureFunctionLibrary_C extends BlueprintFunctionLibrary {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static ["Set Canvas Material Scale and Position"](Size: Vector2D, Position: Vector2D, Scale: number, __WorldContext: Object, ScreenPosition: $Ref<Vector2D>, ScreenSize: $Ref<Vector2D>): void;
+        static ["Array to HLSL Int Array"](Type: EIntTypes, VariableName: $Ref<string>, int: $Ref<TArray<number>>, int2: $Ref<TArray<Vector2D>>, int3: $Ref<TArray<Vector>>, int4: $Ref<TArray<LinearColor>>, __WorldContext: Object, String: $Ref<string>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RenderToTextureFunctionLibrary_C;
+        static Load(InName: string): RenderToTextureFunctionLibrary_C;
+    }
+    
+    class PROTO_BP_Blueprint_0_C extends Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DefaultSceneRoot: SceneComponent;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): PROTO_BP_Blueprint_0_C;
+        static Load(InName: string): PROTO_BP_Blueprint_0_C;
+    }
+    
+    class RenderToTextureMacros_C extends Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): RenderToTextureMacros_C;
+        static Load(InName: string): RenderToTextureMacros_C;
+    }
+    
+    class BlueprintEditorTutorial_C extends EditorTutorial {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BlueprintEditorTutorial_C;
+        static Load(InName: string): BlueprintEditorTutorial_C;
+    }
+    
+    class ActorMacros_C extends Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ActorMacros_C;
+        static Load(InName: string): ActorMacros_C;
+    }
+    
+    class BP_LoginPage_C extends UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        loginBtn: Button;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BP_LoginPage_C;
+        static Load(InName: string): BP_LoginPage_C;
+    }
+    
+    class PROTO_BP_AnimBlueprint_0_C extends AnimInstance {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        UberGraphFrame: PointerToUberGraphFrame;
+        AnimGraphNode_Root: AnimNode_Root;
+        AnimGraph(AnimGraph: $Ref<PoseLink>): void;
+        ExecuteUbergraph_PROTO_BP_AnimBlueprint_0(EntryPoint: number): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): PROTO_BP_AnimBlueprint_0_C;
+        static Load(InName: string): PROTO_BP_AnimBlueprint_0_C;
+    }
+    
+    class TS_Player_C extends Character {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        UberGraphFrame: PointerToUberGraphFrame;
+        Camera: CameraComponent;
+        SpringArm: SpringArmComponent;
+        Player: StaticMeshComponent;
+        InpAxisEvt_MoveForward_K2Node_InputAxisEvent_0(AxisValue: number): void;
+        InpAxisEvt_MoveRight_K2Node_InputAxisEvent_1(AxisValue: number): void;
+        ExecuteUbergraph_TS_Player(EntryPoint: number): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TS_Player_C;
+        static Load(InName: string): TS_Player_C;
+    }
+    
 }

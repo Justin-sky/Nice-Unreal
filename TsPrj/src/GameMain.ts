@@ -1,6 +1,7 @@
 import * as UE from 'ue';
 import {argv} from 'puerts';
-import {ReactUMG} from 'react-umg';
+
+
 
 class GameMain{
 
@@ -13,10 +14,15 @@ class GameMain{
 
 
         let world = (argv.getByName("GameInstance") as UE.GameEngine).GetWorld();
-        console.log(world);
-       ReactUMG.init(world);
-
+      
+        let loginPageClass = UE.Class.Load("/Game/Blueprints/UI/BP_LoginPage.BP_LoginPage_C");
+        let loginPage = UE.UMGManager.CreateWidget(world, loginPageClass) as UE.BP_LoginPage_C;
+    
+        loginPage.AddToViewport(0);
         
+        loginPage.loginBtn.OnClicked.Add(()=>{
+            console.log("justin click me........");
+        });
     }
 }
 
