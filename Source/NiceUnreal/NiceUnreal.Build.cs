@@ -8,7 +8,7 @@ public class NiceUnreal : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" ,"JsEnv", "UMG", "Puerts"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" ,"JsEnv", "UMG","SlateCore","Slate", "Puerts"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

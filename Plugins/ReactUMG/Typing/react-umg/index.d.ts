@@ -1237,6 +1237,11 @@ declare module "react-umg" {
 
     class ReactWidget extends React.Component<ReactWidgetProps> {}
 
+    interface BagUserWidgetProps extends UserWidgetProps {
+    }
+
+    class BagUserWidget extends React.Component<BagUserWidgetProps> {}
+
     interface Synth2DSliderStyle extends SlateWidgetStyle {
         NormalThumbImage?: SlateBrush;
         DisabledThumbImage?: SlateBrush;
@@ -1303,6 +1308,21 @@ declare module "react-umg" {
     }
 
     class BP_LoginPage_C extends React.Component<BP_LoginPage_CProps> {}
+
+    interface BagGridWidget_CProps extends UserWidgetProps {
+    }
+
+    class BagGridWidget_C extends React.Component<BagGridWidget_CProps> {}
+
+    interface BagGridItemWidget_CProps extends UserWidgetProps {
+    }
+
+    class BagGridItemWidget_C extends React.Component<BagGridItemWidget_CProps> {}
+
+    interface BagWidget_CProps extends UserWidgetProps {
+    }
+
+    class BagWidget_C extends React.Component<BagWidget_CProps> {}
 
 
     interface Root {

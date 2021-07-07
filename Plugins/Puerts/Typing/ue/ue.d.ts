@@ -47932,79 +47932,6 @@ declare module "ue" {
         static Load(InName: string): NiagaraScriptBase;
     }
     
-    enum EChaosClothTetherMode { FastTetherFastLength, AccurateTetherFastLength, AccurateTetherAccurateLength, MaxChaosClothTetherMode, EChaosClothTetherMode_MAX}
-    class ChaosClothConfig extends ClothConfigCommon {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MassMode: EClothMassMode;
-        UniformMass: number;
-        TotalMass: number;
-        Density: number;
-        MinPerParticleMass: number;
-        EdgeStiffness: number;
-        BendingStiffness: number;
-        bUseBendingElements: boolean;
-        AreaStiffness: number;
-        VolumeStiffness: number;
-        StrainLimitingStiffness: number;
-        LimitScale: number;
-        TetherMode: EChaosClothTetherMode;
-        bUseGeodesicDistance: boolean;
-        ShapeTargetStiffness: number;
-        CollisionThickness: number;
-        FrictionCoefficient: number;
-        bUseSelfCollisions: boolean;
-        SelfCollisionThickness: number;
-        bUseLegacyBackstop: boolean;
-        DampingCoefficient: number;
-        bUsePointBasedWindModel: boolean;
-        DragCoefficient: number;
-        LiftCoefficient: number;
-        bUseGravityOverride: boolean;
-        GravityScale: number;
-        Gravity: Vector;
-        AnimDriveSpringStiffness: number;
-        LinearVelocityScale: Vector;
-        AngularVelocityScale: number;
-        bUseTetrahedralConstraints: boolean;
-        bUseThinShellVolumeConstraints: boolean;
-        bUseContinuousCollisionDetection: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosClothConfig;
-        static Load(InName: string): ChaosClothConfig;
-    }
-    
-    class ChaosClothSharedSimConfig extends ClothSharedConfigCommon {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        IterationCount: number;
-        SubdivisionCount: number;
-        SelfCollisionThickness: number;
-        CollisionThickness: number;
-        bUseDampingOverride: boolean;
-        Damping: number;
-        bUseGravityOverride: boolean;
-        GravityScale: number;
-        Gravity: Vector;
-        bUseLocalSpaceSimulation: boolean;
-        bUseXPBDConstraints: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosClothSharedSimConfig;
-        static Load(InName: string): ChaosClothSharedSimConfig;
-    }
-    
-    class ChaosClothingSimulationFactory extends ClothingSimulationFactory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosClothingSimulationFactory;
-        static Load(InName: string): ChaosClothingSimulationFactory;
-    }
-    
-    class ChaosClothingSimulationInteractor extends ClothingSimulationInteractor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosClothingSimulationInteractor;
-        static Load(InName: string): ChaosClothingSimulationInteractor;
-    }
-    
     enum EMagicLeapPrivilege { Invalid, BatteryInfo, CameraCapture, ComputerVision, WorldReconstruction, InAppPurchase, AudioCaptureMic, DrmCertificates, Occlusion, LowLatencyLightwear, Internet, IdentityRead, BackgroundDownload, BackgroundUpload, MediaDrm, Media, MediaMetadata, PowerInfo, LocalAreaNetwork, VoiceInput, Documents, ConnectBackgroundMusicService, RegisterBackgroundMusicService, PcfRead, PwFoundObjRead, NormalNotificationsUsage, MusicService, ControllerPose, GesturesSubscribe, GesturesConfig, AddressBookRead, AddressBookWrite, AddressBookBasicAccess, CoarseLocation, FineLocation, HandMesh, WifiStatusRead, SocialConnectionsInvitesAccess, SecureBrowserWindow, EMagicLeapPrivilege_MAX}
     class MagicLeapPrivilegesFunctionLibrary extends BlueprintFunctionLibrary {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -48245,6 +48172,79 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): MagicLeapRaycastFunctionLibrary;
         static Load(InName: string): MagicLeapRaycastFunctionLibrary;
+    }
+    
+    enum EChaosClothTetherMode { FastTetherFastLength, AccurateTetherFastLength, AccurateTetherAccurateLength, MaxChaosClothTetherMode, EChaosClothTetherMode_MAX}
+    class ChaosClothConfig extends ClothConfigCommon {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MassMode: EClothMassMode;
+        UniformMass: number;
+        TotalMass: number;
+        Density: number;
+        MinPerParticleMass: number;
+        EdgeStiffness: number;
+        BendingStiffness: number;
+        bUseBendingElements: boolean;
+        AreaStiffness: number;
+        VolumeStiffness: number;
+        StrainLimitingStiffness: number;
+        LimitScale: number;
+        TetherMode: EChaosClothTetherMode;
+        bUseGeodesicDistance: boolean;
+        ShapeTargetStiffness: number;
+        CollisionThickness: number;
+        FrictionCoefficient: number;
+        bUseSelfCollisions: boolean;
+        SelfCollisionThickness: number;
+        bUseLegacyBackstop: boolean;
+        DampingCoefficient: number;
+        bUsePointBasedWindModel: boolean;
+        DragCoefficient: number;
+        LiftCoefficient: number;
+        bUseGravityOverride: boolean;
+        GravityScale: number;
+        Gravity: Vector;
+        AnimDriveSpringStiffness: number;
+        LinearVelocityScale: Vector;
+        AngularVelocityScale: number;
+        bUseTetrahedralConstraints: boolean;
+        bUseThinShellVolumeConstraints: boolean;
+        bUseContinuousCollisionDetection: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosClothConfig;
+        static Load(InName: string): ChaosClothConfig;
+    }
+    
+    class ChaosClothSharedSimConfig extends ClothSharedConfigCommon {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        IterationCount: number;
+        SubdivisionCount: number;
+        SelfCollisionThickness: number;
+        CollisionThickness: number;
+        bUseDampingOverride: boolean;
+        Damping: number;
+        bUseGravityOverride: boolean;
+        GravityScale: number;
+        Gravity: Vector;
+        bUseLocalSpaceSimulation: boolean;
+        bUseXPBDConstraints: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosClothSharedSimConfig;
+        static Load(InName: string): ChaosClothSharedSimConfig;
+    }
+    
+    class ChaosClothingSimulationFactory extends ClothingSimulationFactory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosClothingSimulationFactory;
+        static Load(InName: string): ChaosClothingSimulationFactory;
+    }
+    
+    class ChaosClothingSimulationInteractor extends ClothingSimulationInteractor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosClothingSimulationInteractor;
+        static Load(InName: string): ChaosClothingSimulationInteractor;
     }
     
     class WmfMediaSettings extends Object {
@@ -51000,147 +51000,46 @@ declare module "ue" {
         static Load(InName: string): EnvironmentQueryGraphNode_Test;
     }
     
-    class SignificanceManager extends Object {
+    class LightPropagationVolumeSettings {
+        constructor(bOverride_LPVIntensity: boolean, bOverride_LPVDirectionalOcclusionIntensity: boolean, bOverride_LPVDirectionalOcclusionRadius: boolean, bOverride_LPVDiffuseOcclusionExponent: boolean, bOverride_LPVSpecularOcclusionExponent: boolean, bOverride_LPVDiffuseOcclusionIntensity: boolean, bOverride_LPVSpecularOcclusionIntensity: boolean, bOverride_LPVSize: boolean, bOverride_LPVSecondaryOcclusionIntensity: boolean, bOverride_LPVSecondaryBounceIntensity: boolean, bOverride_LPVGeometryVolumeBias: boolean, bOverride_LPVVplInjectionBias: boolean, bOverride_LPVEmissiveInjectionIntensity: boolean, LPVIntensity: number, LPVVplInjectionBias: number, LPVSize: number, LPVSecondaryOcclusionIntensity: number, LPVSecondaryBounceIntensity: number, LPVGeometryVolumeBias: number, LPVEmissiveInjectionIntensity: number, LPVDirectionalOcclusionIntensity: number, LPVDirectionalOcclusionRadius: number, LPVDiffuseOcclusionExponent: number, LPVSpecularOcclusionExponent: number, LPVDiffuseOcclusionIntensity: number, LPVSpecularOcclusionIntensity: number, LPVFadeRange: number, LPVDirectionalOcclusionFadeRange: number);
+        bOverride_LPVIntensity: boolean;
+        bOverride_LPVDirectionalOcclusionIntensity: boolean;
+        bOverride_LPVDirectionalOcclusionRadius: boolean;
+        bOverride_LPVDiffuseOcclusionExponent: boolean;
+        bOverride_LPVSpecularOcclusionExponent: boolean;
+        bOverride_LPVDiffuseOcclusionIntensity: boolean;
+        bOverride_LPVSpecularOcclusionIntensity: boolean;
+        bOverride_LPVSize: boolean;
+        bOverride_LPVSecondaryOcclusionIntensity: boolean;
+        bOverride_LPVSecondaryBounceIntensity: boolean;
+        bOverride_LPVGeometryVolumeBias: boolean;
+        bOverride_LPVVplInjectionBias: boolean;
+        bOverride_LPVEmissiveInjectionIntensity: boolean;
+        LPVIntensity: number;
+        LPVVplInjectionBias: number;
+        LPVSize: number;
+        LPVSecondaryOcclusionIntensity: number;
+        LPVSecondaryBounceIntensity: number;
+        LPVGeometryVolumeBias: number;
+        LPVEmissiveInjectionIntensity: number;
+        LPVDirectionalOcclusionIntensity: number;
+        LPVDirectionalOcclusionRadius: number;
+        LPVDiffuseOcclusionExponent: number;
+        LPVSpecularOcclusionExponent: number;
+        LPVDiffuseOcclusionIntensity: number;
+        LPVSpecularOcclusionIntensity: number;
+        LPVFadeRange: number;
+        LPVDirectionalOcclusionFadeRange: number;
+        static StaticClass(): Class;
+    }
+    
+    class LightPropagationVolumeBlendable extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SignificanceManagerClassName: SoftClassPath;
+        Settings: LightPropagationVolumeSettings;
+        BlendWeight: number;
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): SignificanceManager;
-        static Load(InName: string): SignificanceManager;
-    }
-    
-    class AnimationSharingStateProcessor extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationStateEnum: TSoftObjectPtr<Enum>;
-        ProcessActorState(OutState: $Ref<number>, InActor: Actor, CurrentState: number, OnDemandState: number, bShouldProcess: $Ref<boolean>): void;
-        GetAnimationStateEnum(): Enum;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimationSharingStateProcessor;
-        static Load(InName: string): AnimationSharingStateProcessor;
-    }
-    
-    class AnimSharingInstance extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        RegisteredActors: TArray<Actor>;
-        StateProcessor: AnimationSharingStateProcessor;
-        UsedAnimationSequences: TArray<AnimSequence>;
-        StateEnum: Enum;
-        SharingActor: Actor;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimSharingInstance;
-        static Load(InName: string): AnimSharingInstance;
-    }
-    
-    class AnimSharingStateInstance extends AnimInstance {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationToPlay: AnimSequence;
-        PermutationTimeOffset: number;
-        PlayRate: number;
-        bStateBool: boolean;
-        Instance: AnimSharingInstance;
-        GetInstancedActors(Actors: $Ref<TArray<Actor>>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimSharingStateInstance;
-        static Load(InName: string): AnimSharingStateInstance;
-    }
-    
-    class AnimSharingTransitionInstance extends AnimInstance {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FromComponent: TWeakObjectPtr<SkeletalMeshComponent>;
-        ToComponent: TWeakObjectPtr<SkeletalMeshComponent>;
-        BlendTime: number;
-        bBlendBool: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimSharingTransitionInstance;
-        static Load(InName: string): AnimSharingTransitionInstance;
-    }
-    
-    class AnimSharingAdditiveInstance extends AnimInstance {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        BaseComponent: TWeakObjectPtr<SkeletalMeshComponent>;
-        AdditiveAnimation: TWeakObjectPtr<AnimSequence>;
-        Alpha: number;
-        bStateBool: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimSharingAdditiveInstance;
-        static Load(InName: string): AnimSharingAdditiveInstance;
-    }
-    
-    class AnimationSetup {
-        constructor(AnimSequence: AnimSequence, AnimBlueprint: Class, NumRandomizedInstances: PerPlatformInt, Enabled: PerPlatformBool);
-        AnimSequence: AnimSequence;
-        AnimBlueprint: Class;
-        NumRandomizedInstances: PerPlatformInt;
-        Enabled: PerPlatformBool;
-        static StaticClass(): Class;
-    }
-    
-    class AnimationStateEntry {
-        constructor(State: number, AnimationSetups: TArray<AnimationSetup>, bOnDemand: boolean, bAdditive: boolean, BlendTime: number, bReturnToPreviousState: boolean, bSetNextState: boolean, NextState: number, MaximumNumberOfConcurrentInstances: PerPlatformInt, WiggleTimePercentage: number, bRequiresCurves: boolean);
-        State: number;
-        AnimationSetups: TArray<AnimationSetup>;
-        bOnDemand: boolean;
-        bAdditive: boolean;
-        BlendTime: number;
-        bReturnToPreviousState: boolean;
-        bSetNextState: boolean;
-        NextState: number;
-        MaximumNumberOfConcurrentInstances: PerPlatformInt;
-        WiggleTimePercentage: number;
-        bRequiresCurves: boolean;
-        static StaticClass(): Class;
-    }
-    
-    class PerSkeletonAnimationSharingSetup {
-        constructor(Skeleton: Skeleton, SkeletalMesh: SkeletalMesh, BlendAnimBlueprint: Class, AdditiveAnimBlueprint: Class, StateProcessorClass: Class, AnimationStates: TArray<AnimationStateEntry>);
-        Skeleton: Skeleton;
-        SkeletalMesh: SkeletalMesh;
-        BlendAnimBlueprint: Class;
-        AdditiveAnimBlueprint: Class;
-        StateProcessorClass: Class;
-        AnimationStates: TArray<AnimationStateEntry>;
-        static StaticClass(): Class;
-    }
-    
-    class AnimationSharingScalability {
-        constructor(UseBlendTransitions: PerPlatformBool, BlendSignificanceValue: PerPlatformFloat, MaximumNumberConcurrentBlends: PerPlatformInt, TickSignificanceValue: PerPlatformFloat);
-        UseBlendTransitions: PerPlatformBool;
-        BlendSignificanceValue: PerPlatformFloat;
-        MaximumNumberConcurrentBlends: PerPlatformInt;
-        TickSignificanceValue: PerPlatformFloat;
-        static StaticClass(): Class;
-    }
-    
-    class AnimationSharingSetup extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SkeletonSetups: TArray<PerSkeletonAnimationSharingSetup>;
-        ScalabilitySettings: AnimationSharingScalability;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimationSharingSetup;
-        static Load(InName: string): AnimationSharingSetup;
-    }
-    
-    class AnimationSharingManager extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Skeletons: TArray<Skeleton>;
-        PerSkeletonData: TArray<AnimSharingInstance>;
-        RegisterActorWithSkeletonBP(InActor: Actor, SharingSkeleton: Skeleton): void;
-        static GetAnimationSharingManager(WorldContextObject: Object): AnimationSharingManager;
-        static CreateAnimationSharingManager(WorldContextObject: Object, Setup: AnimationSharingSetup): boolean;
-        static AnimationSharingEnabled(): boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimationSharingManager;
-        static Load(InName: string): AnimationSharingManager;
-    }
-    
-    class K2Node_PropertyAccess extends K2Node {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Path: TArray<string>;
-        TextPath: string;
-        ResolvedPinType: EdGraphPinType;
-        GeneratedPropertyName: string;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): K2Node_PropertyAccess;
-        static Load(InName: string): K2Node_PropertyAccess;
+        static Find(OrigInName: string, Outer?: Object): LightPropagationVolumeBlendable;
+        static Load(InName: string): LightPropagationVolumeBlendable;
     }
     
     class EdGraph_ReferenceViewer extends EdGraph {
@@ -51601,6 +51500,149 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): GameplayTagsK2Node_SwitchGameplayTagContainer;
         static Load(InName: string): GameplayTagsK2Node_SwitchGameplayTagContainer;
+    }
+    
+    class SignificanceManager extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SignificanceManagerClassName: SoftClassPath;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): SignificanceManager;
+        static Load(InName: string): SignificanceManager;
+    }
+    
+    class AnimationSharingStateProcessor extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationStateEnum: TSoftObjectPtr<Enum>;
+        ProcessActorState(OutState: $Ref<number>, InActor: Actor, CurrentState: number, OnDemandState: number, bShouldProcess: $Ref<boolean>): void;
+        GetAnimationStateEnum(): Enum;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimationSharingStateProcessor;
+        static Load(InName: string): AnimationSharingStateProcessor;
+    }
+    
+    class AnimSharingInstance extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        RegisteredActors: TArray<Actor>;
+        StateProcessor: AnimationSharingStateProcessor;
+        UsedAnimationSequences: TArray<AnimSequence>;
+        StateEnum: Enum;
+        SharingActor: Actor;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimSharingInstance;
+        static Load(InName: string): AnimSharingInstance;
+    }
+    
+    class AnimSharingStateInstance extends AnimInstance {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationToPlay: AnimSequence;
+        PermutationTimeOffset: number;
+        PlayRate: number;
+        bStateBool: boolean;
+        Instance: AnimSharingInstance;
+        GetInstancedActors(Actors: $Ref<TArray<Actor>>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimSharingStateInstance;
+        static Load(InName: string): AnimSharingStateInstance;
+    }
+    
+    class AnimSharingTransitionInstance extends AnimInstance {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FromComponent: TWeakObjectPtr<SkeletalMeshComponent>;
+        ToComponent: TWeakObjectPtr<SkeletalMeshComponent>;
+        BlendTime: number;
+        bBlendBool: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimSharingTransitionInstance;
+        static Load(InName: string): AnimSharingTransitionInstance;
+    }
+    
+    class AnimSharingAdditiveInstance extends AnimInstance {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BaseComponent: TWeakObjectPtr<SkeletalMeshComponent>;
+        AdditiveAnimation: TWeakObjectPtr<AnimSequence>;
+        Alpha: number;
+        bStateBool: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimSharingAdditiveInstance;
+        static Load(InName: string): AnimSharingAdditiveInstance;
+    }
+    
+    class AnimationSetup {
+        constructor(AnimSequence: AnimSequence, AnimBlueprint: Class, NumRandomizedInstances: PerPlatformInt, Enabled: PerPlatformBool);
+        AnimSequence: AnimSequence;
+        AnimBlueprint: Class;
+        NumRandomizedInstances: PerPlatformInt;
+        Enabled: PerPlatformBool;
+        static StaticClass(): Class;
+    }
+    
+    class AnimationStateEntry {
+        constructor(State: number, AnimationSetups: TArray<AnimationSetup>, bOnDemand: boolean, bAdditive: boolean, BlendTime: number, bReturnToPreviousState: boolean, bSetNextState: boolean, NextState: number, MaximumNumberOfConcurrentInstances: PerPlatformInt, WiggleTimePercentage: number, bRequiresCurves: boolean);
+        State: number;
+        AnimationSetups: TArray<AnimationSetup>;
+        bOnDemand: boolean;
+        bAdditive: boolean;
+        BlendTime: number;
+        bReturnToPreviousState: boolean;
+        bSetNextState: boolean;
+        NextState: number;
+        MaximumNumberOfConcurrentInstances: PerPlatformInt;
+        WiggleTimePercentage: number;
+        bRequiresCurves: boolean;
+        static StaticClass(): Class;
+    }
+    
+    class PerSkeletonAnimationSharingSetup {
+        constructor(Skeleton: Skeleton, SkeletalMesh: SkeletalMesh, BlendAnimBlueprint: Class, AdditiveAnimBlueprint: Class, StateProcessorClass: Class, AnimationStates: TArray<AnimationStateEntry>);
+        Skeleton: Skeleton;
+        SkeletalMesh: SkeletalMesh;
+        BlendAnimBlueprint: Class;
+        AdditiveAnimBlueprint: Class;
+        StateProcessorClass: Class;
+        AnimationStates: TArray<AnimationStateEntry>;
+        static StaticClass(): Class;
+    }
+    
+    class AnimationSharingScalability {
+        constructor(UseBlendTransitions: PerPlatformBool, BlendSignificanceValue: PerPlatformFloat, MaximumNumberConcurrentBlends: PerPlatformInt, TickSignificanceValue: PerPlatformFloat);
+        UseBlendTransitions: PerPlatformBool;
+        BlendSignificanceValue: PerPlatformFloat;
+        MaximumNumberConcurrentBlends: PerPlatformInt;
+        TickSignificanceValue: PerPlatformFloat;
+        static StaticClass(): Class;
+    }
+    
+    class AnimationSharingSetup extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SkeletonSetups: TArray<PerSkeletonAnimationSharingSetup>;
+        ScalabilitySettings: AnimationSharingScalability;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimationSharingSetup;
+        static Load(InName: string): AnimationSharingSetup;
+    }
+    
+    class AnimationSharingManager extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Skeletons: TArray<Skeleton>;
+        PerSkeletonData: TArray<AnimSharingInstance>;
+        RegisterActorWithSkeletonBP(InActor: Actor, SharingSkeleton: Skeleton): void;
+        static GetAnimationSharingManager(WorldContextObject: Object): AnimationSharingManager;
+        static CreateAnimationSharingManager(WorldContextObject: Object, Setup: AnimationSharingSetup): boolean;
+        static AnimationSharingEnabled(): boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimationSharingManager;
+        static Load(InName: string): AnimationSharingManager;
+    }
+    
+    class K2Node_PropertyAccess extends K2Node {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Path: TArray<string>;
+        TextPath: string;
+        ResolvedPinType: EdGraphPinType;
+        GeneratedPropertyName: string;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): K2Node_PropertyAccess;
+        static Load(InName: string): K2Node_PropertyAccess;
     }
     
     class MovieSceneNiagaraTrack extends MovieSceneNameableTrack {
@@ -55227,39 +55269,6 @@ declare module "ue" {
         static Load(InName: string): MagicLeapHandMeshingFunctionLibrary;
     }
     
-    class TcpMessagingSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        EnableTransport: boolean;
-        ListenEndpoint: string;
-        ConnectToEndpoints: TArray<string>;
-        ConnectionRetryDelay: number;
-        bStopServiceWhenAppDeactivates: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TcpMessagingSettings;
-        static Load(InName: string): TcpMessagingSettings;
-    }
-    
-    enum EUdpMessageFormat { None, Json, TaggedProperty, CborPlatformEndianness, CborStandardEndianness, EUdpMessageFormat_MAX}
-    class UdpMessagingSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        EnabledByDefault: boolean;
-        EnableTransport: boolean;
-        bAutoRepair: boolean;
-        bStopServiceWhenAppDeactivates: boolean;
-        UnicastEndpoint: string;
-        MulticastEndpoint: string;
-        MessageFormat: EUdpMessageFormat;
-        MulticastTimeToLive: number;
-        StaticEndpoints: TArray<string>;
-        EnableTunnel: boolean;
-        TunnelUnicastEndpoint: string;
-        TunnelMulticastEndpoint: string;
-        RemoteTunnelEndpoints: TArray<string>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): UdpMessagingSettings;
-        static Load(InName: string): UdpMessagingSettings;
-    }
-    
     enum EActorSequenceObjectReferenceType { ContextActor, ExternalActor, Component, EActorSequenceObjectReferenceType_MAX}
     class ActorSequenceObjectReference {
         constructor(Type: EActorSequenceObjectReferenceType, ActorId: Guid, PathToComponent: string);
@@ -55307,6 +55316,39 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): ActorSequenceComponent;
         static Load(InName: string): ActorSequenceComponent;
+    }
+    
+    class TcpMessagingSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        EnableTransport: boolean;
+        ListenEndpoint: string;
+        ConnectToEndpoints: TArray<string>;
+        ConnectionRetryDelay: number;
+        bStopServiceWhenAppDeactivates: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TcpMessagingSettings;
+        static Load(InName: string): TcpMessagingSettings;
+    }
+    
+    enum EUdpMessageFormat { None, Json, TaggedProperty, CborPlatformEndianness, CborStandardEndianness, EUdpMessageFormat_MAX}
+    class UdpMessagingSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        EnabledByDefault: boolean;
+        EnableTransport: boolean;
+        bAutoRepair: boolean;
+        bStopServiceWhenAppDeactivates: boolean;
+        UnicastEndpoint: string;
+        MulticastEndpoint: string;
+        MessageFormat: EUdpMessageFormat;
+        MulticastTimeToLive: number;
+        StaticEndpoints: TArray<string>;
+        EnableTunnel: boolean;
+        TunnelUnicastEndpoint: string;
+        TunnelMulticastEndpoint: string;
+        RemoteTunnelEndpoints: TArray<string>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): UdpMessagingSettings;
+        static Load(InName: string): UdpMessagingSettings;
     }
     
     class AudioAnalyzerAsset extends Object {
@@ -55733,48 +55775,6 @@ declare module "ue" {
         static Load(InName: string): AmbisonicsEncodingSettings;
     }
     
-    class LightPropagationVolumeSettings {
-        constructor(bOverride_LPVIntensity: boolean, bOverride_LPVDirectionalOcclusionIntensity: boolean, bOverride_LPVDirectionalOcclusionRadius: boolean, bOverride_LPVDiffuseOcclusionExponent: boolean, bOverride_LPVSpecularOcclusionExponent: boolean, bOverride_LPVDiffuseOcclusionIntensity: boolean, bOverride_LPVSpecularOcclusionIntensity: boolean, bOverride_LPVSize: boolean, bOverride_LPVSecondaryOcclusionIntensity: boolean, bOverride_LPVSecondaryBounceIntensity: boolean, bOverride_LPVGeometryVolumeBias: boolean, bOverride_LPVVplInjectionBias: boolean, bOverride_LPVEmissiveInjectionIntensity: boolean, LPVIntensity: number, LPVVplInjectionBias: number, LPVSize: number, LPVSecondaryOcclusionIntensity: number, LPVSecondaryBounceIntensity: number, LPVGeometryVolumeBias: number, LPVEmissiveInjectionIntensity: number, LPVDirectionalOcclusionIntensity: number, LPVDirectionalOcclusionRadius: number, LPVDiffuseOcclusionExponent: number, LPVSpecularOcclusionExponent: number, LPVDiffuseOcclusionIntensity: number, LPVSpecularOcclusionIntensity: number, LPVFadeRange: number, LPVDirectionalOcclusionFadeRange: number);
-        bOverride_LPVIntensity: boolean;
-        bOverride_LPVDirectionalOcclusionIntensity: boolean;
-        bOverride_LPVDirectionalOcclusionRadius: boolean;
-        bOverride_LPVDiffuseOcclusionExponent: boolean;
-        bOverride_LPVSpecularOcclusionExponent: boolean;
-        bOverride_LPVDiffuseOcclusionIntensity: boolean;
-        bOverride_LPVSpecularOcclusionIntensity: boolean;
-        bOverride_LPVSize: boolean;
-        bOverride_LPVSecondaryOcclusionIntensity: boolean;
-        bOverride_LPVSecondaryBounceIntensity: boolean;
-        bOverride_LPVGeometryVolumeBias: boolean;
-        bOverride_LPVVplInjectionBias: boolean;
-        bOverride_LPVEmissiveInjectionIntensity: boolean;
-        LPVIntensity: number;
-        LPVVplInjectionBias: number;
-        LPVSize: number;
-        LPVSecondaryOcclusionIntensity: number;
-        LPVSecondaryBounceIntensity: number;
-        LPVGeometryVolumeBias: number;
-        LPVEmissiveInjectionIntensity: number;
-        LPVDirectionalOcclusionIntensity: number;
-        LPVDirectionalOcclusionRadius: number;
-        LPVDiffuseOcclusionExponent: number;
-        LPVSpecularOcclusionExponent: number;
-        LPVDiffuseOcclusionIntensity: number;
-        LPVSpecularOcclusionIntensity: number;
-        LPVFadeRange: number;
-        LPVDirectionalOcclusionFadeRange: number;
-        static StaticClass(): Class;
-    }
-    
-    class LightPropagationVolumeBlendable extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Settings: LightPropagationVolumeSettings;
-        BlendWeight: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LightPropagationVolumeBlendable;
-        static Load(InName: string): LightPropagationVolumeBlendable;
-    }
-    
     class DynamicDelegateProxy extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         Fire(): void;
@@ -55894,18 +55894,20 @@ declare module "ue" {
         static Load(InName: string): UMGManager;
     }
     
-    class NiceUnrealGameModeBase extends GameModeBase {
+    class BagUserWidget extends UserWidget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        WeaponBtn: Button;
+        ConsumBtn: Button;
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiceUnrealGameModeBase;
-        static Load(InName: string): NiceUnrealGameModeBase;
+        static Find(OrigInName: string, Outer?: Object): BagUserWidget;
+        static Load(InName: string): BagUserWidget;
     }
     
-    class UTsGameInstanceSubsystem extends GameInstanceSubsystem {
+    class TsGameInstance extends GameInstance {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): UTsGameInstanceSubsystem;
-        static Load(InName: string): UTsGameInstanceSubsystem;
+        static Find(OrigInName: string, Outer?: Object): TsGameInstance;
+        static Load(InName: string): TsGameInstance;
     }
     
     class MeshPaintingToolset extends BlueprintFunctionLibrary {
@@ -56585,25 +56587,11 @@ declare module "ue" {
         static Load(InName: string): PaperTiledImporterFactory;
     }
     
-    class AnimationSharingSetupFactory extends Factory {
+    class LightPropagationVolumeBlendableFactory extends Factory {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): AnimationSharingSetupFactory;
-        static Load(InName: string): AnimationSharingSetupFactory;
-    }
-    
-    class MyPluginStruct {
-        constructor(TestString: string);
-        TestString: string;
-        static StaticClass(): Class;
-    }
-    
-    class MyPluginObject extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MyStruct: MyPluginStruct;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MyPluginObject;
-        static Load(InName: string): MyPluginObject;
+        static Find(OrigInName: string, Outer?: Object): LightPropagationVolumeBlendableFactory;
+        static Load(InName: string): LightPropagationVolumeBlendableFactory;
     }
     
     class CryptoKeysCommandlet extends Commandlet {
@@ -56636,56 +56624,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): CryptoKeysSettings;
         static Load(InName: string): CryptoKeysSettings;
-    }
-    
-    class LevelVariantSetsActorFactory extends ActorFactory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelVariantSetsActorFactory;
-        static Load(InName: string): LevelVariantSetsActorFactory;
-    }
-    
-    class SwitchActorFactory extends ActorFactory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): SwitchActorFactory;
-        static Load(InName: string): SwitchActorFactory;
-    }
-    
-    class VariantManagerFactoryNew extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): VariantManagerFactoryNew;
-        static Load(InName: string): VariantManagerFactoryNew;
-    }
-    
-    enum EVariantManagerTestEnum { None, FirstOption, SecondOption, ThirdOption, EVariantManagerTestEnum_MAX}
-    class VariantManagerTestActor extends Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        EnumWithNoDefault: EVariantManagerTestEnum;
-        EnumWithSecondDefault: EVariantManagerTestEnum;
-        CapturedByteProperty: number;
-        CapturedIntProperty: number;
-        CapturedFloatProperty: number;
-        bCapturedBoolProperty: boolean;
-        CapturedObjectProperty: Object;
-        CapturedInterfaceProperty: Interface;
-        CapturedNameProperty: string;
-        CapturedStrProperty: string;
-        CapturedTextProperty: string;
-        CapturedRotatorProperty: Rotator;
-        CapturedColorProperty: Color;
-        CapturedLinearColorProperty: LinearColor;
-        CapturedVectorProperty: Vector;
-        CapturedQuatProperty: Quat;
-        CapturedVector4Property: Vector4;
-        CapturedVector2DProperty: Vector2D;
-        CapturedIntPointProperty: IntPoint;
-        CapturedUObjectArrayProperty: TArray<Object>;
-        CapturedVectorArrayProperty: TArray<Vector>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): VariantManagerTestActor;
-        static Load(InName: string): VariantManagerTestActor;
     }
     
     enum ECurveEditorFFTFilterType { Lowpass, Highpass, ECurveEditorFFTFilterType_MAX}
@@ -56782,6 +56720,156 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): SpeedTreeImportData;
         static Load(InName: string): SpeedTreeImportData;
+    }
+    
+    class AnimationSharingSetupFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): AnimationSharingSetupFactory;
+        static Load(InName: string): AnimationSharingSetupFactory;
+    }
+    
+    class MyPluginStruct {
+        constructor(TestString: string);
+        TestString: string;
+        static StaticClass(): Class;
+    }
+    
+    class MyPluginObject extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MyStruct: MyPluginStruct;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MyPluginObject;
+        static Load(InName: string): MyPluginObject;
+    }
+    
+    class LevelVariantSetsActorFactory extends ActorFactory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelVariantSetsActorFactory;
+        static Load(InName: string): LevelVariantSetsActorFactory;
+    }
+    
+    class SwitchActorFactory extends ActorFactory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): SwitchActorFactory;
+        static Load(InName: string): SwitchActorFactory;
+    }
+    
+    class VariantManagerFactoryNew extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): VariantManagerFactoryNew;
+        static Load(InName: string): VariantManagerFactoryNew;
+    }
+    
+    enum EVariantManagerTestEnum { None, FirstOption, SecondOption, ThirdOption, EVariantManagerTestEnum_MAX}
+    class VariantManagerTestActor extends Actor {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        EnumWithNoDefault: EVariantManagerTestEnum;
+        EnumWithSecondDefault: EVariantManagerTestEnum;
+        CapturedByteProperty: number;
+        CapturedIntProperty: number;
+        CapturedFloatProperty: number;
+        bCapturedBoolProperty: boolean;
+        CapturedObjectProperty: Object;
+        CapturedInterfaceProperty: Interface;
+        CapturedNameProperty: string;
+        CapturedStrProperty: string;
+        CapturedTextProperty: string;
+        CapturedRotatorProperty: Rotator;
+        CapturedColorProperty: Color;
+        CapturedLinearColorProperty: LinearColor;
+        CapturedVectorProperty: Vector;
+        CapturedQuatProperty: Quat;
+        CapturedVector4Property: Vector4;
+        CapturedVector2DProperty: Vector2D;
+        CapturedIntPointProperty: IntPoint;
+        CapturedUObjectArrayProperty: TArray<Object>;
+        CapturedVectorArrayProperty: TArray<Vector>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): VariantManagerTestActor;
+        static Load(InName: string): VariantManagerTestActor;
+    }
+    
+    class MagicLeapAudioFunctionLibrary extends BlueprintFunctionLibrary {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static SetOnAudioJackUnpluggedDelegate(ResultDelegate: $Delegate<() => void>): boolean;
+        static SetOnAudioJackPluggedDelegate(ResultDelegate: $Delegate<() => void>): boolean;
+        static SetMicMute(IsMuted: boolean): boolean;
+        static IsMicMuted(): boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapAudioFunctionLibrary;
+        static Load(InName: string): MagicLeapAudioFunctionLibrary;
+    }
+    
+    class MagicLeapSharedWorldSharedData {
+        constructor(PinIDs: TArray<Guid>);
+        PinIDs: TArray<Guid>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldPinData {
+        constructor(PinID: Guid, PinState: MagicLeapARPinState);
+        PinID: Guid;
+        PinState: MagicLeapARPinState;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldLocalData {
+        constructor(LocalPins: TArray<MagicLeapSharedWorldPinData>);
+        LocalPins: TArray<MagicLeapSharedWorldPinData>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldAlignmentTransforms {
+        constructor(AlignmentTransforms: TArray<Transform>);
+        AlignmentTransforms: TArray<Transform>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldPlayerController extends PlayerController {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
+        ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
+        IsChosenOne(): boolean;
+        ClientSetChosenOne(bChosenOne: boolean): void;
+        ClientMarkReadyForSendingLocalData(): void;
+        CanSendLocalDataToServer(): boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldPlayerController;
+        static Load(InName: string): MagicLeapSharedWorldPlayerController;
+    }
+    
+    class MagicLeapSharedWorldGameMode extends GameMode {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SharedWorldData: MagicLeapSharedWorldSharedData;
+        OnNewLocalDataFromClients: $MulticastDelegate<() => void>;
+        PinSelectionConfidenceThreshold: number;
+        ChosenOne: MagicLeapSharedWorldPlayerController;
+        SendSharedWorldDataToClients(): boolean;
+        SelectChosenOne(): void;
+        MagicLeapOnNewLocalDataFromClients__DelegateSignature(): void;
+        DetermineSharedWorldData(NewSharedWorldData: $Ref<MagicLeapSharedWorldSharedData>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameMode;
+        static Load(InName: string): MagicLeapSharedWorldGameMode;
+    }
+    
+    class MagicLeapSharedWorldGameState extends GameState {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SharedWorldData: MagicLeapSharedWorldSharedData;
+        AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
+        OnSharedWorldDataUpdated: $MulticastDelegate<() => void>;
+        OnAlignmentTransformsUpdated: $MulticastDelegate<() => void>;
+        OnReplicate_SharedWorldData(): void;
+        OnReplicate_AlignmentTransforms(): void;
+        MagicLeapSharedWorldEvent__DelegateSignature(): void;
+        CalculateXRCameraRootTransform(): Transform;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameState;
+        static Load(InName: string): MagicLeapSharedWorldGameState;
     }
     
     class GeometryCacheTrack extends Object {
@@ -57173,6 +57261,20 @@ declare module "ue" {
         static Load(InName: string): ChaosSolverSettings;
     }
     
+    class ActorFactoryChaosSolver extends ActorFactory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ActorFactoryChaosSolver;
+        static Load(InName: string): ActorFactoryChaosSolver;
+    }
+    
+    class ChaosSolverFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ChaosSolverFactory;
+        static Load(InName: string): ChaosSolverFactory;
+    }
+    
     class FieldSystem extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -57428,6 +57530,110 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): ReturnResultsTerminal;
         static Load(InName: string): ReturnResultsTerminal;
+    }
+    
+    enum EDataSourceTypeEnum { ChaosNiagara_DataSourceType_Collision, ChaosNiagara_DataSourceType_Breaking, ChaosNiagara_DataSourceType_Trailing, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum ELocationFilteringModeEnum { ChaosNiagara_LocationFilteringMode_Inclusive, ChaosNiagara_LocationFilteringMode_Exclusive, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum ELocationXToSpawnEnum { ChaosNiagara_LocationXToSpawn_None, ChaosNiagara_LocationXToSpawn_Min, ChaosNiagara_LocationXToSpawn_Max, ChaosNiagara_LocationXToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum ELocationYToSpawnEnum { ChaosNiagara_LocationYToSpawn_None, ChaosNiagara_LocationYToSpawn_Min, ChaosNiagara_LocationYToSpawn_Max, ChaosNiagara_LocationYToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum ELocationZToSpawnEnum { ChaosNiagara_LocationZToSpawn_None, ChaosNiagara_LocationZToSpawn_Min, ChaosNiagara_LocationZToSpawn_Max, ChaosNiagara_LocationZToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum EDataSortTypeEnum { ChaosNiagara_DataSortType_NoSorting, ChaosNiagara_DataSortType_RandomShuffle, ChaosNiagara_DataSortType_SortByMassMaxToMin, ChaosNiagara_DataSortType_SortByMassMinToMax, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum ERandomVelocityGenerationTypeEnum { ChaosNiagara_RandomVelocityGenerationType_RandomDistribution, ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers, ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased, ChaosNiagara_Max, ChaosNiagara_MAX}
+    enum EDebugTypeEnum { ChaosNiagara_DebugType_NoDebug, ChaosNiagara_DebugType_ColorBySolver, ChaosNiagara_DebugType_ColorByParticleIndex, ChaosNiagara_Max, ChaosNiagara_MAX}
+    class NiagaraDataInterfaceChaosDestruction extends NiagaraDataInterface {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ChaosSolverActorSet: TSet<ChaosSolverActor>;
+        DataSourceType: EDataSourceTypeEnum;
+        DataProcessFrequency: number;
+        MaxNumberOfDataEntriesToSpawn: number;
+        DoSpawn: boolean;
+        SpawnMultiplierMinMax: Vector2D;
+        SpawnChance: number;
+        ImpulseToSpawnMinMax: Vector2D;
+        SpeedToSpawnMinMax: Vector2D;
+        MassToSpawnMinMax: Vector2D;
+        ExtentMinToSpawnMinMax: Vector2D;
+        ExtentMaxToSpawnMinMax: Vector2D;
+        VolumeToSpawnMinMax: Vector2D;
+        SolverTimeToSpawnMinMax: Vector2D;
+        SurfaceTypeToSpawn: number;
+        LocationFilteringMode: ELocationFilteringModeEnum;
+        LocationXToSpawn: ELocationXToSpawnEnum;
+        LocationXToSpawnMinMax: Vector2D;
+        LocationYToSpawn: ELocationYToSpawnEnum;
+        LocationYToSpawnMinMax: Vector2D;
+        LocationZToSpawn: ELocationZToSpawnEnum;
+        LocationZToSpawnMinMax: Vector2D;
+        DataSortingType: EDataSortTypeEnum;
+        bGetExternalCollisionData: boolean;
+        DoSpatialHash: boolean;
+        SpatialHashVolumeMin: Vector;
+        SpatialHashVolumeMax: Vector;
+        SpatialHashVolumeCellSize: Vector;
+        MaxDataPerCell: number;
+        bApplyMaterialsFilter: boolean;
+        ChaosBreakingMaterialSet: TSet<PhysicalMaterial>;
+        bGetExternalBreakingData: boolean;
+        bGetExternalTrailingData: boolean;
+        RandomPositionMagnitudeMinMax: Vector2D;
+        InheritedVelocityMultiplier: number;
+        RandomVelocityGenerationType: ERandomVelocityGenerationTypeEnum;
+        RandomVelocityMagnitudeMinMax: Vector2D;
+        SpreadAngleMax: number;
+        VelocityOffsetMin: Vector;
+        VelocityOffsetMax: Vector;
+        FinalVelocityMagnitudeMinMax: Vector2D;
+        MaxLatency: number;
+        DebugType: EDebugTypeEnum;
+        LastSpawnedPointID: number;
+        LastSpawnTime: number;
+        SolverTime: number;
+        TimeStampOfLastProcessedData: number;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceChaosDestruction;
+        static Load(InName: string): NiagaraDataInterfaceChaosDestruction;
+    }
+    
+    class NiagaraDataInterfaceFieldSystem extends NiagaraDataInterface {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BlueprintSource: Blueprint;
+        SourceActor: Actor;
+        FieldDimensions: IntVector;
+        MinBounds: Vector;
+        MaxBounds: Vector;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceFieldSystem;
+        static Load(InName: string): NiagaraDataInterfaceFieldSystem;
+    }
+    
+    class MovieSceneGeometryCacheParams {
+        constructor(GeometryCacheAsset: GeometryCache, FirstLoopStartFrameOffset: FrameNumber, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number, bReverse: boolean, StartOffset: number, EndOffset: number, GeometryCache: SoftObjectPath);
+        GeometryCacheAsset: GeometryCache;
+        FirstLoopStartFrameOffset: FrameNumber;
+        StartFrameOffset: FrameNumber;
+        EndFrameOffset: FrameNumber;
+        PlayRate: number;
+        bReverse: boolean;
+        StartOffset: number;
+        EndOffset: number;
+        GeometryCache: SoftObjectPath;
+        static StaticClass(): Class;
+    }
+    
+    class MovieSceneGeometryCacheSection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Params: MovieSceneGeometryCacheParams;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheSection;
+        static Load(InName: string): MovieSceneGeometryCacheSection;
+    }
+    
+    class MovieSceneGeometryCacheTrack extends MovieSceneNameableTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationSections: TArray<MovieSceneSection>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheTrack;
+        static Load(InName: string): MovieSceneGeometryCacheTrack;
     }
     
     enum EChaosCollisionSortMethod { SortNone, SortByHighestMass, SortByHighestSpeed, SortByHighestImpulse, SortByNearestFirst, Count, EChaosCollisionSortMethod_MAX}
@@ -57960,6 +58166,31 @@ declare module "ue" {
         static Load(InName: string): GeometryCollectionThumbnailRenderer;
     }
     
+    class MovieSceneGeometryCollectionParams {
+        constructor(GeometryCollectionCache: SoftObjectPath, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number);
+        GeometryCollectionCache: SoftObjectPath;
+        StartFrameOffset: FrameNumber;
+        EndFrameOffset: FrameNumber;
+        PlayRate: number;
+        static StaticClass(): Class;
+    }
+    
+    class MovieSceneGeometryCollectionSection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Params: MovieSceneGeometryCollectionParams;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionSection;
+        static Load(InName: string): MovieSceneGeometryCollectionSection;
+    }
+    
+    class MovieSceneGeometryCollectionTrack extends MovieSceneNameableTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationSections: TArray<MovieSceneSection>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionTrack;
+        static Load(InName: string): MovieSceneGeometryCollectionTrack;
+    }
+    
     class AutoClusterFractureCommand extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -58163,160 +58394,6 @@ declare module "ue" {
         static Load(InName: string): FractureToolUniform;
     }
     
-    enum EDataSourceTypeEnum { ChaosNiagara_DataSourceType_Collision, ChaosNiagara_DataSourceType_Breaking, ChaosNiagara_DataSourceType_Trailing, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum ELocationFilteringModeEnum { ChaosNiagara_LocationFilteringMode_Inclusive, ChaosNiagara_LocationFilteringMode_Exclusive, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum ELocationXToSpawnEnum { ChaosNiagara_LocationXToSpawn_None, ChaosNiagara_LocationXToSpawn_Min, ChaosNiagara_LocationXToSpawn_Max, ChaosNiagara_LocationXToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum ELocationYToSpawnEnum { ChaosNiagara_LocationYToSpawn_None, ChaosNiagara_LocationYToSpawn_Min, ChaosNiagara_LocationYToSpawn_Max, ChaosNiagara_LocationYToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum ELocationZToSpawnEnum { ChaosNiagara_LocationZToSpawn_None, ChaosNiagara_LocationZToSpawn_Min, ChaosNiagara_LocationZToSpawn_Max, ChaosNiagara_LocationZToSpawn_MinMax, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum EDataSortTypeEnum { ChaosNiagara_DataSortType_NoSorting, ChaosNiagara_DataSortType_RandomShuffle, ChaosNiagara_DataSortType_SortByMassMaxToMin, ChaosNiagara_DataSortType_SortByMassMinToMax, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum ERandomVelocityGenerationTypeEnum { ChaosNiagara_RandomVelocityGenerationType_RandomDistribution, ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers, ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased, ChaosNiagara_Max, ChaosNiagara_MAX}
-    enum EDebugTypeEnum { ChaosNiagara_DebugType_NoDebug, ChaosNiagara_DebugType_ColorBySolver, ChaosNiagara_DebugType_ColorByParticleIndex, ChaosNiagara_Max, ChaosNiagara_MAX}
-    class NiagaraDataInterfaceChaosDestruction extends NiagaraDataInterface {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ChaosSolverActorSet: TSet<ChaosSolverActor>;
-        DataSourceType: EDataSourceTypeEnum;
-        DataProcessFrequency: number;
-        MaxNumberOfDataEntriesToSpawn: number;
-        DoSpawn: boolean;
-        SpawnMultiplierMinMax: Vector2D;
-        SpawnChance: number;
-        ImpulseToSpawnMinMax: Vector2D;
-        SpeedToSpawnMinMax: Vector2D;
-        MassToSpawnMinMax: Vector2D;
-        ExtentMinToSpawnMinMax: Vector2D;
-        ExtentMaxToSpawnMinMax: Vector2D;
-        VolumeToSpawnMinMax: Vector2D;
-        SolverTimeToSpawnMinMax: Vector2D;
-        SurfaceTypeToSpawn: number;
-        LocationFilteringMode: ELocationFilteringModeEnum;
-        LocationXToSpawn: ELocationXToSpawnEnum;
-        LocationXToSpawnMinMax: Vector2D;
-        LocationYToSpawn: ELocationYToSpawnEnum;
-        LocationYToSpawnMinMax: Vector2D;
-        LocationZToSpawn: ELocationZToSpawnEnum;
-        LocationZToSpawnMinMax: Vector2D;
-        DataSortingType: EDataSortTypeEnum;
-        bGetExternalCollisionData: boolean;
-        DoSpatialHash: boolean;
-        SpatialHashVolumeMin: Vector;
-        SpatialHashVolumeMax: Vector;
-        SpatialHashVolumeCellSize: Vector;
-        MaxDataPerCell: number;
-        bApplyMaterialsFilter: boolean;
-        ChaosBreakingMaterialSet: TSet<PhysicalMaterial>;
-        bGetExternalBreakingData: boolean;
-        bGetExternalTrailingData: boolean;
-        RandomPositionMagnitudeMinMax: Vector2D;
-        InheritedVelocityMultiplier: number;
-        RandomVelocityGenerationType: ERandomVelocityGenerationTypeEnum;
-        RandomVelocityMagnitudeMinMax: Vector2D;
-        SpreadAngleMax: number;
-        VelocityOffsetMin: Vector;
-        VelocityOffsetMax: Vector;
-        FinalVelocityMagnitudeMinMax: Vector2D;
-        MaxLatency: number;
-        DebugType: EDebugTypeEnum;
-        LastSpawnedPointID: number;
-        LastSpawnTime: number;
-        SolverTime: number;
-        TimeStampOfLastProcessedData: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceChaosDestruction;
-        static Load(InName: string): NiagaraDataInterfaceChaosDestruction;
-    }
-    
-    class NiagaraDataInterfaceFieldSystem extends NiagaraDataInterface {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        BlueprintSource: Blueprint;
-        SourceActor: Actor;
-        FieldDimensions: IntVector;
-        MinBounds: Vector;
-        MaxBounds: Vector;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceFieldSystem;
-        static Load(InName: string): NiagaraDataInterfaceFieldSystem;
-    }
-    
-    class ActorFactoryChaosSolver extends ActorFactory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ActorFactoryChaosSolver;
-        static Load(InName: string): ActorFactoryChaosSolver;
-    }
-    
-    class ChaosSolverFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ChaosSolverFactory;
-        static Load(InName: string): ChaosSolverFactory;
-    }
-    
-    class MovieSceneGeometryCacheParams {
-        constructor(GeometryCacheAsset: GeometryCache, FirstLoopStartFrameOffset: FrameNumber, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number, bReverse: boolean, StartOffset: number, EndOffset: number, GeometryCache: SoftObjectPath);
-        GeometryCacheAsset: GeometryCache;
-        FirstLoopStartFrameOffset: FrameNumber;
-        StartFrameOffset: FrameNumber;
-        EndFrameOffset: FrameNumber;
-        PlayRate: number;
-        bReverse: boolean;
-        StartOffset: number;
-        EndOffset: number;
-        GeometryCache: SoftObjectPath;
-        static StaticClass(): Class;
-    }
-    
-    class MovieSceneGeometryCacheSection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Params: MovieSceneGeometryCacheParams;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheSection;
-        static Load(InName: string): MovieSceneGeometryCacheSection;
-    }
-    
-    class MovieSceneGeometryCacheTrack extends MovieSceneNameableTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationSections: TArray<MovieSceneSection>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheTrack;
-        static Load(InName: string): MovieSceneGeometryCacheTrack;
-    }
-    
-    class MovieSceneGeometryCollectionParams {
-        constructor(GeometryCollectionCache: SoftObjectPath, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number);
-        GeometryCollectionCache: SoftObjectPath;
-        StartFrameOffset: FrameNumber;
-        EndFrameOffset: FrameNumber;
-        PlayRate: number;
-        static StaticClass(): Class;
-    }
-    
-    class MovieSceneGeometryCollectionSection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Params: MovieSceneGeometryCollectionParams;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionSection;
-        static Load(InName: string): MovieSceneGeometryCollectionSection;
-    }
-    
-    class MovieSceneGeometryCollectionTrack extends MovieSceneNameableTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationSections: TArray<MovieSceneSection>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionTrack;
-        static Load(InName: string): MovieSceneGeometryCollectionTrack;
-    }
-    
-    class MagicLeapAudioFunctionLibrary extends BlueprintFunctionLibrary {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static SetOnAudioJackUnpluggedDelegate(ResultDelegate: $Delegate<() => void>): boolean;
-        static SetOnAudioJackPluggedDelegate(ResultDelegate: $Delegate<() => void>): boolean;
-        static SetMicMute(IsMuted: boolean): boolean;
-        static IsMicMuted(): boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapAudioFunctionLibrary;
-        static Load(InName: string): MagicLeapAudioFunctionLibrary;
-    }
-    
     class GrainTableEntry {
         constructor(SampleIndex: number, RPM: number, AnalysisSampleIndex: number);
         SampleIndex: number;
@@ -58426,104 +58503,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): MotoSynthSourceFactory;
         static Load(InName: string): MotoSynthSourceFactory;
-    }
-    
-    class MagicLeapSharedWorldSharedData {
-        constructor(PinIDs: TArray<Guid>);
-        PinIDs: TArray<Guid>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldPinData {
-        constructor(PinID: Guid, PinState: MagicLeapARPinState);
-        PinID: Guid;
-        PinState: MagicLeapARPinState;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldLocalData {
-        constructor(LocalPins: TArray<MagicLeapSharedWorldPinData>);
-        LocalPins: TArray<MagicLeapSharedWorldPinData>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldAlignmentTransforms {
-        constructor(AlignmentTransforms: TArray<Transform>);
-        AlignmentTransforms: TArray<Transform>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldPlayerController extends PlayerController {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
-        ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
-        IsChosenOne(): boolean;
-        ClientSetChosenOne(bChosenOne: boolean): void;
-        ClientMarkReadyForSendingLocalData(): void;
-        CanSendLocalDataToServer(): boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldPlayerController;
-        static Load(InName: string): MagicLeapSharedWorldPlayerController;
-    }
-    
-    class MagicLeapSharedWorldGameMode extends GameMode {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SharedWorldData: MagicLeapSharedWorldSharedData;
-        OnNewLocalDataFromClients: $MulticastDelegate<() => void>;
-        PinSelectionConfidenceThreshold: number;
-        ChosenOne: MagicLeapSharedWorldPlayerController;
-        SendSharedWorldDataToClients(): boolean;
-        SelectChosenOne(): void;
-        MagicLeapOnNewLocalDataFromClients__DelegateSignature(): void;
-        DetermineSharedWorldData(NewSharedWorldData: $Ref<MagicLeapSharedWorldSharedData>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameMode;
-        static Load(InName: string): MagicLeapSharedWorldGameMode;
-    }
-    
-    class MagicLeapSharedWorldGameState extends GameState {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SharedWorldData: MagicLeapSharedWorldSharedData;
-        AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
-        OnSharedWorldDataUpdated: $MulticastDelegate<() => void>;
-        OnAlignmentTransformsUpdated: $MulticastDelegate<() => void>;
-        OnReplicate_SharedWorldData(): void;
-        OnReplicate_AlignmentTransforms(): void;
-        MagicLeapSharedWorldEvent__DelegateSignature(): void;
-        CalculateXRCameraRootTransform(): Transform;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameState;
-        static Load(InName: string): MagicLeapSharedWorldGameState;
-    }
-    
-    class ImgMediaSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        DefaultFrameRate: FrameRate;
-        CacheBehindPercentage: number;
-        CacheSizeGB: number;
-        CacheThreads: number;
-        CacheThreadStackSizeKB: number;
-        GlobalCacheSizeGB: number;
-        UseGlobalCache: boolean;
-        ExrDecoderThreads: number;
-        DefaultProxy: string;
-        UseDefaultProxy: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSettings;
-        static Load(InName: string): ImgMediaSettings;
-    }
-    
-    class ImgMediaSource extends BaseMediaSource {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FrameRateOverride: FrameRate;
-        ProxyOverride: string;
-        SequencePath: DirectoryPath;
-        SetSequencePath(Path: string): void;
-        GetSequencePath(): string;
-        GetProxies(OutProxies: $Ref<TArray<string>>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSource;
-        static Load(InName: string): ImgMediaSource;
     }
     
     class MovieSceneMediaPlayerPropertySection extends MovieSceneSection {
@@ -58667,6 +58646,36 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): TemplateSequenceTrack;
         static Load(InName: string): TemplateSequenceTrack;
+    }
+    
+    class ImgMediaSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DefaultFrameRate: FrameRate;
+        CacheBehindPercentage: number;
+        CacheSizeGB: number;
+        CacheThreads: number;
+        CacheThreadStackSizeKB: number;
+        GlobalCacheSizeGB: number;
+        UseGlobalCache: boolean;
+        ExrDecoderThreads: number;
+        DefaultProxy: string;
+        UseDefaultProxy: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSettings;
+        static Load(InName: string): ImgMediaSettings;
+    }
+    
+    class ImgMediaSource extends BaseMediaSource {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FrameRateOverride: FrameRate;
+        ProxyOverride: string;
+        SequencePath: DirectoryPath;
+        SetSequencePath(Path: string): void;
+        GetSequencePath(): string;
+        GetProxies(OutProxies: $Ref<TArray<string>>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSource;
+        static Load(InName: string): ImgMediaSource;
     }
     
     class ActorLayer {
@@ -60360,13 +60369,6 @@ declare module "ue" {
         static Load(InName: string): SynthesisEditorSettings;
     }
     
-    class LightPropagationVolumeBlendableFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LightPropagationVolumeBlendableFactory;
-        static Load(InName: string): LightPropagationVolumeBlendableFactory;
-    }
-    
     class ContentBrowserAssetDataSource extends ContentBrowserDataSource {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -61934,18 +61936,89 @@ declare module "ue" {
         static Load(InName: string): AvfMediaSettings;
     }
     
-    class ImgMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+    class SequencerChannelProxy {
+        constructor(ChannelName: string, Section: MovieSceneSection);
+        ChannelName: string;
+        Section: MovieSceneSection;
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactory;
-        static Load(InName: string): ImgMediaSourceFactory;
     }
     
-    class ImgMediaSourceFactoryNew extends Factory {
+    class LevelSequenceEditorBlueprintLibrary extends BlueprintFunctionLibrary {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static SetLockLevelSequence(bLock: boolean): void;
+        static SetCurrentTime(NewFrame: number): void;
+        static SelectTracks(Tracks: TArray<MovieSceneTrack>): void;
+        static SelectSections(Sections: TArray<MovieSceneSection>): void;
+        static SelectObjects(ObjectBinding: TArray<Guid>): void;
+        static SelectFolders(Folders: TArray<MovieSceneFolder>): void;
+        static SelectChannels(Channels: TArray<SequencerChannelProxy>): void;
+        static RefreshCurrentLevelSequence(): void;
+        static Play(): void;
+        static Pause(): void;
+        static OpenLevelSequence(LevelSequence: LevelSequence): boolean;
+        static IsPlaying(): boolean;
+        static IsLevelSequenceLocked(): boolean;
+        static GetSelectedTracks(): TArray<MovieSceneTrack>;
+        static GetSelectedSections(): TArray<MovieSceneSection>;
+        static GetSelectedObjects(): TArray<Guid>;
+        static GetSelectedFolders(): TArray<MovieSceneFolder>;
+        static GetSelectedChannels(): TArray<SequencerChannelProxy>;
+        static GetCurrentTime(): number;
+        static GetCurrentLevelSequence(): LevelSequence;
+        static GetBoundObjects(ObjectBinding: MovieSceneObjectBindingID): TArray<Object>;
+        static EmptySelection(): void;
+        static CloseLevelSequence(): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorBlueprintLibrary;
+        static Load(InName: string): LevelSequenceEditorBlueprintLibrary;
+    }
+    
+    class LevelSequencePropertyTrackSettings {
+        constructor(ComponentPath: string, PropertyPath: string);
+        ComponentPath: string;
+        PropertyPath: string;
+        static StaticClass(): Class;
+    }
+    
+    class LevelSequenceTrackSettings {
+        constructor(MatchingActorClass: SoftClassPath, DefaultTracks: TArray<SoftClassPath>, ExcludeDefaultTracks: TArray<SoftClassPath>, DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>, ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>);
+        MatchingActorClass: SoftClassPath;
+        DefaultTracks: TArray<SoftClassPath>;
+        ExcludeDefaultTracks: TArray<SoftClassPath>;
+        DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
+        ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
+        static StaticClass(): Class;
+    }
+    
+    class LevelSequenceEditorSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        TrackSettings: TArray<LevelSequenceTrackSettings>;
+        bAutoBindToPIE: boolean;
+        bAutoBindToSimulate: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorSettings;
+        static Load(InName: string): LevelSequenceEditorSettings;
+    }
+    
+    class LevelSequenceMasterSequenceSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MasterSequenceName: string;
+        MasterSequenceSuffix: string;
+        MasterSequenceBasePath: DirectoryPath;
+        MasterSequenceNumShots: number;
+        MasterSequenceLevelSequenceToDuplicate: TLazyObjectPtr<LevelSequence>;
+        SubSequenceNames: TArray<string>;
+        bInstanceSubSequences: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceMasterSequenceSettings;
+        static Load(InName: string): LevelSequenceMasterSequenceSettings;
+    }
+    
+    class LevelSequenceFactoryNew extends Factory {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactoryNew;
-        static Load(InName: string): ImgMediaSourceFactoryNew;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceFactoryNew;
+        static Load(InName: string): LevelSequenceFactoryNew;
     }
     
     enum EMediaPlayerRecordingNumerationStyle { AppendFrameNumber, AppendSampleTime, EMediaPlayerRecordingNumerationStyle_MAX}
@@ -62042,105 +62115,6 @@ declare module "ue" {
         static Load(InName: string): StreamMediaSourceFactoryNew;
     }
     
-    class WmfFileMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): WmfFileMediaSourceFactory;
-        static Load(InName: string): WmfFileMediaSourceFactory;
-    }
-    
-    class WebMPlatFileMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): WebMPlatFileMediaSourceFactory;
-        static Load(InName: string): WebMPlatFileMediaSourceFactory;
-    }
-    
-    class SequencerChannelProxy {
-        constructor(ChannelName: string, Section: MovieSceneSection);
-        ChannelName: string;
-        Section: MovieSceneSection;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceEditorBlueprintLibrary extends BlueprintFunctionLibrary {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static SetLockLevelSequence(bLock: boolean): void;
-        static SetCurrentTime(NewFrame: number): void;
-        static SelectTracks(Tracks: TArray<MovieSceneTrack>): void;
-        static SelectSections(Sections: TArray<MovieSceneSection>): void;
-        static SelectObjects(ObjectBinding: TArray<Guid>): void;
-        static SelectFolders(Folders: TArray<MovieSceneFolder>): void;
-        static SelectChannels(Channels: TArray<SequencerChannelProxy>): void;
-        static RefreshCurrentLevelSequence(): void;
-        static Play(): void;
-        static Pause(): void;
-        static OpenLevelSequence(LevelSequence: LevelSequence): boolean;
-        static IsPlaying(): boolean;
-        static IsLevelSequenceLocked(): boolean;
-        static GetSelectedTracks(): TArray<MovieSceneTrack>;
-        static GetSelectedSections(): TArray<MovieSceneSection>;
-        static GetSelectedObjects(): TArray<Guid>;
-        static GetSelectedFolders(): TArray<MovieSceneFolder>;
-        static GetSelectedChannels(): TArray<SequencerChannelProxy>;
-        static GetCurrentTime(): number;
-        static GetCurrentLevelSequence(): LevelSequence;
-        static GetBoundObjects(ObjectBinding: MovieSceneObjectBindingID): TArray<Object>;
-        static EmptySelection(): void;
-        static CloseLevelSequence(): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorBlueprintLibrary;
-        static Load(InName: string): LevelSequenceEditorBlueprintLibrary;
-    }
-    
-    class LevelSequencePropertyTrackSettings {
-        constructor(ComponentPath: string, PropertyPath: string);
-        ComponentPath: string;
-        PropertyPath: string;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceTrackSettings {
-        constructor(MatchingActorClass: SoftClassPath, DefaultTracks: TArray<SoftClassPath>, ExcludeDefaultTracks: TArray<SoftClassPath>, DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>, ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>);
-        MatchingActorClass: SoftClassPath;
-        DefaultTracks: TArray<SoftClassPath>;
-        ExcludeDefaultTracks: TArray<SoftClassPath>;
-        DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
-        ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceEditorSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        TrackSettings: TArray<LevelSequenceTrackSettings>;
-        bAutoBindToPIE: boolean;
-        bAutoBindToSimulate: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorSettings;
-        static Load(InName: string): LevelSequenceEditorSettings;
-    }
-    
-    class LevelSequenceMasterSequenceSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MasterSequenceName: string;
-        MasterSequenceSuffix: string;
-        MasterSequenceBasePath: DirectoryPath;
-        MasterSequenceNumShots: number;
-        MasterSequenceLevelSequenceToDuplicate: TLazyObjectPtr<LevelSequence>;
-        SubSequenceNames: TArray<string>;
-        bInstanceSubSequences: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceMasterSequenceSettings;
-        static Load(InName: string): LevelSequenceMasterSequenceSettings;
-    }
-    
-    class LevelSequenceFactoryNew extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceFactoryNew;
-        static Load(InName: string): LevelSequenceFactoryNew;
-    }
-    
     class CameraAnimationSequenceFactoryNew extends Factory {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -62160,6 +62134,34 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): TemplateSequenceFactoryNew;
         static Load(InName: string): TemplateSequenceFactoryNew;
+    }
+    
+    class WebMPlatFileMediaSourceFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): WebMPlatFileMediaSourceFactory;
+        static Load(InName: string): WebMPlatFileMediaSourceFactory;
+    }
+    
+    class WmfFileMediaSourceFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): WmfFileMediaSourceFactory;
+        static Load(InName: string): WmfFileMediaSourceFactory;
+    }
+    
+    class ImgMediaSourceFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactory;
+        static Load(InName: string): ImgMediaSourceFactory;
+    }
+    
+    class ImgMediaSourceFactoryNew extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactoryNew;
+        static Load(InName: string): ImgMediaSourceFactoryNew;
     }
     
     class GooglePADRuntimeSettings extends Object {
@@ -62292,13 +62294,6 @@ declare module "ue" {
         static Load(InName: string): LevelEditorAttract_C;
     }
     
-    class LevelEditorOverview_C extends EditorTutorial {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelEditorOverview_C;
-        static Load(InName: string): LevelEditorOverview_C;
-    }
-    
     class BP_GameMode_C extends GameModeBase {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         DefaultSceneRoot: SceneComponent;
@@ -62307,28 +62302,21 @@ declare module "ue" {
         static Load(InName: string): BP_GameMode_C;
     }
     
-    class StandardMacros_C extends Object {
+    class LaunchMap_C extends LevelScriptActor {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        UberGraphFrame: PointerToUberGraphFrame;
+        ReceiveBeginPlay(): void;
+        ExecuteUbergraph_LaunchMap(EntryPoint: number): void;
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): StandardMacros_C;
-        static Load(InName: string): StandardMacros_C;
+        static Find(OrigInName: string, Outer?: Object): LaunchMap_C;
+        static Load(InName: string): LaunchMap_C;
     }
     
-    class Tutorial_BP_MacroLib_C extends EditorTutorial {
+    class LevelEditorOverview_C extends EditorTutorial {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): Tutorial_BP_MacroLib_C;
-        static Load(InName: string): Tutorial_BP_MacroLib_C;
-    }
-    
-    enum EIntTypes { int, int2, int3, int4, EIntTypes_MAX}
-    class RenderToTextureFunctionLibrary_C extends BlueprintFunctionLibrary {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static ["Set Canvas Material Scale and Position"](Size: Vector2D, Position: Vector2D, Scale: number, __WorldContext: Object, ScreenPosition: $Ref<Vector2D>, ScreenSize: $Ref<Vector2D>): void;
-        static ["Array to HLSL Int Array"](Type: EIntTypes, VariableName: $Ref<string>, int: $Ref<TArray<number>>, int2: $Ref<TArray<Vector2D>>, int3: $Ref<TArray<Vector>>, int4: $Ref<TArray<LinearColor>>, __WorldContext: Object, String: $Ref<string>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RenderToTextureFunctionLibrary_C;
-        static Load(InName: string): RenderToTextureFunctionLibrary_C;
+        static Find(OrigInName: string, Outer?: Object): LevelEditorOverview_C;
+        static Load(InName: string): LevelEditorOverview_C;
     }
     
     class PROTO_BP_Blueprint_0_C extends Actor {
@@ -62339,25 +62327,11 @@ declare module "ue" {
         static Load(InName: string): PROTO_BP_Blueprint_0_C;
     }
     
-    class RenderToTextureMacros_C extends Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): RenderToTextureMacros_C;
-        static Load(InName: string): RenderToTextureMacros_C;
-    }
-    
     class BlueprintEditorTutorial_C extends EditorTutorial {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): BlueprintEditorTutorial_C;
         static Load(InName: string): BlueprintEditorTutorial_C;
-    }
-    
-    class ActorMacros_C extends Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ActorMacros_C;
-        static Load(InName: string): ActorMacros_C;
     }
     
     class BP_LoginPage_C extends UserWidget {
@@ -62366,6 +62340,36 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): BP_LoginPage_C;
         static Load(InName: string): BP_LoginPage_C;
+    }
+    
+    class BagGridWidget_C extends UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BagGridPanel: UniformGridPanel;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BagGridWidget_C;
+        static Load(InName: string): BagGridWidget_C;
+    }
+    
+    class BagGridItemWidget_C extends UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ItemAmount: TextBlock;
+        ItemBorder: Border;
+        ItemImage: Image;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BagGridItemWidget_C;
+        static Load(InName: string): BagGridItemWidget_C;
+    }
+    
+    class BagWidget_C extends UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BagItemWidget: BagGridWidget_C;
+        ConsumBtn: Button;
+        Image_0: Image;
+        title: TextBlock;
+        WeaponBtn: Button;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BagWidget_C;
+        static Load(InName: string): BagWidget_C;
     }
     
     class PROTO_BP_AnimBlueprint_0_C extends AnimInstance {
