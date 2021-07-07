@@ -22,6 +22,7 @@ declare module "ue" {
     }
     
     class LayerActorStats {
+        constructor();
         constructor(Type: Class, Total: number);
         Type: Class;
         Total: number;
@@ -40,6 +41,7 @@ declare module "ue" {
     
     enum ETickingGroup { TG_PrePhysics, TG_StartPhysics, TG_DuringPhysics, TG_EndPhysics, TG_PostPhysics, TG_PostUpdateWork, TG_LastDemotable, TG_NewlySpawned, TG_MAX}
     class TickFunction {
+        constructor();
         constructor(TickGroup: ETickingGroup, EndTickGroup: ETickingGroup, bTickEvenWhenPaused: boolean, bCanEverTick: boolean, bStartWithTickEnabled: boolean, bAllowTickOnDedicatedServer: boolean, TickInterval: number);
         TickGroup: ETickingGroup;
         EndTickGroup: ETickingGroup;
@@ -61,6 +63,7 @@ declare module "ue" {
     enum EVectorQuantization { RoundWholeNumber, RoundOneDecimal, RoundTwoDecimals, EVectorQuantization_MAX}
     enum ERotatorQuantization { ByteComponents, ShortComponents, ERotatorQuantization_MAX}
     class RepMovement {
+        constructor();
         constructor(LinearVelocity: Vector, AngularVelocity: Vector, Location: Vector, Rotation: Rotator, bSimulatedPhysicSleep: boolean, bRepPhysics: boolean, LocationQuantizationLevel: EVectorQuantization, VelocityQuantizationLevel: EVectorQuantization, RotationQuantizationLevel: ERotatorQuantization);
         LinearVelocity: Vector;
         AngularVelocity: Vector;
@@ -93,6 +96,7 @@ declare module "ue" {
     
     enum EComponentCreationMethod { Native, SimpleConstructionScript, UserConstructionScript, Instance, EComponentCreationMethod_MAX}
     class SimpleMemberReference {
+        constructor();
         constructor(MemberParent: Object, MemberName: string, MemberGuid: Guid);
         MemberParent: Object;
         MemberName: string;
@@ -168,6 +172,7 @@ declare module "ue" {
     enum EHitProxyPriority { HPP_World, HPP_Wireframe, HPP_Foreground, HPP_UI, HPP_MAX}
     enum ECanBeCharacterBase { ECB_No, ECB_Yes, ECB_Owner, ECB_MAX}
     class LightingChannels {
+        constructor();
         constructor(bChannel0: boolean, bChannel1: boolean, bChannel2: boolean);
         bChannel0: boolean;
         bChannel1: boolean;
@@ -177,6 +182,7 @@ declare module "ue" {
     
     enum ERendererStencilMask { ERSM_Default, ERSM_255, ERSM_1, ERSM_2, ERSM_4, ERSM_8, ERSM_16, ERSM_32, ERSM_64, ERSM_128, ERSM_MAX}
     class CustomPrimitiveData {
+        constructor();
         constructor(Data: TArray<number>);
         Data: TArray<number>;
         static StaticClass(): Class;
@@ -203,6 +209,7 @@ declare module "ue" {
     
     enum ETextureSourceFormat { TSF_Invalid, TSF_G8, TSF_BGRA8, TSF_BGRE8, TSF_RGBA16, TSF_RGBA16F, TSF_RGBA8, TSF_RGBE8, TSF_G16, TSF_MAX}
     class TextureSourceBlock {
+        constructor();
         constructor(BlockX: number, BlockY: number, SizeX: number, SizeY: number, NumSlices: number, NumMips: number);
         BlockX: number;
         BlockY: number;
@@ -214,6 +221,7 @@ declare module "ue" {
     }
     
     class TextureSource {
+        constructor();
         constructor(Id: Guid, BaseBlockX: number, BaseBlockY: number, SizeX: number, SizeY: number, NumSlices: number, NumMips: number, NumLayers: number, bPNGCompressed: boolean, bGuidIsHash: boolean, Format: ETextureSourceFormat, LayerFormat: TArray<ETextureSourceFormat>, Blocks: TArray<TextureSourceBlock>);
         Id: Guid;
         BaseBlockX: number;
@@ -256,6 +264,7 @@ declare module "ue" {
     enum ECompositeTextureMode { CTM_Disabled, CTM_NormalRoughnessToRed, CTM_NormalRoughnessToGreen, CTM_NormalRoughnessToBlue, CTM_NormalRoughnessToAlpha, CTM_MAX}
     enum TextureCompressionSettings { TC_Default, TC_Normalmap, TC_Masks, TC_Grayscale, TC_Displacementmap, TC_VectorDisplacementmap, TC_HDR, TC_EditorIcon, TC_Alpha, TC_DistanceFieldFont, TC_HDR_Compressed, TC_BC7, TC_HalfFloat, TC_ReflectionCapture, TC_MAX}
     class TextureFormatSettings {
+        constructor();
         constructor(CompressionSettings: TextureCompressionSettings, CompressionNoAlpha: boolean, CompressionNone: boolean, CompressionYCoCg: boolean, SRGB: boolean);
         CompressionSettings: TextureCompressionSettings;
         CompressionNoAlpha: boolean;
@@ -268,6 +277,7 @@ declare module "ue" {
     enum TextureFilter { TF_Nearest, TF_Bilinear, TF_Trilinear, TF_Default, TF_MAX}
     enum ETextureMipLoadOptions { Default, AllMips, OnlyFirstMip, ETextureMipLoadOptions_MAX}
     class PerPlatformFloat {
+        constructor();
         constructor(Default: number, PerPlatform: TMap<string, number>);
         Default: number;
         PerPlatform: TMap<string, number>;
@@ -382,6 +392,7 @@ declare module "ue" {
     
     enum ERuntimeVirtualTextureMainPassType { Never, Exclusive, Always, ERuntimeVirtualTextureMainPassType_MAX}
     class BodyInstanceCore {
+        constructor();
         constructor(bSimulatePhysics: boolean, bOverrideMass: boolean, bEnableGravity: boolean, bAutoWeld: boolean, bStartAwake: boolean, bGenerateWakeEvents: boolean, bUpdateMassWhenScaleChanges: boolean);
         bSimulatePhysics: boolean;
         bOverrideMass: boolean;
@@ -399,6 +410,7 @@ declare module "ue" {
     enum EDOFMode { Default, SixDOF, YZPlane, XZPlane, XYPlane, CustomPlane, None, EDOFMode_MAX}
     enum ECollisionResponse { ECR_Ignore, ECR_Overlap, ECR_Block, ECR_MAX}
     class CollisionResponseContainer {
+        constructor();
         constructor(WorldStatic: ECollisionResponse, WorldDynamic: ECollisionResponse, Pawn: ECollisionResponse, Visibility: ECollisionResponse, Camera: ECollisionResponse, PhysicsBody: ECollisionResponse, Vehicle: ECollisionResponse, Destructible: ECollisionResponse, EngineTraceChannel1: ECollisionResponse, EngineTraceChannel2: ECollisionResponse, EngineTraceChannel3: ECollisionResponse, EngineTraceChannel4: ECollisionResponse, EngineTraceChannel5: ECollisionResponse, EngineTraceChannel6: ECollisionResponse, GameTraceChannel1: ECollisionResponse, GameTraceChannel2: ECollisionResponse, GameTraceChannel3: ECollisionResponse, GameTraceChannel4: ECollisionResponse, GameTraceChannel5: ECollisionResponse, GameTraceChannel6: ECollisionResponse, GameTraceChannel7: ECollisionResponse, GameTraceChannel8: ECollisionResponse, GameTraceChannel9: ECollisionResponse, GameTraceChannel10: ECollisionResponse, GameTraceChannel11: ECollisionResponse, GameTraceChannel12: ECollisionResponse, GameTraceChannel13: ECollisionResponse, GameTraceChannel14: ECollisionResponse, GameTraceChannel15: ECollisionResponse, GameTraceChannel16: ECollisionResponse, GameTraceChannel17: ECollisionResponse, GameTraceChannel18: ECollisionResponse);
         WorldStatic: ECollisionResponse;
         WorldDynamic: ECollisionResponse;
@@ -436,6 +448,7 @@ declare module "ue" {
     }
     
     class ResponseChannel {
+        constructor();
         constructor(Channel: string, Response: ECollisionResponse);
         Channel: string;
         Response: ECollisionResponse;
@@ -443,6 +456,7 @@ declare module "ue" {
     }
     
     class CollisionResponse {
+        constructor();
         constructor(ResponseToChannels: CollisionResponseContainer, ResponseArray: TArray<ResponseChannel>);
         ResponseToChannels: CollisionResponseContainer;
         ResponseArray: TArray<ResponseChannel>;
@@ -451,6 +465,7 @@ declare module "ue" {
     
     enum EWalkableSlopeBehavior { WalkableSlope_Default, WalkableSlope_Increase, WalkableSlope_Decrease, WalkableSlope_Unwalkable, WalkableSlope_Max, WalkableSlope_MAX}
     class WalkableSlopeOverride {
+        constructor();
         constructor(WalkableSlopeBehavior: EWalkableSlopeBehavior, WalkableSlopeAngle: number);
         WalkableSlopeBehavior: EWalkableSlopeBehavior;
         WalkableSlopeAngle: number;
@@ -489,6 +504,7 @@ declare module "ue" {
     }
     
     class BodyInstance extends BodyInstanceCore {
+        constructor();
         constructor(ObjectType: ECollisionChannel, CollisionEnabled: ECollisionEnabled, SleepFamily: ESleepFamily, DOFMode: EDOFMode, bUseCCD: boolean, bIgnoreAnalyticCollisions: boolean, bNotifyRigidBodyCollision: boolean, bLockTranslation: boolean, bLockRotation: boolean, bLockXTranslation: boolean, bLockYTranslation: boolean, bLockZTranslation: boolean, bLockXRotation: boolean, bLockYRotation: boolean, bLockZRotation: boolean, bOverrideMaxAngularVelocity: boolean, bOverrideMaxDepenetrationVelocity: boolean, bOverrideWalkableSlopeOnInstance: boolean, bInterpolateWhenSubStepping: boolean, ResponseToChannels: CollisionResponseContainer, CollisionProfileName: string, PositionSolverIterationCount: number, VelocitySolverIterationCount: number, CollisionResponses: CollisionResponse, MaxDepenetrationVelocity: number, MassInKgOverride: number, LinearDamping: number, AngularDamping: number, CustomDOFPlaneNormal: Vector, COMNudge: Vector, MassScale: number, InertiaTensorScale: Vector, WalkableSlopeOverride: WalkableSlopeOverride, PhysMaterialOverride: PhysicalMaterial, MaxAngularVelocity: number, CustomSleepThresholdMultiplier: number, StabilizationThresholdMultiplier: number, PhysicsBlendWeight: number);
         ObjectType: ECollisionChannel;
         CollisionEnabled: ECollisionEnabled;
@@ -542,6 +558,7 @@ declare module "ue" {
     }
     
     class HitResult {
+        constructor();
         constructor(bBlockingHit: boolean, bStartPenetrating: boolean, FaceIndex: number, Time: number, Distance: number, Location: Vector_NetQuantize, ImpactPoint: Vector_NetQuantize, Normal: Vector_NetQuantizeNormal, ImpactNormal: Vector_NetQuantizeNormal, TraceStart: Vector_NetQuantize, TraceEnd: Vector_NetQuantize, PenetrationDepth: number, Item: number, ElementIndex: number, PhysMaterial: TWeakObjectPtr<PhysicalMaterial>, Actor: TWeakObjectPtr<Actor>, Component: TWeakObjectPtr<PrimitiveComponent>, BoneName: string, MyBoneName: string);
         bBlockingHit: boolean;
         bStartPenetrating: boolean;
@@ -566,6 +583,7 @@ declare module "ue" {
     }
     
     class Key {
+        constructor();
         constructor(KeyName: string);
         KeyName: string;
         static StaticClass(): Class;
@@ -573,6 +591,7 @@ declare module "ue" {
     
     enum ETouchIndex { Touch1, Touch2, Touch3, Touch4, Touch5, Touch6, Touch7, Touch8, Touch9, Touch10, CursorPointerIndex, MAX_TOUCHES, ETouchIndex_MAX}
     class SubsurfaceProfileStruct {
+        constructor();
         constructor(SurfaceAlbedo: LinearColor, MeanFreePathColor: LinearColor, MeanFreePathDistance: number, WorldUnitScale: number, bEnableBurley: boolean, ScatterRadius: number, SubsurfaceColor: LinearColor, FalloffColor: LinearColor, BoundaryColorBleed: LinearColor, ExtinctionScale: number, NormalScale: number, ScatteringDistribution: number, IOR: number, Roughness0: number, Roughness1: number, LobeMix: number, TransmissionTintColor: LinearColor);
         SurfaceAlbedo: LinearColor;
         MeanFreePathColor: LinearColor;
@@ -603,6 +622,7 @@ declare module "ue" {
     }
     
     class LightmassMaterialInterfaceSettings {
+        constructor();
         constructor(EmissiveBoost: number, DiffuseBoost: number, ExportResolutionScale: number, bCastShadowAsMasked: boolean, bOverrideCastShadowAsMasked: boolean, bOverrideEmissiveBoost: boolean, bOverrideDiffuseBoost: boolean, bOverrideExportResolutionScale: boolean);
         EmissiveBoost: number;
         DiffuseBoost: number;
@@ -616,6 +636,7 @@ declare module "ue" {
     }
     
     class SoftObjectPath {
+        constructor();
         constructor(AssetPathName: string, SubPathString: string);
         AssetPathName: string;
         SubPathString: string;
@@ -623,6 +644,7 @@ declare module "ue" {
     }
     
     class MaterialTextureInfo {
+        constructor();
         constructor(SamplingScale: number, UVChannelIndex: number, TextureName: string, TextureReference: SoftObjectPath, TextureIndex: number);
         SamplingScale: number;
         UVChannelIndex: number;
@@ -666,6 +688,7 @@ declare module "ue" {
     }
     
     class MaterialParameterInfo {
+        constructor();
         constructor(Name: string, Association: EMaterialParameterAssociation, Index: number, ParameterLocation: SoftObjectPath);
         Name: string;
         Association: EMaterialParameterAssociation;
@@ -676,6 +699,7 @@ declare module "ue" {
     
     enum EEdGraphPinDirection { EGPD_Input, EGPD_Output, EGPD_MAX}
     class EdGraphTerminalType {
+        constructor();
         constructor(TerminalCategory: string, TerminalSubCategory: string, TerminalSubCategoryObject: TWeakObjectPtr<Object>, bTerminalIsConst: boolean, bTerminalIsWeakPointer: boolean, bTerminalIsUObjectWrapper: boolean);
         TerminalCategory: string;
         TerminalSubCategory: string;
@@ -688,6 +712,7 @@ declare module "ue" {
     
     enum EPinContainerType { None, Array, Set, Map, EPinContainerType_MAX}
     class EdGraphPinType {
+        constructor();
         constructor(PinCategory: string, PinSubCategory: string, PinSubCategoryObject: TWeakObjectPtr<Object>, PinSubCategoryMemberReference: SimpleMemberReference, PinValueType: EdGraphTerminalType, ContainerType: EPinContainerType, bIsArray: boolean, bIsReference: boolean, bIsConst: boolean, bIsWeakPointer: boolean, bIsUObjectWrapper: boolean);
         PinCategory: string;
         PinSubCategory: string;
@@ -774,6 +799,7 @@ declare module "ue" {
     }
     
     class ExpressionInput {
+        constructor();
         constructor(Expression: MaterialExpression, OutputIndex: number, InputName: string, Mask: number, MaskR: number, MaskG: number, MaskB: number, MaskA: number, ExpressionName: string);
         Expression: MaterialExpression;
         OutputIndex: number;
@@ -805,6 +831,7 @@ declare module "ue" {
     }
     
     class FunctionExpressionInput {
+        constructor();
         constructor(ExpressionInput: MaterialExpressionFunctionInput, ExpressionInputId: Guid, Input: ExpressionInput);
         ExpressionInput: MaterialExpressionFunctionInput;
         ExpressionInputId: Guid;
@@ -826,6 +853,7 @@ declare module "ue" {
     }
     
     class ExpressionOutput {
+        constructor();
         constructor(OutputName: string, Mask: number, MaskR: number, MaskG: number, MaskB: number, MaskA: number);
         OutputName: string;
         Mask: number;
@@ -837,6 +865,7 @@ declare module "ue" {
     }
     
     class FunctionExpressionOutput {
+        constructor();
         constructor(ExpressionOutput: MaterialExpressionFunctionOutput, ExpressionOutputId: Guid, Output: ExpressionOutput);
         ExpressionOutput: MaterialExpressionFunctionOutput;
         ExpressionOutputId: Guid;
@@ -902,6 +931,7 @@ declare module "ue" {
     }
     
     class MaterialInput {
+        constructor();
         constructor(Expression: MaterialExpression, OutputIndex: number, InputName: string, Mask: number, MaskR: number, MaskG: number, MaskB: number, MaskA: number, ExpressionName: string);
         Expression: MaterialExpression;
         OutputIndex: number;
@@ -916,6 +946,7 @@ declare module "ue" {
     }
     
     class ColorMaterialInput extends MaterialInput {
+        constructor();
         constructor(UseConstant: boolean, Constant: Color);
         UseConstant: boolean;
         Constant: Color;
@@ -923,6 +954,7 @@ declare module "ue" {
     }
     
     class ScalarMaterialInput extends MaterialInput {
+        constructor();
         constructor(UseConstant: boolean, Constant: number);
         UseConstant: boolean;
         Constant: number;
@@ -930,6 +962,7 @@ declare module "ue" {
     }
     
     class VectorMaterialInput extends MaterialInput {
+        constructor();
         constructor(UseConstant: boolean, Constant: Vector);
         UseConstant: boolean;
         Constant: Vector;
@@ -942,12 +975,14 @@ declare module "ue" {
     enum EMaterialDecalResponse { MDR_None, MDR_ColorNormalRoughness, MDR_Color, MDR_ColorNormal, MDR_ColorRoughness, MDR_Normal, MDR_NormalRoughness, MDR_Roughness, MDR_MAX}
     enum EMaterialShadingModel { MSM_Unlit, MSM_DefaultLit, MSM_Subsurface, MSM_PreintegratedSkin, MSM_ClearCoat, MSM_SubsurfaceProfile, MSM_TwoSidedFoliage, MSM_Hair, MSM_Cloth, MSM_Eye, MSM_SingleLayerWater, MSM_ThinTranslucent, MSM_NUM, MSM_FromMaterialExpression, MSM_MAX}
     class MaterialShadingModelField {
+        constructor();
         constructor(ShadingModelField: number);
         ShadingModelField: number;
         static StaticClass(): Class;
     }
     
     class Vector2MaterialInput extends MaterialInput {
+        constructor();
         constructor(UseConstant: boolean, ConstantX: number, ConstantY: number);
         UseConstant: boolean;
         ConstantX: number;
@@ -956,6 +991,7 @@ declare module "ue" {
     }
     
     class MaterialAttributesInput extends ExpressionInput {
+        constructor();
         constructor(PropertyConnectedBitmask: number);
         PropertyConnectedBitmask: number;
         static StaticClass(): Class;
@@ -970,6 +1006,7 @@ declare module "ue" {
     enum EMaterialTessellationMode { MTM_NoTessellation, MTM_FlatTessellation, MTM_PNTriangles, MTM_MAX}
     enum EMaterialShadingRate { MSR_1x1, MSR_2x1, MSR_1x2, MSR_2x2, MSR_4x2, MSR_2x4, MSR_4x4, MSR_Count, MSR_MAX}
     class ParameterGroupData {
+        constructor();
         constructor(GroupName: string, GroupSortPriority: number);
         GroupName: string;
         GroupSortPriority: number;
@@ -980,6 +1017,7 @@ declare module "ue" {
     enum EMaterialStencilCompare { MSC_Less, MSC_LessEqual, MSC_Greater, MSC_GreaterEqual, MSC_Equal, MSC_NotEqual, MSC_Never, MSC_Always, MSC_Count, MSC_MAX}
     enum ERefractionMode { RM_IndexOfRefraction, RM_PixelNormalOffset, RM_MAX}
     class MaterialCachedParameterEntry {
+        constructor();
         constructor(NameHashes: TArray<bigint>, ParameterInfos: TArray<MaterialParameterInfo>, ExpressionGuids: TArray<Guid>, Overrides: TArray<boolean>);
         NameHashes: TArray<bigint>;
         ParameterInfos: TArray<MaterialParameterInfo>;
@@ -990,6 +1028,7 @@ declare module "ue" {
     
     enum EFontCacheType { Offline, Runtime, EFontCacheType_MAX}
     class FontCharacter {
+        constructor();
         constructor(StartU: number, StartV: number, USize: number, VSize: number, TextureIndex: number, VerticalOffset: number);
         StartU: number;
         StartV: number;
@@ -1002,6 +1041,7 @@ declare module "ue" {
     
     enum EFontImportCharacterSet { FontICS_Default, FontICS_Ansi, FontICS_Symbol, FontICS_MAX}
     class FontImportOptionsData {
+        constructor();
         constructor(FontName: string, Height: number, bEnableAntialiasing: boolean, bEnableBold: boolean, bEnableItalic: boolean, bEnableUnderline: boolean, bAlphaOnly: boolean, CharacterSet: EFontImportCharacterSet, Chars: string, UnicodeRange: string, CharsFilePath: string, CharsFileWildcard: string, bCreatePrintableOnly: boolean, bIncludeASCIIRange: boolean, ForegroundColor: LinearColor, bEnableDropShadow: boolean, TexturePageWidth: number, TexturePageMaxHeight: number, XPadding: number, YPadding: number, ExtendBoxTop: number, ExtendBoxBottom: number, ExtendBoxRight: number, ExtendBoxLeft: number, bEnableLegacyMode: boolean, Kerning: number, bUseDistanceFieldAlpha: boolean, DistanceFieldScaleFactor: number, DistanceFieldScanRadiusScale: number);
         FontName: string;
         Height: number;
@@ -1045,6 +1085,7 @@ declare module "ue" {
     }
     
     class FontData {
+        constructor();
         constructor(FontFilename: string, Hinting: EFontHinting, LoadingPolicy: EFontLoadingPolicy, SubFaceIndex: number, FontFaceAsset: Object, BulkDataPtr: FontBulkData, FontData: TArray<number>);
         FontFilename: string;
         Hinting: EFontHinting;
@@ -1057,6 +1098,7 @@ declare module "ue" {
     }
     
     class TypefaceEntry {
+        constructor();
         constructor(Name: string, Font: FontData);
         Name: string;
         Font: FontData;
@@ -1064,12 +1106,14 @@ declare module "ue" {
     }
     
     class Typeface {
+        constructor();
         constructor(Fonts: TArray<TypefaceEntry>);
         Fonts: TArray<TypefaceEntry>;
         static StaticClass(): Class;
     }
     
     class CompositeFallbackFont {
+        constructor();
         constructor(Typeface: Typeface, ScalingFactor: number);
         Typeface: Typeface;
         ScalingFactor: number;
@@ -1078,6 +1122,7 @@ declare module "ue" {
     
     enum ERangeBoundTypes { Exclusive, Inclusive, Open, ERangeBoundTypes_MAX}
     class Int32RangeBound {
+        constructor();
         constructor(Type: ERangeBoundTypes, Value: number);
         Type: ERangeBoundTypes;
         Value: number;
@@ -1085,6 +1130,7 @@ declare module "ue" {
     }
     
     class Int32Range {
+        constructor();
         constructor(LowerBound: Int32RangeBound, UpperBound: Int32RangeBound);
         LowerBound: Int32RangeBound;
         UpperBound: Int32RangeBound;
@@ -1092,6 +1138,7 @@ declare module "ue" {
     }
     
     class CompositeSubFont extends CompositeFallbackFont {
+        constructor();
         constructor(CharacterRanges: TArray<Int32Range>, Cultures: string, EditorName: string);
         CharacterRanges: TArray<Int32Range>;
         Cultures: string;
@@ -1100,6 +1147,7 @@ declare module "ue" {
     }
     
     class CompositeFont {
+        constructor();
         constructor(DefaultTypeface: Typeface, FallbackTypeface: CompositeFallbackFont, SubTypefaces: TArray<CompositeSubFont>);
         DefaultTypeface: Typeface;
         FallbackTypeface: CompositeFallbackFont;
@@ -1131,6 +1179,7 @@ declare module "ue" {
     }
     
     class StaticComponentMaskValue {
+        constructor();
         constructor(R: boolean, G: boolean, B: boolean, A: boolean);
         R: boolean;
         G: boolean;
@@ -1156,6 +1205,7 @@ declare module "ue" {
     }
     
     class IndexedCurve {
+        constructor();
         constructor(KeyHandlesToIndices: KeyHandleMap);
         KeyHandlesToIndices: KeyHandleMap;
         static StaticClass(): Class;
@@ -1163,6 +1213,7 @@ declare module "ue" {
     
     enum ERichCurveExtrapolation { RCCE_Cycle, RCCE_CycleWithOffset, RCCE_Oscillate, RCCE_Linear, RCCE_Constant, RCCE_None, RCCE_MAX}
     class RealCurve extends IndexedCurve {
+        constructor();
         constructor(DefaultValue: number, PreInfinityExtrap: ERichCurveExtrapolation, PostInfinityExtrap: ERichCurveExtrapolation);
         DefaultValue: number;
         PreInfinityExtrap: ERichCurveExtrapolation;
@@ -1174,6 +1225,7 @@ declare module "ue" {
     enum ERichCurveTangentMode { RCTM_Auto, RCTM_User, RCTM_Break, RCTM_None, RCTM_MAX}
     enum ERichCurveTangentWeightMode { RCTWM_WeightedNone, RCTWM_WeightedArrive, RCTWM_WeightedLeave, RCTWM_WeightedBoth, RCTWM_MAX}
     class RichCurveKey {
+        constructor();
         constructor(InterpMode: ERichCurveInterpMode, TangentMode: ERichCurveTangentMode, TangentWeightMode: ERichCurveTangentWeightMode, Time: number, Value: number, ArriveTangent: number, ArriveTangentWeight: number, LeaveTangent: number, LeaveTangentWeight: number);
         InterpMode: ERichCurveInterpMode;
         TangentMode: ERichCurveTangentMode;
@@ -1188,6 +1240,7 @@ declare module "ue" {
     }
     
     class RichCurve extends RealCurve {
+        constructor();
         constructor(Keys: TArray<RichCurveKey>);
         Keys: TArray<RichCurveKey>;
         static StaticClass(): Class;
@@ -1222,6 +1275,7 @@ declare module "ue" {
     }
     
     class ParameterChannelNames {
+        constructor();
         constructor(R: string, G: string, B: string, A: string);
         R: string;
         G: string;
@@ -1231,6 +1285,7 @@ declare module "ue" {
     }
     
     class MaterialCachedParameters {
+        constructor();
         constructor(RuntimeEntries: FixSizeArray<MaterialCachedParameterEntry>, ScalarValues: TArray<number>, VectorValues: TArray<LinearColor>, TextureValues: TArray<Texture>, FontValues: TArray<Font>, FontPageValues: TArray<number>, RuntimeVirtualTextureValues: TArray<RuntimeVirtualTexture>, EditorOnlyEntries: FixSizeArray<MaterialCachedParameterEntry>, StaticSwitchValues: TArray<boolean>, StaticComponentMaskValues: TArray<StaticComponentMaskValue>, ScalarMinMaxValues: TArray<Vector2D>, ScalarCurveValues: TArray<CurveLinearColor>, ScalarCurveAtlasValues: TArray<CurveLinearColorAtlas>, VectorChannelNameValues: TArray<ParameterChannelNames>, VectorUsedAsChannelMaskValues: TArray<boolean>, TextureChannelNameValues: TArray<ParameterChannelNames>);
         RuntimeEntries: FixSizeArray<MaterialCachedParameterEntry>;
         ScalarValues: TArray<number>;
@@ -1252,6 +1307,7 @@ declare module "ue" {
     }
     
     class MaterialFunctionInfo {
+        constructor();
         constructor(StateId: Guid, Function: MaterialFunctionInterface);
         StateId: Guid;
         Function: MaterialFunctionInterface;
@@ -1259,6 +1315,7 @@ declare module "ue" {
     }
     
     class CollectionParameterBase {
+        constructor();
         constructor(ParameterName: string, Id: Guid);
         ParameterName: string;
         Id: Guid;
@@ -1266,12 +1323,14 @@ declare module "ue" {
     }
     
     class CollectionScalarParameter extends CollectionParameterBase {
+        constructor();
         constructor(DefaultValue: number);
         DefaultValue: number;
         static StaticClass(): Class;
     }
     
     class CollectionVectorParameter extends CollectionParameterBase {
+        constructor();
         constructor(DefaultValue: LinearColor);
         DefaultValue: LinearColor;
         static StaticClass(): Class;
@@ -1288,6 +1347,7 @@ declare module "ue" {
     }
     
     class MaterialParameterCollectionInfo {
+        constructor();
         constructor(StateId: Guid, ParameterCollection: MaterialParameterCollection);
         StateId: Guid;
         ParameterCollection: MaterialParameterCollection;
@@ -1295,6 +1355,7 @@ declare module "ue" {
     }
     
     class MeshBuildSettings {
+        constructor();
         constructor(bUseMikkTSpace: boolean, bRecomputeNormals: boolean, bRecomputeTangents: boolean, bComputeWeightedNormals: boolean, bRemoveDegenerates: boolean, bBuildAdjacencyBuffer: boolean, bBuildReversedIndexBuffer: boolean, bUseHighPrecisionTangentBasis: boolean, bUseFullPrecisionUVs: boolean, bGenerateLightmapUVs: boolean, bGenerateDistanceFieldAsIfTwoSided: boolean, bSupportFaceRemap: boolean, MinLightmapResolution: number, SrcLightmapIndex: number, DstLightmapIndex: number, BuildScale: number, BuildScale3D: Vector, DistanceFieldResolutionScale: number, DistanceFieldBias: number, DistanceFieldReplacementMesh: StaticMesh);
         bUseMikkTSpace: boolean;
         bRecomputeNormals: boolean;
@@ -1322,6 +1383,7 @@ declare module "ue" {
     enum EMeshFeatureImportance { Off, Lowest, Low, Normal, High, Highest, EMeshFeatureImportance_MAX}
     enum EStaticMeshReductionTerimationCriterion { Triangles, Vertices, Any, EStaticMeshReductionTerimationCriterion_MAX}
     class MeshReductionSettings {
+        constructor();
         constructor(PercentTriangles: number, PercentVertices: number, MaxDeviation: number, PixelError: number, WeldingThreshold: number, HardAngleThreshold: number, BaseLODModel: number, SilhouetteImportance: EMeshFeatureImportance, TextureImportance: EMeshFeatureImportance, ShadingImportance: EMeshFeatureImportance, bRecalculateNormals: boolean, bGenerateUniqueLightmapUVs: boolean, bKeepSymmetry: boolean, bVisibilityAided: boolean, bCullOccluded: boolean, TerminationCriterion: EStaticMeshReductionTerimationCriterion, VisibilityAggressiveness: EMeshFeatureImportance, VertexColorImportance: EMeshFeatureImportance);
         PercentTriangles: number;
         PercentVertices: number;
@@ -1345,6 +1407,7 @@ declare module "ue" {
     }
     
     class StaticMeshSourceModel {
+        constructor();
         constructor(BuildSettings: MeshBuildSettings, ReductionSettings: MeshReductionSettings, LODDistance: number, ScreenSize: PerPlatformFloat, SourceImportFilename: string, bImportWithBaseMesh: boolean);
         BuildSettings: MeshBuildSettings;
         ReductionSettings: MeshReductionSettings;
@@ -1356,6 +1419,7 @@ declare module "ue" {
     }
     
     class MeshSectionInfo {
+        constructor();
         constructor(MaterialIndex: number, bEnableCollision: boolean, bCastShadow: boolean, bVisibleInRayTracing: boolean, bForceOpaque: boolean);
         MaterialIndex: number;
         bEnableCollision: boolean;
@@ -1366,12 +1430,14 @@ declare module "ue" {
     }
     
     class MeshSectionInfoMap {
+        constructor();
         constructor(Map: TMap<number, MeshSectionInfo>);
         Map: TMap<number, MeshSectionInfo>;
         static StaticClass(): Class;
     }
     
     class PerPlatformInt {
+        constructor();
         constructor(Default: number, PerPlatform: TMap<string, number>);
         Default: number;
         PerPlatform: TMap<string, number>;
@@ -1379,6 +1445,7 @@ declare module "ue" {
     }
     
     class MaterialRemapIndex {
+        constructor();
         constructor(ImportVersionKey: number, MaterialRemap: TArray<number>);
         ImportVersionKey: number;
         MaterialRemap: TArray<number>;
@@ -1386,6 +1453,7 @@ declare module "ue" {
     }
     
     class MeshUVChannelInfo {
+        constructor();
         constructor(bInitialized: boolean, bOverrideDensities: boolean, LocalUVDensities: FixSizeArray<number>);
         bInitialized: boolean;
         bOverrideDensities: boolean;
@@ -1394,6 +1462,7 @@ declare module "ue" {
     }
     
     class StaticMaterial {
+        constructor();
         constructor(MaterialInterface: MaterialInterface, MaterialSlotName: string, ImportedMaterialSlotName: string, UVChannelData: MeshUVChannelInfo);
         MaterialInterface: MaterialInterface;
         MaterialSlotName: string;
@@ -1417,6 +1486,7 @@ declare module "ue" {
     }
     
     class KShapeElem {
+        constructor();
         constructor(RestOffset: number, bIsGenerated: boolean, Name: string, bContributeToMass: boolean, CollisionEnabled: ECollisionEnabled);
         RestOffset: number;
         bIsGenerated: boolean;
@@ -1427,12 +1497,14 @@ declare module "ue" {
     }
     
     class Plane extends Vector {
+        constructor();
         constructor(W: number);
         W: number;
         static StaticClass(): Class;
     }
     
     class Matrix {
+        constructor();
         constructor(XPlane: Plane, YPlane: Plane, ZPlane: Plane, WPlane: Plane);
         XPlane: Plane;
         YPlane: Plane;
@@ -1442,6 +1514,7 @@ declare module "ue" {
     }
     
     class KSphereElem extends KShapeElem {
+        constructor();
         constructor(TM: Matrix, Center: Vector, Radius: number);
         TM: Matrix;
         Center: Vector;
@@ -1450,6 +1523,7 @@ declare module "ue" {
     }
     
     class KBoxElem extends KShapeElem {
+        constructor();
         constructor(TM: Matrix, Orientation: Quat, Center: Vector, Rotation: Rotator, X: number, Y: number, Z: number);
         TM: Matrix;
         Orientation: Quat;
@@ -1462,6 +1536,7 @@ declare module "ue" {
     }
     
     class KSphylElem extends KShapeElem {
+        constructor();
         constructor(TM: Matrix, Orientation: Quat, Center: Vector, Rotation: Rotator, Radius: number, Length: number);
         TM: Matrix;
         Orientation: Quat;
@@ -1473,6 +1548,7 @@ declare module "ue" {
     }
     
     class Box {
+        constructor();
         constructor(Min: Vector, Max: Vector, IsValid: number);
         Min: Vector;
         Max: Vector;
@@ -1481,6 +1557,7 @@ declare module "ue" {
     }
     
     class KConvexElem extends KShapeElem {
+        constructor();
         constructor(VertexData: TArray<Vector>, IndexData: TArray<number>, ElemBox: Box, Transform: Transform);
         VertexData: TArray<Vector>;
         IndexData: TArray<number>;
@@ -1490,6 +1567,7 @@ declare module "ue" {
     }
     
     class KTaperedCapsuleElem extends KShapeElem {
+        constructor();
         constructor(Center: Vector, Rotation: Rotator, Radius0: number, Radius1: number, Length: number);
         Center: Vector;
         Rotation: Rotator;
@@ -1500,6 +1578,7 @@ declare module "ue" {
     }
     
     class KAggregateGeom {
+        constructor();
         constructor(SphereElems: TArray<KSphereElem>, BoxElems: TArray<KBoxElem>, SphylElems: TArray<KSphylElem>, ConvexElems: TArray<KConvexElem>, TaperedCapsuleElems: TArray<KTaperedCapsuleElem>);
         SphereElems: TArray<KSphereElem>;
         BoxElems: TArray<KBoxElem>;
@@ -1531,6 +1610,7 @@ declare module "ue" {
     }
     
     class AssetEditorOrbitCameraPosition {
+        constructor();
         constructor(bIsSet: boolean, CamOrbitPoint: Vector, CamOrbitZoom: Vector, CamOrbitRotation: Rotator);
         bIsSet: boolean;
         CamOrbitPoint: Vector;
@@ -1554,6 +1634,7 @@ declare module "ue" {
     }
     
     class BoxSphereBounds {
+        constructor();
         constructor(Origin: Vector, BoxExtent: Vector, SphereRadius: number);
         Origin: Vector;
         BoxExtent: Vector;
@@ -1570,6 +1651,7 @@ declare module "ue" {
     }
     
     class ElementID {
+        constructor();
         constructor(IDValue: number);
         IDValue: number;
         static StaticClass(): Class;
@@ -1777,6 +1859,7 @@ declare module "ue" {
     
     enum EGrassScaling { Uniform, Free, LockXY, EGrassScaling_MAX}
     class FloatInterval {
+        constructor();
         constructor(Min: number, Max: number);
         Min: number;
         Max: number;
@@ -1784,6 +1867,7 @@ declare module "ue" {
     }
     
     class GrassVariety {
+        constructor();
         constructor(GrassMesh: StaticMesh, OverrideMaterials: TArray<MaterialInterface>, GrassDensity: PerPlatformFloat, bUseGrid: boolean, PlacementJitter: number, StartCullDistance: PerPlatformInt, EndCullDistance: PerPlatformInt, MinLOD: number, Scaling: EGrassScaling, ScaleX: FloatInterval, ScaleY: FloatInterval, ScaleZ: FloatInterval, RandomRotation: boolean, AlignToSurface: boolean, bUseLandscapeLightmap: boolean, LightingChannels: LightingChannels, bReceivesDecals: boolean, bCastDynamicShadow: boolean, bKeepInstanceBufferCPUCopy: boolean);
         GrassMesh: StaticMesh;
         OverrideMaterials: TArray<MaterialInterface>;
@@ -1824,6 +1908,7 @@ declare module "ue" {
     }
     
     class MaterialCachedExpressionData {
+        constructor();
         constructor(Parameters: MaterialCachedParameters, ReferencedTextures: TArray<Object>, FunctionInfos: TArray<MaterialFunctionInfo>, ParameterCollectionInfos: TArray<MaterialParameterCollectionInfo>, DefaultLayers: TArray<MaterialFunctionInterface>, DefaultLayerBlends: TArray<MaterialFunctionInterface>, GrassTypes: TArray<LandscapeGrassType>, DynamicParameterNames: TArray<string>, QualityLevelsUsed: TArray<boolean>, bHasRuntimeVirtualTextureOutput: boolean, bHasSceneColor: boolean);
         Parameters: MaterialCachedParameters;
         ReferencedTextures: TArray<Object>;
@@ -2005,6 +2090,7 @@ declare module "ue" {
     }
     
     class ScalarParameterAtlasInstanceData {
+        constructor();
         constructor(bIsUsedAsAtlasPosition: boolean, Curve: TSoftObjectPtr<CurveLinearColor>, Atlas: TSoftObjectPtr<CurveLinearColorAtlas>);
         bIsUsedAsAtlasPosition: boolean;
         Curve: TSoftObjectPtr<CurveLinearColor>;
@@ -2013,6 +2099,7 @@ declare module "ue" {
     }
     
     class ScalarParameterValue {
+        constructor();
         constructor(ParameterName: string, AtlasData: ScalarParameterAtlasInstanceData, ParameterInfo: MaterialParameterInfo, ParameterValue: number, ExpressionGUID: Guid);
         ParameterName: string;
         AtlasData: ScalarParameterAtlasInstanceData;
@@ -2023,6 +2110,7 @@ declare module "ue" {
     }
     
     class VectorParameterValue {
+        constructor();
         constructor(ParameterName: string, ParameterInfo: MaterialParameterInfo, ParameterValue: LinearColor, ExpressionGUID: Guid);
         ParameterName: string;
         ParameterInfo: MaterialParameterInfo;
@@ -2032,6 +2120,7 @@ declare module "ue" {
     }
     
     class TextureParameterValue {
+        constructor();
         constructor(ParameterName: string, ParameterInfo: MaterialParameterInfo, ParameterValue: Texture, ExpressionGUID: Guid);
         ParameterName: string;
         ParameterInfo: MaterialParameterInfo;
@@ -2041,6 +2130,7 @@ declare module "ue" {
     }
     
     class RuntimeVirtualTextureParameterValue {
+        constructor();
         constructor(ParameterInfo: MaterialParameterInfo, ParameterValue: RuntimeVirtualTexture, ExpressionGUID: Guid);
         ParameterInfo: MaterialParameterInfo;
         ParameterValue: RuntimeVirtualTexture;
@@ -2049,6 +2139,7 @@ declare module "ue" {
     }
     
     class FontParameterValue {
+        constructor();
         constructor(ParameterName: string, ParameterInfo: MaterialParameterInfo, FontValue: Font, FontPage: number, ExpressionGUID: Guid);
         ParameterName: string;
         ParameterInfo: MaterialParameterInfo;
@@ -2059,6 +2150,7 @@ declare module "ue" {
     }
     
     class MaterialInstanceBasePropertyOverrides {
+        constructor();
         constructor(bOverride_OpacityMaskClipValue: boolean, bOverride_BlendMode: boolean, bOverride_ShadingModel: boolean, bOverride_DitheredLODTransition: boolean, bOverride_CastDynamicShadowAsMasked: boolean, bOverride_TwoSided: boolean, TwoSided: boolean, DitheredLODTransition: boolean, bCastDynamicShadowAsMasked: boolean, BlendMode: EBlendMode, ShadingModel: EMaterialShadingModel, OpacityMaskClipValue: number);
         bOverride_OpacityMaskClipValue: boolean;
         bOverride_BlendMode: boolean;
@@ -2076,6 +2168,7 @@ declare module "ue" {
     }
     
     class StaticParameterBase {
+        constructor();
         constructor(ParameterInfo: MaterialParameterInfo, bOverride: boolean, ExpressionGUID: Guid);
         ParameterInfo: MaterialParameterInfo;
         bOverride: boolean;
@@ -2084,12 +2177,14 @@ declare module "ue" {
     }
     
     class StaticSwitchParameter extends StaticParameterBase {
+        constructor();
         constructor(Value: boolean);
         Value: boolean;
         static StaticClass(): Class;
     }
     
     class StaticComponentMaskParameter extends StaticParameterBase {
+        constructor();
         constructor(R: boolean, G: boolean, B: boolean, A: boolean);
         R: boolean;
         G: boolean;
@@ -2099,6 +2194,7 @@ declare module "ue" {
     }
     
     class StaticTerrainLayerWeightParameter extends StaticParameterBase {
+        constructor();
         constructor(WeightmapIndex: number, bWeightBasedBlend: boolean);
         WeightmapIndex: number;
         bWeightBasedBlend: boolean;
@@ -2107,6 +2203,7 @@ declare module "ue" {
     
     enum EMaterialLayerLinkState { Uninitialized, LinkedToParent, UnlinkedFromParent, NotFromParent, EMaterialLayerLinkState_MAX}
     class MaterialLayersFunctions {
+        constructor();
         constructor(Layers: TArray<MaterialFunctionInterface>, Blends: TArray<MaterialFunctionInterface>, LayerStates: TArray<boolean>, LayerNames: TArray<string>, RestrictToLayerRelatives: TArray<boolean>, RestrictToBlendRelatives: TArray<boolean>, LayerGuids: TArray<Guid>, LayerLinkStates: TArray<EMaterialLayerLinkState>, DeletedParentLayerGuids: TArray<Guid>, KeyString: string);
         Layers: TArray<MaterialFunctionInterface>;
         Blends: TArray<MaterialFunctionInterface>;
@@ -2122,12 +2219,14 @@ declare module "ue" {
     }
     
     class StaticMaterialLayersParameter extends StaticParameterBase {
+        constructor();
         constructor(Value: MaterialLayersFunctions);
         Value: MaterialLayersFunctions;
         static StaticClass(): Class;
     }
     
     class StaticParameterSet {
+        constructor();
         constructor(StaticSwitchParameters: TArray<StaticSwitchParameter>, StaticComponentMaskParameters: TArray<StaticComponentMaskParameter>, TerrainLayerWeightParameters: TArray<StaticTerrainLayerWeightParameter>, MaterialLayersParameters: TArray<StaticMaterialLayersParameter>);
         StaticSwitchParameters: TArray<StaticSwitchParameter>;
         StaticComponentMaskParameters: TArray<StaticComponentMaskParameter>;
@@ -2185,6 +2284,7 @@ declare module "ue" {
     enum EAutoReceiveInput { Disabled, Player0, Player1, Player2, Player3, Player4, Player5, Player6, Player7, EAutoReceiveInput_MAX}
     enum EAutoPossessAI { Disabled, PlacedInWorld, Spawned, PlacedInWorldOrSpawned, EAutoPossessAI_MAX}
     class SpriteCategoryInfo {
+        constructor();
         constructor(Category: string, DisplayName: string, Description: string);
         Category: string;
         DisplayName: string;
@@ -2226,6 +2326,7 @@ declare module "ue" {
     }
     
     class UniqueNetIdRepl extends UniqueNetIdWrapper {
+        constructor();
         constructor(ReplicationBytes: TArray<number>);
         ReplicationBytes: TArray<number>;
         static StaticClass(): Class;
@@ -2300,6 +2401,7 @@ declare module "ue" {
     
     enum EBoneTranslationRetargetingMode { Animation, Skeleton, AnimationScaled, AnimationRelative, OrientAndScale, EBoneTranslationRetargetingMode_MAX}
     class BoneNode {
+        constructor();
         constructor(Name: string, ParentIndex: number, TranslationRetargetingMode: EBoneTranslationRetargetingMode);
         Name: string;
         ParentIndex: number;
@@ -2308,6 +2410,7 @@ declare module "ue" {
     }
     
     class VirtualBone {
+        constructor();
         constructor(SourceBoneName: string, TargetBoneName: string, VirtualBoneName: string);
         SourceBoneName: string;
         TargetBoneName: string;
@@ -2336,12 +2439,14 @@ declare module "ue" {
     }
     
     class BoneReference {
+        constructor();
         constructor(BoneName: string);
         BoneName: string;
         static StaticClass(): Class;
     }
     
     class BlendProfileBoneEntry {
+        constructor();
         constructor(BoneReference: BoneReference, BlendScale: number);
         BoneReference: BoneReference;
         BlendScale: number;
@@ -2358,6 +2463,7 @@ declare module "ue" {
     }
     
     class AnimSlotGroup {
+        constructor();
         constructor(GroupName: string, SlotNames: TArray<string>);
         GroupName: string;
         SlotNames: TArray<string>;
@@ -2374,6 +2480,7 @@ declare module "ue" {
     
     enum EConstraintTransform { Absolute, Relative, EConstraintTransform_MAX}
     class RigTransformConstraint {
+        constructor();
         constructor(TranformType: EConstraintTransform, ParentSpace: string, Weight: number);
         TranformType: EConstraintTransform;
         ParentSpace: string;
@@ -2382,12 +2489,14 @@ declare module "ue" {
     }
     
     class TransformBaseConstraint {
+        constructor();
         constructor(TransformConstraints: TArray<RigTransformConstraint>);
         TransformConstraints: TArray<RigTransformConstraint>;
         static StaticClass(): Class;
     }
     
     class TransformBase {
+        constructor();
         constructor(Node: string, Constraints: FixSizeArray<TransformBaseConstraint>);
         Node: string;
         Constraints: FixSizeArray<TransformBaseConstraint>;
@@ -2395,6 +2504,7 @@ declare module "ue" {
     }
     
     class Node {
+        constructor();
         constructor(Name: string, ParentName: string, Transform: Transform, DisplayName: string, bAdvanced: boolean);
         Name: string;
         ParentName: string;
@@ -2414,6 +2524,7 @@ declare module "ue" {
     }
     
     class NameMapping {
+        constructor();
         constructor(NodeName: string, BoneName: string);
         NodeName: string;
         BoneName: string;
@@ -2421,6 +2532,7 @@ declare module "ue" {
     }
     
     class RigConfiguration {
+        constructor();
         constructor(Rig: Rig, BoneMappingTable: TArray<NameMapping>);
         Rig: Rig;
         BoneMappingTable: TArray<NameMapping>;
@@ -2428,6 +2540,7 @@ declare module "ue" {
     }
     
     class PreviewAttachedObjectPair {
+        constructor();
         constructor(AttachedObject: TSoftObjectPtr<Object>, Object: Object, AttachedTo: string);
         AttachedObject: TSoftObjectPtr<Object>;
         Object: Object;
@@ -2436,6 +2549,7 @@ declare module "ue" {
     }
     
     class PreviewAssetAttachContainer {
+        constructor();
         constructor(AttachedObjects: TArray<PreviewAttachedObjectPair>);
         AttachedObjects: TArray<PreviewAttachedObjectPair>;
         static StaticClass(): Class;
@@ -2463,6 +2577,7 @@ declare module "ue" {
     }
     
     class SkeletalMaterial {
+        constructor();
         constructor(MaterialInterface: MaterialInterface, MaterialSlotName: string, bEnableShadowCasting: boolean, bRecomputeTangent: boolean, ImportedMaterialSlotName: string, UVChannelData: MeshUVChannelInfo);
         MaterialInterface: MaterialInterface;
         MaterialSlotName: string;
@@ -2475,6 +2590,7 @@ declare module "ue" {
     
     enum EAxis { None, X, Y, Z, EAxis_MAX}
     class BoneMirrorInfo {
+        constructor();
         constructor(SourceIndex: number, BoneFlipAxis: EAxis);
         SourceIndex: number;
         BoneFlipAxis: EAxis;
@@ -2482,6 +2598,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshBuildSettings {
+        constructor();
         constructor(bRecomputeNormals: boolean, bRecomputeTangents: boolean, bUseMikkTSpace: boolean, bComputeWeightedNormals: boolean, bRemoveDegenerates: boolean, bUseHighPrecisionTangentBasis: boolean, bUseFullPrecisionUVs: boolean, bBuildAdjacencyBuffer: boolean, ThresholdPosition: number, ThresholdTangentNormal: number, ThresholdUV: number, MorphThresholdPosition: number);
         bRecomputeNormals: boolean;
         bRecomputeTangents: boolean;
@@ -2509,6 +2626,7 @@ declare module "ue" {
     }
     
     class AssetMapping {
+        constructor();
         constructor(SourceAsset: AnimationAsset, TargetAsset: AnimationAsset);
         SourceAsset: AnimationAsset;
         TargetAsset: AnimationAsset;
@@ -2524,12 +2642,14 @@ declare module "ue" {
     }
     
     class SmartName {
+        constructor();
         constructor(DisplayName: string);
         DisplayName: string;
         static StaticClass(): Class;
     }
     
     class PoseData {
+        constructor();
         constructor(SourceLocalSpacePose: TArray<Transform>, SourceCurveData: TArray<number>, LocalSpacePose: TArray<Transform>, TrackToBufferIndex: TMap<number, number>, CurveData: TArray<number>);
         SourceLocalSpacePose: TArray<Transform>;
         SourceCurveData: TArray<number>;
@@ -2540,6 +2660,7 @@ declare module "ue" {
     }
     
     class AnimCurveBase {
+        constructor();
         constructor(LastObservedName: string, Name: SmartName, Color: LinearColor, CurveTypeFlags: number);
         LastObservedName: string;
         Name: SmartName;
@@ -2549,6 +2670,7 @@ declare module "ue" {
     }
     
     class PoseDataContainer {
+        constructor();
         constructor(PoseNames: TArray<SmartName>, Tracks: TArray<string>, TrackMap: TMap<string, number>, Poses: TArray<PoseData>, Curves: TArray<AnimCurveBase>);
         PoseNames: TArray<SmartName>;
         Tracks: TArray<string>;
@@ -2605,6 +2727,7 @@ declare module "ue" {
     
     enum EAlphaBlendOption { Linear, Cubic, HermiteCubic, Sinusoidal, QuadraticInOut, CubicInOut, QuarticInOut, QuinticInOut, CircularIn, CircularOut, CircularInOut, ExpIn, ExpOut, ExpInOut, Custom, EAlphaBlendOption_MAX}
     class AlphaBlend {
+        constructor();
         constructor(CustomCurve: CurveFloat, BlendTime: number, BlendOption: EAlphaBlendOption);
         CustomCurve: CurveFloat;
         BlendTime: number;
@@ -2613,6 +2736,7 @@ declare module "ue" {
     }
     
     class AnimSyncMarker {
+        constructor();
         constructor(MarkerName: string, Time: number, TrackIndex: number, Guid: Guid);
         MarkerName: string;
         Time: number;
@@ -2622,12 +2746,14 @@ declare module "ue" {
     }
     
     class MarkerSyncData {
+        constructor();
         constructor(AuthoredSyncMarkers: TArray<AnimSyncMarker>);
         AuthoredSyncMarkers: TArray<AnimSyncMarker>;
         static StaticClass(): Class;
     }
     
     class CompositeSection extends AnimLinkableElement {
+        constructor();
         constructor(SectionName: string, StartTime: number, NextSectionName: string, MetaData: TArray<AnimMetaData>);
         SectionName: string;
         StartTime: number;
@@ -2637,6 +2763,7 @@ declare module "ue" {
     }
     
     class AnimSegment {
+        constructor();
         constructor(AnimReference: AnimSequenceBase, StartPos: number, AnimStartTime: number, AnimEndTime: number, AnimPlayRate: number, LoopingCount: number);
         AnimReference: AnimSequenceBase;
         StartPos: number;
@@ -2648,12 +2775,14 @@ declare module "ue" {
     }
     
     class AnimTrack {
+        constructor();
         constructor(AnimSegments: TArray<AnimSegment>);
         AnimSegments: TArray<AnimSegment>;
         static StaticClass(): Class;
     }
     
     class SlotAnimationTrack {
+        constructor();
         constructor(SlotName: string, AnimTrack: AnimTrack);
         SlotName: string;
         AnimTrack: AnimTrack;
@@ -2661,6 +2790,7 @@ declare module "ue" {
     }
     
     class BranchingPoint extends AnimLinkableElement {
+        constructor();
         constructor(EventName: string, DisplayTime: number, TriggerTimeOffset: number);
         EventName: string;
         DisplayTime: number;
@@ -2671,6 +2801,7 @@ declare module "ue" {
     enum ERootMotionRootLock { RefPose, AnimFirstFrame, Zero, ERootMotionRootLock_MAX}
     enum EAnimNotifyEventType { Begin, End, EAnimNotifyEventType_MAX}
     class BranchingPointMarker {
+        constructor();
         constructor(NotifyIndex: number, TriggerTime: number, NotifyEventType: EAnimNotifyEventType);
         NotifyIndex: number;
         TriggerTime: number;
@@ -2679,6 +2810,7 @@ declare module "ue" {
     }
     
     class TimeStretchCurveMarker {
+        constructor();
         constructor(Time: FixSizeArray<number>, Alpha: number);
         Time: FixSizeArray<number>;
         Alpha: number;
@@ -2686,6 +2818,7 @@ declare module "ue" {
     }
     
     class TimeStretchCurve {
+        constructor();
         constructor(SamplingRate: number, CurveValueMinPrecision: number, Markers: TArray<TimeStretchCurveMarker>, Sum_dT_i_by_C_i: FixSizeArray<number>);
         SamplingRate: number;
         CurveValueMinPrecision: number;
@@ -2724,6 +2857,7 @@ declare module "ue" {
     
     enum EAnimLinkMethod { Absolute, Relative, Proportional, EAnimLinkMethod_MAX}
     class AnimLinkableElement {
+        constructor();
         constructor(LinkedMontage: AnimMontage, SlotIndex: number, SegmentIndex: number, LinkMethod: EAnimLinkMethod, CachedLinkMethod: EAnimLinkMethod, SegmentBeginTime: number, SegmentLength: number, LinkValue: number, LinkedSequence: AnimSequenceBase);
         LinkedMontage: AnimMontage;
         SlotIndex: number;
@@ -2762,6 +2896,7 @@ declare module "ue" {
     enum EMontageNotifyTickType { Queued, BranchingPoint, EMontageNotifyTickType_MAX}
     enum ENotifyFilterType { NoFiltering, LOD, ENotifyFilterType_MAX}
     class AnimNotifyEvent extends AnimLinkableElement {
+        constructor();
         constructor(DisplayTime: number, TriggerTimeOffset: number, EndTriggerTimeOffset: number, TriggerWeightThreshold: number, NotifyName: string, Notify: AnimNotify, NotifyStateClass: AnimNotifyState, Duration: number, EndLink: AnimLinkableElement, bConvertedFromBranchingPoint: boolean, MontageTickType: EMontageNotifyTickType, NotifyTriggerChance: number, NotifyFilterType: ENotifyFilterType, NotifyFilterLOD: number, bTriggerOnDedicatedServer: boolean, bTriggerOnFollower: boolean, NotifyColor: Color, Guid: Guid, TrackIndex: number);
         DisplayTime: number;
         TriggerTimeOffset: number;
@@ -2786,18 +2921,21 @@ declare module "ue" {
     }
     
     class FloatCurve extends AnimCurveBase {
+        constructor();
         constructor(FloatCurve: RichCurve);
         FloatCurve: RichCurve;
         static StaticClass(): Class;
     }
     
     class VectorCurve extends AnimCurveBase {
+        constructor();
         constructor(FloatCurves: FixSizeArray<RichCurve>);
         FloatCurves: FixSizeArray<RichCurve>;
         static StaticClass(): Class;
     }
     
     class TransformCurve extends AnimCurveBase {
+        constructor();
         constructor(TranslationCurve: VectorCurve, RotationCurve: VectorCurve, ScaleCurve: VectorCurve);
         TranslationCurve: VectorCurve;
         RotationCurve: VectorCurve;
@@ -2806,6 +2944,7 @@ declare module "ue" {
     }
     
     class RawCurveTracks {
+        constructor();
         constructor(FloatCurves: TArray<FloatCurve>, VectorCurves: TArray<VectorCurve>, TransformCurves: TArray<TransformCurve>);
         FloatCurves: TArray<FloatCurve>;
         VectorCurves: TArray<VectorCurve>;
@@ -2814,6 +2953,7 @@ declare module "ue" {
     }
     
     class AnimNotifyTrack {
+        constructor();
         constructor(TrackName: string, TrackColor: LinearColor);
         TrackName: string;
         TrackColor: LinearColor;
@@ -2834,6 +2974,7 @@ declare module "ue" {
     }
     
     class TrackToSkeletonMap {
+        constructor();
         constructor(BoneTreeIndex: number);
         BoneTreeIndex: number;
         static StaticClass(): Class;
@@ -2876,6 +3017,7 @@ declare module "ue" {
     enum EAdditiveBasePoseType { ABPT_None, ABPT_RefPose, ABPT_AnimScaled, ABPT_AnimFrame, ABPT_MAX}
     enum EAnimInterpolationType { Linear, Step, EAnimInterpolationType_MAX}
     class CustomAttribute {
+        constructor();
         constructor(Name: string, VariantType: number, Times: TArray<number>);
         Name: string;
         VariantType: number;
@@ -2884,6 +3026,7 @@ declare module "ue" {
     }
     
     class CustomAttributePerBoneData {
+        constructor();
         constructor(BoneTreeIndex: number, Attributes: TArray<CustomAttribute>);
         BoneTreeIndex: number;
         Attributes: TArray<CustomAttribute>;
@@ -2891,6 +3034,7 @@ declare module "ue" {
     }
     
     class StringCurveKey {
+        constructor();
         constructor(Time: number, Value: string);
         Time: number;
         Value: string;
@@ -2898,6 +3042,7 @@ declare module "ue" {
     }
     
     class StringCurve extends IndexedCurve {
+        constructor();
         constructor(DefaultValue: string, Keys: TArray<StringCurveKey>);
         DefaultValue: string;
         Keys: TArray<StringCurveKey>;
@@ -2905,6 +3050,7 @@ declare module "ue" {
     }
     
     class BakedStringCustomAttribute {
+        constructor();
         constructor(AttributeName: string, StringCurve: StringCurve);
         AttributeName: string;
         StringCurve: StringCurve;
@@ -2912,6 +3058,7 @@ declare module "ue" {
     }
     
     class IntegralKey {
+        constructor();
         constructor(Time: number, Value: number);
         Time: number;
         Value: number;
@@ -2919,6 +3066,7 @@ declare module "ue" {
     }
     
     class IntegralCurve extends IndexedCurve {
+        constructor();
         constructor(Keys: TArray<IntegralKey>, DefaultValue: number, bUseDefaultValueBeforeFirstKey: boolean);
         Keys: TArray<IntegralKey>;
         DefaultValue: number;
@@ -2927,6 +3075,7 @@ declare module "ue" {
     }
     
     class BakedIntegerCustomAttribute {
+        constructor();
         constructor(AttributeName: string, IntCurve: IntegralCurve);
         AttributeName: string;
         IntCurve: IntegralCurve;
@@ -2934,6 +3083,7 @@ declare module "ue" {
     }
     
     class SimpleCurveKey {
+        constructor();
         constructor(Time: number, Value: number);
         Time: number;
         Value: number;
@@ -2941,6 +3091,7 @@ declare module "ue" {
     }
     
     class SimpleCurve extends RealCurve {
+        constructor();
         constructor(InterpMode: ERichCurveInterpMode, Keys: TArray<SimpleCurveKey>);
         InterpMode: ERichCurveInterpMode;
         Keys: TArray<SimpleCurveKey>;
@@ -2948,6 +3099,7 @@ declare module "ue" {
     }
     
     class BakedFloatCustomAttribute {
+        constructor();
         constructor(AttributeName: string, FloatCurve: SimpleCurve);
         AttributeName: string;
         FloatCurve: SimpleCurve;
@@ -2955,6 +3107,7 @@ declare module "ue" {
     }
     
     class BakedCustomAttributePerBoneData {
+        constructor();
         constructor(BoneTreeIndex: number, StringAttributes: TArray<BakedStringCustomAttribute>, IntAttributes: TArray<BakedIntegerCustomAttribute>, FloatAttributes: TArray<BakedFloatCustomAttribute>);
         BoneTreeIndex: number;
         StringAttributes: TArray<BakedStringCustomAttribute>;
@@ -3009,6 +3162,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshOptimizationSettings {
+        constructor();
         constructor(TerminationCriterion: SkeletalMeshTerminationCriterion, NumOfTrianglesPercentage: number, NumOfVertPercentage: number, MaxNumOfTriangles: number, MaxNumOfVerts: number, MaxNumOfTrianglesPercentage: number, MaxNumOfVertsPercentage: number, MaxDeviationPercentage: number, ReductionMethod: SkeletalMeshOptimizationType, SilhouetteImportance: SkeletalMeshOptimizationImportance, TextureImportance: SkeletalMeshOptimizationImportance, ShadingImportance: SkeletalMeshOptimizationImportance, SkinningImportance: SkeletalMeshOptimizationImportance, bRemapMorphTargets: boolean, bRecalcNormals: boolean, WeldingThreshold: number, NormalsThreshold: number, MaxBonesPerVertex: number, bEnforceBoneBoundaries: boolean, VolumeImportance: number, bLockEdges: boolean, bLockColorBounaries: boolean, BaseLOD: number, BonesToRemove: TArray<BoneReference>, BakePose: AnimSequence);
         TerminationCriterion: SkeletalMeshTerminationCriterion;
         NumOfTrianglesPercentage: number;
@@ -3040,6 +3194,7 @@ declare module "ue" {
     
     enum ESkinCacheUsage { Auto, Disabled, Enabled, ESkinCacheUsage_MAX}
     class SkeletalMeshLODInfo {
+        constructor();
         constructor(ScreenSize: PerPlatformFloat, LODHysteresis: number, LODMaterialMap: TArray<number>, bEnableShadowCasting: TArray<boolean>, RemovedBones: TArray<string>, BuildSettings: SkeletalMeshBuildSettings, ReductionSettings: SkeletalMeshOptimizationSettings, BonesToRemove: TArray<BoneReference>, BonesToPrioritize: TArray<BoneReference>, WeightOfPrioritization: number, BakePose: AnimSequence, BakePoseOverride: AnimSequence, SourceImportFilename: string, SkinCacheUsage: ESkinCacheUsage, bHasBeenSimplified: boolean, bHasPerLODVertexColors: boolean, bAllowCPUAccess: boolean, bSupportUniformlyDistributedSampling: boolean, bImportWithBaseMesh: boolean);
         ScreenSize: PerPlatformFloat;
         LODHysteresis: number;
@@ -3064,6 +3219,7 @@ declare module "ue" {
     }
     
     class PerPlatformBool {
+        constructor();
         constructor(Default: boolean, PerPlatform: TMap<string, boolean>);
         Default: boolean;
         PerPlatform: TMap<string, boolean>;
@@ -3072,6 +3228,7 @@ declare module "ue" {
     
     enum EBoneFilterActionOption { Remove, Keep, Invalid, EBoneFilterActionOption_MAX}
     class BoneFilter {
+        constructor();
         constructor(bExcludeSelf: boolean, BoneName: string);
         bExcludeSelf: boolean;
         BoneName: string;
@@ -3079,6 +3236,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshLODGroupSettings {
+        constructor();
         constructor(ScreenSize: PerPlatformFloat, LODHysteresis: number, BoneFilterActionOption: EBoneFilterActionOption, BoneList: TArray<BoneFilter>, BonesToPrioritize: TArray<string>, WeightOfPrioritization: number, BakePose: AnimSequence, ReductionSettings: SkeletalMeshOptimizationSettings);
         ScreenSize: PerPlatformFloat;
         LODHysteresis: number;
@@ -3106,6 +3264,7 @@ declare module "ue" {
     }
     
     class PhysicalAnimationData {
+        constructor();
         constructor(BodyName: string, bIsLocalSimulation: boolean, OrientationStrength: number, AngularVelocityStrength: number, PositionStrength: number, VelocityStrength: number, MaxLinearForce: number, MaxAngularForce: number);
         BodyName: string;
         bIsLocalSimulation: boolean;
@@ -3119,6 +3278,7 @@ declare module "ue" {
     }
     
     class PhysicalAnimationProfile {
+        constructor();
         constructor(ProfileName: string, PhysicalAnimationData: PhysicalAnimationData);
         ProfileName: string;
         PhysicalAnimationData: PhysicalAnimationData;
@@ -3141,6 +3301,7 @@ declare module "ue" {
     }
     
     class ConstraintBaseParams {
+        constructor();
         constructor(Stiffness: number, Damping: number, Restitution: number, ContactDistance: number, bSoftConstraint: boolean);
         Stiffness: number;
         Damping: number;
@@ -3152,6 +3313,7 @@ declare module "ue" {
     
     enum ELinearConstraintMotion { LCM_Free, LCM_Limited, LCM_Locked, LCM_MAX}
     class LinearConstraint extends ConstraintBaseParams {
+        constructor();
         constructor(Limit: number, XMotion: ELinearConstraintMotion, YMotion: ELinearConstraintMotion, ZMotion: ELinearConstraintMotion);
         Limit: number;
         XMotion: ELinearConstraintMotion;
@@ -3162,6 +3324,7 @@ declare module "ue" {
     
     enum EAngularConstraintMotion { ACM_Free, ACM_Limited, ACM_Locked, ACM_MAX}
     class ConeConstraint extends ConstraintBaseParams {
+        constructor();
         constructor(Swing1LimitDegrees: number, Swing2LimitDegrees: number, Swing1Motion: EAngularConstraintMotion, Swing2Motion: EAngularConstraintMotion);
         Swing1LimitDegrees: number;
         Swing2LimitDegrees: number;
@@ -3171,6 +3334,7 @@ declare module "ue" {
     }
     
     class TwistConstraint extends ConstraintBaseParams {
+        constructor();
         constructor(TwistLimitDegrees: number, TwistMotion: EAngularConstraintMotion);
         TwistLimitDegrees: number;
         TwistMotion: EAngularConstraintMotion;
@@ -3178,6 +3342,7 @@ declare module "ue" {
     }
     
     class ConstraintDrive {
+        constructor();
         constructor(Stiffness: number, Damping: number, MaxForce: number, bEnablePositionDrive: boolean, bEnableVelocityDrive: boolean);
         Stiffness: number;
         Damping: number;
@@ -3188,6 +3353,7 @@ declare module "ue" {
     }
     
     class LinearDriveConstraint {
+        constructor();
         constructor(PositionTarget: Vector, VelocityTarget: Vector, XDrive: ConstraintDrive, YDrive: ConstraintDrive, ZDrive: ConstraintDrive, bEnablePositionDrive: boolean);
         PositionTarget: Vector;
         VelocityTarget: Vector;
@@ -3200,6 +3366,7 @@ declare module "ue" {
     
     enum EAngularDriveMode { SLERP, TwistAndSwing, EAngularDriveMode_MAX}
     class AngularDriveConstraint {
+        constructor();
         constructor(TwistDrive: ConstraintDrive, SwingDrive: ConstraintDrive, SlerpDrive: ConstraintDrive, OrientationTarget: Rotator, AngularVelocityTarget: Vector, AngularDriveMode: EAngularDriveMode);
         TwistDrive: ConstraintDrive;
         SwingDrive: ConstraintDrive;
@@ -3211,6 +3378,7 @@ declare module "ue" {
     }
     
     class ConstraintProfileProperties {
+        constructor();
         constructor(ProjectionLinearTolerance: number, ProjectionAngularTolerance: number, ProjectionLinearAlpha: number, ProjectionAngularAlpha: number, LinearBreakThreshold: number, AngularBreakThreshold: number, LinearLimit: LinearConstraint, ConeLimit: ConeConstraint, TwistLimit: TwistConstraint, LinearDrive: LinearDriveConstraint, AngularDrive: AngularDriveConstraint, bDisableCollision: boolean, bParentDominates: boolean, bEnableProjection: boolean, bEnableSoftProjection: boolean, bAngularBreakable: boolean, bLinearBreakable: boolean);
         ProjectionLinearTolerance: number;
         ProjectionAngularTolerance: number;
@@ -3233,6 +3401,7 @@ declare module "ue" {
     }
     
     class ConstraintInstance extends ConstraintInstanceBase {
+        constructor();
         constructor(JointName: string, ConstraintBone1: string, ConstraintBone2: string, Pos1: Vector, PriAxis1: Vector, SecAxis1: Vector, Pos2: Vector, PriAxis2: Vector, SecAxis2: Vector, AngularRotationOffset: Rotator, bScaleLinearLimits: boolean, ProfileInstance: ConstraintProfileProperties, bDisableCollision: boolean, bEnableProjection: boolean, ProjectionLinearTolerance: number, ProjectionAngularTolerance: number, LinearXMotion: ELinearConstraintMotion, LinearYMotion: ELinearConstraintMotion, LinearZMotion: ELinearConstraintMotion, LinearLimitSize: number, bLinearLimitSoft: boolean, LinearLimitStiffness: number, LinearLimitDamping: number, bLinearBreakable: boolean, LinearBreakThreshold: number, AngularSwing1Motion: EAngularConstraintMotion, AngularTwistMotion: EAngularConstraintMotion, AngularSwing2Motion: EAngularConstraintMotion, bSwingLimitSoft: boolean, bTwistLimitSoft: boolean, Swing1LimitAngle: number, TwistLimitAngle: number, Swing2LimitAngle: number, SwingLimitStiffness: number, SwingLimitDamping: number, TwistLimitStiffness: number, TwistLimitDamping: number, bAngularBreakable: boolean, AngularBreakThreshold: number, bLinearXPositionDrive: boolean, bLinearXVelocityDrive: boolean, bLinearYPositionDrive: boolean, bLinearYVelocityDrive: boolean, bLinearZPositionDrive: boolean, bLinearZVelocityDrive: boolean, bLinearPositionDrive: boolean, bLinearVelocityDrive: boolean, LinearPositionTarget: Vector, LinearVelocityTarget: Vector, LinearDriveSpring: number, LinearDriveDamping: number, LinearDriveForceLimit: number, bSwingPositionDrive: boolean, bSwingVelocityDrive: boolean, bTwistPositionDrive: boolean, bTwistVelocityDrive: boolean, bAngularSlerpDrive: boolean, bAngularOrientationDrive: boolean, bEnableSwingDrive: boolean, bEnableTwistDrive: boolean, bAngularVelocityDrive: boolean, AngularPositionTarget: Quat, AngularDriveMode: EAngularDriveMode, AngularOrientationTarget: Rotator, AngularVelocityTarget: Vector, AngularDriveSpring: number, AngularDriveDamping: number, AngularDriveForceLimit: number);
         JointName: string;
         ConstraintBone1: string;
@@ -3306,6 +3475,7 @@ declare module "ue" {
     }
     
     class PhysicsConstraintProfileHandle {
+        constructor();
         constructor(ProfileProperties: ConstraintProfileProperties, ProfileName: string);
         ProfileProperties: ConstraintProfileProperties;
         ProfileName: string;
@@ -3358,6 +3528,7 @@ declare module "ue" {
     }
     
     class SolverIterations {
+        constructor();
         constructor(FixedTimeStep: number, SolverIterations: number, JointIterations: number, CollisionIterations: number, SolverPushOutIterations: number, JointPushOutIterations: number, CollisionPushOutIterations: number);
         FixedTimeStep: number;
         SolverIterations: number;
@@ -3390,6 +3561,7 @@ declare module "ue" {
     }
     
     class NodeItem {
+        constructor();
         constructor(ParentName: string, Transform: Transform);
         ParentName: string;
         Transform: Transform;
@@ -3417,6 +3589,7 @@ declare module "ue" {
     }
     
     class ClothPhysicsProperties_Legacy {
+        constructor();
         constructor(VerticalResistance: number, HorizontalResistance: number, BendResistance: number, ShearResistance: number, Friction: number, Damping: number, TetherStiffness: number, TetherLimit: number, Drag: number, StiffnessFrequency: number, GravityScale: number, MassScale: number, InertiaBlend: number, SelfCollisionThickness: number, SelfCollisionSquashScale: number, SelfCollisionStiffness: number, SolverFrequency: number, FiberCompression: number, FiberExpansion: number, FiberResistance: number);
         VerticalResistance: number;
         HorizontalResistance: number;
@@ -3442,6 +3615,7 @@ declare module "ue" {
     }
     
     class ClothingAssetData_Legacy {
+        constructor();
         constructor(AssetName: string, ApexFileName: string, bClothPropertiesChanged: boolean, PhysicsProperties: ClothPhysicsProperties_Legacy);
         AssetName: string;
         ApexFileName: string;
@@ -3460,12 +3634,14 @@ declare module "ue" {
     }
     
     class SkeletalMeshSamplingRegionMaterialFilter {
+        constructor();
         constructor(MaterialName: string);
         MaterialName: string;
         static StaticClass(): Class;
     }
     
     class SkeletalMeshSamplingRegionBoneFilter {
+        constructor();
         constructor(BoneName: string, bIncludeOrExclude: boolean, bApplyToChildren: boolean);
         BoneName: string;
         bIncludeOrExclude: boolean;
@@ -3474,6 +3650,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshSamplingRegion {
+        constructor();
         constructor(Name: string, LODIndex: number, bSupportUniformlyDistributedSampling: boolean, MaterialFilters: TArray<SkeletalMeshSamplingRegionMaterialFilter>, BoneFilters: TArray<SkeletalMeshSamplingRegionBoneFilter>);
         Name: string;
         LODIndex: number;
@@ -3494,6 +3671,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshSamplingBuiltData {
+        constructor();
         constructor(WholeMeshBuiltData: TArray<SkeletalMeshSamplingLODBuiltData>, RegionBuiltData: TArray<SkeletalMeshSamplingRegionBuiltData>);
         WholeMeshBuiltData: TArray<SkeletalMeshSamplingLODBuiltData>;
         RegionBuiltData: TArray<SkeletalMeshSamplingRegionBuiltData>;
@@ -3501,6 +3679,7 @@ declare module "ue" {
     }
     
     class SkeletalMeshSamplingInfo {
+        constructor();
         constructor(Regions: TArray<SkeletalMeshSamplingRegion>, BuiltData: SkeletalMeshSamplingBuiltData);
         Regions: TArray<SkeletalMeshSamplingRegion>;
         BuiltData: SkeletalMeshSamplingBuiltData;
@@ -3508,6 +3687,7 @@ declare module "ue" {
     }
     
     class SkinWeightProfileInfo {
+        constructor();
         constructor(Name: string, DefaultProfile: PerPlatformBool, DefaultProfileFromLODIndex: PerPlatformInt, PerLODSourceFiles: TMap<number, string>);
         Name: string;
         DefaultProfile: PerPlatformBool;
@@ -3532,6 +3712,7 @@ declare module "ue" {
     enum EBlueprintCompileMode { Default, Development, FinalRelease, EBlueprintCompileMode_MAX}
     enum EBlueprintStatus { BS_Unknown, BS_Dirty, BS_Error, BS_UpToDate, BS_BeingCreated, BS_UpToDateWithWarnings, BS_MAX}
     class BlueprintComponentChangedPropertyInfo {
+        constructor();
         constructor(PropertyName: string, ArrayIndex: number, PropertyScope: Struct);
         PropertyName: string;
         ArrayIndex: number;
@@ -3540,6 +3721,7 @@ declare module "ue" {
     }
     
     class BlueprintCookedComponentInstancingData {
+        constructor();
         constructor(ChangedPropertyList: TArray<BlueprintComponentChangedPropertyInfo>, bHasValidCookedData: boolean);
         ChangedPropertyList: TArray<BlueprintComponentChangedPropertyInfo>;
         bHasValidCookedData: boolean;
@@ -3547,6 +3729,7 @@ declare module "ue" {
     }
     
     class BPVariableMetaDataEntry {
+        constructor();
         constructor(DataKey: string, DataValue: string);
         DataKey: string;
         DataValue: string;
@@ -3609,6 +3792,7 @@ declare module "ue" {
     
     enum ETimelineLengthMode { TL_TimelineLength, TL_LastKeyFrame, TL_MAX}
     class TTTrackBase {
+        constructor();
         constructor(TrackName: string, bIsExternalCurve: boolean, bIsExpanded: boolean, bIsCurveViewSynchronized: boolean);
         TrackName: string;
         bIsExternalCurve: boolean;
@@ -3618,6 +3802,7 @@ declare module "ue" {
     }
     
     class TTEventTrack extends TTTrackBase {
+        constructor();
         constructor(FunctionName: string, CurveKeys: CurveFloat);
         FunctionName: string;
         CurveKeys: CurveFloat;
@@ -3625,12 +3810,14 @@ declare module "ue" {
     }
     
     class TTPropertyTrack extends TTTrackBase {
+        constructor();
         constructor(PropertyName: string);
         PropertyName: string;
         static StaticClass(): Class;
     }
     
     class TTFloatTrack extends TTPropertyTrack {
+        constructor();
         constructor(CurveFloat: CurveFloat);
         CurveFloat: CurveFloat;
         static StaticClass(): Class;
@@ -3646,18 +3833,21 @@ declare module "ue" {
     }
     
     class TTVectorTrack extends TTPropertyTrack {
+        constructor();
         constructor(CurveVector: CurveVector);
         CurveVector: CurveVector;
         static StaticClass(): Class;
     }
     
     class TTLinearColorTrack extends TTPropertyTrack {
+        constructor();
         constructor(CurveLinearColor: CurveLinearColor);
         CurveLinearColor: CurveLinearColor;
         static StaticClass(): Class;
     }
     
     class TTTrackId {
+        constructor();
         constructor(TrackType: number, TrackIndex: number);
         TrackType: number;
         TrackIndex: number;
@@ -3689,6 +3879,7 @@ declare module "ue" {
     }
     
     class BPComponentClassOverride {
+        constructor();
         constructor(ComponentName: string, ComponentClass: Class);
         ComponentName: string;
         ComponentClass: Class;
@@ -3696,6 +3887,7 @@ declare module "ue" {
     }
     
     class ComponentKey {
+        constructor();
         constructor(OwnerClass: Class, SCSVariableName: string, AssociatedGuid: Guid);
         OwnerClass: Class;
         SCSVariableName: string;
@@ -3704,6 +3896,7 @@ declare module "ue" {
     }
     
     class ComponentOverrideRecord {
+        constructor();
         constructor(ComponentClass: Class, ComponentTemplate: ActorComponent, ComponentKey: ComponentKey, CookedComponentInstancingData: BlueprintCookedComponentInstancingData);
         ComponentClass: Class;
         ComponentTemplate: ActorComponent;
@@ -3723,6 +3916,7 @@ declare module "ue" {
     
     enum ELifetimeCondition { COND_None, COND_InitialOnly, COND_OwnerOnly, COND_SkipOwner, COND_SimulatedOnly, COND_AutonomousOnly, COND_SimulatedOrPhysics, COND_InitialOrOwner, COND_Custom, COND_ReplayOrOwner, COND_ReplayOnly, COND_SimulatedOnlyNoReplay, COND_SimulatedOrPhysicsNoReplay, COND_SkipReplay, COND_Never, COND_Max, COND_MAX}
     class BPVariableDescription {
+        constructor();
         constructor(VarName: string, VarGuid: Guid, VarType: EdGraphPinType, FriendlyName: string, Category: string, PropertyFlags: bigint, RepNotifyFunc: string, ReplicationCondition: ELifetimeCondition, MetaDataArray: TArray<BPVariableMetaDataEntry>, DefaultValue: string);
         VarName: string;
         VarGuid: Guid;
@@ -3738,6 +3932,7 @@ declare module "ue" {
     }
     
     class BPInterfaceDescription {
+        constructor();
         constructor(Interface: Class, Graphs: TArray<EdGraph>);
         Interface: Class;
         Graphs: TArray<EdGraph>;
@@ -3745,6 +3940,7 @@ declare module "ue" {
     }
     
     class EditedDocumentInfo {
+        constructor();
         constructor(EditedObjectPath: SoftObjectPath, SavedViewOffset: Vector2D, SavedZoomAmount: number, EditedObject: Object);
         EditedObjectPath: SoftObjectPath;
         SavedViewOffset: Vector2D;
@@ -3754,6 +3950,7 @@ declare module "ue" {
     }
     
     class BPEditorBookmarkNode {
+        constructor();
         constructor(NodeGuid: Guid, ParentGuid: Guid, DisplayName: string);
         NodeGuid: Guid;
         ParentGuid: Guid;
@@ -3774,6 +3971,7 @@ declare module "ue" {
     }
     
     class EdGraphPinReference {
+        constructor();
         constructor(OwningNode: TWeakObjectPtr<EdGraphNode>, PinId: Guid);
         OwningNode: TWeakObjectPtr<EdGraphNode>;
         PinId: Guid;
@@ -3918,12 +4116,14 @@ declare module "ue" {
     }
     
     class VertexOffsetUsage {
+        constructor();
         constructor(Usage: number);
         Usage: number;
         static StaticClass(): Class;
     }
     
     class SkelMeshComponentLODInfo {
+        constructor();
         constructor(HiddenMaterials: TArray<boolean>);
         HiddenMaterials: TArray<boolean>;
         static StaticClass(): Class;
@@ -3931,6 +4131,7 @@ declare module "ue" {
     
     enum EVisibilityBasedAnimTickOption { AlwaysTickPoseAndRefreshBones, AlwaysTickPose, OnlyTickMontagesWhenNotRendered, OnlyTickPoseWhenRendered, EVisibilityBasedAnimTickOption_MAX}
     class SkelMeshSkinWeightInfo {
+        constructor();
         constructor(Bones: FixSizeArray<number>, Weights: FixSizeArray<number>);
         Bones: FixSizeArray<number>;
         Weights: FixSizeArray<number>;
@@ -4023,6 +4224,7 @@ declare module "ue" {
     }
     
     class AnimGroupInfo {
+        constructor();
         constructor(Name: string, Color: LinearColor);
         Name: string;
         Color: LinearColor;
@@ -4030,6 +4232,7 @@ declare module "ue" {
     }
     
     class AnimParentNodeAssetOverride {
+        constructor();
         constructor(NewAsset: AnimationAsset, ParentNodeGuid: Guid);
         NewAsset: AnimationAsset;
         ParentNodeGuid: Guid;
@@ -4092,6 +4295,7 @@ declare module "ue" {
     }
     
     class EventGraphFastCallPair {
+        constructor();
         constructor(FunctionToPatch: Function, EventGraphCallOffset: number);
         FunctionToPatch: Function;
         EventGraphCallOffset: number;
@@ -4123,6 +4327,7 @@ declare module "ue" {
     }
     
     class BakedStateExitTransition {
+        constructor();
         constructor(CanTakeDelegateIndex: number, CustomResultNodeIndex: number, TransitionIndex: number, bDesiredTransitionReturnValue: boolean, bAutomaticRemainingTimeRule: boolean, PoseEvaluatorLinks: TArray<number>);
         CanTakeDelegateIndex: number;
         CustomResultNodeIndex: number;
@@ -4134,6 +4339,7 @@ declare module "ue" {
     }
     
     class BakedAnimationState {
+        constructor();
         constructor(StateName: string, Transitions: TArray<BakedStateExitTransition>, StateRootNodeIndex: number, StartNotify: number, EndNotify: number, FullyBlendedNotify: number, bIsAConduit: boolean, EntryRuleNodeIndex: number, PlayerNodeIndices: TArray<number>, LayerNodeIndices: TArray<number>, bAlwaysResetOnEntry: boolean);
         StateName: string;
         Transitions: TArray<BakedStateExitTransition>;
@@ -4150,6 +4356,7 @@ declare module "ue" {
     }
     
     class AnimationStateBase {
+        constructor();
         constructor(StateName: string);
         StateName: string;
         static StaticClass(): Class;
@@ -4157,6 +4364,7 @@ declare module "ue" {
     
     enum ETransitionLogicType { TLT_StandardBlend, TLT_Inertialization, TLT_Custom, TLT_MAX}
     class AnimationTransitionBetweenStates extends AnimationStateBase {
+        constructor();
         constructor(PreviousState: number, NextState: number, CrossfadeDuration: number, StartNotify: number, EndNotify: number, InterruptNotify: number, BlendMode: EAlphaBlendOption, CustomCurve: CurveFloat, BlendProfile: BlendProfile, LogicType: ETransitionLogicType);
         PreviousState: number;
         NextState: number;
@@ -4172,6 +4380,7 @@ declare module "ue" {
     }
     
     class BakedAnimationStateMachine {
+        constructor();
         constructor(MachineName: string, InitialState: number, States: TArray<BakedAnimationState>, Transitions: TArray<AnimationTransitionBetweenStates>);
         MachineName: string;
         InitialState: number;
@@ -4181,6 +4390,7 @@ declare module "ue" {
     }
     
     class CachedPoseIndices {
+        constructor();
         constructor(OrderedSavedPoseNodeIndices: TArray<number>);
         OrderedSavedPoseNodeIndices: TArray<number>;
         static StaticClass(): Class;
@@ -4188,6 +4398,7 @@ declare module "ue" {
     
     enum EPostCopyOperation { None, LogicalNegateBool, EPostCopyOperation_MAX}
     class ExposedValueCopyRecord {
+        constructor();
         constructor(CopyIndex: number, PostCopyOperation: EPostCopyOperation);
         CopyIndex: number;
         PostCopyOperation: EPostCopyOperation;
@@ -4202,12 +4413,14 @@ declare module "ue" {
     }
     
     class GraphAssetPlayerInformation {
+        constructor();
         constructor(PlayerNodeIndices: TArray<number>);
         PlayerNodeIndices: TArray<number>;
         static StaticClass(): Class;
     }
     
     class AnimGraphBlendOptions {
+        constructor();
         constructor(BlendInTime: number, BlendOutTime: number);
         BlendInTime: number;
         BlendOutTime: number;
@@ -4224,6 +4437,7 @@ declare module "ue" {
     }
     
     class PropertyAccessPath {
+        constructor();
         constructor(PathSegmentStartIndex: number, PathSegmentCount: number, bHasEvents: boolean);
         PathSegmentStartIndex: number;
         PathSegmentCount: number;
@@ -4233,6 +4447,7 @@ declare module "ue" {
     
     enum EPropertyAccessCopyType { None, Plain, Complex, Bool, Struct, Object, Name, Array, PromoteBoolToByte, PromoteBoolToInt32, PromoteBoolToInt64, PromoteBoolToFloat, PromoteByteToInt32, PromoteByteToInt64, PromoteByteToFloat, PromoteInt32ToInt64, PromoteInt32ToFloat, EPropertyAccessCopyType_MAX}
     class PropertyAccessCopy {
+        constructor();
         constructor(AccessIndex: number, DestAccessStartIndex: number, DestAccessEndIndex: number, Type: EPropertyAccessCopyType);
         AccessIndex: number;
         DestAccessStartIndex: number;
@@ -4242,6 +4457,7 @@ declare module "ue" {
     }
     
     class PropertyAccessCopyBatch {
+        constructor();
         constructor(Copies: TArray<PropertyAccessCopy>);
         Copies: TArray<PropertyAccessCopy>;
         static StaticClass(): Class;
@@ -4268,6 +4484,7 @@ declare module "ue" {
     }
     
     class PropertyAccessLibrary {
+        constructor();
         constructor(PathSegments: TArray<PropertyAccessSegment>, SrcPaths: TArray<PropertyAccessPath>, DestPaths: TArray<PropertyAccessPath>, CopyBatches: FixSizeArray<PropertyAccessCopyBatch>, SrcAccesses: TArray<PropertyAccessIndirectionChain>, DestAccesses: TArray<PropertyAccessIndirectionChain>, Indirections: TArray<PropertyAccessIndirection>, EventAccessIndices: TArray<number>);
         PathSegments: TArray<PropertyAccessSegment>;
         SrcPaths: TArray<PropertyAccessPath>;
@@ -4303,18 +4520,21 @@ declare module "ue" {
     }
     
     class AnimNotifyEventReference {
+        constructor();
         constructor(NotifySource: Object);
         NotifySource: Object;
         static StaticClass(): Class;
     }
     
     class AnimNotifyArray {
+        constructor();
         constructor(Notifies: TArray<AnimNotifyEventReference>);
         Notifies: TArray<AnimNotifyEventReference>;
         static StaticClass(): Class;
     }
     
     class AnimNotifyQueue {
+        constructor();
         constructor(AnimNotifies: TArray<AnimNotifyEventReference>, UnfilteredMontageAnimNotifies: TMap<string, AnimNotifyArray>);
         AnimNotifies: TArray<AnimNotifyEventReference>;
         UnfilteredMontageAnimNotifies: TMap<string, AnimNotifyArray>;
@@ -4322,6 +4542,7 @@ declare module "ue" {
     }
     
     class PoseSnapshot {
+        constructor();
         constructor(LocalTransforms: TArray<Transform>, BoneNames: TArray<string>, SkeletalMeshName: string, SnapshotName: string, bIsValid: boolean);
         LocalTransforms: TArray<Transform>;
         BoneNames: TArray<string>;
@@ -4334,6 +4555,7 @@ declare module "ue" {
     enum ETeleportType { None, TeleportPhysics, ResetPhysics, ETeleportType_MAX}
     enum EMontagePlayReturnType { MontageLength, Duration, EMontagePlayReturnType_MAX}
     class MarkerSyncAnimPosition {
+        constructor();
         constructor(PreviousMarkerName: string, NextMarkerName: string, PositionBetweenMarkers: number);
         PreviousMarkerName: string;
         NextMarkerName: string;
@@ -4445,6 +4667,7 @@ declare module "ue" {
     }
     
     class SingleAnimationPlayData {
+        constructor();
         constructor(AnimToPlay: AnimationAsset, bSavedLooping: boolean, bSavedPlaying: boolean, SavedPosition: number, SavedPlayRate: number);
         AnimToPlay: AnimationAsset;
         bSavedLooping: boolean;
@@ -4705,6 +4928,7 @@ declare module "ue" {
     }
     
     class MovementProperties {
+        constructor();
         constructor(bCanCrouch: boolean, bCanJump: boolean, bCanWalk: boolean, bCanSwim: boolean, bCanFly: boolean);
         bCanCrouch: boolean;
         bCanJump: boolean;
@@ -4715,6 +4939,7 @@ declare module "ue" {
     }
     
     class NavAgentProperties extends MovementProperties {
+        constructor();
         constructor(AgentRadius: number, AgentHeight: number, AgentStepHeight: number, NavWalkingSearchHeightScale: number, PreferredNavData: SoftClassPath);
         AgentRadius: number;
         AgentHeight: number;
@@ -4763,6 +4988,7 @@ declare module "ue" {
     enum EMovementMode { MOVE_None, MOVE_Walking, MOVE_NavWalking, MOVE_Falling, MOVE_Swimming, MOVE_Flying, MOVE_Custom, MOVE_MAX}
     enum ENetworkSmoothingMode { Disabled, Linear, Exponential, Replay, ENetworkSmoothingMode_MAX}
     class FindFloorResult {
+        constructor();
         constructor(bBlockingHit: boolean, bWalkableFloor: boolean, bLineTrace: boolean, FloorDist: number, LineDist: number, HitResult: HitResult);
         bBlockingHit: boolean;
         bWalkableFloor: boolean;
@@ -4774,6 +5000,7 @@ declare module "ue" {
     }
     
     class NavAvoidanceMask {
+        constructor();
         constructor(bGroup0: boolean, bGroup1: boolean, bGroup2: boolean, bGroup3: boolean, bGroup4: boolean, bGroup5: boolean, bGroup6: boolean, bGroup7: boolean, bGroup8: boolean, bGroup9: boolean, bGroup10: boolean, bGroup11: boolean, bGroup12: boolean, bGroup13: boolean, bGroup14: boolean, bGroup15: boolean, bGroup16: boolean, bGroup17: boolean, bGroup18: boolean, bGroup19: boolean, bGroup20: boolean, bGroup21: boolean, bGroup22: boolean, bGroup23: boolean, bGroup24: boolean, bGroup25: boolean, bGroup26: boolean, bGroup27: boolean, bGroup28: boolean, bGroup29: boolean, bGroup30: boolean, bGroup31: boolean);
         bGroup0: boolean;
         bGroup1: boolean;
@@ -4816,6 +5043,7 @@ declare module "ue" {
     }
     
     class RootMotionSourceSettings {
+        constructor();
         constructor(Flags: number);
         Flags: number;
         static StaticClass(): Class;
@@ -4827,6 +5055,7 @@ declare module "ue" {
     }
     
     class RootMotionSourceGroup {
+        constructor();
         constructor(bHasAdditiveSources: boolean, bHasOverrideSources: boolean, bHasOverrideSourcesWithIgnoreZAccumulate: boolean, bIsAdditiveVelocityApplied: boolean, LastAccumulatedSettings: RootMotionSourceSettings, LastPreAdditiveVelocity: Vector_NetQuantize10);
         bHasAdditiveSources: boolean;
         bHasOverrideSources: boolean;
@@ -4838,6 +5067,7 @@ declare module "ue" {
     }
     
     class RootMotionMovementParams {
+        constructor();
         constructor(bHasRootMotion: boolean, BlendWeight: number, RootMotionTransform: Transform);
         bHasRootMotion: boolean;
         BlendWeight: number;
@@ -5101,6 +5331,7 @@ declare module "ue" {
     }
     
     class BasedMovementInfo {
+        constructor();
         constructor(MovementBase: PrimitiveComponent, BoneName: string, Location: Vector_NetQuantize100, Rotation: Rotator, bServerHasBaseComponent: boolean, bRelativeRotation: boolean, bServerHasVelocity: boolean);
         MovementBase: PrimitiveComponent;
         BoneName: string;
@@ -5113,6 +5344,7 @@ declare module "ue" {
     }
     
     class RepRootMotionMontage {
+        constructor();
         constructor(bIsActive: boolean, AnimMontage: AnimMontage, Position: number, Location: Vector_NetQuantize100, Rotation: Rotator, MovementBase: PrimitiveComponent, MovementBaseBoneName: string, bRelativePosition: boolean, bRelativeRotation: boolean, AuthoritativeRootMotion: RootMotionSourceGroup, Acceleration: Vector_NetQuantize10, LinearVelocity: Vector_NetQuantize10);
         bIsActive: boolean;
         AnimMontage: AnimMontage;
@@ -5130,6 +5362,7 @@ declare module "ue" {
     }
     
     class SimulatedRootMotionReplicatedMove {
+        constructor();
         constructor(Time: number, RootMotion: RepRootMotionMontage);
         Time: number;
         RootMotion: RepRootMotionMontage;
@@ -5286,6 +5519,7 @@ declare module "ue" {
     }
     
     class CanvasUVTri {
+        constructor();
         constructor(V0_Pos: Vector2D, V0_UV: Vector2D, V0_Color: LinearColor, V1_Pos: Vector2D, V1_UV: Vector2D, V1_Color: LinearColor, V2_Pos: Vector2D, V2_UV: Vector2D, V2_Color: LinearColor);
         V0_Pos: Vector2D;
         V0_UV: Vector2D;
@@ -5334,6 +5568,7 @@ declare module "ue" {
     }
     
     class DebugTextInfo {
+        constructor();
         constructor(SrcActor: Actor, SrcActorOffset: Vector, SrcActorDesiredOffset: Vector, DebugText: string, TimeRemaining: number, Duration: number, TextColor: Color, bAbsoluteLocation: boolean, bKeepAttachedToActor: boolean, bDrawShadow: boolean, OrigActorLocation: Vector, Font: Font, FontScale: number);
         SrcActor: Actor;
         SrcActorOffset: Vector;
@@ -5419,6 +5654,7 @@ declare module "ue" {
     enum EReflectedAndRefractedRayTracedShadows { Disabled, Hard_shadows, Area_shadows, EReflectedAndRefractedRayTracedShadows_MAX}
     enum ETranslucencyType { Raster, RayTracing, ETranslucencyType_MAX}
     class WeightedBlendable {
+        constructor();
         constructor(Weight: number, Object: Object);
         Weight: number;
         Object: Object;
@@ -5426,12 +5662,14 @@ declare module "ue" {
     }
     
     class WeightedBlendables {
+        constructor();
         constructor(Array: TArray<WeightedBlendable>);
         Array: TArray<WeightedBlendable>;
         static StaticClass(): Class;
     }
     
     class PostProcessSettings {
+        constructor();
         constructor(bOverride_WhiteTemp: boolean, bOverride_WhiteTint: boolean, bOverride_ColorSaturation: boolean, bOverride_ColorContrast: boolean, bOverride_ColorGamma: boolean, bOverride_ColorGain: boolean, bOverride_ColorOffset: boolean, bOverride_ColorSaturationShadows: boolean, bOverride_ColorContrastShadows: boolean, bOverride_ColorGammaShadows: boolean, bOverride_ColorGainShadows: boolean, bOverride_ColorOffsetShadows: boolean, bOverride_ColorSaturationMidtones: boolean, bOverride_ColorContrastMidtones: boolean, bOverride_ColorGammaMidtones: boolean, bOverride_ColorGainMidtones: boolean, bOverride_ColorOffsetMidtones: boolean, bOverride_ColorSaturationHighlights: boolean, bOverride_ColorContrastHighlights: boolean, bOverride_ColorGammaHighlights: boolean, bOverride_ColorGainHighlights: boolean, bOverride_ColorOffsetHighlights: boolean, bOverride_ColorCorrectionShadowsMax: boolean, bOverride_ColorCorrectionHighlightsMin: boolean, bOverride_BlueCorrection: boolean, bOverride_ExpandGamut: boolean, bOverride_ToneCurveAmount: boolean, bOverride_FilmWhitePoint: boolean, bOverride_FilmSaturation: boolean, bOverride_FilmChannelMixerRed: boolean, bOverride_FilmChannelMixerGreen: boolean, bOverride_FilmChannelMixerBlue: boolean, bOverride_FilmContrast: boolean, bOverride_FilmDynamicRange: boolean, bOverride_FilmHealAmount: boolean, bOverride_FilmToeAmount: boolean, bOverride_FilmShadowTint: boolean, bOverride_FilmShadowTintBlend: boolean, bOverride_FilmShadowTintAmount: boolean, bOverride_FilmSlope: boolean, bOverride_FilmToe: boolean, bOverride_FilmShoulder: boolean, bOverride_FilmBlackClip: boolean, bOverride_FilmWhiteClip: boolean, bOverride_SceneColorTint: boolean, bOverride_SceneFringeIntensity: boolean, bOverride_ChromaticAberrationStartOffset: boolean, bOverride_AmbientCubemapTint: boolean, bOverride_AmbientCubemapIntensity: boolean, bOverride_BloomMethod: boolean, bOverride_BloomIntensity: boolean, bOverride_BloomThreshold: boolean, bOverride_Bloom1Tint: boolean, bOverride_Bloom1Size: boolean, bOverride_Bloom2Size: boolean, bOverride_Bloom2Tint: boolean, bOverride_Bloom3Tint: boolean, bOverride_Bloom3Size: boolean, bOverride_Bloom4Tint: boolean, bOverride_Bloom4Size: boolean, bOverride_Bloom5Tint: boolean, bOverride_Bloom5Size: boolean, bOverride_Bloom6Tint: boolean, bOverride_Bloom6Size: boolean, bOverride_BloomSizeScale: boolean, bOverride_BloomConvolutionTexture: boolean, bOverride_BloomConvolutionSize: boolean, bOverride_BloomConvolutionCenterUV: boolean, bOverride_BloomConvolutionPreFilter: boolean, bOverride_BloomConvolutionPreFilterMin: boolean, bOverride_BloomConvolutionPreFilterMax: boolean, bOverride_BloomConvolutionPreFilterMult: boolean, bOverride_BloomConvolutionBufferScale: boolean, bOverride_BloomDirtMaskIntensity: boolean, bOverride_BloomDirtMaskTint: boolean, bOverride_BloomDirtMask: boolean, bOverride_CameraShutterSpeed: boolean, bOverride_CameraISO: boolean, bOverride_AutoExposureMethod: boolean, bOverride_AutoExposureLowPercent: boolean, bOverride_AutoExposureHighPercent: boolean, bOverride_AutoExposureMinBrightness: boolean, bOverride_AutoExposureMaxBrightness: boolean, bOverride_AutoExposureCalibrationConstant: boolean, bOverride_AutoExposureSpeedUp: boolean, bOverride_AutoExposureSpeedDown: boolean, bOverride_AutoExposureBias: boolean, bOverride_AutoExposureBiasCurve: boolean, bOverride_AutoExposureMeterMask: boolean, bOverride_AutoExposureApplyPhysicalCameraExposure: boolean, bOverride_HistogramLogMin: boolean, bOverride_HistogramLogMax: boolean, bOverride_LensFlareIntensity: boolean, bOverride_LensFlareTint: boolean, bOverride_LensFlareTints: boolean, bOverride_LensFlareBokehSize: boolean, bOverride_LensFlareBokehShape: boolean, bOverride_LensFlareThreshold: boolean, bOverride_VignetteIntensity: boolean, bOverride_GrainIntensity: boolean, bOverride_GrainJitter: boolean, bOverride_AmbientOcclusionIntensity: boolean, bOverride_AmbientOcclusionStaticFraction: boolean, bOverride_AmbientOcclusionRadius: boolean, bOverride_AmbientOcclusionFadeDistance: boolean, bOverride_AmbientOcclusionFadeRadius: boolean, bOverride_AmbientOcclusionDistance: boolean, bOverride_AmbientOcclusionRadiusInWS: boolean, bOverride_AmbientOcclusionPower: boolean, bOverride_AmbientOcclusionBias: boolean, bOverride_AmbientOcclusionQuality: boolean, bOverride_AmbientOcclusionMipBlend: boolean, bOverride_AmbientOcclusionMipScale: boolean, bOverride_AmbientOcclusionMipThreshold: boolean, bOverride_AmbientOcclusionTemporalBlendWeight: boolean, bOverride_RayTracingAO: boolean, bOverride_RayTracingAOSamplesPerPixel: boolean, bOverride_RayTracingAOIntensity: boolean, bOverride_RayTracingAORadius: boolean, bOverride_LPVIntensity: boolean, bOverride_LPVDirectionalOcclusionIntensity: boolean, bOverride_LPVDirectionalOcclusionRadius: boolean, bOverride_LPVDiffuseOcclusionExponent: boolean, bOverride_LPVSpecularOcclusionExponent: boolean, bOverride_LPVDiffuseOcclusionIntensity: boolean, bOverride_LPVSpecularOcclusionIntensity: boolean, bOverride_LPVSize: boolean, bOverride_LPVSecondaryOcclusionIntensity: boolean, bOverride_LPVSecondaryBounceIntensity: boolean, bOverride_LPVGeometryVolumeBias: boolean, bOverride_LPVVplInjectionBias: boolean, bOverride_LPVEmissiveInjectionIntensity: boolean, bOverride_LPVFadeRange: boolean, bOverride_LPVDirectionalOcclusionFadeRange: boolean, bOverride_IndirectLightingColor: boolean, bOverride_IndirectLightingIntensity: boolean, bOverride_ColorGradingIntensity: boolean, bOverride_ColorGradingLUT: boolean, bOverride_DepthOfFieldFocalDistance: boolean, bOverride_DepthOfFieldFstop: boolean, bOverride_DepthOfFieldMinFstop: boolean, bOverride_DepthOfFieldBladeCount: boolean, bOverride_DepthOfFieldSensorWidth: boolean, bOverride_DepthOfFieldDepthBlurRadius: boolean, bOverride_DepthOfFieldDepthBlurAmount: boolean, bOverride_DepthOfFieldFocalRegion: boolean, bOverride_DepthOfFieldNearTransitionRegion: boolean, bOverride_DepthOfFieldFarTransitionRegion: boolean, bOverride_DepthOfFieldScale: boolean, bOverride_DepthOfFieldNearBlurSize: boolean, bOverride_DepthOfFieldFarBlurSize: boolean, bOverride_MobileHQGaussian: boolean, bOverride_DepthOfFieldOcclusion: boolean, bOverride_DepthOfFieldSkyFocusDistance: boolean, bOverride_DepthOfFieldVignetteSize: boolean, bOverride_MotionBlurAmount: boolean, bOverride_MotionBlurMax: boolean, bOverride_MotionBlurTargetFPS: boolean, bOverride_MotionBlurPerObjectSize: boolean, bOverride_ScreenPercentage: boolean, bOverride_ScreenSpaceReflectionIntensity: boolean, bOverride_ScreenSpaceReflectionQuality: boolean, bOverride_ScreenSpaceReflectionMaxRoughness: boolean, bOverride_ScreenSpaceReflectionRoughnessScale: boolean, bOverride_ReflectionsType: boolean, bOverride_RayTracingReflectionsMaxRoughness: boolean, bOverride_RayTracingReflectionsMaxBounces: boolean, bOverride_RayTracingReflectionsSamplesPerPixel: boolean, bOverride_RayTracingReflectionsShadows: boolean, bOverride_RayTracingReflectionsTranslucency: boolean, bOverride_TranslucencyType: boolean, bOverride_RayTracingTranslucencyMaxRoughness: boolean, bOverride_RayTracingTranslucencyRefractionRays: boolean, bOverride_RayTracingTranslucencySamplesPerPixel: boolean, bOverride_RayTracingTranslucencyShadows: boolean, bOverride_RayTracingTranslucencyRefraction: boolean, bOverride_RayTracingGI: boolean, bOverride_RayTracingGIMaxBounces: boolean, bOverride_RayTracingGISamplesPerPixel: boolean, bOverride_PathTracingMaxBounces: boolean, bOverride_PathTracingSamplesPerPixel: boolean, bMobileHQGaussian: boolean, BloomMethod: EBloomMethod, AutoExposureMethod: EAutoExposureMethod, DepthOfFieldMethod: EDepthOfFieldMethod, WhiteTemp: number, WhiteTint: number, ColorSaturation: Vector4, ColorContrast: Vector4, ColorGamma: Vector4, ColorGain: Vector4, ColorOffset: Vector4, ColorSaturationShadows: Vector4, ColorContrastShadows: Vector4, ColorGammaShadows: Vector4, ColorGainShadows: Vector4, ColorOffsetShadows: Vector4, ColorSaturationMidtones: Vector4, ColorContrastMidtones: Vector4, ColorGammaMidtones: Vector4, ColorGainMidtones: Vector4, ColorOffsetMidtones: Vector4, ColorSaturationHighlights: Vector4, ColorContrastHighlights: Vector4, ColorGammaHighlights: Vector4, ColorGainHighlights: Vector4, ColorOffsetHighlights: Vector4, ColorCorrectionHighlightsMin: number, ColorCorrectionShadowsMax: number, BlueCorrection: number, ExpandGamut: number, ToneCurveAmount: number, FilmSlope: number, FilmToe: number, FilmShoulder: number, FilmBlackClip: number, FilmWhiteClip: number, FilmWhitePoint: LinearColor, FilmShadowTint: LinearColor, FilmShadowTintBlend: number, FilmShadowTintAmount: number, FilmSaturation: number, FilmChannelMixerRed: LinearColor, FilmChannelMixerGreen: LinearColor, FilmChannelMixerBlue: LinearColor, FilmContrast: number, FilmToeAmount: number, FilmHealAmount: number, FilmDynamicRange: number, SceneColorTint: LinearColor, SceneFringeIntensity: number, ChromaticAberrationStartOffset: number, BloomIntensity: number, BloomThreshold: number, BloomSizeScale: number, Bloom1Size: number, Bloom2Size: number, Bloom3Size: number, Bloom4Size: number, Bloom5Size: number, Bloom6Size: number, Bloom1Tint: LinearColor, Bloom2Tint: LinearColor, Bloom3Tint: LinearColor, Bloom4Tint: LinearColor, Bloom5Tint: LinearColor, Bloom6Tint: LinearColor, BloomConvolutionSize: number, BloomConvolutionTexture: Texture2D, BloomConvolutionCenterUV: Vector2D, BloomConvolutionPreFilter: Vector, BloomConvolutionPreFilterMin: number, BloomConvolutionPreFilterMax: number, BloomConvolutionPreFilterMult: number, BloomConvolutionBufferScale: number, BloomDirtMask: Texture, BloomDirtMaskIntensity: number, BloomDirtMaskTint: LinearColor, AmbientCubemapTint: LinearColor, AmbientCubemapIntensity: number, AmbientCubemap: TextureCube, CameraShutterSpeed: number, CameraISO: number, DepthOfFieldFstop: number, DepthOfFieldMinFstop: number, DepthOfFieldBladeCount: number, AutoExposureBias: number, AutoExposureBiasBackup: number, bOverride_AutoExposureBiasBackup: boolean, AutoExposureApplyPhysicalCameraExposure: boolean, AutoExposureBiasCurve: CurveFloat, AutoExposureMeterMask: Texture, AutoExposureLowPercent: number, AutoExposureHighPercent: number, AutoExposureMinBrightness: number, AutoExposureMaxBrightness: number, AutoExposureSpeedUp: number, AutoExposureSpeedDown: number, HistogramLogMin: number, HistogramLogMax: number, AutoExposureCalibrationConstant: number, LensFlareIntensity: number, LensFlareTint: LinearColor, LensFlareBokehSize: number, LensFlareThreshold: number, LensFlareBokehShape: Texture, LensFlareTints: FixSizeArray<LinearColor>, VignetteIntensity: number, GrainJitter: number, GrainIntensity: number, AmbientOcclusionIntensity: number, AmbientOcclusionStaticFraction: number, AmbientOcclusionRadius: number, AmbientOcclusionRadiusInWS: boolean, AmbientOcclusionFadeDistance: number, AmbientOcclusionFadeRadius: number, AmbientOcclusionDistance: number, AmbientOcclusionPower: number, AmbientOcclusionBias: number, AmbientOcclusionQuality: number, AmbientOcclusionMipBlend: number, AmbientOcclusionMipScale: number, AmbientOcclusionMipThreshold: number, AmbientOcclusionTemporalBlendWeight: number, RayTracingAO: boolean, RayTracingAOSamplesPerPixel: number, RayTracingAOIntensity: number, RayTracingAORadius: number, IndirectLightingColor: LinearColor, IndirectLightingIntensity: number, RayTracingGI: boolean, RayTracingGIType: ERayTracingGlobalIlluminationType, RayTracingGIMaxBounces: number, RayTracingGISamplesPerPixel: number, ColorGradingIntensity: number, ColorGradingLUT: Texture, DepthOfFieldSensorWidth: number, DepthOfFieldFocalDistance: number, DepthOfFieldDepthBlurAmount: number, DepthOfFieldDepthBlurRadius: number, DepthOfFieldFocalRegion: number, DepthOfFieldNearTransitionRegion: number, DepthOfFieldFarTransitionRegion: number, DepthOfFieldScale: number, DepthOfFieldNearBlurSize: number, DepthOfFieldFarBlurSize: number, DepthOfFieldOcclusion: number, DepthOfFieldSkyFocusDistance: number, DepthOfFieldVignetteSize: number, MotionBlurAmount: number, MotionBlurMax: number, MotionBlurTargetFPS: number, MotionBlurPerObjectSize: number, LPVIntensity: number, LPVVplInjectionBias: number, LPVSize: number, LPVSecondaryOcclusionIntensity: number, LPVSecondaryBounceIntensity: number, LPVGeometryVolumeBias: number, LPVEmissiveInjectionIntensity: number, LPVDirectionalOcclusionIntensity: number, LPVDirectionalOcclusionRadius: number, LPVDiffuseOcclusionExponent: number, LPVSpecularOcclusionExponent: number, LPVDiffuseOcclusionIntensity: number, LPVSpecularOcclusionIntensity: number, ReflectionsType: EReflectionsType, ScreenSpaceReflectionIntensity: number, ScreenSpaceReflectionQuality: number, ScreenSpaceReflectionMaxRoughness: number, RayTracingReflectionsMaxRoughness: number, RayTracingReflectionsMaxBounces: number, RayTracingReflectionsSamplesPerPixel: number, RayTracingReflectionsShadows: EReflectedAndRefractedRayTracedShadows, RayTracingReflectionsTranslucency: boolean, TranslucencyType: ETranslucencyType, RayTracingTranslucencyMaxRoughness: number, RayTracingTranslucencyRefractionRays: number, RayTracingTranslucencySamplesPerPixel: number, RayTracingTranslucencyShadows: EReflectedAndRefractedRayTracedShadows, RayTracingTranslucencyRefraction: boolean, PathTracingMaxBounces: number, PathTracingSamplesPerPixel: number, LPVFadeRange: number, LPVDirectionalOcclusionFadeRange: number, ScreenPercentage: number, WeightedBlendables: WeightedBlendables, Blendables: TArray<Object>);
         bOverride_WhiteTemp: boolean;
         bOverride_WhiteTint: boolean;
@@ -5805,6 +6043,7 @@ declare module "ue" {
     }
     
     class MinimalViewInfo {
+        constructor();
         constructor(Location: Vector, Rotation: Rotator, FOV: number, DesiredFOV: number, OrthoWidth: number, OrthoNearClipPlane: number, OrthoFarClipPlane: number, AspectRatio: number, bConstrainAspectRatio: boolean, bUseFieldOfViewForLOD: boolean, ProjectionMode: ECameraProjectionMode, PostProcessBlendWeight: number, PostProcessSettings: PostProcessSettings, OffCenterProjectionOffset: Vector2D);
         Location: Vector;
         Rotation: Rotator;
@@ -5824,6 +6063,7 @@ declare module "ue" {
     }
     
     class CameraCacheEntry {
+        constructor();
         constructor(TimeStamp: number, POV: MinimalViewInfo);
         TimeStamp: number;
         POV: MinimalViewInfo;
@@ -5831,6 +6071,7 @@ declare module "ue" {
     }
     
     class TViewTarget {
+        constructor();
         constructor(Target: Actor, POV: MinimalViewInfo, PlayerState: PlayerState);
         Target: Actor;
         POV: MinimalViewInfo;
@@ -5913,6 +6154,7 @@ declare module "ue" {
     enum EParticleScreenAlignment { PSA_FacingCameraPosition, PSA_Square, PSA_Rectangle, PSA_Velocity, PSA_AwayFromCenter, PSA_TypeSpecific, PSA_FacingCameraDistanceBlend, PSA_MAX}
     enum EParticleSortMode { PSORTMODE_None, PSORTMODE_ViewProjDepth, PSORTMODE_DistanceToView, PSORTMODE_Age_OldestFirst, PSORTMODE_Age_NewestFirst, PSORTMODE_MAX}
     class DistributionLookupTable {
+        constructor();
         constructor(TimeScale: number, TimeBias: number, Values: TArray<number>, Op: number, EntryCount: number, EntryStride: number, SubEntryStride: number, LockFlag: number);
         TimeScale: number;
         TimeBias: number;
@@ -5926,6 +6168,7 @@ declare module "ue" {
     }
     
     class RawDistribution {
+        constructor();
         constructor(Table: DistributionLookupTable);
         Table: DistributionLookupTable;
         static StaticClass(): Class;
@@ -5948,6 +6191,7 @@ declare module "ue" {
     }
     
     class RawDistributionFloat extends RawDistribution {
+        constructor();
         constructor(MinValue: number, MaxValue: number, Distribution: DistributionFloat);
         MinValue: number;
         MaxValue: number;
@@ -5956,6 +6200,7 @@ declare module "ue" {
     }
     
     class ParticleBurst {
+        constructor();
         constructor(Count: number, CountLow: number, Time: number);
         Count: number;
         CountLow: number;
@@ -6066,6 +6311,7 @@ declare module "ue" {
     }
     
     class ParticleEvent_GenerateInfo {
+        constructor();
         constructor(Type: EParticleEventType, Frequency: number, ParticleFrequency: number, FirstTimeOnly: boolean, LastTimeOnly: boolean, UseReflectedImpactVector: boolean, bUseOrbitOffset: boolean, CustomName: string, ParticleModuleEventsToSendToGame: TArray<ParticleModuleEventSendToGame>);
         Type: EParticleEventType;
         Frequency: number;
@@ -6107,6 +6353,7 @@ declare module "ue" {
     }
     
     class RawDistributionVector extends RawDistribution {
+        constructor();
         constructor(MinValue: number, MaxValue: number, MinValueVec: Vector, MaxValueVec: Vector, Distribution: DistributionVector);
         MinValue: number;
         MaxValue: number;
@@ -6117,6 +6364,7 @@ declare module "ue" {
     }
     
     class OrbitOptions {
+        constructor();
         constructor(bProcessDuringSpawn: boolean, bProcessDuringUpdate: boolean, bUseEmitterTime: boolean);
         bProcessDuringSpawn: boolean;
         bProcessDuringUpdate: boolean;
@@ -6195,6 +6443,7 @@ declare module "ue" {
     }
     
     class CurveEdEntry {
+        constructor();
         constructor(CurveObject: Object, CurveColor: Color, CurveName: string, bHideCurve: number, bColorCurve: number, bFloatingPointColorCurve: number, bClamp: number, ClampLow: number, ClampHigh: number);
         CurveObject: Object;
         CurveColor: Color;
@@ -6209,6 +6458,7 @@ declare module "ue" {
     }
     
     class CurveEdTab {
+        constructor();
         constructor(TabName: string, Curves: TArray<CurveEdEntry>, ViewStartInput: number, ViewEndInput: number, ViewStartOutput: number, ViewEndOutput: number);
         TabName: string;
         Curves: TArray<CurveEdEntry>;
@@ -6238,12 +6488,14 @@ declare module "ue" {
     enum EParticleSystemInsignificanceReaction { Auto, Complete, DisableTick, DisableTickAndKill, Num, EParticleSystemInsignificanceReaction_MAX}
     enum EParticleSystemOcclusionBoundsMethod { EPSOBM_None, EPSOBM_ParticleBounds, EPSOBM_CustomBounds, EPSOBM_MAX}
     class LODSoloTrack {
+        constructor();
         constructor(SoloEnableSetting: TArray<number>);
         SoloEnableSetting: TArray<number>;
         static StaticClass(): Class;
     }
     
     class NamedEmitterMaterial {
+        constructor();
         constructor(Name: string, Material: MaterialInterface);
         Name: string;
         Material: MaterialInterface;
@@ -6307,6 +6559,7 @@ declare module "ue" {
     
     enum EParticleSysParamType { PSPT_None, PSPT_Scalar, PSPT_ScalarRand, PSPT_Vector, PSPT_VectorRand, PSPT_Color, PSPT_Actor, PSPT_Material, PSPT_VectorUnitRand, PSPT_MAX}
     class ParticleSysParam {
+        constructor();
         constructor(Name: string, ParamType: EParticleSysParamType, Scalar: number, Scalar_Low: number, Vector: Vector, Vector_Low: Vector, Color: Color, Actor: Actor, Material: MaterialInterface);
         Name: string;
         ParamType: EParticleSysParamType;
@@ -6474,6 +6727,7 @@ declare module "ue" {
     }
     
     class ActiveCameraShakeInfo {
+        constructor();
         constructor(ShakeInstance: CameraShakeBase, ShakeSource: TWeakObjectPtr<CameraShakeSourceComponent>);
         ShakeInstance: CameraShakeBase;
         ShakeSource: TWeakObjectPtr<CameraShakeSourceComponent>;
@@ -6481,6 +6735,7 @@ declare module "ue" {
     }
     
     class PooledCameraShakes {
+        constructor();
         constructor(PooledShakes: TArray<CameraShakeBase>);
         PooledShakes: TArray<CameraShakeBase>;
         static StaticClass(): Class;
@@ -6497,6 +6752,7 @@ declare module "ue" {
     }
     
     class SubTrackGroup {
+        constructor();
         constructor(GroupName: string, TrackIndices: TArray<number>, bIsCollapsed: boolean, bIsSelected: boolean);
         GroupName: string;
         TrackIndices: TArray<number>;
@@ -6506,6 +6762,7 @@ declare module "ue" {
     }
     
     class SupportedSubTrackInfo {
+        constructor();
         constructor(SupportedClass: Class, SubTrackName: string, GroupIndex: number);
         SupportedClass: Class;
         SubTrackName: string;
@@ -6580,6 +6837,7 @@ declare module "ue" {
     
     enum EInterpCurveMode { CIM_Linear, CIM_CurveAuto, CIM_Constant, CIM_CurveUser, CIM_CurveBreak, CIM_CurveAutoClamped, CIM_MAX}
     class InterpCurvePointVector {
+        constructor();
         constructor(InVal: number, OutVal: Vector, ArriveTangent: Vector, LeaveTangent: Vector, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: Vector;
@@ -6590,6 +6848,7 @@ declare module "ue" {
     }
     
     class InterpCurveVector {
+        constructor();
         constructor(Points: TArray<InterpCurvePointVector>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointVector>;
         bIsLooped: boolean;
@@ -6598,6 +6857,7 @@ declare module "ue" {
     }
     
     class InterpLookupPoint {
+        constructor();
         constructor(GroupName: string, Time: number);
         GroupName: string;
         Time: number;
@@ -6605,6 +6865,7 @@ declare module "ue" {
     }
     
     class InterpLookupTrack {
+        constructor();
         constructor(Points: TArray<InterpLookupPoint>);
         Points: TArray<InterpLookupPoint>;
         static StaticClass(): Class;
@@ -6725,6 +6986,7 @@ declare module "ue" {
     enum EInitialOscillatorOffset { EOO_OffsetRandom, EOO_OffsetZero, EOO_MAX}
     enum EOscillatorWaveform { SineWave, PerlinNoise, EOscillatorWaveform_MAX}
     class FOscillator {
+        constructor();
         constructor(Amplitude: number, Frequency: number, InitialOffset: EInitialOscillatorOffset, Waveform: EOscillatorWaveform);
         Amplitude: number;
         Frequency: number;
@@ -6734,6 +6996,7 @@ declare module "ue" {
     }
     
     class ROscillator {
+        constructor();
         constructor(Pitch: FOscillator, Yaw: FOscillator, Roll: FOscillator);
         Pitch: FOscillator;
         Yaw: FOscillator;
@@ -6742,6 +7005,7 @@ declare module "ue" {
     }
     
     class VOscillator {
+        constructor();
         constructor(X: FOscillator, Y: FOscillator, Z: FOscillator);
         X: FOscillator;
         Y: FOscillator;
@@ -6962,6 +7226,7 @@ declare module "ue" {
     }
     
     class KeyBind {
+        constructor();
         constructor(Key: Key, Command: string, Control: boolean, Shift: boolean, Alt: boolean, Cmd: boolean, bIgnoreCtrl: boolean, bIgnoreShift: boolean, bIgnoreAlt: boolean, bIgnoreCmd: boolean, bDisabled: boolean);
         Key: Key;
         Command: string;
@@ -6992,6 +7257,7 @@ declare module "ue" {
     }
     
     class RuntimeFloatCurve {
+        constructor();
         constructor(EditorCurveData: RichCurve, ExternalCurve: CurveFloat);
         EditorCurveData: RichCurve;
         ExternalCurve: CurveFloat;
@@ -6999,6 +7265,7 @@ declare module "ue" {
     }
     
     class ForceFeedbackChannelDetails {
+        constructor();
         constructor(bAffectsLeftLarge: boolean, bAffectsLeftSmall: boolean, bAffectsRightLarge: boolean, bAffectsRightSmall: boolean, Curve: RuntimeFloatCurve);
         bAffectsLeftLarge: boolean;
         bAffectsLeftSmall: boolean;
@@ -7018,6 +7285,7 @@ declare module "ue" {
     }
     
     class ActiveForceFeedbackEffect {
+        constructor();
         constructor(ForceFeedbackEffect: ForceFeedbackEffect);
         ForceFeedbackEffect: ForceFeedbackEffect;
         static StaticClass(): Class;
@@ -7039,6 +7307,7 @@ declare module "ue" {
     }
     
     class ChannelDefinition {
+        constructor();
         constructor(ChannelName: string, ClassName: string, ChannelClass: Class, StaticChannelIndex: number, bTickOnCreate: boolean, bServerOpen: boolean, bClientOpen: boolean, bInitialServer: boolean, bInitialClient: boolean);
         ChannelName: string;
         ClassName: string;
@@ -7133,6 +7402,7 @@ declare module "ue" {
     
     enum EMouseCursor { None, Default, TextEditBeam, ResizeLeftRight, ResizeUpDown, ResizeSouthEast, ResizeSouthWest, CardinalCross, Crosshairs, Hand, GrabHand, GrabHandClosed, SlashedCircle, EyeDropper, EMouseCursor_MAX}
     class CachedKeyToActionInfo {
+        constructor();
         constructor(PlayerInput: PlayerInput);
         PlayerInput: PlayerInput;
         static StaticClass(): Class;
@@ -7157,6 +7427,7 @@ declare module "ue" {
     }
     
     class TouchInputControl {
+        constructor();
         constructor(Image1: Texture2D, Image2: Texture2D, Center: Vector2D, VisualSize: Vector2D, ThumbSize: Vector2D, InteractionSize: Vector2D, InputScale: Vector2D, MainInputKey: Key, AltInputKey: Key);
         Image1: Texture2D;
         Image2: Texture2D;
@@ -7203,6 +7474,7 @@ declare module "ue" {
     }
     
     class StreamingTextureBuildInfo {
+        constructor();
         constructor(PackedRelativeBox: number, TextureLevelIndex: number, TexelFactor: number);
         PackedRelativeBox: number;
         TextureLevelIndex: number;
@@ -7211,6 +7483,7 @@ declare module "ue" {
     }
     
     class LightmassPrimitiveSettings {
+        constructor();
         constructor(bUseTwoSidedLighting: boolean, bShadowIndirectOnly: boolean, bUseEmissiveForStaticLighting: boolean, bUseVertexNormalForHemisphereGather: boolean, EmissiveLightFalloffExponent: number, EmissiveLightExplicitInfluenceRadius: number, EmissiveBoost: number, DiffuseBoost: number, FullyOccludedSamplesFraction: number);
         bUseTwoSidedLighting: boolean;
         bShadowIndirectOnly: boolean;
@@ -7338,6 +7611,7 @@ declare module "ue" {
     
     enum ESlateVisibility { Visible, Collapsed, Hidden, HitTestInvisible, SelfHitTestInvisible, ESlateVisibility_MAX}
     class WidgetTransform {
+        constructor();
         constructor(Translation: Vector2D, Scale: Vector2D, Shear: Vector2D, Angle: number);
         Translation: Vector2D;
         Scale: Vector2D;
@@ -7366,6 +7640,7 @@ declare module "ue" {
     enum EUINavigation { Left, Right, Up, Down, Next, Previous, Num, Invalid, EUINavigation_MAX}
     enum EUINavigationRule { Escape, Explicit, Wrap, Stop, Custom, CustomBoundary, Invalid, EUINavigationRule_MAX}
     class WidgetNavigationData {
+        constructor();
         constructor(Rule: EUINavigationRule, WidgetToFocus: string, Widget: TWeakObjectPtr<Widget>, CustomDelegate: $Delegate<(Navigation: EUINavigation) => Widget>);
         Rule: EUINavigationRule;
         WidgetToFocus: string;
@@ -7389,6 +7664,7 @@ declare module "ue" {
     
     enum EFlowDirectionPreference { Inherit, Culture, LeftToRight, RightToLeft, EFlowDirectionPreference_MAX}
     class PropertyPathSegment {
+        constructor();
         constructor(Name: string, ArrayIndex: number, Struct: Struct);
         Name: string;
         ArrayIndex: number;
@@ -7397,6 +7673,7 @@ declare module "ue" {
     }
     
     class CachedPropertyPath {
+        constructor();
         constructor(Segments: TArray<PropertyPathSegment>, CachedFunction: Function);
         Segments: TArray<PropertyPathSegment>;
         CachedFunction: Function;
@@ -7440,6 +7717,7 @@ declare module "ue" {
     
     enum ESlateColorStylingMode { UseColor_Specified, UseColor_Specified_Link, UseColor_Foreground, UseColor_Foreground_Subdued, UseColor_MAX}
     class SlateColor {
+        constructor();
         constructor(SpecifiedColor: LinearColor, ColorUseRule: ESlateColorStylingMode);
         SpecifiedColor: LinearColor;
         ColorUseRule: ESlateColorStylingMode;
@@ -7447,6 +7725,7 @@ declare module "ue" {
     }
     
     class Margin {
+        constructor();
         constructor(Left: number, Top: number, Right: number, Bottom: number);
         Left: number;
         Top: number;
@@ -7460,6 +7739,7 @@ declare module "ue" {
     enum ESlateBrushMirrorType { NoMirror, Horizontal, Vertical, Both, ESlateBrushMirrorType_MAX}
     enum ESlateBrushImageType { NoImage, FullColor, Linear, ESlateBrushImageType_MAX}
     class SlateBrush {
+        constructor();
         constructor(ImageSize: Vector2D, Margin: Margin, Tint: LinearColor, TintColor: SlateColor, ResourceObject: Object, ResourceName: string, UVRegion: Box2D, DrawAs: ESlateBrushDrawType, Tiling: ESlateBrushTileType, Mirroring: ESlateBrushMirrorType, ImageType: ESlateBrushImageType, bIsDynamicallyLoaded: boolean, bHasUObject: boolean);
         ImageSize: Vector2D;
         Margin: Margin;
@@ -7496,6 +7776,7 @@ declare module "ue" {
     }
     
     class DebugDisplayProperty {
+        constructor();
         constructor(Obj: Object, WithinClass: Class);
         Obj: Object;
         WithinClass: Class;
@@ -7675,6 +7956,7 @@ declare module "ue" {
     }
     
     class MovieSceneTrackIdentifier {
+        constructor();
         constructor(Value: number);
         Value: number;
         static StaticClass(): Class;
@@ -7682,6 +7964,7 @@ declare module "ue" {
     
     enum EEvaluationMethod { Static, Swept, EEvaluationMethod_MAX}
     class MovieSceneTrackEvalOptions {
+        constructor();
         constructor(bCanEvaluateNearestSection: boolean, bEvalNearestSection: boolean, bEvaluateInPreroll: boolean, bEvaluateInPostroll: boolean, bEvaluateNearestSection: boolean);
         bCanEvaluateNearestSection: boolean;
         bEvalNearestSection: boolean;
@@ -7692,6 +7975,7 @@ declare module "ue" {
     }
     
     class MovieSceneTrackDisplayOptions {
+        constructor();
         constructor(bShowVerticalFrames: boolean);
         bShowVerticalFrames: boolean;
         static StaticClass(): Class;
@@ -7699,6 +7983,7 @@ declare module "ue" {
     
     enum EMovieSceneCompletionMode { KeepState, RestoreState, ProjectDefault, EMovieSceneCompletionMode_MAX}
     class MovieSceneSectionEvalOptions {
+        constructor();
         constructor(bCanEditCompletionMode: boolean, CompletionMode: EMovieSceneCompletionMode);
         bCanEditCompletionMode: boolean;
         CompletionMode: EMovieSceneCompletionMode;
@@ -7714,6 +7999,7 @@ declare module "ue" {
     }
     
     class MovieSceneEasingSettings {
+        constructor();
         constructor(AutoEaseInDuration: number, AutoEaseOutDuration: number, EaseIn: MovieSceneEasingFunction, bManualEaseIn: boolean, ManualEaseInDuration: number, EaseOut: MovieSceneEasingFunction, bManualEaseOut: boolean, ManualEaseOutDuration: number, AutoEaseInTime: number, AutoEaseOutTime: number, ManualEaseInTime: number, ManualEaseOutTime: number);
         AutoEaseInDuration: number;
         AutoEaseOutDuration: number;
@@ -7736,6 +8022,7 @@ declare module "ue" {
     }
     
     class Timecode {
+        constructor();
         constructor(Hours: number, Minutes: number, Seconds: number, Frames: number, bDropFrameFormat: boolean);
         Hours: number;
         Minutes: number;
@@ -7746,12 +8033,14 @@ declare module "ue" {
     }
     
     class FrameNumber {
+        constructor();
         constructor(Value: number);
         Value: number;
         static StaticClass(): Class;
     }
     
     class MovieSceneTimecodeSource {
+        constructor();
         constructor(Timecode: Timecode, DeltaFrame: FrameNumber);
         Timecode: Timecode;
         DeltaFrame: FrameNumber;
@@ -7760,6 +8049,7 @@ declare module "ue" {
     
     enum EMovieSceneBlendType { Invalid, Absolute, Additive, Relative, AdditiveFromBase, EMovieSceneBlendType_MAX}
     class OptionalMovieSceneBlendType {
+        constructor();
         constructor(BlendType: EMovieSceneBlendType, bIsValid: boolean);
         BlendType: EMovieSceneBlendType;
         bIsValid: boolean;
@@ -7807,6 +8097,7 @@ declare module "ue" {
     }
     
     class FrameNumberRangeBound {
+        constructor();
         constructor(Type: ERangeBoundTypes, Value: FrameNumber);
         Type: ERangeBoundTypes;
         Value: FrameNumber;
@@ -7814,6 +8105,7 @@ declare module "ue" {
     }
     
     class FrameNumberRange {
+        constructor();
         constructor(LowerBound: FrameNumberRangeBound, UpperBound: FrameNumberRangeBound);
         LowerBound: FrameNumberRangeBound;
         UpperBound: FrameNumberRangeBound;
@@ -7822,6 +8114,7 @@ declare module "ue" {
     
     enum ESectionEvaluationFlags { None, PreRoll, PostRoll, ESectionEvaluationFlags_MAX}
     class MovieSceneTrackEvaluationFieldEntry {
+        constructor();
         constructor(Section: MovieSceneSection, Range: FrameNumberRange, ForcedTime: FrameNumber, Flags: ESectionEvaluationFlags, LegacySortOrder: number);
         Section: MovieSceneSection;
         Range: FrameNumberRange;
@@ -7832,6 +8125,7 @@ declare module "ue" {
     }
     
     class MovieSceneTrackEvaluationField {
+        constructor();
         constructor(Entries: TArray<MovieSceneTrackEvaluationFieldEntry>);
         Entries: TArray<MovieSceneTrackEvaluationFieldEntry>;
         static StaticClass(): Class;
@@ -7865,6 +8159,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationTrack {
+        constructor();
         constructor(ObjectBindingID: Guid, EvaluationPriority: number, EvaluationMethod: EEvaluationMethod, SourceTrack: TWeakObjectPtr<MovieSceneTrack>, ChildTemplates: TArray<MovieSceneEvalTemplatePtr>, TrackTemplate: MovieSceneTrackImplementationPtr, EvaluationGroup: string, bEvaluateInPreroll: boolean, bEvaluateInPostroll: boolean, bTearDownPriority: boolean);
         ObjectBindingID: Guid;
         EvaluationPriority: number;
@@ -7880,12 +8175,14 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationTemplateSerialNumber {
+        constructor();
         constructor(Value: number);
         Value: number;
         static StaticClass(): Class;
     }
     
     class MovieSceneTemplateGenerationLedger {
+        constructor();
         constructor(LastTrackIdentifier: MovieSceneTrackIdentifier, TrackSignatureToTrackIdentifier: TMap<Guid, MovieSceneTrackIdentifier>, SubSectionRanges: TMap<Guid, MovieSceneFrameRange>);
         LastTrackIdentifier: MovieSceneTrackIdentifier;
         TrackSignatureToTrackIdentifier: TMap<Guid, MovieSceneTrackIdentifier>;
@@ -7894,6 +8191,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationTemplate {
+        constructor();
         constructor(Tracks: TMap<MovieSceneTrackIdentifier, MovieSceneEvaluationTrack>, SequenceSignature: Guid, TemplateSerialNumber: MovieSceneEvaluationTemplateSerialNumber, TemplateLedger: MovieSceneTemplateGenerationLedger);
         Tracks: TMap<MovieSceneTrackIdentifier, MovieSceneEvaluationTrack>;
         SequenceSignature: Guid;
@@ -7903,12 +8201,14 @@ declare module "ue" {
     }
     
     class MovieSceneSequenceID {
+        constructor();
         constructor(Value: number);
         Value: number;
         static StaticClass(): Class;
     }
     
     class MovieSceneSequenceHierarchyNode {
+        constructor();
         constructor(ParentID: MovieSceneSequenceID, Children: TArray<MovieSceneSequenceID>);
         ParentID: MovieSceneSequenceID;
         Children: TArray<MovieSceneSequenceID>;
@@ -7921,6 +8221,7 @@ declare module "ue" {
     }
     
     class FrameTime {
+        constructor();
         constructor(FrameNumber: FrameNumber, SubFrame: number);
         FrameNumber: FrameNumber;
         SubFrame: number;
@@ -7928,6 +8229,7 @@ declare module "ue" {
     }
     
     class MovieSceneTimeTransform {
+        constructor();
         constructor(TimeScale: number, Offset: FrameTime);
         TimeScale: number;
         Offset: FrameTime;
@@ -7935,6 +8237,7 @@ declare module "ue" {
     }
     
     class MovieSceneTimeWarping {
+        constructor();
         constructor(Start: FrameNumber, End: FrameNumber);
         Start: FrameNumber;
         End: FrameNumber;
@@ -7942,6 +8245,7 @@ declare module "ue" {
     }
     
     class MovieSceneNestedSequenceTransform {
+        constructor();
         constructor(LinearTransform: MovieSceneTimeTransform, Warping: MovieSceneTimeWarping);
         LinearTransform: MovieSceneTimeTransform;
         Warping: MovieSceneTimeWarping;
@@ -7949,6 +8253,7 @@ declare module "ue" {
     }
     
     class MovieSceneSequenceTransform {
+        constructor();
         constructor(LinearTransform: MovieSceneTimeTransform, NestedTransforms: TArray<MovieSceneNestedSequenceTransform>);
         LinearTransform: MovieSceneTimeTransform;
         NestedTransforms: TArray<MovieSceneNestedSequenceTransform>;
@@ -7956,6 +8261,7 @@ declare module "ue" {
     }
     
     class FrameRate {
+        constructor();
         constructor(Numerator: number, Denominator: number);
         Numerator: number;
         Denominator: number;
@@ -7968,6 +8274,7 @@ declare module "ue" {
     }
     
     class MovieSceneSubSequenceData {
+        constructor();
         constructor(Sequence: SoftObjectPath, RootToSequenceTransform: MovieSceneSequenceTransform, TickResolution: FrameRate, DeterministicSequenceID: MovieSceneSequenceID, PlayRange: MovieSceneFrameRange, FullPlayRange: MovieSceneFrameRange, UnwarpedPlayRange: MovieSceneFrameRange, PreRollRange: MovieSceneFrameRange, PostRollRange: MovieSceneFrameRange, HierarchicalBias: number, bHasHierarchicalEasing: boolean, InstanceData: MovieSceneSequenceInstanceDataPtr, SectionPath: string, SubSectionSignature: Guid, OuterToInnerTransform: MovieSceneSequenceTransform);
         Sequence: SoftObjectPath;
         RootToSequenceTransform: MovieSceneSequenceTransform;
@@ -7988,6 +8295,7 @@ declare module "ue" {
     }
     
     class MovieSceneSequenceHierarchy {
+        constructor();
         constructor(RootNode: MovieSceneSequenceHierarchyNode, Tree: MovieSceneSubSequenceTree, SubSequences: TMap<MovieSceneSequenceID, MovieSceneSubSequenceData>, Hierarchy: TMap<MovieSceneSequenceID, MovieSceneSequenceHierarchyNode>);
         RootNode: MovieSceneSequenceHierarchyNode;
         Tree: MovieSceneSubSequenceTree;
@@ -8002,6 +8310,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationFieldEntityKey {
+        constructor();
         constructor(EntityOwner: TWeakObjectPtr<Object>, EntityID: number);
         EntityOwner: TWeakObjectPtr<Object>;
         EntityID: number;
@@ -8009,6 +8318,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationFieldEntity {
+        constructor();
         constructor(Key: MovieSceneEvaluationFieldEntityKey, SharedMetaDataIndex: number);
         Key: MovieSceneEvaluationFieldEntityKey;
         SharedMetaDataIndex: number;
@@ -8016,6 +8326,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationFieldEntityMetaData {
+        constructor();
         constructor(ForcedTime: FrameNumber, Flags: ESectionEvaluationFlags, bEvaluateInSequencePreRoll: boolean, bEvaluateInSequencePostRoll: boolean);
         ForcedTime: FrameNumber;
         Flags: ESectionEvaluationFlags;
@@ -8025,12 +8336,14 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationFieldSharedEntityMetaData {
+        constructor();
         constructor(ObjectBindingID: Guid);
         ObjectBindingID: Guid;
         static StaticClass(): Class;
     }
     
     class MovieSceneEntityComponentField {
+        constructor();
         constructor(PersistentEntityTree: MovieSceneEvaluationFieldEntityTree, OneShotEntityTree: MovieSceneEvaluationFieldEntityTree, Entities: TArray<MovieSceneEvaluationFieldEntity>, EntityMetaData: TArray<MovieSceneEvaluationFieldEntityMetaData>, SharedMetaData: TArray<MovieSceneEvaluationFieldSharedEntityMetaData>);
         PersistentEntityTree: MovieSceneEvaluationFieldEntityTree;
         OneShotEntityTree: MovieSceneEvaluationFieldEntityTree;
@@ -8041,6 +8354,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationGroupLUTIndex {
+        constructor();
         constructor(NumInitPtrs: number, NumEvalPtrs: number);
         NumInitPtrs: number;
         NumEvalPtrs: number;
@@ -8048,6 +8362,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationFieldTrackPtr {
+        constructor();
         constructor(SequenceID: MovieSceneSequenceID, TrackIdentifier: MovieSceneTrackIdentifier);
         SequenceID: MovieSceneSequenceID;
         TrackIdentifier: MovieSceneTrackIdentifier;
@@ -8055,6 +8370,7 @@ declare module "ue" {
     }
     
     class MovieSceneFieldEntry_EvaluationTrack {
+        constructor();
         constructor(TrackPtr: MovieSceneEvaluationFieldTrackPtr, NumChildren: number);
         TrackPtr: MovieSceneEvaluationFieldTrackPtr;
         NumChildren: number;
@@ -8062,6 +8378,7 @@ declare module "ue" {
     }
     
     class MovieSceneFieldEntry_ChildTemplate {
+        constructor();
         constructor(ChildIndex: number, Flags: ESectionEvaluationFlags, ForcedTime: FrameNumber);
         ChildIndex: number;
         Flags: ESectionEvaluationFlags;
@@ -8070,6 +8387,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationGroup {
+        constructor();
         constructor(LUTIndices: TArray<MovieSceneEvaluationGroupLUTIndex>, TrackLUT: TArray<MovieSceneFieldEntry_EvaluationTrack>, SectionLUT: TArray<MovieSceneFieldEntry_ChildTemplate>);
         LUTIndices: TArray<MovieSceneEvaluationGroupLUTIndex>;
         TrackLUT: TArray<MovieSceneFieldEntry_EvaluationTrack>;
@@ -8078,6 +8396,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationKey {
+        constructor();
         constructor(SequenceID: MovieSceneSequenceID, TrackIdentifier: MovieSceneTrackIdentifier, SectionIndex: number);
         SequenceID: MovieSceneSequenceID;
         TrackIdentifier: MovieSceneTrackIdentifier;
@@ -8086,6 +8405,7 @@ declare module "ue" {
     }
     
     class MovieSceneOrderedEvaluationKey {
+        constructor();
         constructor(Key: MovieSceneEvaluationKey, SetupIndex: number, TearDownIndex: number);
         Key: MovieSceneEvaluationKey;
         SetupIndex: number;
@@ -8094,6 +8414,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationMetaData {
+        constructor();
         constructor(ActiveSequences: TArray<MovieSceneSequenceID>, ActiveEntities: TArray<MovieSceneOrderedEvaluationKey>);
         ActiveSequences: TArray<MovieSceneSequenceID>;
         ActiveEntities: TArray<MovieSceneOrderedEvaluationKey>;
@@ -8101,6 +8422,7 @@ declare module "ue" {
     }
     
     class MovieSceneEvaluationField {
+        constructor();
         constructor(Signature: Guid, Ranges: TArray<MovieSceneFrameRange>, Groups: TArray<MovieSceneEvaluationGroup>, MetaData: TArray<MovieSceneEvaluationMetaData>);
         Signature: Guid;
         Ranges: TArray<MovieSceneFrameRange>;
@@ -8110,6 +8432,7 @@ declare module "ue" {
     }
     
     class MovieSceneSequenceCompilerMaskStruct {
+        constructor();
         constructor(bHierarchy: boolean, bEvaluationTemplate: boolean, bEvaluationTemplateField: boolean, bEntityComponentField: boolean);
         bHierarchy: boolean;
         bEvaluationTemplate: boolean;
@@ -8138,6 +8461,7 @@ declare module "ue" {
     
     enum EMovieSceneObjectBindingSpace { Local, Root, EMovieSceneObjectBindingSpace_MAX}
     class MovieSceneObjectBindingID {
+        constructor();
         constructor(SequenceID: number, Space: EMovieSceneObjectBindingSpace, Guid: Guid);
         SequenceID: number;
         Space: EMovieSceneObjectBindingSpace;
@@ -8161,6 +8485,7 @@ declare module "ue" {
     
     enum ESpawnOwnership { InnerSequence, MasterSequence, External, ESpawnOwnership_MAX}
     class MovieSceneSpawnable {
+        constructor();
         constructor(SpawnTransform: Transform, Tags: TArray<string>, bContinuouslyRespawn: boolean, bEvaluateTracksWhenNotSpawned: boolean, Guid: Guid, Name: string, ObjectTemplate: Object, ChildPossessables: TArray<Guid>, Ownership: ESpawnOwnership, GeneratedClass: Class, LevelName: string);
         SpawnTransform: Transform;
         Tags: TArray<string>;
@@ -8177,6 +8502,7 @@ declare module "ue" {
     }
     
     class MovieScenePossessable {
+        constructor();
         constructor(Tags: TArray<string>, Guid: Guid, Name: string, PossessedObjectClass: Class, ParentGuid: Guid);
         Tags: TArray<string>;
         Guid: Guid;
@@ -8187,6 +8513,7 @@ declare module "ue" {
     }
     
     class MovieSceneBinding {
+        constructor();
         constructor(ObjectGuid: Guid, BindingName: string, Tracks: TArray<MovieSceneTrack>, SortingOrder: number);
         ObjectGuid: Guid;
         BindingName: string;
@@ -8196,6 +8523,7 @@ declare module "ue" {
     }
     
     class MovieSceneObjectBindingIDs {
+        constructor();
         constructor(IDs: TArray<MovieSceneObjectBindingID>);
         IDs: TArray<MovieSceneObjectBindingID>;
         static StaticClass(): Class;
@@ -8204,6 +8532,7 @@ declare module "ue" {
     enum EMovieSceneEvaluationType { FrameLocked, WithSubFrames, EMovieSceneEvaluationType_MAX}
     enum EUpdateClockSource { Tick, Platform, Audio, RelativeTimecode, Timecode, Custom, EUpdateClockSource_MAX}
     class MovieSceneMarkedFrame {
+        constructor();
         constructor(FrameNumber: FrameNumber, Label: string, Color: LinearColor);
         FrameNumber: FrameNumber;
         Label: string;
@@ -8212,18 +8541,21 @@ declare module "ue" {
     }
     
     class MovieSceneTrackLabels {
+        constructor();
         constructor(Strings: TArray<string>);
         Strings: TArray<string>;
         static StaticClass(): Class;
     }
     
     class MovieSceneExpansionState {
+        constructor();
         constructor(bExpanded: boolean);
         bExpanded: boolean;
         static StaticClass(): Class;
     }
     
     class FloatRangeBound {
+        constructor();
         constructor(Type: ERangeBoundTypes, Value: number);
         Type: ERangeBoundTypes;
         Value: number;
@@ -8231,6 +8563,7 @@ declare module "ue" {
     }
     
     class FloatRange {
+        constructor();
         constructor(LowerBound: FloatRangeBound, UpperBound: FloatRangeBound);
         LowerBound: FloatRangeBound;
         UpperBound: FloatRangeBound;
@@ -8238,6 +8571,7 @@ declare module "ue" {
     }
     
     class MovieSceneEditorData {
+        constructor();
         constructor(ExpansionStates: TMap<string, MovieSceneExpansionState>, PinnedNodes: TArray<string>, ViewStart: number, ViewEnd: number, WorkStart: number, WorkEnd: number, MarkedFrames: TSet<FrameNumber>, WorkingRange: FloatRange, ViewRange: FloatRange);
         ExpansionStates: TMap<string, MovieSceneExpansionState>;
         PinnedNodes: TArray<string>;
@@ -8265,6 +8599,7 @@ declare module "ue" {
     }
     
     class MovieSceneSectionGroup {
+        constructor();
         constructor(Sections: TArray<TWeakObjectPtr<MovieSceneSection>>);
         Sections: TArray<TWeakObjectPtr<MovieSceneSection>>;
         static StaticClass(): Class;
@@ -8326,6 +8661,7 @@ declare module "ue" {
     }
     
     class WidgetAnimationBinding {
+        constructor();
         constructor(WidgetName: string, SlotWidgetName: string, AnimationGuid: Guid, bIsRootWidget: boolean);
         WidgetName: string;
         SlotWidgetName: string;
@@ -8372,6 +8708,7 @@ declare module "ue" {
     }
     
     class MovieSceneEntitySystemGraph {
+        constructor();
         constructor(Nodes: MovieSceneEntitySystemGraphNodes);
         Nodes: MovieSceneEntitySystemGraphNodes;
         static StaticClass(): Class;
@@ -8386,6 +8723,7 @@ declare module "ue" {
     }
     
     class MovieSceneRootEvaluationTemplateInstance {
+        constructor();
         constructor(WeakRootSequence: TWeakObjectPtr<MovieSceneSequence>, CompiledDataManager: MovieSceneCompiledDataManager, EntitySystemLinker: MovieSceneEntitySystemLinker, DirectorInstances: TMap<MovieSceneSequenceID, Object>);
         WeakRootSequence: TWeakObjectPtr<MovieSceneSequence>;
         CompiledDataManager: MovieSceneCompiledDataManager;
@@ -8415,6 +8753,7 @@ declare module "ue" {
     }
     
     class NamedSlotBinding {
+        constructor();
         constructor(Name: string, Content: Widget);
         Name: string;
         Content: Widget;
@@ -8434,6 +8773,7 @@ declare module "ue" {
     enum EWidgetTickFrequency { Never, Auto, EWidgetTickFrequency_MAX}
     enum EWidgetAnimationEvent { Started, Finished, EWidgetAnimationEvent_MAX}
     class AnimationEventBinding {
+        constructor();
         constructor(Animation: WidgetAnimation, Delegate: $Delegate<() => void>, AnimationEvent: EWidgetAnimationEvent, UserTag: string);
         Animation: WidgetAnimation;
         Delegate: $Delegate<() => void>;
@@ -8444,6 +8784,7 @@ declare module "ue" {
     
     enum EInputEvent { IE_Pressed, IE_Released, IE_Repeat, IE_DoubleClick, IE_Axis, IE_MAX}
     class Anchors {
+        constructor();
         constructor(Minimum: Vector2D, Maximum: Vector2D);
         Minimum: Vector2D;
         Maximum: Vector2D;
@@ -8458,6 +8799,7 @@ declare module "ue" {
     }
     
     class SoundModulationDestinationSettings {
+        constructor();
         constructor(Value: number, bEnableModulation: boolean, Modulator: SoundModulatorBase);
         Value: number;
         bEnableModulation: boolean;
@@ -8466,6 +8808,7 @@ declare module "ue" {
     }
     
     class SoundModulationDefaultSettings {
+        constructor();
         constructor(VolumeModulationDestination: SoundModulationDestinationSettings, PitchModulationDestination: SoundModulationDestinationSettings, HighpassModulationDestination: SoundModulationDestinationSettings, LowpassModulationDestination: SoundModulationDestinationSettings);
         VolumeModulationDestination: SoundModulationDestinationSettings;
         PitchModulationDestination: SoundModulationDestinationSettings;
@@ -8518,6 +8861,7 @@ declare module "ue" {
     enum ESoundGroup { SOUNDGROUP_Default, SOUNDGROUP_Effects, SOUNDGROUP_UI, SOUNDGROUP_Music, SOUNDGROUP_Voice, SOUNDGROUP_GameSoundGroup1, SOUNDGROUP_GameSoundGroup2, SOUNDGROUP_GameSoundGroup3, SOUNDGROUP_GameSoundGroup4, SOUNDGROUP_GameSoundGroup5, SOUNDGROUP_GameSoundGroup6, SOUNDGROUP_GameSoundGroup7, SOUNDGROUP_GameSoundGroup8, SOUNDGROUP_GameSoundGroup9, SOUNDGROUP_GameSoundGroup10, SOUNDGROUP_GameSoundGroup11, SOUNDGROUP_GameSoundGroup12, SOUNDGROUP_GameSoundGroup13, SOUNDGROUP_GameSoundGroup14, SOUNDGROUP_GameSoundGroup15, SOUNDGROUP_GameSoundGroup16, SOUNDGROUP_GameSoundGroup17, SOUNDGROUP_GameSoundGroup18, SOUNDGROUP_GameSoundGroup19, SOUNDGROUP_GameSoundGroup20, SOUNDGROUP_MAX}
     enum ESoundWaveFFTSize { VerySmall_64, Small_256, Medium_512, Large_1024, VeryLarge_2048, ESoundWaveFFTSize_MAX}
     class SoundWaveSpectralDataEntry {
+        constructor();
         constructor(Magnitude: number, NormalizedMagnitude: number);
         Magnitude: number;
         NormalizedMagnitude: number;
@@ -8525,6 +8869,7 @@ declare module "ue" {
     }
     
     class SoundWaveSpectralTimeData {
+        constructor();
         constructor(Data: TArray<SoundWaveSpectralDataEntry>, TimeSec: number);
         Data: TArray<SoundWaveSpectralDataEntry>;
         TimeSec: number;
@@ -8532,6 +8877,7 @@ declare module "ue" {
     }
     
     class SoundWaveEnvelopeTimeData {
+        constructor();
         constructor(Amplitude: number, TimeSec: number);
         Amplitude: number;
         TimeSec: number;
@@ -8539,6 +8885,7 @@ declare module "ue" {
     }
     
     class SubtitleCue {
+        constructor();
         constructor(Text: string, Time: number);
         Text: string;
         Time: number;
@@ -8610,6 +8957,7 @@ declare module "ue" {
     enum EFFTWindowType { None, Hamming, Hann, Blackman, EFFTWindowType_MAX}
     enum EAudioSpectrumType { MagnitudeSpectrum, PowerSpectrum, Decibel, EAudioSpectrumType_MAX}
     class SoundSubmixSpectralAnalysisBandSettings {
+        constructor();
         constructor(BandFrequency: number, AttackTimeMsec: number, ReleaseTimeMsec: number, QFactor: number);
         BandFrequency: number;
         AttackTimeMsec: number;
@@ -8649,6 +8997,7 @@ declare module "ue" {
     }
     
     class SoundClassProperties {
+        constructor();
         constructor(Volume: number, Pitch: number, LowPassFilterFrequency: number, AttenuationDistanceScale: number, StereoBleed: number, LFEBleed: number, VoiceCenterChannelVolume: number, RadioFilterVolume: number, RadioFilterVolumeThreshold: number, bApplyEffects: boolean, bAlwaysPlay: boolean, bIsUISound: boolean, bIsMusic: boolean, bCenterChannelOnly: boolean, bApplyAmbientVolumes: boolean, bReverb: boolean, Default2DReverbSendAmount: number, ModulationSettings: SoundModulationDefaultSettings, OutputTarget: EAudioOutputTarget, LoadingBehavior: ESoundWaveLoadingBehavior, DefaultSubmix: SoundSubmix);
         Volume: number;
         Pitch: number;
@@ -8680,6 +9029,7 @@ declare module "ue" {
     }
     
     class AudioEQEffect extends AudioEffectParameters {
+        constructor();
         constructor(FrequencyCenter0: number, Gain0: number, Bandwidth0: number, FrequencyCenter1: number, Gain1: number, Bandwidth1: number, FrequencyCenter2: number, Gain2: number, Bandwidth2: number, FrequencyCenter3: number, Gain3: number, Bandwidth3: number);
         FrequencyCenter0: number;
         Gain0: number;
@@ -8697,6 +9047,7 @@ declare module "ue" {
     }
     
     class SoundClassAdjuster {
+        constructor();
         constructor(SoundClassObject: SoundClass, VolumeAdjuster: number, PitchAdjuster: number, LowPassFilterFrequency: number, bApplyToChildren: boolean, VoiceCenterChannelVolumeAdjuster: number);
         SoundClassObject: SoundClass;
         VolumeAdjuster: number;
@@ -8724,6 +9075,7 @@ declare module "ue" {
     }
     
     class PassiveSoundMixModifier {
+        constructor();
         constructor(SoundMix: SoundMix, MinVolumeThreshold: number, MaxVolumeThreshold: number);
         SoundMix: SoundMix;
         MinVolumeThreshold: number;
@@ -8746,6 +9098,7 @@ declare module "ue" {
     enum EMaxConcurrentResolutionRule { PreventNew, StopOldest, StopFarthestThenPreventNew, StopFarthestThenOldest, StopLowestPriority, StopQuietest, StopLowestPriorityThenPreventNew, Count, EMaxConcurrentResolutionRule_MAX}
     enum EConcurrencyVolumeScaleMode { Default, Distance, Priority, EConcurrencyVolumeScaleMode_MAX}
     class SoundConcurrencySettings {
+        constructor();
         constructor(MaxCount: number, bLimitToOwner: boolean, ResolutionRule: EMaxConcurrentResolutionRule, RetriggerTime: number, VolumeScale: number, VolumeScaleMode: EConcurrencyVolumeScaleMode, VolumeScaleAttackTime: number, bVolumeScaleCanRelease: boolean, VolumeScaleReleaseTime: number, VoiceStealReleaseTime: number);
         MaxCount: number;
         bLimitToOwner: boolean;
@@ -8772,6 +9125,7 @@ declare module "ue" {
     enum EAttenuationShape { Sphere, Capsule, Box, Cone, EAttenuationShape_MAX}
     enum ENaturalSoundFalloffMode { Continues, Silent, Hold, ENaturalSoundFalloffMode_MAX}
     class BaseAttenuationSettings {
+        constructor();
         constructor(DistanceAlgorithm: EAttenuationDistanceModel, AttenuationShape: EAttenuationShape, dBAttenuationAtMax: number, FalloffMode: ENaturalSoundFalloffMode, AttenuationShapeExtents: Vector, ConeOffset: number, FalloffDistance: number, CustomAttenuationCurve: RuntimeFloatCurve);
         DistanceAlgorithm: EAttenuationDistanceModel;
         AttenuationShape: EAttenuationShape;
@@ -8812,6 +9166,7 @@ declare module "ue" {
     
     enum ESubmixSendMethod { Linear, CustomCurve, Manual, ESubmixSendMethod_MAX}
     class AttenuationSubmixSendSettings {
+        constructor();
         constructor(Submix: SoundSubmixBase, SubmixSendMethod: ESubmixSendMethod, SubmixSendLevelMin: number, SubmixSendLevelMax: number, SubmixSendDistanceMin: number, SubmixSendDistanceMax: number, ManualSubmixSendLevel: number, CustomSubmixSendCurve: RuntimeFloatCurve);
         Submix: SoundSubmixBase;
         SubmixSendMethod: ESubmixSendMethod;
@@ -8825,6 +9180,7 @@ declare module "ue" {
     }
     
     class SoundAttenuationPluginSettings {
+        constructor();
         constructor(SpatializationPluginSettingsArray: TArray<SpatializationPluginSourceSettingsBase>, OcclusionPluginSettingsArray: TArray<OcclusionPluginSourceSettingsBase>, ReverbPluginSettingsArray: TArray<ReverbPluginSourceSettingsBase>);
         SpatializationPluginSettingsArray: TArray<SpatializationPluginSourceSettingsBase>;
         OcclusionPluginSettingsArray: TArray<OcclusionPluginSourceSettingsBase>;
@@ -8833,6 +9189,7 @@ declare module "ue" {
     }
     
     class SoundAttenuationSettings extends BaseAttenuationSettings {
+        constructor();
         constructor(bAttenuate: boolean, bSpatialize: boolean, bAttenuateWithLPF: boolean, bEnableListenerFocus: boolean, bEnableFocusInterpolation: boolean, bEnableOcclusion: boolean, bUseComplexCollisionForOcclusion: boolean, bEnableReverbSend: boolean, bEnablePriorityAttenuation: boolean, bApplyNormalizationToStereoSounds: boolean, bEnableLogFrequencyScaling: boolean, bEnableSubmixSends: boolean, SpatializationAlgorithm: ESoundSpatializationAlgorithm, BinauralRadius: number, AbsorptionMethod: EAirAbsorptionMethod, OcclusionTraceChannel: ECollisionChannel, ReverbSendMethod: EReverbSendMethod, PriorityAttenuationMethod: EPriorityAttenuationMethod, DistanceType: ESoundDistanceCalc, OmniRadius: number, StereoSpread: number, SpatializationPluginSettings: SpatializationPluginSourceSettingsBase, RadiusMin: number, RadiusMax: number, LPFRadiusMin: number, LPFRadiusMax: number, CustomLowpassAirAbsorptionCurve: RuntimeFloatCurve, CustomHighpassAirAbsorptionCurve: RuntimeFloatCurve, LPFFrequencyAtMin: number, LPFFrequencyAtMax: number, HPFFrequencyAtMin: number, HPFFrequencyAtMax: number, FocusAzimuth: number, NonFocusAzimuth: number, FocusDistanceScale: number, NonFocusDistanceScale: number, FocusPriorityScale: number, NonFocusPriorityScale: number, FocusVolumeAttenuation: number, NonFocusVolumeAttenuation: number, FocusAttackInterpSpeed: number, FocusReleaseInterpSpeed: number, OcclusionLowPassFilterFrequency: number, OcclusionVolumeAttenuation: number, OcclusionInterpolationTime: number, OcclusionPluginSettings: OcclusionPluginSourceSettingsBase, ReverbPluginSettings: ReverbPluginSourceSettingsBase, ReverbWetLevelMin: number, ReverbWetLevelMax: number, ReverbDistanceMin: number, ReverbDistanceMax: number, ManualReverbSendLevel: number, CustomReverbSendCurve: RuntimeFloatCurve, SubmixSendSettings: TArray<AttenuationSubmixSendSettings>, PriorityAttenuationMin: number, PriorityAttenuationMax: number, PriorityAttenuationDistanceMin: number, PriorityAttenuationDistanceMax: number, ManualPriorityAttenuation: number, CustomPriorityAttenuationCurve: RuntimeFloatCurve, PluginSettings: SoundAttenuationPluginSettings);
         bAttenuate: boolean;
         bSpatialize: boolean;
@@ -8908,6 +9265,7 @@ declare module "ue" {
     
     enum EModulationRouting { Disable, Inherit, Override, EModulationRouting_MAX}
     class SoundModulationDefaultRoutingSettings extends SoundModulationDefaultSettings {
+        constructor();
         constructor(VolumeRouting: EModulationRouting, PitchRouting: EModulationRouting, HighpassRouting: EModulationRouting, LowpassRouting: EModulationRouting);
         VolumeRouting: EModulationRouting;
         PitchRouting: EModulationRouting;
@@ -8919,6 +9277,7 @@ declare module "ue" {
     enum ESendLevelControlMethod { Linear, CustomCurve, Manual, ESendLevelControlMethod_MAX}
     enum ESubmixSendStage { PostDistanceAttenuation, PreDistanceAttenuation, ESubmixSendStage_MAX}
     class SoundSubmixSendInfo {
+        constructor();
         constructor(SendLevelControlMethod: ESendLevelControlMethod, SendStage: ESubmixSendStage, SoundSubmix: SoundSubmixBase, SendLevel: number, MinSendLevel: number, MaxSendLevel: number, MinSendDistance: number, MaxSendDistance: number, CustomSendLevelCurve: RuntimeFloatCurve);
         SendLevelControlMethod: ESendLevelControlMethod;
         SendStage: ESubmixSendStage;
@@ -8940,6 +9299,7 @@ declare module "ue" {
     }
     
     class SourceEffectChainEntry {
+        constructor();
         constructor(Preset: SoundEffectSourcePreset, bBypass: boolean);
         Preset: SoundEffectSourcePreset;
         bBypass: boolean;
@@ -8979,6 +9339,7 @@ declare module "ue" {
     }
     
     class SoundSourceBusSendInfo {
+        constructor();
         constructor(SourceBusSendLevelControlMethod: ESourceBusSendLevelControlMethod, SoundSourceBus: SoundSourceBus, AudioBus: AudioBus, SendLevel: number, MinSendLevel: number, MaxSendLevel: number, MinSendDistance: number, MaxSendDistance: number, CustomSendLevelCurve: RuntimeFloatCurve);
         SourceBusSendLevelControlMethod: ESourceBusSendLevelControlMethod;
         SoundSourceBus: SoundSourceBus;
@@ -9198,6 +9559,7 @@ declare module "ue" {
     }
     
     class ViewTargetTransitionParams {
+        constructor();
         constructor(BlendTime: number, BlendFunction: EViewTargetBlendFunction, BlendExp: number, bLockOutgoing: boolean);
         BlendTime: number;
         BlendFunction: EViewTargetBlendFunction;
@@ -9207,6 +9569,7 @@ declare module "ue" {
     }
     
     class UpdateLevelVisibilityLevelInfo {
+        constructor();
         constructor(PackageName: string, FileName: string, bIsVisible: boolean);
         PackageName: string;
         FileName: string;
@@ -9223,6 +9586,7 @@ declare module "ue" {
     
     enum EDynamicForceFeedbackAction { Start, Update, Stop, EDynamicForceFeedbackAction_MAX}
     class LatentActionInfo {
+        constructor();
         constructor(Linkage: number, UUID: number, ExecutionFunction: string, CallbackTarget: Object);
         Linkage: number;
         UUID: number;
@@ -9234,6 +9598,7 @@ declare module "ue" {
     enum EObjectTypeQuery { ObjectTypeQuery1, ObjectTypeQuery2, ObjectTypeQuery3, ObjectTypeQuery4, ObjectTypeQuery5, ObjectTypeQuery6, ObjectTypeQuery7, ObjectTypeQuery8, ObjectTypeQuery9, ObjectTypeQuery10, ObjectTypeQuery11, ObjectTypeQuery12, ObjectTypeQuery13, ObjectTypeQuery14, ObjectTypeQuery15, ObjectTypeQuery16, ObjectTypeQuery17, ObjectTypeQuery18, ObjectTypeQuery19, ObjectTypeQuery20, ObjectTypeQuery21, ObjectTypeQuery22, ObjectTypeQuery23, ObjectTypeQuery24, ObjectTypeQuery25, ObjectTypeQuery26, ObjectTypeQuery27, ObjectTypeQuery28, ObjectTypeQuery29, ObjectTypeQuery30, ObjectTypeQuery31, ObjectTypeQuery32, ObjectTypeQuery_MAX, EObjectTypeQuery_MAX}
     enum ETraceTypeQuery { TraceTypeQuery1, TraceTypeQuery2, TraceTypeQuery3, TraceTypeQuery4, TraceTypeQuery5, TraceTypeQuery6, TraceTypeQuery7, TraceTypeQuery8, TraceTypeQuery9, TraceTypeQuery10, TraceTypeQuery11, TraceTypeQuery12, TraceTypeQuery13, TraceTypeQuery14, TraceTypeQuery15, TraceTypeQuery16, TraceTypeQuery17, TraceTypeQuery18, TraceTypeQuery19, TraceTypeQuery20, TraceTypeQuery21, TraceTypeQuery22, TraceTypeQuery23, TraceTypeQuery24, TraceTypeQuery25, TraceTypeQuery26, TraceTypeQuery27, TraceTypeQuery28, TraceTypeQuery29, TraceTypeQuery30, TraceTypeQuery31, TraceTypeQuery32, TraceTypeQuery_MAX, ETraceTypeQuery_MAX}
     class UpdateLevelStreamingLevelStatus {
+        constructor();
         constructor(PackageName: string, LODIndex: number, bNewShouldBeLoaded: boolean, bNewShouldBeVisible: boolean, bNewShouldBlockOnLoad: boolean);
         PackageName: string;
         LODIndex: number;
@@ -9245,6 +9610,7 @@ declare module "ue" {
     
     enum ETravelType { TRAVEL_Absolute, TRAVEL_Partial, TRAVEL_Relative, TRAVEL_MAX}
     class ForceFeedbackParameters {
+        constructor();
         constructor(Tag: string, bLooping: boolean, bIgnoreTimeDilation: boolean, bPlayWhilePaused: boolean);
         Tag: string;
         bLooping: boolean;
@@ -9767,6 +10133,7 @@ declare module "ue" {
     }
     
     class BuilderPoly {
+        constructor();
         constructor(VertexIndices: TArray<number>, Direction: number, ItemName: string, PolyFlags: number);
         VertexIndices: TArray<number>;
         Direction: number;
@@ -9790,6 +10157,7 @@ declare module "ue" {
     }
     
     class GeomSelection {
+        constructor();
         constructor(Type: number, Index: number, SelectionIndex: number);
         Type: number;
         Index: number;
@@ -9934,6 +10302,7 @@ declare module "ue" {
     }
     
     class RepAttachment {
+        constructor();
         constructor(AttachParent: Actor, LocationOffset: Vector_NetQuantize100, RelativeScale3D: Vector_NetQuantize100, RotationOffset: Rotator, AttachSocket: string, AttachComponent: SceneComponent);
         AttachParent: Actor;
         LocationOffset: Vector_NetQuantize100;
@@ -9981,6 +10350,7 @@ declare module "ue" {
     }
     
     class InterpGroupActorInfo {
+        constructor();
         constructor(ObjectName: string, Actors: TArray<Actor>);
         ObjectName: string;
         Actors: TArray<Actor>;
@@ -9988,6 +10358,7 @@ declare module "ue" {
     }
     
     class CameraCutInfo {
+        constructor();
         constructor(Location: Vector, TimeStamp: number);
         Location: Vector;
         TimeStamp: number;
@@ -10365,6 +10736,7 @@ declare module "ue" {
     enum ETextureSizingType { TextureSizingType_UseSingleTextureSize, TextureSizingType_UseAutomaticBiasedSizes, TextureSizingType_UseManualOverrideTextureSize, TextureSizingType_UseSimplygonAutomaticSizing, TextureSizingType_MAX}
     enum EMaterialMergeType { MaterialMergeType_Default, MaterialMergeType_Simplygon, MaterialMergeType_MAX}
     class MaterialProxySettings {
+        constructor();
         constructor(TextureSize: IntPoint, GutterSpace: number, MetallicConstant: number, RoughnessConstant: number, AnisotropyConstant: number, SpecularConstant: number, OpacityConstant: number, OpacityMaskConstant: number, AmbientOcclusionConstant: number, TextureSizingType: ETextureSizingType, MaterialMergeType: EMaterialMergeType, BlendMode: EBlendMode, bAllowTwoSidedMaterial: boolean, bNormalMap: boolean, bTangentMap: boolean, bMetallicMap: boolean, bRoughnessMap: boolean, bAnisotropyMap: boolean, bSpecularMap: boolean, bEmissiveMap: boolean, bOpacityMap: boolean, bOpacityMaskMap: boolean, bAmbientOcclusionMap: boolean, DiffuseTextureSize: IntPoint, NormalTextureSize: IntPoint, TangentTextureSize: IntPoint, MetallicTextureSize: IntPoint, RoughnessTextureSize: IntPoint, AnisotropyTextureSize: IntPoint, SpecularTextureSize: IntPoint, EmissiveTextureSize: IntPoint, OpacityTextureSize: IntPoint, OpacityMaskTextureSize: IntPoint, AmbientOcclusionTextureSize: IntPoint);
         TextureSize: IntPoint;
         GutterSpace: number;
@@ -10404,6 +10776,7 @@ declare module "ue" {
     }
     
     class LevelSimplificationDetails {
+        constructor();
         constructor(bCreatePackagePerAsset: boolean, DetailsPercentage: number, StaticMeshMaterialSettings: MaterialProxySettings, bOverrideLandscapeExportLOD: boolean, LandscapeExportLOD: number, LandscapeMaterialSettings: MaterialProxySettings, bBakeFoliageToLandscape: boolean, bBakeGrassToLandscape: boolean, bGenerateMeshNormalMap: boolean, bGenerateMeshMetallicMap: boolean, bGenerateMeshRoughnessMap: boolean, bGenerateMeshSpecularMap: boolean, bGenerateLandscapeNormalMap: boolean, bGenerateLandscapeMetallicMap: boolean, bGenerateLandscapeRoughnessMap: boolean, bGenerateLandscapeSpecularMap: boolean);
         bCreatePackagePerAsset: boolean;
         DetailsPercentage: number;
@@ -10426,6 +10799,7 @@ declare module "ue" {
     
     enum EVisibilityAggressiveness { VIS_LeastAggressive, VIS_ModeratelyAggressive, VIS_MostAggressive, VIS_Max, VIS_MAX}
     class NavAgentSelector {
+        constructor();
         constructor(bSupportsAgent0: boolean, bSupportsAgent1: boolean, bSupportsAgent2: boolean, bSupportsAgent3: boolean, bSupportsAgent4: boolean, bSupportsAgent5: boolean, bSupportsAgent6: boolean, bSupportsAgent7: boolean, bSupportsAgent8: boolean, bSupportsAgent9: boolean, bSupportsAgent10: boolean, bSupportsAgent11: boolean, bSupportsAgent12: boolean, bSupportsAgent13: boolean, bSupportsAgent14: boolean, bSupportsAgent15: boolean);
         bSupportsAgent0: boolean;
         bSupportsAgent1: boolean;
@@ -10459,6 +10833,7 @@ declare module "ue" {
     
     enum EVolumeLightingMethod { VLM_VolumetricLightmap, VLM_SparseVolumeLightingSamples, VLM_MAX}
     class LightmassWorldInfoSettings {
+        constructor();
         constructor(StaticLightingLevelScale: number, NumIndirectLightingBounces: number, NumSkyLightingBounces: number, IndirectLightingQuality: number, IndirectLightingSmoothness: number, EnvironmentColor: Color, EnvironmentIntensity: number, EmissiveBoost: number, DiffuseBoost: number, VolumeLightingMethod: EVolumeLightingMethod, bUseAmbientOcclusion: boolean, bGenerateAmbientOcclusionMaterialMask: boolean, bVisualizeMaterialDiffuse: boolean, bVisualizeAmbientOcclusion: boolean, bCompressLightmaps: boolean, VolumetricLightmapDetailCellSize: number, VolumetricLightmapMaximumBrickMemoryMb: number, VolumetricLightmapSphericalHarmonicSmoothing: number, VolumeLightSamplePlacementScale: number, DirectIlluminationOcclusionFraction: number, IndirectIlluminationOcclusionFraction: number, OcclusionExponent: number, FullyOccludedSamplesFraction: number, MaxOcclusionDistance: number);
         StaticLightingLevelScale: number;
         NumIndirectLightingBounces: number;
@@ -10511,6 +10886,7 @@ declare module "ue" {
     }
     
     class ReverbSettings {
+        constructor();
         constructor(bApplyReverb: boolean, ReverbType: ReverbPreset, ReverbEffect: ReverbEffect, ReverbPluginEffect: SoundEffectSubmixPreset, Volume: number, FadeTime: number);
         bApplyReverb: boolean;
         ReverbType: ReverbPreset;
@@ -10522,6 +10898,7 @@ declare module "ue" {
     }
     
     class InteriorSettings {
+        constructor();
         constructor(bIsWorldSettings: boolean, ExteriorVolume: number, ExteriorTime: number, ExteriorLPF: number, ExteriorLPFTime: number, InteriorVolume: number, InteriorTime: number, InteriorLPF: number, InteriorLPFTime: number);
         bIsWorldSettings: boolean;
         ExteriorVolume: number;
@@ -10538,6 +10915,7 @@ declare module "ue" {
     enum EProxyNormalComputationMethod { AngleWeighted, AreaWeighted, EqualWeighted, EProxyNormalComputationMethod_MAX}
     enum ELandscapeCullingPrecision { High, Medium, Low, ELandscapeCullingPrecision_MAX}
     class MeshProxySettings {
+        constructor();
         constructor(ScreenSize: number, VoxelSize: number, MaterialSettings: MaterialProxySettings, TextureWidth: number, TextureHeight: number, bExportNormalMap: boolean, bExportMetallicMap: boolean, bExportRoughnessMap: boolean, bExportSpecularMap: boolean, bBakeVertexData: boolean, MergeDistance: number, UnresolvedGeometryColor: Color, MaxRayCastDist: number, HardAngleThreshold: number, LightMapResolution: number, NormalCalculationMethod: EProxyNormalComputationMethod, LandscapeCullingPrecision: ELandscapeCullingPrecision, bCalculateCorrectLODModel: boolean, bOverrideVoxelSize: boolean, bOverrideTransferDistance: boolean, bUseHardAngleThreshold: boolean, bComputeLightMapResolution: boolean, bRecalculateNormals: boolean, bUseLandscapeCulling: boolean, bAllowAdjacency: boolean, bAllowDistanceField: boolean, bReuseMeshLightmapUVs: boolean, bCreateCollision: boolean, bAllowVertexColors: boolean, bGenerateLightmapUVs: boolean);
         ScreenSize: number;
         VoxelSize: number;
@@ -10575,6 +10953,7 @@ declare module "ue" {
     enum EUVOutput { DoNotOutputChannel, OutputChannel, EUVOutput_MAX}
     enum EMeshLODSelectionType { AllLODs, SpecificLOD, CalculateLOD, LowestDetailLOD, EMeshLODSelectionType_MAX}
     class MeshMergingSettings {
+        constructor();
         constructor(TargetLightMapResolution: number, OutputUVs: FixSizeArray<EUVOutput>, MaterialSettings: MaterialProxySettings, GutterSize: number, SpecificLOD: number, LODSelectionType: EMeshLODSelectionType, bGenerateLightMapUV: boolean, bComputedLightMapResolution: boolean, bPivotPointAtZero: boolean, bMergePhysicsData: boolean, bMergeMaterials: boolean, bCreateMergedMaterial: boolean, bBakeVertexDataToMesh: boolean, bUseVertexDataForBakingMaterial: boolean, bUseTextureBinning: boolean, bReuseMeshLightmapUVs: boolean, bMergeEquivalentMaterials: boolean, bUseLandscapeCulling: boolean, bIncludeImposters: boolean, bAllowDistanceField: boolean, bImportVertexColors: boolean, bCalculateCorrectLODModel: boolean, bExportNormalMap: boolean, bExportMetallicMap: boolean, bExportRoughnessMap: boolean, bExportSpecularMap: boolean, MergedMaterialAtlasResolution: number, ExportSpecificLOD: number);
         TargetLightMapResolution: number;
         OutputUVs: FixSizeArray<EUVOutput>;
@@ -10608,6 +10987,7 @@ declare module "ue" {
     }
     
     class HierarchicalSimplification {
+        constructor();
         constructor(TransitionScreenSize: number, OverrideDrawDistance: number, bUseOverrideDrawDistance: boolean, bAllowSpecificExclusion: boolean, bSimplifyMesh: boolean, bOnlyGenerateClustersForVolumes: boolean, bReusePreviousLevelClusters: boolean, ProxySetting: MeshProxySettings, MergeSetting: MeshMergingSettings, DesiredBoundRadius: number, DesiredFillingPercentage: number, MinNumberOfActorsToBuild: number);
         TransitionScreenSize: number;
         OverrideDrawDistance: number;
@@ -10642,6 +11022,7 @@ declare module "ue" {
     }
     
     class BroadphaseSettings {
+        constructor();
         constructor(bUseMBPOnClient: boolean, bUseMBPOnServer: boolean, bUseMBPOuterBounds: boolean, MBPBounds: Box, MBPOuterBounds: Box, MBPNumSubdivs: number);
         bUseMBPOnClient: boolean;
         bUseMBPOnServer: boolean;
@@ -10653,6 +11034,7 @@ declare module "ue" {
     }
     
     class NetViewer {
+        constructor();
         constructor(Connection: NetConnection, InViewer: Actor, ViewTarget: Actor, ViewLocation: Vector, ViewDir: Vector);
         Connection: NetConnection;
         InViewer: Actor;
@@ -10732,6 +11114,7 @@ declare module "ue" {
     }
     
     class ReplicatedStaticActorDestructionInfo {
+        constructor();
         constructor(ObjClass: Class);
         ObjClass: Class;
         static StaticClass(): Class;
@@ -10915,12 +11298,14 @@ declare module "ue" {
     }
     
     class StreamingLevelsToConsider {
+        constructor();
         constructor(StreamingLevels: TArray<LevelStreaming>);
         StreamingLevels: TArray<LevelStreaming>;
         static StaticClass(): Class;
     }
     
     class RollbackNetStartupActorInfo {
+        constructor();
         constructor(Archetype: Object, Level: Level, ObjReferences: TArray<Object>);
         Archetype: Object;
         Level: Level;
@@ -10929,6 +11314,7 @@ declare module "ue" {
     }
     
     class MulticastRecordOptions {
+        constructor();
         constructor(FuncPathName: string, bServerSkip: boolean, bClientSkip: boolean);
         FuncPathName: string;
         bServerSkip: boolean;
@@ -11138,6 +11524,7 @@ declare module "ue" {
     }
     
     class LevelCollection {
+        constructor();
         constructor(GameState: GameStateBase, NetDriver: NetDriver, DemoNetDriver: DemoNetDriver, PersistentLevel: Level, Levels: TSet<Level>);
         GameState: GameStateBase;
         NetDriver: NetDriver;
@@ -11156,6 +11543,7 @@ declare module "ue" {
     }
     
     class LevelViewportInfo {
+        constructor();
         constructor(CamPosition: Vector, CamRotation: Rotator, CamOrthoZoom: number, CamUpdated: boolean);
         CamPosition: Vector;
         CamRotation: Rotator;
@@ -11178,12 +11566,14 @@ declare module "ue" {
     }
     
     class PSCPoolElem {
+        constructor();
         constructor(PSC: ParticleSystemComponent);
         PSC: ParticleSystemComponent;
         static StaticClass(): Class;
     }
     
     class PSCPool {
+        constructor();
         constructor(FreeElements: TArray<PSCPoolElem>, InUseComponents_Auto: TArray<ParticleSystemComponent>, InUseComponents_Manual: TArray<ParticleSystemComponent>);
         FreeElements: TArray<PSCPoolElem>;
         InUseComponents_Auto: TArray<ParticleSystemComponent>;
@@ -11192,6 +11582,7 @@ declare module "ue" {
     }
     
     class WorldPSCPool {
+        constructor();
         constructor(WorldParticleSystemPools: TMap<ParticleSystem, PSCPool>);
         WorldParticleSystemPools: TMap<ParticleSystem, PSCPool>;
         static StaticClass(): Class;
@@ -11638,12 +12029,14 @@ declare module "ue" {
     }
     
     class SlateSound {
+        constructor();
         constructor(ResourceObject: Object);
         ResourceObject: Object;
         static StaticClass(): Class;
     }
     
     class ButtonStyle extends SlateWidgetStyle {
+        constructor();
         constructor(Normal: SlateBrush, Hovered: SlateBrush, Pressed: SlateBrush, Disabled: SlateBrush, NormalPadding: Margin, PressedPadding: Margin, PressedSlateSound: SlateSound, HoveredSlateSound: SlateSound, PressedSound: string, HoveredSound: string);
         Normal: SlateBrush;
         Hovered: SlateBrush;
@@ -11668,6 +12061,7 @@ declare module "ue" {
     
     enum ESlateCheckBoxType { CheckBox, ToggleButton, ESlateCheckBoxType_MAX}
     class CheckBoxStyle extends SlateWidgetStyle {
+        constructor();
         constructor(CheckBoxType: ESlateCheckBoxType, UncheckedImage: SlateBrush, UncheckedHoveredImage: SlateBrush, UncheckedPressedImage: SlateBrush, CheckedImage: SlateBrush, CheckedHoveredImage: SlateBrush, CheckedPressedImage: SlateBrush, UndeterminedImage: SlateBrush, UndeterminedHoveredImage: SlateBrush, UndeterminedPressedImage: SlateBrush, Padding: Margin, ForegroundColor: SlateColor, BorderBackgroundColor: SlateColor, CheckedSlateSound: SlateSound, UncheckedSlateSound: SlateSound, HoveredSlateSound: SlateSound, CheckedSound: string, UncheckedSound: string, HoveredSound: string);
         CheckBoxType: ESlateCheckBoxType;
         UncheckedImage: SlateBrush;
@@ -11700,6 +12094,7 @@ declare module "ue" {
     }
     
     class ComboButtonStyle extends SlateWidgetStyle {
+        constructor();
         constructor(ButtonStyle: ButtonStyle, DownArrowImage: SlateBrush, ShadowOffset: Vector2D, ShadowColorAndOpacity: LinearColor, MenuBorderBrush: SlateBrush, MenuBorderPadding: Margin);
         ButtonStyle: ButtonStyle;
         DownArrowImage: SlateBrush;
@@ -11711,6 +12106,7 @@ declare module "ue" {
     }
     
     class ComboBoxStyle extends SlateWidgetStyle {
+        constructor();
         constructor(ComboButtonStyle: ComboButtonStyle, PressedSlateSound: SlateSound, SelectionChangeSlateSound: SlateSound, PressedSound: string, SelectionChangeSound: string);
         ComboButtonStyle: ComboButtonStyle;
         PressedSlateSound: SlateSound;
@@ -11737,6 +12133,7 @@ declare module "ue" {
     }
     
     class FontOutlineSettings {
+        constructor();
         constructor(OutlineSize: number, bSeparateFillAlpha: boolean, bApplyOutlineToDropShadows: boolean, OutlineMaterial: Object, OutlineColor: LinearColor);
         OutlineSize: number;
         bSeparateFillAlpha: boolean;
@@ -11747,6 +12144,7 @@ declare module "ue" {
     }
     
     class SlateFontInfo {
+        constructor();
         constructor(FontObject: Object, FontMaterial: Object, OutlineSettings: FontOutlineSettings, TypefaceFontName: string, Size: number, LetterSpacing: number, FontName: string, Hinting: EFontHinting);
         FontObject: Object;
         FontMaterial: Object;
@@ -11760,6 +12158,7 @@ declare module "ue" {
     }
     
     class ScrollBarStyle extends SlateWidgetStyle {
+        constructor();
         constructor(HorizontalBackgroundImage: SlateBrush, VerticalBackgroundImage: SlateBrush, VerticalTopSlotImage: SlateBrush, HorizontalTopSlotImage: SlateBrush, VerticalBottomSlotImage: SlateBrush, HorizontalBottomSlotImage: SlateBrush, NormalThumbImage: SlateBrush, HoveredThumbImage: SlateBrush, DraggedThumbImage: SlateBrush);
         HorizontalBackgroundImage: SlateBrush;
         VerticalBackgroundImage: SlateBrush;
@@ -11774,6 +12173,7 @@ declare module "ue" {
     }
     
     class EditableTextBoxStyle extends SlateWidgetStyle {
+        constructor();
         constructor(BackgroundImageNormal: SlateBrush, BackgroundImageHovered: SlateBrush, BackgroundImageFocused: SlateBrush, BackgroundImageReadOnly: SlateBrush, Padding: Margin, Font: SlateFontInfo, ForegroundColor: SlateColor, BackgroundColor: SlateColor, ReadOnlyForegroundColor: SlateColor, HScrollBarPadding: Margin, VScrollBarPadding: Margin, ScrollBarStyle: ScrollBarStyle);
         BackgroundImageNormal: SlateBrush;
         BackgroundImageHovered: SlateBrush;
@@ -11799,6 +12199,7 @@ declare module "ue" {
     }
     
     class EditableTextStyle extends SlateWidgetStyle {
+        constructor();
         constructor(Font: SlateFontInfo, ColorAndOpacity: SlateColor, BackgroundImageSelected: SlateBrush, BackgroundImageComposing: SlateBrush, CaretImage: SlateBrush);
         Font: SlateFontInfo;
         ColorAndOpacity: SlateColor;
@@ -11817,6 +12218,7 @@ declare module "ue" {
     }
     
     class ProgressBarStyle extends SlateWidgetStyle {
+        constructor();
         constructor(BackgroundImage: SlateBrush, FillImage: SlateBrush, MarqueeImage: SlateBrush);
         BackgroundImage: SlateBrush;
         FillImage: SlateBrush;
@@ -11841,6 +12243,7 @@ declare module "ue" {
     }
     
     class ScrollBoxStyle extends SlateWidgetStyle {
+        constructor();
         constructor(TopShadowBrush: SlateBrush, BottomShadowBrush: SlateBrush, LeftShadowBrush: SlateBrush, RightShadowBrush: SlateBrush);
         TopShadowBrush: SlateBrush;
         BottomShadowBrush: SlateBrush;
@@ -11866,6 +12269,7 @@ declare module "ue" {
     }
     
     class SpinBoxStyle extends SlateWidgetStyle {
+        constructor();
         constructor(BackgroundBrush: SlateBrush, HoveredBackgroundBrush: SlateBrush, ActiveFillBrush: SlateBrush, InactiveFillBrush: SlateBrush, ArrowsImage: SlateBrush, ForegroundColor: SlateColor, TextPadding: Margin);
         BackgroundBrush: SlateBrush;
         HoveredBackgroundBrush: SlateBrush;
@@ -11886,6 +12290,7 @@ declare module "ue" {
     }
     
     class TextBlockStyle extends SlateWidgetStyle {
+        constructor();
         constructor(Font: SlateFontInfo, ColorAndOpacity: SlateColor, ShadowOffset: Vector2D, ShadowColorAndOpacity: LinearColor, SelectedBackgroundColor: SlateColor, HighlightColor: LinearColor, HighlightShape: SlateBrush, StrikeBrush: SlateBrush, UnderlineBrush: SlateBrush);
         Font: SlateFontInfo;
         ColorAndOpacity: SlateColor;
@@ -11967,6 +12372,7 @@ declare module "ue" {
     
     enum EMobileShadowQuality { NoFiltering, PCF_1x1, PCF_2x2, PCF_3x3, EMobileShadowQuality_MAX}
     class MaterialQualityOverrides {
+        constructor();
         constructor(bDiscardQualityDuringCook: boolean, bEnableOverride: boolean, bForceFullyRough: boolean, bForceNonMetal: boolean, bForceDisableLMDirectionality: boolean, bForceLQReflections: boolean, bForceDisablePreintegratedGF: boolean, bDisableMaterialNormalCalculation: boolean, MobileShadowQuality: EMobileShadowQuality);
         bDiscardQualityDuringCook: boolean;
         bEnableOverride: boolean;
@@ -12004,6 +12410,7 @@ declare module "ue" {
     }
     
     class NetAnalyticsDataConfig {
+        constructor();
         constructor(DataName: string, bEnabled: boolean);
         DataName: string;
         bEnabled: boolean;
@@ -12026,6 +12433,7 @@ declare module "ue" {
     }
     
     class AssetData {
+        constructor();
         constructor(ObjectPath: string, PackageName: string, PackagePath: string, AssetName: string, AssetClass: string);
         ObjectPath: string;
         PackageName: string;
@@ -12036,6 +12444,7 @@ declare module "ue" {
     }
     
     class ARFilter {
+        constructor();
         constructor(PackageNames: TArray<string>, PackagePaths: TArray<string>, ObjectPaths: TArray<string>, ClassNames: TArray<string>, RecursiveClassesExclusionSet: TSet<string>, bRecursivePaths: boolean, bRecursiveClasses: boolean, bIncludeOnlyOnDiskAssets: boolean);
         PackageNames: TArray<string>;
         PackagePaths: TArray<string>;
@@ -12049,6 +12458,7 @@ declare module "ue" {
     }
     
     class TagAndValue {
+        constructor();
         constructor(Tag: string, Value: string);
         Tag: string;
         Value: string;
@@ -12056,6 +12466,7 @@ declare module "ue" {
     }
     
     class AssetRegistryDependencyOptions {
+        constructor();
         constructor(bIncludeSoftPackageReferences: boolean, bIncludeHardPackageReferences: boolean, bIncludeSearchableNames: boolean, bIncludeSoftManagementReferences: boolean, bIncludeHardManagementReferences: boolean);
         bIncludeSoftPackageReferences: boolean;
         bIncludeHardPackageReferences: boolean;
@@ -12113,6 +12524,7 @@ declare module "ue" {
     }
     
     class AutoCompleteCommand {
+        constructor();
         constructor(Command: string, Desc: string);
         Command: string;
         Desc: string;
@@ -12141,6 +12553,7 @@ declare module "ue" {
     enum EThreePlayerSplitScreenType { FavorTop, FavorBottom, Vertical, Horizontal, EThreePlayerSplitScreenType_MAX}
     enum EFourPlayerSplitScreenType { Grid, Vertical, Horizontal, EFourPlayerSplitScreenType_MAX}
     class GameModeName {
+        constructor();
         constructor(Name: string, GameMode: SoftClassPath);
         Name: string;
         GameMode: SoftClassPath;
@@ -12288,6 +12701,7 @@ declare module "ue" {
     
     enum EClusterUnionMethod { PointImplicit, DelaunayTriangulation, MinimalSpanningSubsetDelaunayTriangulation, PointImplicitAugmentedWithMinimalDelaunay, None, EClusterUnionMethod_MAX}
     class SolverCollisionFilterSettings {
+        constructor();
         constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinImpulse: number);
         FilterEnabled: boolean;
         MinMass: number;
@@ -12297,6 +12711,7 @@ declare module "ue" {
     }
     
     class SolverBreakingFilterSettings {
+        constructor();
         constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
         FilterEnabled: boolean;
         MinMass: number;
@@ -12306,6 +12721,7 @@ declare module "ue" {
     }
     
     class SolverTrailingFilterSettings {
+        constructor();
         constructor(FilterEnabled: boolean, MinMass: number, MinSpeed: number, MinVolume: number);
         FilterEnabled: boolean;
         MinMass: number;
@@ -12315,6 +12731,7 @@ declare module "ue" {
     }
     
     class ChaosSolverConfiguration {
+        constructor();
         constructor(Iterations: number, CollisionPairIterations: number, PushOutIterations: number, CollisionPushOutPairIterations: number, CollisionMarginFraction: number, CollisionMarginMax: number, CollisionCullDistance: number, JointPairIterations: number, JointPushOutPairIterations: number, ClusterConnectionFactor: number, ClusterUnionConnectionType: EClusterUnionMethod, bGenerateCollisionData: boolean, CollisionFilterSettings: SolverCollisionFilterSettings, bGenerateBreakData: boolean, BreakingFilterSettings: SolverBreakingFilterSettings, bGenerateTrailingData: boolean, TrailingFilterSettings: SolverTrailingFilterSettings, bGenerateContactGraph: boolean);
         Iterations: number;
         CollisionPairIterations: number;
@@ -12439,6 +12856,7 @@ declare module "ue" {
     }
     
     class ClothVertBoneData {
+        constructor();
         constructor(NumInfluences: number, BoneIndices: FixSizeArray<number>, BoneWeights: FixSizeArray<number>);
         NumInfluences: number;
         BoneIndices: FixSizeArray<number>;
@@ -12476,6 +12894,7 @@ declare module "ue" {
     }
     
     class ToolMenuContext {
+        constructor();
         constructor(ContextObjects: TArray<Object>);
         ContextObjects: TArray<Object>;
         static StaticClass(): Class;
@@ -12485,6 +12904,7 @@ declare module "ue" {
     enum EUserInterfaceActionType { None, Button, ToggleButton, RadioButton, Check, CollapsedButton, EUserInterfaceActionType_MAX}
     enum EToolMenuInsertType { Default, Before, After, First, EToolMenuInsertType_MAX}
     class ToolMenuInsert {
+        constructor();
         constructor(Name: string, Position: EToolMenuInsertType);
         Name: string;
         Position: EToolMenuInsertType;
@@ -12492,6 +12912,7 @@ declare module "ue" {
     }
     
     class ScriptSlateIcon {
+        constructor();
         constructor(StyleSetName: string, StyleName: string, SmallStyleName: string);
         StyleSetName: string;
         StyleName: string;
@@ -12500,6 +12921,7 @@ declare module "ue" {
     }
     
     class ToolMenuEntryScriptDataAdvanced {
+        constructor();
         constructor(TutorialHighlight: string, EntryType: EMultiBlockType, UserInterfaceActionType: EUserInterfaceActionType, bIsSubMenu: boolean, bOpenSubMenuOnClick: boolean, bShouldCloseWindowAfterMenuSelection: boolean, bSimpleComboBox: boolean);
         TutorialHighlight: string;
         EntryType: EMultiBlockType;
@@ -12512,6 +12934,7 @@ declare module "ue" {
     }
     
     class ToolMenuEntryScriptData {
+        constructor();
         constructor(Menu: string, Section: string, Name: string, Label: string, ToolTip: string, Icon: ScriptSlateIcon, OwnerName: string, InsertPosition: ToolMenuInsert, Advanced: ToolMenuEntryScriptDataAdvanced);
         Menu: string;
         Section: string;
@@ -12544,6 +12967,7 @@ declare module "ue" {
     }
     
     class ToolMenuEntry {
+        constructor();
         constructor(Name: string, Owner: ToolMenuOwner, Type: EMultiBlockType, UserInterfaceActionType: EUserInterfaceActionType, TutorialHighlightName: string, InsertPosition: ToolMenuInsert, bShouldCloseWindowAfterMenuSelection: boolean, ScriptObject: ToolMenuEntryScript);
         Name: string;
         Owner: ToolMenuOwner;
@@ -12565,6 +12989,7 @@ declare module "ue" {
     }
     
     class ToolMenuSection {
+        constructor();
         constructor(Name: string, Owner: ToolMenuOwner, Blocks: TArray<ToolMenuEntry>, InsertPosition: ToolMenuInsert, Context: ToolMenuContext, ToolMenuSectionDynamic: ToolMenuSectionDynamic);
         Name: string;
         Owner: ToolMenuOwner;
@@ -12620,24 +13045,28 @@ declare module "ue" {
     
     enum ECustomizedToolMenuVisibility { None, Visible, Hidden, ECustomizedToolMenuVisibility_MAX}
     class CustomizedToolMenuEntry {
+        constructor();
         constructor(Visibility: ECustomizedToolMenuVisibility);
         Visibility: ECustomizedToolMenuVisibility;
         static StaticClass(): Class;
     }
     
     class CustomizedToolMenuSection {
+        constructor();
         constructor(Visibility: ECustomizedToolMenuVisibility);
         Visibility: ECustomizedToolMenuVisibility;
         static StaticClass(): Class;
     }
     
     class CustomizedToolMenuNameArray {
+        constructor();
         constructor(Names: TArray<string>);
         Names: TArray<string>;
         static StaticClass(): Class;
     }
     
     class CustomizedToolMenu {
+        constructor();
         constructor(Name: string, Entries: TMap<string, CustomizedToolMenuEntry>, Sections: TMap<string, CustomizedToolMenuSection>, EntryOrder: TMap<string, CustomizedToolMenuNameArray>, SectionOrder: TArray<string>);
         Name: string;
         Entries: TMap<string, CustomizedToolMenuEntry>;
@@ -12682,6 +13111,7 @@ declare module "ue" {
     
     enum EToolMenuStringCommandType { Command, Python, Custom, EToolMenuStringCommandType_MAX}
     class ToolMenuStringCommand {
+        constructor();
         constructor(Type: EToolMenuStringCommandType, CustomType: string, String: string);
         Type: EToolMenuStringCommandType;
         CustomType: string;
@@ -12764,6 +13194,7 @@ declare module "ue" {
     
     enum ELiveLinkSourceMode { Latest, EngineTime, Timecode, ELiveLinkSourceMode_MAX}
     class LiveLinkSourceBufferManagementSettings {
+        constructor();
         constructor(bValidEngineTimeEnabled: boolean, ValidEngineTime: number, EngineTimeOffset: number, EngineTimeClockOffset: number, TimecodeFrameRate: FrameRate, bGenerateSubFrame: boolean, DetectedFrameRate: FrameRate, bUseTimecodeSmoothLatest: boolean, SourceTimecodeFrameRate: FrameRate, bValidTimecodeFrameEnabled: boolean, ValidTimecodeFrame: number, TimecodeFrameOffset: number, TimecodeClockOffset: number, LatestOffset: number, MaxNumberOfFrameToBuffered: number, bKeepAtLeastOneFrame: boolean);
         bValidEngineTimeEnabled: boolean;
         ValidEngineTime: number;
@@ -12785,12 +13216,14 @@ declare module "ue" {
     }
     
     class LiveLinkSubjectName {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
     }
     
     class LiveLinkSourceDebugInfo {
+        constructor();
         constructor(SubjectName: LiveLinkSubjectName, SnapshotIndex: number, NumberOfBufferAtSnapshot: number);
         SubjectName: LiveLinkSubjectName;
         SnapshotIndex: number;
@@ -12811,6 +13244,7 @@ declare module "ue" {
     }
     
     class LiveLinkCurveConversionSettings {
+        constructor();
         constructor(CurveConversionAssetMap: TMap<string, SoftObjectPath>);
         CurveConversionAssetMap: TMap<string, SoftObjectPath>;
         static StaticClass(): Class;
@@ -12909,12 +13343,14 @@ declare module "ue" {
     }
     
     class GameplayTag {
+        constructor();
         constructor(TagName: string);
         TagName: string;
         static StaticClass(): Class;
     }
     
     class GameplayTagContainer {
+        constructor();
         constructor(GameplayTags: TArray<GameplayTag>, ParentTags: TArray<GameplayTag>);
         GameplayTags: TArray<GameplayTag>;
         ParentTags: TArray<GameplayTag>;
@@ -12922,6 +13358,7 @@ declare module "ue" {
     }
     
     class GameplayTagQuery {
+        constructor();
         constructor(TokenStreamVersion: number, TagDictionary: TArray<GameplayTag>, QueryTokenStream: TArray<number>, UserDescription: string, AutoDescription: string);
         TokenStreamVersion: number;
         TagDictionary: TArray<GameplayTag>;
@@ -13051,6 +13488,7 @@ declare module "ue" {
     }
     
     class GameplayTagTableRow extends TableRowBase {
+        constructor();
         constructor(Tag: string, DevComment: string);
         Tag: string;
         DevComment: string;
@@ -13067,6 +13505,7 @@ declare module "ue" {
     }
     
     class RestrictedGameplayTagTableRow extends GameplayTagTableRow {
+        constructor();
         constructor(bAllowNonRestrictedChildren: boolean);
         bAllowNonRestrictedChildren: boolean;
         static StaticClass(): Class;
@@ -13082,6 +13521,7 @@ declare module "ue" {
     }
     
     class GameplayTagSource {
+        constructor();
         constructor(SourceName: string, SourceType: EGameplayTagSourceType, SourceTagList: GameplayTagsList, SourceRestrictedTagList: RestrictedGameplayTagsList);
         SourceName: string;
         SourceType: EGameplayTagSourceType;
@@ -13117,6 +13557,7 @@ declare module "ue" {
     }
     
     class GameplayTagCategoryRemap {
+        constructor();
         constructor(BaseCategory: string, RemapCategories: TArray<string>);
         BaseCategory: string;
         RemapCategories: TArray<string>;
@@ -13124,6 +13565,7 @@ declare module "ue" {
     }
     
     class GameplayTagRedirect {
+        constructor();
         constructor(OldTagName: string, NewTagName: string);
         OldTagName: string;
         NewTagName: string;
@@ -13131,6 +13573,7 @@ declare module "ue" {
     }
     
     class RestrictedConfigInfo {
+        constructor();
         constructor(RestrictedConfigName: string, Owners: TArray<string>);
         RestrictedConfigName: string;
         Owners: TArray<string>;
@@ -13166,6 +13609,7 @@ declare module "ue" {
     }
     
     class NavDataConfig extends NavAgentProperties {
+        constructor();
         constructor(Name: string, Color: Color, DefaultQueryExtent: Vector, NavigationDataClass: Class, NavDataClass: TSoftObjectPtr<Class>);
         Name: string;
         Color: Color;
@@ -13177,6 +13621,7 @@ declare module "ue" {
     
     enum ERuntimeGenerationType { Static, DynamicModifiersOnly, Dynamic, LegacyGeneration, ERuntimeGenerationType_MAX}
     class SupportedAreaData {
+        constructor();
         constructor(AreaClassName: string, AreaID: number, AreaClass: Class);
         AreaClassName: string;
         AreaID: number;
@@ -13310,6 +13755,7 @@ declare module "ue" {
     }
     
     class NavCollisionCylinder {
+        constructor();
         constructor(Offset: Vector, Radius: number, Height: number);
         Offset: Vector;
         Radius: number;
@@ -13318,6 +13764,7 @@ declare module "ue" {
     }
     
     class NavCollisionBox {
+        constructor();
         constructor(Offset: Vector, Extent: Vector);
         Offset: Vector;
         Extent: Vector;
@@ -13351,6 +13798,7 @@ declare module "ue" {
     }
     
     class NavGraphNode {
+        constructor();
         constructor(Owner: Object);
         Owner: Object;
         static StaticClass(): Class;
@@ -13403,6 +13851,7 @@ declare module "ue" {
     }
     
     class NavigationFilterArea {
+        constructor();
         constructor(AreaClass: Class, TravelCostOverride: number, EnteringCostOverride: number, bIsExcluded: boolean, bOverrideTravelCost: boolean, bOverrideEnteringCost: boolean);
         AreaClass: Class;
         TravelCostOverride: number;
@@ -13414,6 +13863,7 @@ declare module "ue" {
     }
     
     class NavigationFilterFlags {
+        constructor();
         constructor(bNavFlag0: boolean, bNavFlag1: boolean, bNavFlag2: boolean, bNavFlag3: boolean, bNavFlag4: boolean, bNavFlag5: boolean, bNavFlag6: boolean, bNavFlag7: boolean, bNavFlag8: boolean, bNavFlag9: boolean, bNavFlag10: boolean, bNavFlag11: boolean, bNavFlag12: boolean, bNavFlag13: boolean, bNavFlag14: boolean, bNavFlag15: boolean);
         bNavFlag0: boolean;
         bNavFlag1: boolean;
@@ -13570,6 +14020,7 @@ declare module "ue" {
     
     enum ENavLinkDirection { BothWays, LeftToRight, RightToLeft, ENavLinkDirection_MAX}
     class NavigationLinkBase {
+        constructor();
         constructor(LeftProjectHeight: number, MaxFallDownLength: number, SnapRadius: number, SnapHeight: number, SupportedAgents: NavAgentSelector, bSupportsAgent0: boolean, bSupportsAgent1: boolean, bSupportsAgent2: boolean, bSupportsAgent3: boolean, bSupportsAgent4: boolean, bSupportsAgent5: boolean, bSupportsAgent6: boolean, bSupportsAgent7: boolean, bSupportsAgent8: boolean, bSupportsAgent9: boolean, bSupportsAgent10: boolean, bSupportsAgent11: boolean, bSupportsAgent12: boolean, bSupportsAgent13: boolean, bSupportsAgent14: boolean, bSupportsAgent15: boolean, Description: string, Direction: ENavLinkDirection, bUseSnapHeight: boolean, bSnapToCheapestArea: boolean, bCustomFlag0: boolean, bCustomFlag1: boolean, bCustomFlag2: boolean, bCustomFlag3: boolean, bCustomFlag4: boolean, bCustomFlag5: boolean, bCustomFlag6: boolean, bCustomFlag7: boolean, AreaClass: Class);
         LeftProjectHeight: number;
         MaxFallDownLength: number;
@@ -13609,6 +14060,7 @@ declare module "ue" {
     }
     
     class NavigationLink extends NavigationLinkBase {
+        constructor();
         constructor(Left: Vector, Right: Vector);
         Left: Vector;
         Right: Vector;
@@ -13679,6 +14131,7 @@ declare module "ue" {
     }
     
     class NavigationSegmentLink extends NavigationLinkBase {
+        constructor();
         constructor(LeftStart: Vector, LeftEnd: Vector, RightStart: Vector, RightEnd: Vector);
         LeftStart: Vector;
         LeftEnd: Vector;
@@ -13861,6 +14314,7 @@ declare module "ue" {
     }
     
     class BehaviorInfo {
+        constructor();
         constructor(Behavior: InputBehavior);
         Behavior: InputBehavior;
         static StaticClass(): Class;
@@ -14436,6 +14890,7 @@ declare module "ue" {
     }
     
     class GizmoFloatParameterChange {
+        constructor();
         constructor(InitialValue: number, CurrentValue: number);
         InitialValue: number;
         CurrentValue: number;
@@ -14459,6 +14914,7 @@ declare module "ue" {
     }
     
     class GizmoVec2ParameterChange {
+        constructor();
         constructor(InitialValue: Vector2D, CurrentValue: Vector2D);
         InitialValue: Vector2D;
         CurrentValue: Vector2D;
@@ -14777,6 +15233,7 @@ declare module "ue" {
     
     enum EClothingWindMethodNv { Legacy, Accurate, EClothingWindMethodNv_MAX}
     class ClothConstraintSetupNv {
+        constructor();
         constructor(Stiffness: number, StiffnessMultiplier: number, StretchLimit: number, CompressionLimit: number);
         Stiffness: number;
         StiffnessMultiplier: number;
@@ -14787,6 +15244,7 @@ declare module "ue" {
     
     enum EClothingWindMethod_Legacy { Legacy, Accurate, EClothingWindMethod_MAX}
     class ClothConstraintSetup_Legacy {
+        constructor();
         constructor(Stiffness: number, StiffnessMultiplier: number, StretchLimit: number, CompressionLimit: number);
         Stiffness: number;
         StiffnessMultiplier: number;
@@ -14908,6 +15366,7 @@ declare module "ue" {
     }
     
     class CompositionGraphCapturePasses {
+        constructor();
         constructor(Value: TArray<string>);
         Value: TArray<string>;
         static StaticClass(): Class;
@@ -14988,12 +15447,14 @@ declare module "ue" {
     }
     
     class DirectoryPath {
+        constructor();
         constructor(Path: string);
         Path: string;
         static StaticClass(): Class;
     }
     
     class CaptureResolution {
+        constructor();
         constructor(ResX: number, ResY: number);
         ResX: number;
         ResY: number;
@@ -15001,6 +15462,7 @@ declare module "ue" {
     }
     
     class MovieSceneCaptureSettings {
+        constructor();
         constructor(OutputDirectory: DirectoryPath, GameModeOverride: Class, OutputFormat: string, bOverwriteExisting: boolean, bUseRelativeFrameNumbers: boolean, HandleFrames: number, MovieExtension: string, ZeroPadFrameNumbers: number, FrameRate: FrameRate, bUseCustomFrameRate: boolean, CustomFrameRate: FrameRate, Resolution: CaptureResolution, bEnableTextureStreaming: boolean, bCinematicEngineScalability: boolean, bCinematicMode: boolean, bAllowMovement: boolean, bAllowTurning: boolean, bShowPlayer: boolean, bShowHUD: boolean, bUsePathTracer: boolean, PathTracerSamplePerPixel: number);
         OutputDirectory: DirectoryPath;
         GameModeOverride: Class;
@@ -15068,6 +15530,7 @@ declare module "ue" {
     }
     
     class CapturedPixelsID {
+        constructor();
         constructor(Identifiers: TMap<string, string>);
         Identifiers: TMap<string, string>;
         static StaticClass(): Class;
@@ -15079,6 +15542,7 @@ declare module "ue" {
     }
     
     class FrameMetrics {
+        constructor();
         constructor(TotalElapsedTime: number, FrameDelta: number, FrameNumber: number, NumDroppedFrames: number);
         TotalElapsedTime: number;
         FrameDelta: number;
@@ -15142,6 +15606,7 @@ declare module "ue" {
     }
     
     class ActorRecordingSettings {
+        constructor();
         constructor(Settings: TArray<Object>);
         Settings: TArray<Object>;
         static StaticClass(): Class;
@@ -15153,6 +15618,7 @@ declare module "ue" {
     }
     
     class LevelSequenceBindingReference {
+        constructor();
         constructor(PackageName: string, ExternalObjectPath: SoftObjectPath, ObjectPath: string);
         PackageName: string;
         ExternalObjectPath: SoftObjectPath;
@@ -15161,12 +15627,14 @@ declare module "ue" {
     }
     
     class LevelSequenceBindingReferenceArray {
+        constructor();
         constructor(References: TArray<LevelSequenceBindingReference>);
         References: TArray<LevelSequenceBindingReference>;
         static StaticClass(): Class;
     }
     
     class LevelSequenceBindingReferences {
+        constructor();
         constructor(BindingIdToReferences: TMap<Guid, LevelSequenceBindingReferenceArray>, AnimSequenceInstances: TSet<Guid>);
         BindingIdToReferences: TMap<Guid, LevelSequenceBindingReferenceArray>;
         AnimSequenceInstances: TSet<Guid>;
@@ -15174,6 +15642,7 @@ declare module "ue" {
     }
     
     class LevelSequenceObject {
+        constructor();
         constructor(ObjectOrOwner: TLazyObjectPtr<Object>, ComponentName: string, CachedComponent: TWeakObjectPtr<Object>);
         ObjectOrOwner: TLazyObjectPtr<Object>;
         ComponentName: string;
@@ -15201,6 +15670,7 @@ declare module "ue" {
     }
     
     class AnimationRecordingSettings {
+        constructor();
         constructor(bRecordInWorldSpace: boolean, bRemoveRootAnimation: boolean, bAutoSaveAsset: boolean, SampleRate: number, Length: number, InterpMode: ERichCurveInterpMode, TangentMode: ERichCurveTangentMode, bRecordTransforms: boolean, bRecordCurves: boolean);
         bRecordInWorldSpace: boolean;
         bRemoveRootAnimation: boolean;
@@ -15275,18 +15745,21 @@ declare module "ue" {
     
     enum EAudioRecordingMode { None, AudioTrack, EAudioRecordingMode_MAX}
     class SequenceRecorderActorFilter {
+        constructor();
         constructor(ActorClassesToRecord: TArray<Class>);
         ActorClassesToRecord: TArray<Class>;
         static StaticClass(): Class;
     }
     
     class MovieSceneSequenceLoopCount {
+        constructor();
         constructor(Value: number);
         Value: number;
         static StaticClass(): Class;
     }
     
     class MovieSceneSequencePlaybackSettings {
+        constructor();
         constructor(bAutoPlay: boolean, LoopCount: MovieSceneSequenceLoopCount, PlayRate: number, StartTime: number, bRandomStartTime: boolean, bRestoreState: boolean, bDisableMovementInput: boolean, bDisableLookAtInput: boolean, bHidePlayer: boolean, bHideHud: boolean, bDisableCameraCuts: boolean, bPauseAtEnd: boolean);
         bAutoPlay: boolean;
         LoopCount: MovieSceneSequenceLoopCount;
@@ -15305,6 +15778,7 @@ declare module "ue" {
     
     enum EMovieScenePlayerStatus { Stopped, Playing, Recording, Scrubbing, Jumping, Stepping, Paused, MAX}
     class MovieSceneSequenceReplProperties {
+        constructor();
         constructor(LastKnownPosition: FrameTime, LastKnownStatus: EMovieScenePlayerStatus, LastKnownNumLoops: number);
         LastKnownPosition: FrameTime;
         LastKnownStatus: EMovieScenePlayerStatus;
@@ -15331,6 +15805,7 @@ declare module "ue" {
     enum EMovieScenePositionType { Frame, Time, MarkedFrame, EMovieScenePositionType_MAX}
     enum EUpdatePositionMethod { Play, Jump, Scrub, EUpdatePositionMethod_MAX}
     class MovieSceneSequencePlaybackParams {
+        constructor();
         constructor(Frame: FrameTime, Time: number, MarkedFrame: string, PositionType: EMovieScenePositionType, UpdateMethod: EUpdatePositionMethod);
         Frame: FrameTime;
         Time: number;
@@ -15341,6 +15816,7 @@ declare module "ue" {
     }
     
     class QualifiedFrameTime {
+        constructor();
         constructor(Time: FrameTime, Rate: FrameRate);
         Time: FrameTime;
         Rate: FrameRate;
@@ -15422,6 +15898,7 @@ declare module "ue" {
     }
     
     class LevelSequenceCameraSettings {
+        constructor();
         constructor(bOverrideAspectRatioAxisConstraint: boolean, AspectRatioAxisConstraint: EAspectRatioAxisConstraint);
         bOverrideAspectRatioAxisConstraint: boolean;
         AspectRatioAxisConstraint: EAspectRatioAxisConstraint;
@@ -15447,6 +15924,7 @@ declare module "ue" {
     }
     
     class MovieSceneBindingOverrideData {
+        constructor();
         constructor(ObjectBindingId: MovieSceneObjectBindingID, Object: TWeakObjectPtr<Object>, bOverridesDefault: boolean);
         ObjectBindingId: MovieSceneObjectBindingID;
         Object: TWeakObjectPtr<Object>;
@@ -15463,6 +15941,7 @@ declare module "ue" {
     }
     
     class LevelSequenceSnapshotSettings {
+        constructor();
         constructor(ZeroPadAmount: number, FrameRate: FrameRate);
         ZeroPadAmount: number;
         FrameRate: FrameRate;
@@ -15470,6 +15949,7 @@ declare module "ue" {
     }
     
     class LevelSequencePlayerSnapshot {
+        constructor();
         constructor(MasterName: string, MasterTime: QualifiedFrameTime, SourceTime: QualifiedFrameTime, CurrentShotName: string, CurrentShotLocalTime: QualifiedFrameTime, CurrentShotSourceTime: QualifiedFrameTime, SourceTimecode: string, CameraComponent: TSoftObjectPtr<CameraComponent>, Settings: LevelSequenceSnapshotSettings, ActiveShot: LevelSequence, ShotID: MovieSceneSequenceID);
         MasterName: string;
         MasterTime: QualifiedFrameTime;
@@ -15534,6 +16014,7 @@ declare module "ue" {
     }
     
     class PropertiesToRecordForClass {
+        constructor();
         constructor(Class: Class, Properties: TArray<string>);
         Class: Class;
         Properties: TArray<string>;
@@ -15541,6 +16022,7 @@ declare module "ue" {
     }
     
     class PropertiesToRecordForActorClass {
+        constructor();
         constructor(Class: Class, Properties: TArray<string>);
         Class: Class;
         Properties: TArray<string>;
@@ -15548,6 +16030,7 @@ declare module "ue" {
     }
     
     class SettingsForActorClass {
+        constructor();
         constructor(Class: Class, bRecordToPossessable: boolean);
         Class: Class;
         bRecordToPossessable: boolean;
@@ -15618,6 +16101,7 @@ declare module "ue" {
     }
     
     class MovieSceneTangentData {
+        constructor();
         constructor(ArriveTangent: number, LeaveTangent: number, ArriveTangentWeight: number, LeaveTangentWeight: number, TangentWeightMode: ERichCurveTangentWeightMode);
         ArriveTangent: number;
         LeaveTangent: number;
@@ -15628,6 +16112,7 @@ declare module "ue" {
     }
     
     class MovieSceneFloatValue {
+        constructor();
         constructor(Value: number, Tangent: MovieSceneTangentData, InterpMode: ERichCurveInterpMode, TangentMode: ERichCurveTangentMode, PaddingByte: number);
         Value: number;
         Tangent: MovieSceneTangentData;
@@ -15687,6 +16172,7 @@ declare module "ue" {
     }
     
     class MovieSceneToolsPropertyTrackSettings {
+        constructor();
         constructor(ComponentName: string, PropertyName: string);
         ComponentName: string;
         PropertyName: string;
@@ -15694,6 +16180,7 @@ declare module "ue" {
     }
     
     class MovieSceneToolsFbxSettings {
+        constructor();
         constructor(FbxPropertyName: string, PropertyPath: MovieSceneToolsPropertyTrackSettings);
         FbxPropertyName: string;
         PropertyPath: MovieSceneToolsPropertyTrackSettings;
@@ -15744,6 +16231,7 @@ declare module "ue" {
     }
     
     class ControlFindReplaceString {
+        constructor();
         constructor(Find: string, Replace: string);
         Find: string;
         Replace: string;
@@ -15753,6 +16241,7 @@ declare module "ue" {
     enum FControlRigChannelEnum { Bool, Enum, Integer, Float, Vector2DX, Vector2DY, PositionX, PositionY, PositionZ, RotatorX, RotatorY, RotatorZ, ScaleX, ScaleY, ScaleZ, FControlRigChannelEnum_MAX}
     enum FTransformChannelEnum { TranslateX, TranslateY, TranslateZ, RotateX, RotateY, RotateZ, ScaleX, ScaleY, ScaleZ, FTransformChannelEnum_MAX}
     class ControlToTransformMappings {
+        constructor();
         constructor(ControlChannel: FControlRigChannelEnum, FBXChannel: FTransformChannelEnum, bNegate: boolean);
         ControlChannel: FControlRigChannelEnum;
         FBXChannel: FTransformChannelEnum;
@@ -15796,6 +16285,7 @@ declare module "ue" {
     }
     
     class AdvancedCopyMap {
+        constructor();
         constructor(ClassToCopy: SoftClassPath, AdvancedCopyCustomization: SoftClassPath);
         ClassToCopy: SoftClassPath;
         AdvancedCopyCustomization: SoftClassPath;
@@ -15811,6 +16301,7 @@ declare module "ue" {
     }
     
     class AssetRenameData {
+        constructor();
         constructor(Asset: TWeakObjectPtr<Object>, NewPackagePath: string, NewName: string, OldObjectPath: SoftObjectPath, NewObjectPath: SoftObjectPath, bOnlyFixSoftReferences: boolean);
         Asset: TWeakObjectPtr<Object>;
         NewPackagePath: string;
@@ -16017,6 +16508,7 @@ declare module "ue" {
     }
     
     class MovieSceneTransformMask {
+        constructor();
         constructor(Mask: number);
         Mask: number;
         static StaticClass(): Class;
@@ -16038,6 +16530,7 @@ declare module "ue" {
     }
     
     class MovieSceneFloatChannel extends MovieSceneChannel {
+        constructor();
         constructor(PreInfinityExtrap: ERichCurveExtrapolation, PostInfinityExtrap: ERichCurveExtrapolation, Times: TArray<FrameNumber>, Values: TArray<MovieSceneFloatValue>, DefaultValue: number, bHasDefaultValue: boolean, KeyHandles: MovieSceneKeyHandleMap, TickResolution: FrameRate);
         PreInfinityExtrap: ERichCurveExtrapolation;
         PostInfinityExtrap: ERichCurveExtrapolation;
@@ -16321,6 +16814,7 @@ declare module "ue" {
     }
     
     class ARVideoFormat {
+        constructor();
         constructor(FPS: number, Width: number, Height: number);
         FPS: number;
         Width: number;
@@ -16441,6 +16935,7 @@ declare module "ue" {
     
     enum EARLineTraceChannels { None, FeaturePoint, GroundPlane, PlaneUsingExtent, PlaneUsingBoundaryPolygon, EARLineTraceChannels_MAX}
     class ARTraceResult {
+        constructor();
         constructor(DistanceFromCamera: number, TraceChannel: EARLineTraceChannels, LocalTransform: Transform, TrackedGeometry: ARTrackedGeometry);
         DistanceFromCamera: number;
         TraceChannel: EARLineTraceChannels;
@@ -16472,6 +16967,7 @@ declare module "ue" {
     }
     
     class ARCameraIntrinsics {
+        constructor();
         constructor(ImageResolution: IntPoint, FocalLength: Vector2D, PrincipalPoint: Vector2D);
         ImageResolution: IntPoint;
         FocalLength: Vector2D;
@@ -16500,6 +16996,7 @@ declare module "ue" {
     
     enum EARSessionStatus { NotStarted, Running, NotSupported, FatalError, PermissionNotGranted, UnsupportedConfiguration, Other, EARSessionStatus_MAX}
     class ARSessionStatus {
+        constructor();
         constructor(AdditionalInfo: string, Status: EARSessionStatus);
         AdditionalInfo: string;
         Status: EARSessionStatus;
@@ -16507,6 +17004,7 @@ declare module "ue" {
     }
     
     class ARSkeletonDefinition {
+        constructor();
         constructor(NumJoints: number, JointNames: TArray<string>, ParentIndices: TArray<number>);
         NumJoints: number;
         JointNames: TArray<string>;
@@ -16516,6 +17014,7 @@ declare module "ue" {
     
     enum EARJointTransformSpace { Model, ParentJoint, EARJointTransformSpace_MAX}
     class ARPose3D {
+        constructor();
         constructor(SkeletonDefinition: ARSkeletonDefinition, JointTransforms: TArray<Transform>, IsJointTracked: TArray<boolean>, JointTransformSpace: EARJointTransformSpace);
         SkeletonDefinition: ARSkeletonDefinition;
         JointTransforms: TArray<Transform>;
@@ -16592,6 +17091,7 @@ declare module "ue" {
     }
     
     class ARPose2D {
+        constructor();
         constructor(SkeletonDefinition: ARSkeletonDefinition, JointLocations: TArray<Vector2D>, IsJointTracked: TArray<boolean>);
         SkeletonDefinition: ARSkeletonDefinition;
         JointLocations: TArray<Vector2D>;
@@ -16716,6 +17216,7 @@ declare module "ue" {
     }
     
     class ARSessionPayload {
+        constructor();
         constructor(ConfigFlags: number, DefaultMeshMaterial: MaterialInterface, DefaultWireframeMeshMaterial: MaterialInterface);
         ConfigFlags: number;
         DefaultMeshMaterial: MaterialInterface;
@@ -16724,6 +17225,7 @@ declare module "ue" {
     }
     
     class ARPlaneUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, WorldTransform: Transform, Center: Vector, Extents: Vector, BoundaryVertices: TArray<Vector>, ObjectClassification: EARObjectClassification);
         SessionPayload: ARSessionPayload;
         WorldTransform: Transform;
@@ -16767,6 +17269,7 @@ declare module "ue" {
     
     enum EARFaceTransformMixing { ComponentOnly, ComponentLocationTrackedRotation, ComponentWithTracked, TrackingOnly, EARFaceTransformMixing_MAX}
     class ARFaceUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, LeftEyePosition: Vector, RightEyePosition: Vector, LookAtTarget: Vector);
         SessionPayload: ARSessionPayload;
         LeftEyePosition: Vector;
@@ -16792,6 +17295,7 @@ declare module "ue" {
     }
     
     class ARImageUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, WorldTransform: Transform, DetectedImage: ARCandidateImage, EstimatedSize: Vector2D);
         SessionPayload: ARSessionPayload;
         WorldTransform: Transform;
@@ -16814,6 +17318,7 @@ declare module "ue" {
     }
     
     class ARQRCodeUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, WorldTransform: Transform, Extents: Vector, QRCode: string);
         SessionPayload: ARSessionPayload;
         WorldTransform: Transform;
@@ -16836,6 +17341,7 @@ declare module "ue" {
     }
     
     class ARPoseUpdatePayload {
+        constructor();
         constructor(WorldTransform: Transform, JointTransforms: TArray<Transform>);
         WorldTransform: Transform;
         JointTransforms: TArray<Transform>;
@@ -16856,6 +17362,7 @@ declare module "ue" {
     }
     
     class AREnvironmentProbeUpdatePayload {
+        constructor();
         constructor(WorldTransform: Transform);
         WorldTransform: Transform;
         static StaticClass(): Class;
@@ -16873,6 +17380,7 @@ declare module "ue" {
     }
     
     class ARObjectUpdatePayload {
+        constructor();
         constructor(WorldTransform: Transform);
         WorldTransform: Transform;
         static StaticClass(): Class;
@@ -16890,6 +17398,7 @@ declare module "ue" {
     }
     
     class ARMeshUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, WorldTransform: Transform, ObjectClassification: EARObjectClassification);
         SessionPayload: ARSessionPayload;
         WorldTransform: Transform;
@@ -16910,6 +17419,7 @@ declare module "ue" {
     
     enum EARAltitudeSource { Precise, Coarse, UserDefined, Unknown, EARAltitudeSource_MAX}
     class ARGeoAnchorUpdatePayload {
+        constructor();
         constructor(SessionPayload: ARSessionPayload, WorldTransform: Transform, Longitude: number, Latitude: number, AltitudeMeters: number, AltitudeSource: EARAltitudeSource, AnchorName: string);
         SessionPayload: ARSessionPayload;
         WorldTransform: Transform;
@@ -17305,6 +17815,7 @@ declare module "ue" {
     enum ESpectatorScreenMode { Disabled, SingleEyeLetterboxed, Undistorted, Distorted, SingleEye, SingleEyeCroppedToFill, Texture, TexturePlusEye, ESpectatorScreenMode_MAX}
     enum EOrientPositionSelector { Orientation, Position, OrientationAndPosition, EOrientPositionSelector_MAX}
     class XRDeviceId {
+        constructor();
         constructor(SystemName: string, DeviceId: number);
         SystemName: string;
         DeviceId: number;
@@ -17314,6 +17825,7 @@ declare module "ue" {
     enum EXRVisualType { Controller, Hand, EXRVisualType_MAX}
     enum ETrackingStatus { NotTracked, InertialOnly, Tracked, ETrackingStatus_MAX}
     class XRMotionControllerData {
+        constructor();
         constructor(bValid: boolean, DeviceName: string, ApplicationInstanceID: Guid, DeviceVisualType: EXRVisualType, HandIndex: EControllerHand, TrackingStatus: ETrackingStatus, GripPosition: Vector, GripRotation: Quat, AimPosition: Vector, AimRotation: Quat, HandKeyPositions: TArray<Vector>, HandKeyRotations: TArray<Quat>, HandKeyRadii: TArray<number>, bIsGrasped: boolean);
         bValid: boolean;
         DeviceName: string;
@@ -17334,6 +17846,7 @@ declare module "ue" {
     
     enum EHMDWornState { Unknown, Worn, NotWorn, EHMDWornState_MAX}
     class XRHMDData {
+        constructor();
         constructor(bValid: boolean, DeviceName: string, ApplicationInstanceID: Guid, TrackingStatus: ETrackingStatus, Position: Vector, Rotation: Quat);
         bValid: boolean;
         DeviceName: string;
@@ -17348,6 +17861,7 @@ declare module "ue" {
     enum EXRDeviceConnectionResult { NoTrackingSystem, FeatureNotSupported, NoValidViewport, MiscFailure, Success, EXRDeviceConnectionResult_MAX}
     enum ESpatialInputGestureAxis { None, Manipulation, Navigation, NavigationRails, ESpatialInputGestureAxis_MAX}
     class XRGestureConfig {
+        constructor();
         constructor(bTap: boolean, bHold: boolean, AxisGesture: ESpatialInputGestureAxis, bNavigationAxisX: boolean, bNavigationAxisY: boolean, bNavigationAxisZ: boolean);
         bTap: boolean;
         bHold: boolean;
@@ -17590,6 +18104,7 @@ declare module "ue" {
     }
     
     class EditorWorldExtensionActorData {
+        constructor();
         constructor(Actor: Actor, bValidForPIE: boolean);
         Actor: Actor;
         bValidForPIE: boolean;
@@ -17685,6 +18200,7 @@ declare module "ue" {
     }
     
     class VREditorFloatingUICreationContext {
+        constructor();
         constructor(WidgetClass: Class, PanelID: string, ParentActor: Actor, PanelSpawnOffset: Transform, PanelSize: Vector2D, PanelMesh: StaticMesh, EditorUISize: number, bHideWindowHandles: boolean, bMaskOutWidgetBackground: boolean, bNoCloseButton: boolean);
         WidgetClass: Class;
         PanelID: string;
@@ -17885,6 +18401,7 @@ declare module "ue" {
     }
     
     class ViewportActionKeyInput {
+        constructor();
         constructor(ActionType: string, Event: EInputEvent, bIsInputCaptured: boolean);
         ActionType: string;
         Event: EInputEvent;
@@ -18030,6 +18547,7 @@ declare module "ue" {
     }
     
     class InterpCurvePointQuat {
+        constructor();
         constructor(InVal: number, OutVal: Quat, ArriveTangent: Quat, LeaveTangent: Quat, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: Quat;
@@ -18040,6 +18558,7 @@ declare module "ue" {
     }
     
     class InterpCurveQuat {
+        constructor();
         constructor(Points: TArray<InterpCurvePointQuat>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointQuat>;
         bIsLooped: boolean;
@@ -18048,6 +18567,7 @@ declare module "ue" {
     }
     
     class InterpCurvePointFloat {
+        constructor();
         constructor(InVal: number, OutVal: number, ArriveTangent: number, LeaveTangent: number, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: number;
@@ -18058,6 +18578,7 @@ declare module "ue" {
     }
     
     class InterpCurveFloat {
+        constructor();
         constructor(Points: TArray<InterpCurvePointFloat>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointFloat>;
         bIsLooped: boolean;
@@ -18073,6 +18594,7 @@ declare module "ue" {
     }
     
     class SplineCurves {
+        constructor();
         constructor(Position: InterpCurveVector, Rotation: InterpCurveQuat, Scale: InterpCurveVector, ReparamTable: InterpCurveFloat, Metadata: SplineMetadata, Version: number);
         Position: InterpCurveVector;
         Rotation: InterpCurveQuat;
@@ -18086,6 +18608,7 @@ declare module "ue" {
     enum ESplineCoordinateSpace { Local, World, ESplineCoordinateSpace_MAX}
     enum ESplinePointType { Linear, Curve, Constant, CurveClamped, CurveCustomTangent, ESplinePointType_MAX}
     class SplinePoint {
+        constructor();
         constructor(InputKey: number, Position: Vector, ArriveTangent: Vector, LeaveTangent: Vector, Rotation: Rotator, Scale: Vector, Type: ESplinePointType);
         InputKey: number;
         Position: Vector;
@@ -18226,6 +18749,7 @@ declare module "ue" {
     }
     
     class SplineMeshParams {
+        constructor();
         constructor(StartPos: Vector, StartTangent: Vector, StartScale: Vector2D, StartRoll: number, StartOffset: Vector2D, EndPos: Vector, EndScale: Vector2D, EndTangent: Vector, EndRoll: number, EndOffset: Vector2D);
         StartPos: Vector;
         StartTangent: Vector;
@@ -18366,6 +18890,7 @@ declare module "ue" {
     
     enum ELightUnits { Unitless, Candelas, Lumens, ELightUnits_MAX}
     class LightmassLightSettings {
+        constructor();
         constructor(IndirectLightingSaturation: number, ShadowExponent: number, bUseAreaShadowsForStationaryLight: boolean);
         IndirectLightingSaturation: number;
         ShadowExponent: number;
@@ -18483,6 +19008,7 @@ declare module "ue" {
     }
     
     class VRButton {
+        constructor();
         constructor(ButtonWidget: VREditorWidgetComponent);
         ButtonWidget: VREditorWidgetComponent;
         static StaticClass(): Class;
@@ -18800,6 +19326,7 @@ declare module "ue" {
     
     enum ELocalizationTargetConflictStatus { Unknown, ConflictsPresent, Clear, ELocalizationTargetConflictStatus_MAX}
     class FilePath {
+        constructor();
         constructor(FilePath: string);
         FilePath: string;
         static StaticClass(): Class;
@@ -18807,6 +19334,7 @@ declare module "ue" {
     
     enum ELocalizationGatherPathRoot { Auto, Engine, Project, ELocalizationGatherPathRoot_MAX}
     class GatherTextSearchDirectory {
+        constructor();
         constructor(PathRoot: ELocalizationGatherPathRoot, Path: string);
         PathRoot: ELocalizationGatherPathRoot;
         Path: string;
@@ -18814,6 +19342,7 @@ declare module "ue" {
     }
     
     class GatherTextExcludePath {
+        constructor();
         constructor(PathRoot: ELocalizationGatherPathRoot, Pattern: string);
         PathRoot: ELocalizationGatherPathRoot;
         Pattern: string;
@@ -18821,12 +19350,14 @@ declare module "ue" {
     }
     
     class GatherTextFileExtension {
+        constructor();
         constructor(Pattern: string);
         Pattern: string;
         static StaticClass(): Class;
     }
     
     class GatherTextFromTextFilesConfiguration {
+        constructor();
         constructor(IsEnabled: boolean, SearchDirectories: TArray<GatherTextSearchDirectory>, ExcludePathWildcards: TArray<GatherTextExcludePath>, FileExtensions: TArray<GatherTextFileExtension>, ShouldGatherFromEditorOnlyData: boolean);
         IsEnabled: boolean;
         SearchDirectories: TArray<GatherTextSearchDirectory>;
@@ -18837,6 +19368,7 @@ declare module "ue" {
     }
     
     class GatherTextIncludePath {
+        constructor();
         constructor(PathRoot: ELocalizationGatherPathRoot, Pattern: string);
         PathRoot: ELocalizationGatherPathRoot;
         Pattern: string;
@@ -18844,6 +19376,7 @@ declare module "ue" {
     }
     
     class GatherTextFromPackagesConfiguration {
+        constructor();
         constructor(IsEnabled: boolean, IncludePathWildcards: TArray<GatherTextIncludePath>, ExcludePathWildcards: TArray<GatherTextExcludePath>, FileExtensions: TArray<GatherTextFileExtension>, Collections: TArray<string>, ExcludeClasses: TArray<SoftClassPath>, ShouldExcludeDerivedClasses: boolean, ShouldGatherFromEditorOnlyData: boolean, SkipGatherCache: boolean);
         IsEnabled: boolean;
         IncludePathWildcards: TArray<GatherTextIncludePath>;
@@ -18858,18 +19391,21 @@ declare module "ue" {
     }
     
     class MetaDataKeyName {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
     }
     
     class MetaDataTextKeyPattern {
+        constructor();
         constructor(Pattern: string);
         Pattern: string;
         static StaticClass(): Class;
     }
     
     class MetaDataKeyGatherSpecification {
+        constructor();
         constructor(MetaDataKey: MetaDataKeyName, TextNamespace: string, TextKeyPattern: MetaDataTextKeyPattern);
         MetaDataKey: MetaDataKeyName;
         TextNamespace: string;
@@ -18878,6 +19414,7 @@ declare module "ue" {
     }
     
     class GatherTextFromMetaDataConfiguration {
+        constructor();
         constructor(IsEnabled: boolean, IncludePathWildcards: TArray<GatherTextIncludePath>, ExcludePathWildcards: TArray<GatherTextExcludePath>, KeySpecifications: TArray<MetaDataKeyGatherSpecification>, ShouldGatherFromEditorOnlyData: boolean);
         IsEnabled: boolean;
         IncludePathWildcards: TArray<GatherTextIncludePath>;
@@ -18890,6 +19427,7 @@ declare module "ue" {
     enum ELocalizedTextCollapseMode { IdenticalTextIdAndSource, IdenticalPackageIdTextIdAndSource, IdenticalNamespaceAndSource, ELocalizedTextCollapseMode_MAX}
     enum EPortableObjectFormat { Unreal, Crowdin, EPortableObjectFormat_MAX}
     class LocalizationExportingSettings {
+        constructor();
         constructor(CollapseMode: ELocalizedTextCollapseMode, POFormat: EPortableObjectFormat, ShouldPersistCommentsOnExport: boolean, ShouldAddSourceLocationsAsComments: boolean);
         CollapseMode: ELocalizedTextCollapseMode;
         POFormat: EPortableObjectFormat;
@@ -18899,6 +19437,7 @@ declare module "ue" {
     }
     
     class LocalizationCompilationSettings {
+        constructor();
         constructor(SkipSourceCheck: boolean, ValidateFormatPatterns: boolean, ValidateSafeWhitespace: boolean);
         SkipSourceCheck: boolean;
         ValidateFormatPatterns: boolean;
@@ -18907,6 +19446,7 @@ declare module "ue" {
     }
     
     class LocalizationImportDialogueSettings {
+        constructor();
         constructor(RawAudioPath: DirectoryPath, ImportedDialogueFolder: string, bImportNativeAsSource: boolean);
         RawAudioPath: DirectoryPath;
         ImportedDialogueFolder: string;
@@ -18915,6 +19455,7 @@ declare module "ue" {
     }
     
     class CultureStatistics {
+        constructor();
         constructor(CultureName: string, WordCount: number);
         CultureName: string;
         WordCount: number;
@@ -18922,6 +19463,7 @@ declare module "ue" {
     }
     
     class LocalizationTargetSettings {
+        constructor();
         constructor(Name: string, Guid: Guid, ConflictStatus: ELocalizationTargetConflictStatus, TargetDependencies: TArray<Guid>, AdditionalManifestDependencies: TArray<FilePath>, RequiredModuleNames: TArray<string>, GatherFromTextFiles: GatherTextFromTextFilesConfiguration, GatherFromPackages: GatherTextFromPackagesConfiguration, GatherFromMetaData: GatherTextFromMetaDataConfiguration, ExportSettings: LocalizationExportingSettings, CompileSettings: LocalizationCompilationSettings, ImportDialogueSettings: LocalizationImportDialogueSettings, NativeCultureIndex: number, SupportedCulturesStatistics: TArray<CultureStatistics>);
         Name: string;
         Guid: Guid;
@@ -19089,6 +19631,7 @@ declare module "ue" {
     }
     
     class PointWeightMap {
+        constructor();
         constructor(Values: TArray<number>, Name: string, CurrentTarget: number, bEnabled: boolean);
         Values: TArray<number>;
         Name: string;
@@ -19098,6 +19641,7 @@ declare module "ue" {
     }
     
     class ClothPhysicalMeshData {
+        constructor();
         constructor(Vertices: TArray<Vector>, Normals: TArray<Vector>, VertexColors: TArray<Color>, Indices: TArray<number>, WeightMaps: TMap<number, PointWeightMap>, InverseMasses: TArray<number>, BoneData: TArray<ClothVertBoneData>, MaxBoneWeights: number, NumFixedVerts: number, SelfCollisionIndices: TArray<number>, MaxDistances: TArray<number>, BackstopDistances: TArray<number>, BackstopRadiuses: TArray<number>, AnimDriveMultipliers: TArray<number>);
         Vertices: TArray<Vector>;
         Normals: TArray<Vector>;
@@ -19117,6 +19661,7 @@ declare module "ue" {
     }
     
     class ClothCollisionPrim_Sphere {
+        constructor();
         constructor(BoneIndex: number, Radius: number, LocalPosition: Vector);
         BoneIndex: number;
         Radius: number;
@@ -19125,12 +19670,14 @@ declare module "ue" {
     }
     
     class ClothCollisionPrim_SphereConnection {
+        constructor();
         constructor(SphereIndices: FixSizeArray<number>);
         SphereIndices: FixSizeArray<number>;
         static StaticClass(): Class;
     }
     
     class ClothCollisionPrim_Convex {
+        constructor();
         constructor(Planes: TArray<Plane>, SurfacePoints: TArray<Vector>, BoneIndex: number);
         Planes: TArray<Plane>;
         SurfacePoints: TArray<Vector>;
@@ -19139,6 +19686,7 @@ declare module "ue" {
     }
     
     class ClothCollisionPrim_Box {
+        constructor();
         constructor(LocalPosition: Vector, LocalRotation: Quat, HalfExtents: Vector, BoneIndex: number);
         LocalPosition: Vector;
         LocalRotation: Quat;
@@ -19148,6 +19696,7 @@ declare module "ue" {
     }
     
     class ClothCollisionData {
+        constructor();
         constructor(Spheres: TArray<ClothCollisionPrim_Sphere>, SphereConnections: TArray<ClothCollisionPrim_SphereConnection>, Convexes: TArray<ClothCollisionPrim_Convex>, Boxes: TArray<ClothCollisionPrim_Box>);
         Spheres: TArray<ClothCollisionPrim_Sphere>;
         SphereConnections: TArray<ClothCollisionPrim_SphereConnection>;
@@ -19169,6 +19718,7 @@ declare module "ue" {
     
     enum EWeightMapTargetCommon { None, MaxDistance, BackstopDistance, BackstopRadius, AnimDriveMultiplier, EWeightMapTargetCommon_MAX}
     class ClothParameterMask_Legacy {
+        constructor();
         constructor(MaskName: string, CurrentTarget: EWeightMapTargetCommon, MaxValue: number, MinValue: number, Values: TArray<number>, bEnabled: boolean);
         MaskName: string;
         CurrentTarget: EWeightMapTargetCommon;
@@ -19180,6 +19730,7 @@ declare module "ue" {
     }
     
     class ClothLODDataCommon {
+        constructor();
         constructor(PhysicalMeshData: ClothPhysicalMeshData, CollisionData: ClothCollisionData, bUseMultipleInfluences: boolean, SkinningKernelRadius: number, ParameterMasks: TArray<ClothParameterMask_Legacy>, PointWeightMaps: TArray<PointWeightMap>);
         PhysicalMeshData: ClothPhysicalMeshData;
         CollisionData: ClothCollisionData;
@@ -19191,6 +19742,7 @@ declare module "ue" {
     }
     
     class ClothConfig_Legacy {
+        constructor();
         constructor(WindMethod: EClothingWindMethod_Legacy, VerticalConstraintConfig: ClothConstraintSetup_Legacy, HorizontalConstraintConfig: ClothConstraintSetup_Legacy, BendConstraintConfig: ClothConstraintSetup_Legacy, ShearConstraintConfig: ClothConstraintSetup_Legacy, SelfCollisionRadius: number, SelfCollisionStiffness: number, SelfCollisionCullScale: number, Damping: Vector, Friction: number, WindDragCoefficient: number, WindLiftCoefficient: number, LinearDrag: Vector, AngularDrag: Vector, LinearInertiaScale: Vector, AngularInertiaScale: Vector, CentrifugalInertiaScale: Vector, SolverFrequency: number, StiffnessFrequency: number, GravityScale: number, GravityOverride: Vector, bUseGravityOverride: boolean, TetherStiffness: number, TetherLimit: number, CollisionThickness: number, AnimDriveSpringStiffness: number, AnimDriveDamperStiffness: number);
         WindMethod: EClothingWindMethod_Legacy;
         VerticalConstraintConfig: ClothConstraintSetup_Legacy;
@@ -19243,6 +19795,7 @@ declare module "ue" {
     }
     
     class PreviewSceneProfile {
+        constructor();
         constructor(ProfileName: string, bSharedProfile: boolean, bUseSkyLighting: boolean, DirectionalLightIntensity: number, DirectionalLightColor: LinearColor, SkyLightIntensity: number, bRotateLightingRig: boolean, bShowEnvironment: boolean, bShowFloor: boolean, EnvironmentColor: LinearColor, EnvironmentIntensity: number, EnvironmentCubeMap: TSoftObjectPtr<TextureCube>, EnvironmentCubeMapPath: string, bPostProcessingEnabled: boolean, PostProcessingSettings: PostProcessSettings, LightingRigRotation: number, RotationSpeed: number, DirectionalLightRotation: Rotator);
         ProfileName: string;
         bSharedProfile: boolean;
@@ -19291,6 +19844,7 @@ declare module "ue" {
     
     enum EMaterialProperty { MP_EmissiveColor, MP_Opacity, MP_OpacityMask, MP_DiffuseColor, MP_SpecularColor, MP_BaseColor, MP_Metallic, MP_Specular, MP_Roughness, MP_Anisotropy, MP_Normal, MP_Tangent, MP_WorldPositionOffset, MP_WorldDisplacement, MP_TessellationMultiplier, MP_SubsurfaceColor, MP_CustomData0, MP_CustomData1, MP_AmbientOcclusion, MP_Refraction, MP_CustomizedUVs0, MP_CustomizedUVs1, MP_CustomizedUVs2, MP_CustomizedUVs3, MP_CustomizedUVs4, MP_CustomizedUVs5, MP_CustomizedUVs6, MP_CustomizedUVs7, MP_PixelDepthOffset, MP_ShadingModel, MP_MaterialAttributes, MP_CustomOutput, MP_MAX}
     class PropertyEntry {
+        constructor();
         constructor(Property: EMaterialProperty, bUseCustomSize: boolean, CustomSize: IntPoint, bUseConstantValue: boolean, ConstantValue: number);
         Property: EMaterialProperty;
         bUseCustomSize: boolean;
@@ -19427,6 +19981,7 @@ declare module "ue" {
     }
     
     class KeyPosition {
+        constructor();
         constructor(InputValue: number, OutputValue: number);
         InputValue: number;
         OutputValue: number;
@@ -19434,6 +19989,7 @@ declare module "ue" {
     }
     
     class KeyAttributes {
+        constructor();
         constructor(bHasArriveTangent: boolean, bHasLeaveTangent: boolean, bHasInterpMode: boolean, bHasTangentMode: boolean, bHasTangentWeightMode: boolean, bHasArriveTangentWeight: boolean, bHasLeaveTangentWeight: boolean, ArriveTangent: number, LeaveTangent: number, InterpMode: ERichCurveInterpMode, TangentMode: ERichCurveTangentMode, TangentWeightMode: ERichCurveTangentWeightMode, ArriveTangentWeight: number, LeaveTangentWeight: number);
         bHasArriveTangent: boolean;
         bHasLeaveTangent: boolean;
@@ -19557,6 +20113,7 @@ declare module "ue" {
     }
     
     class CameraLookatTrackingSettings {
+        constructor();
         constructor(bEnableLookAtTracking: boolean, bDrawDebugLookAtTrackingPosition: boolean, LookAtTrackingInterpSpeed: number, ActorToTrack: TSoftObjectPtr<Actor>, RelativeOffset: Vector, bAllowRoll: boolean);
         bEnableLookAtTracking: boolean;
         bDrawDebugLookAtTrackingPosition: boolean;
@@ -19568,6 +20125,7 @@ declare module "ue" {
     }
     
     class CameraFilmbackSettings {
+        constructor();
         constructor(SensorWidth: number, SensorHeight: number, SensorAspectRatio: number);
         SensorWidth: number;
         SensorHeight: number;
@@ -19576,6 +20134,7 @@ declare module "ue" {
     }
     
     class CameraLensSettings {
+        constructor();
         constructor(MinFocalLength: number, MaxFocalLength: number, MinFStop: number, MaxFStop: number, MinimumFocusDistance: number, DiaphragmBladeCount: number);
         MinFocalLength: number;
         MaxFocalLength: number;
@@ -19588,6 +20147,7 @@ declare module "ue" {
     
     enum ECameraFocusMethod { DoNotOverride, Manual, Tracking, Disable, MAX}
     class CameraTrackingFocusSettings {
+        constructor();
         constructor(ActorToTrack: TSoftObjectPtr<Actor>, RelativeOffset: Vector, bDrawDebugTrackingFocusPoint: boolean);
         ActorToTrack: TSoftObjectPtr<Actor>;
         RelativeOffset: Vector;
@@ -19596,6 +20156,7 @@ declare module "ue" {
     }
     
     class CameraFocusSettings {
+        constructor();
         constructor(FocusMethod: ECameraFocusMethod, ManualFocusDistance: number, TrackingFocusSettings: CameraTrackingFocusSettings, bDrawDebugFocusPlane: boolean, DebugFocusPlaneColor: Color, bSmoothFocusChanges: boolean, FocusSmoothingInterpSpeed: number, FocusOffset: number);
         FocusMethod: ECameraFocusMethod;
         ManualFocusDistance: number;
@@ -19609,6 +20170,7 @@ declare module "ue" {
     }
     
     class NamedFilmbackPreset {
+        constructor();
         constructor(Name: string, FilmbackSettings: CameraFilmbackSettings);
         Name: string;
         FilmbackSettings: CameraFilmbackSettings;
@@ -19616,6 +20178,7 @@ declare module "ue" {
     }
     
     class NamedLensPreset {
+        constructor();
         constructor(Name: string, LensSettings: CameraLensSettings);
         Name: string;
         LensSettings: CameraLensSettings;
@@ -19725,6 +20288,7 @@ declare module "ue" {
     }
     
     class LocalizedTemplateString {
+        constructor();
         constructor(Language: string, Text: string);
         Language: string;
         Text: string;
@@ -19732,6 +20296,7 @@ declare module "ue" {
     }
     
     class TemplateFolderRename {
+        constructor();
         constructor(From: string, To: string);
         From: string;
         To: string;
@@ -19739,6 +20304,7 @@ declare module "ue" {
     }
     
     class TemplateReplacement {
+        constructor();
         constructor(Extensions: TArray<string>, From: string, To: string, bCaseSensitive: boolean);
         Extensions: TArray<string>;
         From: string;
@@ -19750,6 +20316,7 @@ declare module "ue" {
     enum ETemplateSetting { Languages, HardwareTarget, GraphicsPreset, StarterContent, XR, Raytracing, All, ETemplateSetting_MAX}
     enum EFeaturePackDetailLevel { Standard, High, EFeaturePackDetailLevel_MAX}
     class FeaturePackLevelSet {
+        constructor();
         constructor(DetailLevels: TArray<EFeaturePackDetailLevel>, MountName: string);
         DetailLevels: TArray<EFeaturePackDetailLevel>;
         MountName: string;
@@ -19790,6 +20357,7 @@ declare module "ue" {
     }
     
     class TemplateCategoryDef {
+        constructor();
         constructor(Key: string, LocalizedDisplayNames: TArray<LocalizedTemplateString>, LocalizedDescriptions: TArray<LocalizedTemplateString>, Icon: string, IsMajorCategory: boolean);
         Key: string;
         LocalizedDisplayNames: TArray<LocalizedTemplateString>;
@@ -19808,6 +20376,7 @@ declare module "ue" {
     }
     
     class SourceControlState {
+        constructor();
         constructor(Filename: string, bIsValid: boolean, bIsUnknown: boolean, bCanCheckIn: boolean, bCanCheckOut: boolean, bIsCheckedOut: boolean, bIsCurrent: boolean, bIsSourceControlled: boolean, bIsAdded: boolean, bIsDeleted: boolean, bIsIgnored: boolean, bCanEdit: boolean, bCanDelete: boolean, bIsModified: boolean, bCanAdd: boolean, bIsConflicted: boolean, bCanRevert: boolean, bIsCheckedOutOther: boolean, CheckedOutOther: string);
         Filename: string;
         bIsValid: boolean;
@@ -19913,6 +20482,7 @@ declare module "ue" {
     enum EContentBrowserItemCategoryFilter { IncludeNone, IncludeAssets, IncludeClasses, IncludeCollections, IncludeMisc, IncludeAll, EContentBrowserItemCategoryFilter_MAX}
     enum EContentBrowserItemAttributeFilter { IncludeNone, IncludeProject, IncludeEngine, IncludePlugins, IncludeDeveloper, IncludeLocalized, IncludeAll, EContentBrowserItemAttributeFilter_MAX}
     class ContentBrowserDataFilter {
+        constructor();
         constructor(bRecursivePaths: boolean, ItemTypeFilter: EContentBrowserItemTypeFilter, ItemCategoryFilter: EContentBrowserItemCategoryFilter, ItemAttributeFilter: EContentBrowserItemAttributeFilter);
         bRecursivePaths: boolean;
         ItemTypeFilter: EContentBrowserItemTypeFilter;
@@ -20101,6 +20671,7 @@ declare module "ue" {
     }
     
     class BlueprintCallableFunctionRedirect {
+        constructor();
         constructor(ClassName: string, OldFunctionName: string, NewFunctionName: string, BlueprintParamName: string, ClassParamName: string);
         ClassName: string;
         OldFunctionName: string;
@@ -20127,6 +20698,7 @@ declare module "ue" {
     }
     
     class MemberReference {
+        constructor();
         constructor(MemberParent: Object, MemberScope: string, MemberName: string, MemberGuid: Guid, bSelfContext: boolean, bWasDeprecated: boolean);
         MemberParent: Object;
         MemberScope: string;
@@ -20285,6 +20857,7 @@ declare module "ue" {
     }
     
     class OptionalPinFromProperty {
+        constructor();
         constructor(PropertyName: string, PropertyFriendlyName: string, PropertyTooltip: string, CategoryName: string, bShowPin: boolean, bCanToggleVisibility: boolean, bPropertyIsCustomized: boolean, bHasOverridePin: boolean, bIsMarkedForAdvancedDisplay: boolean, bIsOverrideEnabled: boolean, bIsSetValuePinVisible: boolean, bIsOverridePinVisible: boolean);
         PropertyName: string;
         PropertyFriendlyName: string;
@@ -20412,6 +20985,7 @@ declare module "ue" {
     }
     
     class KismetUserDeclaredFunctionMetadata {
+        constructor();
         constructor(ToolTip: string, Category: string, Keywords: string, CompactNodeTitle: string, InstanceTitleColor: LinearColor, DeprecationMessage: string, bIsDeprecated: boolean, bCallInEditor: boolean, HasLatentFunctions: number);
         ToolTip: string;
         Category: string;
@@ -20802,6 +21376,7 @@ declare module "ue" {
     }
     
     class InputChord {
+        constructor();
         constructor(Key: Key, bShift: boolean, bCtrl: boolean, bAlt: boolean, bCmd: boolean);
         Key: Key;
         bShift: boolean;
@@ -20890,6 +21465,7 @@ declare module "ue" {
     }
     
     class GraphReference {
+        constructor();
         constructor(MacroGraph: EdGraph, GraphBlueprint: Blueprint, GraphGuid: Guid);
         MacroGraph: EdGraph;
         GraphBlueprint: Blueprint;
@@ -21287,6 +21863,7 @@ declare module "ue" {
     
     enum EAnimGraphNodePropertyBindingType { None, Property, Function, EAnimGraphNodePropertyBindingType_MAX}
     class AnimGraphNodePropertyBinding {
+        constructor();
         constructor(PinType: EdGraphPinType, PromotedPinType: EdGraphPinType, PropertyName: string, PathAsText: string, PropertyPath: TArray<string>, Type: EAnimGraphNodePropertyBindingType, bIsBound: boolean, bIsPromotion: boolean);
         PinType: EdGraphPinType;
         PromotedPinType: EdGraphPinType;
@@ -21316,6 +21893,7 @@ declare module "ue" {
     }
     
     class PoseLinkBase {
+        constructor();
         constructor(LinkID: number, SourceLinkID: number);
         LinkID: number;
         SourceLinkID: number;
@@ -21328,6 +21906,7 @@ declare module "ue" {
     }
     
     class AnimNode_Root extends AnimNode_Base {
+        constructor();
         constructor(Result: PoseLink, Name: string, Group: string);
         Result: PoseLink;
         Name: string;
@@ -21432,6 +22011,7 @@ declare module "ue" {
     }
     
     class AnimNode_TransitionResult extends AnimNode_Base {
+        constructor();
         constructor(bCanEnterTransition: boolean);
         bCanEnterTransition: boolean;
         static StaticClass(): Class;
@@ -21470,6 +22050,7 @@ declare module "ue" {
     enum EAnimGroupRole { CanBeLeader, AlwaysFollower, AlwaysLeader, TransitionLeader, TransitionFollower, EAnimGroupRole_MAX}
     enum EAnimSyncGroupScope { Local, Component, EAnimSyncGroupScope_MAX}
     class AnimationGroupReference {
+        constructor();
         constructor(GroupName: string, GroupRole: EAnimGroupRole, GroupScope: EAnimSyncGroupScope);
         GroupName: string;
         GroupRole: EAnimGroupRole;
@@ -21493,6 +22074,7 @@ declare module "ue" {
     }
     
     class AnimNode_AssetPlayerBase extends AnimNode_Base {
+        constructor();
         constructor(GroupName: string, GroupIndex: number, GroupRole: EAnimGroupRole, GroupScope: EAnimSyncGroupScope, bIgnoreForRelevancyTest: boolean, BlendWeight: number, InternalTimeAccumulator: number);
         GroupName: string;
         GroupIndex: number;
@@ -21506,6 +22088,7 @@ declare module "ue" {
     
     enum EFilterInterpolationType { BSIT_Average, BSIT_Linear, BSIT_Cubic, BSIT_MAX}
     class InterpolationParameter {
+        constructor();
         constructor(InterpolationTime: number, InterpolationType: EFilterInterpolationType);
         InterpolationTime: number;
         InterpolationType: EFilterInterpolationType;
@@ -21514,6 +22097,7 @@ declare module "ue" {
     
     enum ENotifyTriggerMode { AllAnimations, HighestWeightedAnimation, None, ENotifyTriggerMode_MAX}
     class PerBoneInterpolation {
+        constructor();
         constructor(BoneReference: BoneReference, InterpolationSpeedPerSec: number);
         BoneReference: BoneReference;
         InterpolationSpeedPerSec: number;
@@ -21521,6 +22105,7 @@ declare module "ue" {
     }
     
     class BlendSample {
+        constructor();
         constructor(Animation: AnimSequence, SampleValue: Vector, RateScale: number, bSnapToGrid: boolean, bIsValid: boolean);
         Animation: AnimSequence;
         SampleValue: Vector;
@@ -21531,6 +22116,7 @@ declare module "ue" {
     }
     
     class EditorElement {
+        constructor();
         constructor(Indices: FixSizeArray<number>, Weights: FixSizeArray<number>);
         Indices: FixSizeArray<number>;
         Weights: FixSizeArray<number>;
@@ -21538,6 +22124,7 @@ declare module "ue" {
     }
     
     class BlendParameter {
+        constructor();
         constructor(DisplayName: string, Min: number, Max: number, GridNum: number);
         DisplayName: string;
         Min: number;
@@ -21565,6 +22152,7 @@ declare module "ue" {
     }
     
     class AnimNode_BlendSpacePlayer extends AnimNode_AssetPlayerBase {
+        constructor();
         constructor(X: number, Y: number, Z: number, PlayRate: number, bLoop: boolean, bResetPlayTimeWhenBlendSpaceChanges: boolean, StartPosition: number, BlendSpace: BlendSpaceBase, PreviousBlendSpace: BlendSpaceBase);
         X: number;
         Y: number;
@@ -21579,6 +22167,7 @@ declare module "ue" {
     }
     
     class AnimNode_AimOffsetLookAt extends AnimNode_BlendSpacePlayer {
+        constructor();
         constructor(BasePose: PoseLink, LODThreshold: number, SourceSocketName: string, PivotSocketName: string, LookAtLocation: Vector, SocketAxis: Vector, Alpha: number);
         BasePose: PoseLink;
         LODThreshold: number;
@@ -21612,6 +22201,7 @@ declare module "ue" {
     
     enum EAnimAlphaInputType { Float, Bool, Curve, EAnimAlphaInputType_MAX}
     class InputScaleBias {
+        constructor();
         constructor(Scale: number, Bias: number);
         Scale: number;
         Bias: number;
@@ -21619,6 +22209,7 @@ declare module "ue" {
     }
     
     class InputAlphaBoolBlend {
+        constructor();
         constructor(BlendInTime: number, BlendOutTime: number, BlendOption: EAlphaBlendOption, bInitialized: boolean, CustomCurve: CurveFloat, AlphaBlend: AlphaBlend);
         BlendInTime: number;
         BlendOutTime: number;
@@ -21630,6 +22221,7 @@ declare module "ue" {
     }
     
     class InputRange {
+        constructor();
         constructor(Min: number, Max: number);
         Min: number;
         Max: number;
@@ -21637,6 +22229,7 @@ declare module "ue" {
     }
     
     class InputScaleBiasClamp {
+        constructor();
         constructor(bMapRange: boolean, bClampResult: boolean, bInterpResult: boolean, InRange: InputRange, OutRange: InputRange, Scale: number, Bias: number, ClampMin: number, ClampMax: number, InterpSpeedIncreasing: number, InterpSpeedDecreasing: number);
         bMapRange: boolean;
         bClampResult: boolean;
@@ -21653,6 +22246,7 @@ declare module "ue" {
     }
     
     class AnimNode_SkeletalControlBase extends AnimNode_Base {
+        constructor();
         constructor(ComponentPose: ComponentSpacePoseLink, LODThreshold: number, ActualAlpha: number, AlphaInputType: EAnimAlphaInputType, bAlphaBoolEnabled: boolean, Alpha: number, AlphaScaleBias: InputScaleBias, AlphaBoolBlend: InputAlphaBoolBlend, AlphaCurveName: string, AlphaScaleBiasClamp: InputScaleBiasClamp);
         ComponentPose: ComponentSpacePoseLink;
         LODThreshold: number;
@@ -21671,6 +22265,7 @@ declare module "ue" {
     enum AnimPhysAngularConstraintType { Angular, Cone, AnimPhysAngularConstraintType_MAX}
     enum AnimPhysTwistAxis { AxisX, AxisY, AxisZ, AnimPhysTwistAxis_MAX}
     class AnimPhysConstraintSetup {
+        constructor();
         constructor(LinearXLimitType: AnimPhysLinearConstraintType, LinearYLimitType: AnimPhysLinearConstraintType, LinearZLimitType: AnimPhysLinearConstraintType, LinearAxesMin: Vector, LinearAxesMax: Vector, AngularConstraintType: AnimPhysAngularConstraintType, TwistAxis: AnimPhysTwistAxis, AngularTargetAxis: AnimPhysTwistAxis, ConeAngle: number, AngularXAngle: number, AngularYAngle: number, AngularZAngle: number, AngularLimitsMin: Vector, AngularLimitsMax: Vector, AngularTarget: Vector);
         LinearXLimitType: AnimPhysLinearConstraintType;
         LinearYLimitType: AnimPhysLinearConstraintType;
@@ -21692,6 +22287,7 @@ declare module "ue" {
     
     enum ESphericalLimitType { Inner, Outer, ESphericalLimitType_MAX}
     class AnimPhysSphericalLimit {
+        constructor();
         constructor(DrivingBone: BoneReference, SphereLocalOffset: Vector, LimitRadius: number, LimitType: ESphericalLimitType);
         DrivingBone: BoneReference;
         SphereLocalOffset: Vector;
@@ -21701,6 +22297,7 @@ declare module "ue" {
     }
     
     class AnimPhysPlanarLimit {
+        constructor();
         constructor(DrivingBone: BoneReference, PlaneTransform: Transform);
         DrivingBone: BoneReference;
         PlaneTransform: Transform;
@@ -21712,6 +22309,7 @@ declare module "ue" {
     enum ERotationComponent { EulerX, EulerY, EulerZ, QuaternionAngle, SwingAngle, TwistAngle, ERotationComponent_MAX}
     enum EEasingFuncType { Linear, Sinusoidal, Cubic, QuadraticInOut, CubicInOut, HermiteCubic, QuarticInOut, QuinticInOut, CircularIn, CircularOut, CircularInOut, ExpIn, ExpOut, ExpInOut, CustomCurve, EEasingFuncType_MAX}
     class RotationRetargetingInfo {
+        constructor();
         constructor(bEnabled: boolean, Source: Transform, Target: Transform, RotationComponent: ERotationComponent, TwistAxis: Vector, bUseAbsoluteAngle: boolean, SourceMinimum: number, SourceMaximum: number, TargetMinimum: number, TargetMaximum: number, EasingType: EEasingFuncType, CustomCurve: RuntimeFloatCurve, bFlipEasing: boolean, EasingWeight: number, bClamp: boolean);
         bEnabled: boolean;
         Source: Transform;
@@ -21732,6 +22330,7 @@ declare module "ue" {
     }
     
     class AnimNode_AnimDynamics extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(LinearDampingOverride: number, AngularDampingOverride: number, RelativeSpaceBone: BoneReference, BoundBone: BoneReference, ChainEnd: BoneReference, BoxExtents: Vector, LocalJointOffset: Vector, GravityScale: number, GravityOverride: Vector, LinearSpringConstant: number, AngularSpringConstant: number, WindScale: number, ComponentLinearAccScale: Vector, ComponentLinearVelScale: Vector, ComponentAppliedLinearAccClamp: Vector, AngularBiasOverride: number, NumSolverIterationsPreUpdate: number, NumSolverIterationsPostUpdate: number, ConstraintSetup: AnimPhysConstraintSetup, SphericalLimits: TArray<AnimPhysSphericalLimit>, SphereCollisionRadius: number, ExternalForce: Vector, PlanarLimits: TArray<AnimPhysPlanarLimit>, CollisionType: AnimPhysCollisionType, SimulationSpace: AnimPhysSimSpaceType, bUseSphericalLimits: boolean, bUsePlanarLimit: boolean, bDoUpdate: boolean, bDoEval: boolean, bOverrideLinearDamping: boolean, bOverrideAngularBias: boolean, bOverrideAngularDamping: boolean, bEnableWind: boolean, bUseGravityOverride: boolean, bLinearSpring: boolean, bAngularSpring: boolean, bChain: boolean, RetargetingSettings: RotationRetargetingInfo);
         LinearDampingOverride: number;
         AngularDampingOverride: number;
@@ -21790,6 +22389,7 @@ declare module "ue" {
     }
     
     class AnimNode_ApplyAdditive extends AnimNode_Base {
+        constructor();
         constructor(Base: PoseLink, Additive: PoseLink, Alpha: number, AlphaScaleBias: InputScaleBias, LODThreshold: number, AlphaBoolBlend: InputAlphaBoolBlend, AlphaCurveName: string, AlphaScaleBiasClamp: InputScaleBiasClamp, AlphaInputType: EAnimAlphaInputType, bAlphaBoolEnabled: boolean);
         Base: PoseLink;
         Additive: PoseLink;
@@ -21813,6 +22413,7 @@ declare module "ue" {
     }
     
     class AngularRangeLimit {
+        constructor();
         constructor(LimitMin: Vector, LimitMax: Vector, Bone: BoneReference);
         LimitMin: Vector;
         LimitMax: Vector;
@@ -21821,6 +22422,7 @@ declare module "ue" {
     }
     
     class AnimNode_ApplyLimits extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(AngularRangeLimits: TArray<AngularRangeLimit>, AngularOffsets: TArray<Vector>);
         AngularRangeLimits: TArray<AngularRangeLimit>;
         AngularOffsets: TArray<Vector>;
@@ -21836,6 +22438,7 @@ declare module "ue" {
     }
     
     class AnimNode_ApplyMeshSpaceAdditive extends AnimNode_Base {
+        constructor();
         constructor(Base: PoseLink, Additive: PoseLink, AlphaInputType: EAnimAlphaInputType, Alpha: number, bAlphaBoolEnabled: boolean, AlphaBoolBlend: InputAlphaBoolBlend, AlphaCurveName: string, AlphaScaleBias: InputScaleBias, AlphaScaleBiasClamp: InputScaleBiasClamp, LODThreshold: number);
         Base: PoseLink;
         Additive: PoseLink;
@@ -21859,6 +22462,7 @@ declare module "ue" {
     }
     
     class BlendBoneByChannelEntry {
+        constructor();
         constructor(SourceBone: BoneReference, TargetBone: BoneReference, bBlendTranslation: boolean, bBlendRotation: boolean, bBlendScale: boolean);
         SourceBone: BoneReference;
         TargetBone: BoneReference;
@@ -21870,6 +22474,7 @@ declare module "ue" {
     
     enum EBoneControlSpace { BCS_WorldSpace, BCS_ComponentSpace, BCS_ParentBoneSpace, BCS_BoneSpace, BCS_MAX}
     class AnimNode_BlendBoneByChannel extends AnimNode_Base {
+        constructor();
         constructor(A: PoseLink, B: PoseLink, BoneDefinitions: TArray<BlendBoneByChannelEntry>, Alpha: number, AlphaScaleBias: InputScaleBias, TransformsSpace: EBoneControlSpace);
         A: PoseLink;
         B: PoseLink;
@@ -21897,6 +22502,7 @@ declare module "ue" {
     
     enum EBlendListTransitionType { StandardBlend, Inertialization, EBlendListTransitionType_MAX}
     class AnimNode_BlendListBase extends AnimNode_Base {
+        constructor();
         constructor(BlendPose: TArray<PoseLink>, BlendTime: TArray<number>, TransitionType: EBlendListTransitionType, BlendType: EAlphaBlendOption, bResetChildOnActivation: boolean, CustomBlendCurve: CurveFloat, BlendProfile: BlendProfile);
         BlendPose: TArray<PoseLink>;
         BlendTime: TArray<number>;
@@ -21909,6 +22515,7 @@ declare module "ue" {
     }
     
     class AnimNode_BlendListByBool extends AnimNode_BlendListBase {
+        constructor();
         constructor(bActiveValue: boolean);
         bActiveValue: boolean;
         static StaticClass(): Class;
@@ -21923,6 +22530,7 @@ declare module "ue" {
     }
     
     class AnimNode_BlendListByEnum extends AnimNode_BlendListBase {
+        constructor();
         constructor(EnumToPoseIndex: TArray<number>, ActiveEnumValue: number);
         EnumToPoseIndex: TArray<number>;
         ActiveEnumValue: number;
@@ -21940,6 +22548,7 @@ declare module "ue" {
     }
     
     class AnimNode_BlendListByInt extends AnimNode_BlendListBase {
+        constructor();
         constructor(ActiveChildIndex: number);
         ActiveChildIndex: number;
         static StaticClass(): Class;
@@ -21954,6 +22563,7 @@ declare module "ue" {
     }
     
     class AnimNode_BlendSpaceEvaluator extends AnimNode_BlendSpacePlayer {
+        constructor();
         constructor(NormalizedTime: number);
         NormalizedTime: number;
         static StaticClass(): Class;
@@ -21979,6 +22589,7 @@ declare module "ue" {
     enum EDrivenDestinationMode { Bone, MorphTarget, MaterialParameter, EDrivenDestinationMode_MAX}
     enum EDrivenBoneModificationMode { AddToInput, ReplaceComponent, AddToRefPose, EDrivenBoneModificationMode_MAX}
     class AnimNode_BoneDrivenController extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(SourceBone: BoneReference, DrivingCurve: CurveFloat, Multiplier: number, RangeMin: number, RangeMax: number, RemappedMin: number, RemappedMax: number, ParameterName: string, TargetBone: BoneReference, TargetComponent: EComponentType, DestinationMode: EDrivenDestinationMode, ModificationMode: EDrivenBoneModificationMode, SourceComponent: EComponentType, bUseRange: boolean, bAffectTargetTranslationX: boolean, bAffectTargetTranslationY: boolean, bAffectTargetTranslationZ: boolean, bAffectTargetRotationX: boolean, bAffectTargetRotationY: boolean, bAffectTargetRotationZ: boolean, bAffectTargetScaleX: boolean, bAffectTargetScaleY: boolean, bAffectTargetScaleZ: boolean);
         SourceBone: BoneReference;
         DrivingCurve: CurveFloat;
@@ -22015,12 +22626,14 @@ declare module "ue" {
     }
     
     class SocketReference {
+        constructor();
         constructor(SocketName: string);
         SocketName: string;
         static StaticClass(): Class;
     }
     
     class BoneSocketTarget {
+        constructor();
         constructor(bUseSocket: boolean, BoneReference: BoneReference, SocketReference: SocketReference);
         bUseSocket: boolean;
         BoneReference: BoneReference;
@@ -22029,6 +22642,7 @@ declare module "ue" {
     }
     
     class AnimNode_CCDIK extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(EffectorLocation: Vector, EffectorLocationSpace: EBoneControlSpace, EffectorTarget: BoneSocketTarget, TipBone: BoneReference, RootBone: BoneReference, Precision: number, MaxIterations: number, bStartFromTail: boolean, bEnableRotationLimit: boolean, RotationLimitPerJoints: TArray<number>);
         EffectorLocation: Vector;
         EffectorLocationSpace: EBoneControlSpace;
@@ -22052,6 +22666,7 @@ declare module "ue" {
     }
     
     class AnimNode_ConvertComponentToLocalSpace extends AnimNode_Base {
+        constructor();
         constructor(ComponentPose: ComponentSpacePoseLink);
         ComponentPose: ComponentSpacePoseLink;
         static StaticClass(): Class;
@@ -22068,6 +22683,7 @@ declare module "ue" {
     enum EConstraintOffsetOption { None, Offset_RefPose, EConstraintOffsetOption_MAX}
     enum ETransformConstraintType { Translation, Rotation, Scale, Parent, ETransformConstraintType_MAX}
     class FilterOptionPerAxis {
+        constructor();
         constructor(bX: boolean, bY: boolean, bZ: boolean);
         bX: boolean;
         bY: boolean;
@@ -22076,6 +22692,7 @@ declare module "ue" {
     }
     
     class Constraint {
+        constructor();
         constructor(TargetBone: BoneReference, OffsetOption: EConstraintOffsetOption, TransformType: ETransformConstraintType, PerAxis: FilterOptionPerAxis);
         TargetBone: BoneReference;
         OffsetOption: EConstraintOffsetOption;
@@ -22085,6 +22702,7 @@ declare module "ue" {
     }
     
     class AnimNode_Constraint extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(BoneToModify: BoneReference, ConstraintSetup: TArray<Constraint>, ConstraintWeights: TArray<number>);
         BoneToModify: BoneReference;
         ConstraintSetup: TArray<Constraint>;
@@ -22101,6 +22719,7 @@ declare module "ue" {
     }
     
     class AnimNode_CopyBone extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(SourceBone: BoneReference, TargetBone: BoneReference, bCopyTranslation: boolean, bCopyRotation: boolean, bCopyScale: boolean, ControlSpace: EBoneControlSpace);
         SourceBone: BoneReference;
         TargetBone: BoneReference;
@@ -22121,6 +22740,7 @@ declare module "ue" {
     
     enum CopyBoneDeltaMode { Accumulate, Copy, CopyBoneDeltaMode_MAX}
     class AnimNode_CopyBoneDelta extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(SourceBone: BoneReference, TargetBone: BoneReference, bCopyTranslation: boolean, bCopyRotation: boolean, bCopyScale: boolean, CopyMode: CopyBoneDeltaMode, TranslationMultiplier: number, RotationMultiplier: number, ScaleMultiplier: number);
         SourceBone: BoneReference;
         TargetBone: BoneReference;
@@ -22143,6 +22763,7 @@ declare module "ue" {
     }
     
     class AnimNode_CopyPoseFromMesh extends AnimNode_Base {
+        constructor();
         constructor(SourceMeshComponent: TWeakObjectPtr<SkeletalMeshComponent>, bUseAttachedParent: boolean, bCopyCurves: boolean, bCopyCustomAttributes: boolean, bUseMeshPose: boolean, RootBoneToCopy: string);
         SourceMeshComponent: TWeakObjectPtr<SkeletalMeshComponent>;
         bUseAttachedParent: boolean;
@@ -22162,6 +22783,7 @@ declare module "ue" {
     }
     
     class NamedCurveValue {
+        constructor();
         constructor(Name: string, Value: number);
         Name: string;
         Value: number;
@@ -22179,6 +22801,7 @@ declare module "ue" {
     }
     
     class AnimNode_CurveSource extends AnimNode_Base {
+        constructor();
         constructor(SourcePose: PoseLink, SourceBinding: string, Alpha: number, CurveSource: CurveSourceInterface);
         SourcePose: PoseLink;
         SourceBinding: string;
@@ -22206,6 +22829,7 @@ declare module "ue" {
     
     enum EBoneRotationSource { BRS_KeepComponentSpaceRotation, BRS_KeepLocalSpaceRotation, BRS_CopyFromTarget, BRS_MAX}
     class AnimNode_Fabrik extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(EffectorTransform: Transform, EffectorTarget: BoneSocketTarget, TipBone: BoneReference, RootBone: BoneReference, Precision: number, MaxIterations: number, EffectorTransformSpace: EBoneControlSpace, EffectorRotationSource: EBoneRotationSource, bEnableDebugDraw: boolean, EffectorTransformBone: BoneReference);
         EffectorTransform: Transform;
         EffectorTarget: BoneSocketTarget;
@@ -22229,6 +22853,7 @@ declare module "ue" {
     }
     
     class AnimNode_HandIKRetargeting extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(RightHandFK: BoneReference, LeftHandFK: BoneReference, RightHandIK: BoneReference, LeftHandIK: BoneReference, IKBonesToMove: TArray<BoneReference>, HandFKWeight: number);
         RightHandFK: BoneReference;
         LeftHandFK: BoneReference;
@@ -22249,6 +22874,7 @@ declare module "ue" {
     
     enum ERefPoseType { EIT_LocalSpace, EIT_Additive, EIT_MAX}
     class AnimNode_RefPose extends AnimNode_Base {
+        constructor();
         constructor(RefPoseType: ERefPoseType);
         RefPoseType: ERefPoseType;
         static StaticClass(): Class;
@@ -22270,6 +22896,7 @@ declare module "ue" {
     }
     
     class AnimNode_Inertialization extends AnimNode_Base {
+        constructor();
         constructor(Source: PoseLink);
         Source: PoseLink;
         static StaticClass(): Class;
@@ -22284,6 +22911,7 @@ declare module "ue" {
     }
     
     class BranchFilter {
+        constructor();
         constructor(BoneName: string, BlendDepth: number);
         BoneName: string;
         BlendDepth: number;
@@ -22291,6 +22919,7 @@ declare module "ue" {
     }
     
     class InputBlendPose {
+        constructor();
         constructor(BranchFilters: TArray<BranchFilter>);
         BranchFilters: TArray<BranchFilter>;
         static StaticClass(): Class;
@@ -22298,6 +22927,7 @@ declare module "ue" {
     
     enum ECurveBlendOption { Override, DoNotOverride, NormalizeByWeight, BlendByWeight, UseBasePose, UseMaxValue, UseMinValue, ECurveBlendOption_MAX}
     class PerBoneBlendWeight {
+        constructor();
         constructor(SourceIndex: number, BlendWeight: number);
         SourceIndex: number;
         BlendWeight: number;
@@ -22305,6 +22935,7 @@ declare module "ue" {
     }
     
     class AnimNode_LayeredBoneBlend extends AnimNode_Base {
+        constructor();
         constructor(BasePose: PoseLink, BlendPoses: TArray<PoseLink>, LayerSetup: TArray<InputBlendPose>, BlendWeights: TArray<number>, bMeshSpaceRotationBlend: boolean, bMeshSpaceScaleBlend: boolean, CurveBlendOption: ECurveBlendOption, bBlendRootMotionBasedOnRootBone: boolean, LODThreshold: number, PerBoneBlendWeights: TArray<PerBoneBlendWeight>, SkeletonGuid: Guid, VirtualBoneGuid: Guid);
         BasePose: PoseLink;
         BlendPoses: TArray<PoseLink>;
@@ -22330,6 +22961,7 @@ declare module "ue" {
     }
     
     class AnimLegIKDefinition {
+        constructor();
         constructor(IKFootBone: BoneReference, FKFootBone: BoneReference, NumBonesInLimb: number, MinRotationAngle: number, FootBoneForwardAxis: EAxis, HingeRotationAxis: EAxis, bEnableRotationLimit: boolean, bEnableKneeTwistCorrection: boolean);
         IKFootBone: BoneReference;
         FKFootBone: BoneReference;
@@ -22343,6 +22975,7 @@ declare module "ue" {
     }
     
     class AnimNode_LegIK extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(ReachPrecision: number, MaxIterations: number, LegsDefinition: TArray<AnimLegIKDefinition>);
         ReachPrecision: number;
         MaxIterations: number;
@@ -22366,6 +22999,7 @@ declare module "ue" {
     }
     
     class AnimNode_CustomProperty extends AnimNode_Base {
+        constructor();
         constructor(SourcePropertyNames: TArray<string>, DestPropertyNames: TArray<string>, TargetInstance: Object);
         SourcePropertyNames: TArray<string>;
         DestPropertyNames: TArray<string>;
@@ -22374,6 +23008,7 @@ declare module "ue" {
     }
     
     class AnimNode_LinkedAnimGraph extends AnimNode_CustomProperty {
+        constructor();
         constructor(InputPoses: TArray<PoseLink>, InputPoseNames: TArray<string>, InstanceClass: Class, Tag: string, bReceiveNotifiesFromLinkedInstances: boolean, bPropagateNotifiesToLinkedInstances: boolean);
         InputPoses: TArray<PoseLink>;
         InputPoseNames: TArray<string>;
@@ -22393,6 +23028,7 @@ declare module "ue" {
     }
     
     class AnimNode_LinkedAnimLayer extends AnimNode_LinkedAnimGraph {
+        constructor();
         constructor(Interface: Class, Layer: string);
         Interface: Class;
         Layer: string;
@@ -22409,6 +23045,7 @@ declare module "ue" {
     }
     
     class AnimNode_LinkedInputPose extends AnimNode_Base {
+        constructor();
         constructor(Name: string, Graph: string, InputPose: PoseLink);
         Name: string;
         Graph: string;
@@ -22417,6 +23054,7 @@ declare module "ue" {
     }
     
     class AnimBlueprintFunctionPinInfo {
+        constructor();
         constructor(Name: string, Type: EdGraphPinType);
         Name: string;
         Type: EdGraphPinType;
@@ -22442,6 +23080,7 @@ declare module "ue" {
     }
     
     class AnimNode_ConvertLocalToComponentSpace extends AnimNode_Base {
+        constructor();
         constructor(LocalPose: PoseLink);
         LocalPose: PoseLink;
         static StaticClass(): Class;
@@ -22456,6 +23095,7 @@ declare module "ue" {
     }
     
     class Axis {
+        constructor();
         constructor(Axis: Vector, bInLocalSpace: boolean);
         Axis: Vector;
         bInLocalSpace: boolean;
@@ -22465,6 +23105,7 @@ declare module "ue" {
     enum EInterpolationBlend { Linear, Cubic, Sinusoidal, EaseInOutExponent2, EaseInOutExponent3, EaseInOutExponent4, EaseInOutExponent5, MAX}
     enum EAxisOption { X, Y, Z, X_Neg, Y_Neg, Z_Neg, Custom, EAxisOption_MAX}
     class AnimNode_LookAt extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(BoneToModify: BoneReference, LookAtTarget: BoneSocketTarget, LookAtLocation: Vector, LookAt_Axis: Axis, bUseLookUpAxis: boolean, InterpolationType: EInterpolationBlend, LookUp_Axis: Axis, LookAtClamp: number, InterpolationTime: number, InterpolationTriggerThreashold: number, LookAtBone: BoneReference, LookAtSocket: string, LookAtAxis: EAxisOption, CustomLookAtAxis: Vector, LookUpAxis: EAxisOption, CustomLookUpAxis: Vector);
         BoneToModify: BoneReference;
         LookAtTarget: BoneSocketTarget;
@@ -22494,6 +23135,7 @@ declare module "ue" {
     }
     
     class AnimNode_MakeDynamicAdditive extends AnimNode_Base {
+        constructor();
         constructor(Base: PoseLink, Additive: PoseLink, bMeshSpaceAdditive: boolean);
         Base: PoseLink;
         Additive: PoseLink;
@@ -22524,6 +23166,7 @@ declare module "ue" {
     
     enum EBoneModificationMode { BMM_Ignore, BMM_Replace, BMM_Additive, BMM_MAX}
     class AnimNode_ModifyBone extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(BoneToModify: BoneReference, Translation: Vector, Rotation: Rotator, Scale: Vector, TranslationMode: EBoneModificationMode, RotationMode: EBoneModificationMode, ScaleMode: EBoneModificationMode, TranslationSpace: EBoneControlSpace, RotationSpace: EBoneControlSpace, ScaleSpace: EBoneControlSpace);
         BoneToModify: BoneReference;
         Translation: Vector;
@@ -22548,6 +23191,7 @@ declare module "ue" {
     
     enum EModifyCurveApplyMode { Add, Scale, Blend, WeightedMovingAverage, RemapCurve, EModifyCurveApplyMode_MAX}
     class AnimNode_ModifyCurve extends AnimNode_Base {
+        constructor();
         constructor(SourcePose: PoseLink, CurveValues: TArray<number>, CurveNames: TArray<string>, Alpha: number, ApplyMode: EModifyCurveApplyMode);
         SourcePose: PoseLink;
         CurveValues: TArray<number>;
@@ -22566,6 +23210,7 @@ declare module "ue" {
     }
     
     class AnimNode_MultiWayBlend extends AnimNode_Base {
+        constructor();
         constructor(Poses: TArray<PoseLink>, DesiredAlphas: TArray<number>, AlphaScaleBias: InputScaleBias, bAdditiveNode: boolean, bNormalizeAlpha: boolean);
         Poses: TArray<PoseLink>;
         DesiredAlphas: TArray<number>;
@@ -22584,6 +23229,7 @@ declare module "ue" {
     }
     
     class AnimNode_ObserveBone extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(BoneToObserve: BoneReference, DisplaySpace: EBoneControlSpace, bRelativeToRefPose: boolean, Translation: Vector, Rotation: Rotator, Scale: Vector);
         BoneToObserve: BoneReference;
         DisplaySpace: EBoneControlSpace;
@@ -22610,12 +23256,14 @@ declare module "ue" {
     }
     
     class AnimNode_PoseHandler extends AnimNode_AssetPlayerBase {
+        constructor();
         constructor(PoseAsset: PoseAsset);
         PoseAsset: PoseAsset;
         static StaticClass(): Class;
     }
     
     class AnimNode_PoseBlendNode extends AnimNode_PoseHandler {
+        constructor();
         constructor(SourcePose: PoseLink, BlendOption: EAlphaBlendOption, CustomCurve: CurveFloat);
         SourcePose: PoseLink;
         BlendOption: EAlphaBlendOption;
@@ -22632,6 +23280,7 @@ declare module "ue" {
     }
     
     class AnimNode_PoseByName extends AnimNode_PoseHandler {
+        constructor();
         constructor(PoseName: string, PoseWeight: number);
         PoseName: string;
         PoseWeight: number;
@@ -22647,6 +23296,7 @@ declare module "ue" {
     }
     
     class PoseDriverTransform {
+        constructor();
         constructor(TargetTranslation: Vector, TargetRotation: Rotator);
         TargetTranslation: Vector;
         TargetRotation: Rotator;
@@ -22656,6 +23306,7 @@ declare module "ue" {
     enum ERBFDistanceMethod { Euclidean, Quaternion, SwingAngle, TwistAngle, DefaultMethod, ERBFDistanceMethod_MAX}
     enum ERBFFunctionType { Gaussian, Exponential, Linear, Cubic, Quintic, DefaultFunction, ERBFFunctionType_MAX}
     class PoseDriverTarget {
+        constructor();
         constructor(BoneTransforms: TArray<PoseDriverTransform>, TargetRotation: Rotator, TargetScale: number, DistanceMethod: ERBFDistanceMethod, FunctionType: ERBFFunctionType, bApplyCustomCurve: boolean, CustomCurve: RichCurve, DrivenName: string, bIsHidden: boolean);
         BoneTransforms: TArray<PoseDriverTransform>;
         TargetRotation: Rotator;
@@ -22673,6 +23324,7 @@ declare module "ue" {
     enum EBoneAxis { BA_X, BA_Y, BA_Z, BA_MAX}
     enum ERBFNormalizeMethod { OnlyNormalizeAboveOne, AlwaysNormalize, NormalizeWithinMedian, NoNormalization, ERBFNormalizeMethod_MAX}
     class RBFParams {
+        constructor();
         constructor(TargetDimensions: number, SolverType: ERBFSolverType, Radius: number, bAutomaticRadius: boolean, Function: ERBFFunctionType, DistanceMethod: ERBFDistanceMethod, TwistAxis: EBoneAxis, WeightThreshold: number, NormalizeMethod: ERBFNormalizeMethod, MedianReference: Vector, MedianMin: number, MedianMax: number);
         TargetDimensions: number;
         SolverType: ERBFSolverType;
@@ -22693,6 +23345,7 @@ declare module "ue" {
     enum EPoseDriverSource { Rotation, Translation, EPoseDriverSource_MAX}
     enum EPoseDriverOutput { DrivePoses, DriveCurves, EPoseDriverOutput_MAX}
     class AnimNode_PoseDriver extends AnimNode_PoseHandler {
+        constructor();
         constructor(SourcePose: PoseLink, SourceBones: TArray<BoneReference>, OnlyDriveBones: TArray<BoneReference>, PoseTargets: TArray<PoseDriverTarget>, EvalSpaceBone: BoneReference, RBFParams: RBFParams, SourceBone: BoneReference, TwistAxis: EBoneAxis, Type: EPoseDriverType, RadialScaling: number, DriveSource: EPoseDriverSource, DriveOutput: EPoseDriverOutput, bOnlyDriveSelectedBones: boolean, bSoloDrivenOnly: boolean, LODThreshold: number);
         SourcePose: PoseLink;
         SourceBones: TArray<BoneReference>;
@@ -22726,6 +23379,7 @@ declare module "ue" {
     
     enum ESnapshotSourceMode { NamedSnapshot, SnapshotPin, ESnapshotSourceMode_MAX}
     class AnimNode_PoseSnapshot extends AnimNode_Base {
+        constructor();
         constructor(SnapshotName: string, Snapshot: PoseSnapshot, Mode: ESnapshotSourceMode);
         SnapshotName: string;
         Snapshot: PoseSnapshot;
@@ -22742,6 +23396,7 @@ declare module "ue" {
     }
     
     class RandomPlayerSequenceEntry {
+        constructor();
         constructor(Sequence: AnimSequence, ChanceToPlay: number, MinLoopCount: number, MaxLoopCount: number, MinPlayRate: number, MaxPlayRate: number, BlendIn: AlphaBlend);
         Sequence: AnimSequence;
         ChanceToPlay: number;
@@ -22754,6 +23409,7 @@ declare module "ue" {
     }
     
     class AnimNode_RandomPlayer extends AnimNode_Base {
+        constructor();
         constructor(Entries: TArray<RandomPlayerSequenceEntry>, bShuffleMode: boolean);
         Entries: TArray<RandomPlayerSequenceEntry>;
         bShuffleMode: boolean;
@@ -22782,6 +23438,7 @@ declare module "ue" {
     }
     
     class SimSpaceSettings {
+        constructor();
         constructor(MasterAlpha: number, VelocityScaleZ: number, MaxLinearVelocity: number, MaxAngularVelocity: number, MaxLinearAcceleration: number, MaxAngularAcceleration: number, ExternalLinearDrag: number, ExternalLinearDragV: Vector, ExternalLinearVelocity: Vector, ExternalAngularVelocity: Vector);
         MasterAlpha: number;
         VelocityScaleZ: number;
@@ -22798,6 +23455,7 @@ declare module "ue" {
     
     enum ESimulationSpace { ComponentSpace, WorldSpace, BaseBoneSpace, ESimulationSpace_MAX}
     class AnimNode_RigidBody extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(OverridePhysicsAsset: PhysicsAsset, OverrideWorldGravity: Vector, ExternalForce: Vector, ComponentLinearAccScale: Vector, ComponentLinearVelScale: Vector, ComponentAppliedLinearAccClamp: Vector, SimSpaceSettings: SimSpaceSettings, CachedBoundsScale: number, BaseBoneRef: BoneReference, OverlapChannel: ECollisionChannel, SimulationSpace: ESimulationSpace, bForceDisableCollisionBetweenConstraintBodies: boolean, bEnableWorldGeometry: boolean, bOverrideWorldGravity: boolean, bTransferBoneVelocities: boolean, bFreezeIncomingPoseOnStart: boolean, bClampLinearTranslationLimitToRefPose: boolean, WorldSpaceMinimumScale: number, EvaluationResetTime: number, bComponentSpaceSimulation: boolean);
         OverridePhysicsAsset: PhysicsAsset;
         OverrideWorldGravity: Vector;
@@ -22839,6 +23497,7 @@ declare module "ue" {
     }
     
     class AnimNode_RotateRootBone extends AnimNode_Base {
+        constructor();
         constructor(BasePose: PoseLink, Pitch: number, Yaw: number, PitchScaleBiasClamp: InputScaleBiasClamp, YawScaleBiasClamp: InputScaleBiasClamp, MeshToComponent: Rotator);
         BasePose: PoseLink;
         Pitch: number;
@@ -22858,6 +23517,7 @@ declare module "ue" {
     }
     
     class AnimNode_RotationMultiplier extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(TargetBone: BoneReference, SourceBone: BoneReference, Multiplier: number, RotationAxisToRefer: EBoneAxis, bIsAdditive: boolean);
         TargetBone: BoneReference;
         SourceBone: BoneReference;
@@ -22876,6 +23536,7 @@ declare module "ue" {
     }
     
     class AnimNode_RotationOffsetBlendSpace extends AnimNode_BlendSpacePlayer {
+        constructor();
         constructor(BasePose: PoseLink, LODThreshold: number, Alpha: number, AlphaScaleBias: InputScaleBias, AlphaBoolBlend: InputAlphaBoolBlend, AlphaCurveName: string, AlphaScaleBiasClamp: InputScaleBiasClamp, AlphaInputType: EAnimAlphaInputType, bAlphaBoolEnabled: boolean);
         BasePose: PoseLink;
         LODThreshold: number;
@@ -22898,6 +23559,7 @@ declare module "ue" {
     }
     
     class AnimNode_SaveCachedPose extends AnimNode_Base {
+        constructor();
         constructor(Pose: PoseLink, CachePoseName: string);
         Pose: PoseLink;
         CachePoseName: string;
@@ -22915,6 +23577,7 @@ declare module "ue" {
     
     enum EScaleChainInitialLength { FixedDefaultLengthValue, Distance, ChainLength, EScaleChainInitialLength_MAX}
     class AnimNode_ScaleChainLength extends AnimNode_Base {
+        constructor();
         constructor(InputPose: PoseLink, DefaultChainLength: number, ChainStartBone: BoneReference, ChainEndBone: BoneReference, TargetLocation: Vector, Alpha: number, AlphaScaleBias: InputScaleBias, ChainInitialLength: EScaleChainInitialLength);
         InputPose: PoseLink;
         DefaultChainLength: number;
@@ -22937,6 +23600,7 @@ declare module "ue" {
     
     enum ESequenceEvalReinit { NoReset, StartPosition, ExplicitTime, ESequenceEvalReinit_MAX}
     class AnimNode_SequenceEvaluator extends AnimNode_AssetPlayerBase {
+        constructor();
         constructor(Sequence: AnimSequenceBase, ExplicitTime: number, bShouldLoop: boolean, bTeleportToExplicitTime: boolean, ReinitializationBehavior: ESequenceEvalReinit, StartPosition: number);
         Sequence: AnimSequenceBase;
         ExplicitTime: number;
@@ -22956,6 +23620,7 @@ declare module "ue" {
     }
     
     class AnimNode_SequencePlayer extends AnimNode_AssetPlayerBase {
+        constructor();
         constructor(Sequence: AnimSequenceBase, PlayRateBasis: number, PlayRate: number, PlayRateScaleBiasClamp: InputScaleBiasClamp, StartPosition: number, bLoopAnimation: boolean);
         Sequence: AnimSequenceBase;
         PlayRateBasis: number;
@@ -22975,6 +23640,7 @@ declare module "ue" {
     }
     
     class AnimNode_Slot extends AnimNode_Base {
+        constructor();
         constructor(Source: PoseLink, SlotName: string, bAlwaysUpdateSourcePose: boolean);
         Source: PoseLink;
         SlotName: string;
@@ -22992,6 +23658,7 @@ declare module "ue" {
     
     enum ESplineBoneAxis { None, X, Y, Z, ESplineBoneAxis_MAX}
     class AnimNode_SplineIK extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(StartBone: BoneReference, EndBone: BoneReference, BoneAxis: ESplineBoneAxis, bAutoCalculateSpline: boolean, PointCount: number, ControlPoints: TArray<Transform>, Roll: number, TwistStart: number, TwistEnd: number, TwistBlend: AlphaBlend, Stretch: number, Offset: number);
         StartBone: BoneReference;
         EndBone: BoneReference;
@@ -23017,6 +23684,7 @@ declare module "ue" {
     }
     
     class AnimNode_SpringBone extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(SpringBone: BoneReference, MaxDisplacement: number, SpringStiffness: number, SpringDamping: number, ErrorResetThresh: number, bNoZSpring: boolean, bLimitDisplacement: boolean, bTranslateX: boolean, bTranslateY: boolean, bTranslateZ: boolean, bRotateX: boolean, bRotateY: boolean, bRotateZ: boolean);
         SpringBone: BoneReference;
         MaxDisplacement: number;
@@ -23043,6 +23711,7 @@ declare module "ue" {
     }
     
     class AnimNode_StateMachine extends AnimNode_Base {
+        constructor();
         constructor(StateMachineIndexInClass: number, MaxTransitionsPerFrame: number, bSkipFirstUpdateTransition: boolean, bReinitializeOnBecomingRelevant: boolean);
         StateMachineIndexInClass: number;
         MaxTransitionsPerFrame: number;
@@ -23060,6 +23729,7 @@ declare module "ue" {
     }
     
     class RotationLimit {
+        constructor();
         constructor(LimitMin: Vector, LimitMax: Vector);
         LimitMin: Vector;
         LimitMax: Vector;
@@ -23067,6 +23737,7 @@ declare module "ue" {
     }
     
     class AnimNode_Trail extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(TrailBone: BoneReference, ChainLength: number, ChainBoneAxis: EAxis, bInvertChainBoneAxis: boolean, bLimitStretch: boolean, bLimitRotation: boolean, bUsePlanarLimit: boolean, bActorSpaceFakeVel: boolean, bReorientParentToChild: boolean, bEnableDebug: boolean, bShowBaseMotion: boolean, bShowTrailLocation: boolean, bShowLimit: boolean, DebugLifeTime: number, TrailRelaxation: number, MaxDeltaTime: number, RelaxationSpeedScale: number, TrailRelaxationSpeed: RuntimeFloatCurve, RelaxationSpeedScaleInputProcessor: InputScaleBiasClamp, RotationLimits: TArray<RotationLimit>, RotationOffsets: TArray<Vector>, PlanarLimits: TArray<AnimPhysPlanarLimit>, StretchLimit: number, FakeVelocity: Vector, BaseJoint: BoneReference, TrailBoneRotationBlendAlpha: number, LastBoneRotationAnimAlphaBlend: number);
         TrailBone: BoneReference;
         ChainLength: number;
@@ -23109,6 +23780,7 @@ declare module "ue" {
     enum EEvaluatorDataSource { EDS_SourcePose, EDS_DestinationPose, EDS_MAX}
     enum EEvaluatorMode { EM_Standard, EM_Freeze, EM_DelayedFreeze, EM_MAX}
     class AnimNode_TransitionPoseEvaluator extends AnimNode_Base {
+        constructor();
         constructor(FramesToCachePose: number, DataSource: EEvaluatorDataSource, EvaluatorMode: EEvaluatorMode);
         FramesToCachePose: number;
         DataSource: EEvaluatorDataSource;
@@ -23125,6 +23797,7 @@ declare module "ue" {
     }
     
     class ReferenceBoneFrame {
+        constructor();
         constructor(Bone: BoneReference, Axis: Axis);
         Bone: BoneReference;
         Axis: Axis;
@@ -23132,12 +23805,14 @@ declare module "ue" {
     }
     
     class AnimCurveParam {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
     }
     
     class AnimNode_TwistCorrectiveNode extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(BaseFrame: ReferenceBoneFrame, TwistFrame: ReferenceBoneFrame, TwistPlaneNormalAxis: Axis, RangeMax: number, RemappedMin: number, RemappedMax: number, Curve: AnimCurveParam);
         BaseFrame: ReferenceBoneFrame;
         TwistFrame: ReferenceBoneFrame;
@@ -23158,6 +23833,7 @@ declare module "ue" {
     }
     
     class AnimNode_TwoBoneIK extends AnimNode_SkeletalControlBase {
+        constructor();
         constructor(IKBone: BoneReference, StartStretchRatio: number, MaxStretchScale: number, StretchLimits: Vector2D, bNoTwist: boolean, JointTargetSpaceBoneName: string, EffectorSpaceBoneName: string, EffectorLocation: Vector, EffectorTarget: BoneSocketTarget, JointTargetLocation: Vector, JointTarget: BoneSocketTarget, TwistAxis: Axis, EffectorLocationSpace: EBoneControlSpace, JointTargetLocationSpace: EBoneControlSpace, bAllowStretching: boolean, bTakeRotationFromEffectorSpace: boolean, bMaintainEffectorRelRot: boolean, bAllowTwist: boolean);
         IKBone: BoneReference;
         StartStretchRatio: number;
@@ -23190,6 +23866,7 @@ declare module "ue" {
     }
     
     class AnimNode_TwoWayBlend extends AnimNode_Base {
+        constructor();
         constructor(A: PoseLink, B: PoseLink, AlphaInputType: EAnimAlphaInputType, bAlphaBoolEnabled: boolean, bResetChildOnActivation: boolean, Alpha: number, AlphaScaleBias: InputScaleBias, AlphaBoolBlend: InputAlphaBoolBlend, AlphaCurveName: string, AlphaScaleBiasClamp: InputScaleBiasClamp);
         A: PoseLink;
         B: PoseLink;
@@ -23213,6 +23890,7 @@ declare module "ue" {
     }
     
     class AnimNode_UseCachedPose extends AnimNode_Base {
+        constructor();
         constructor(LinkToCachingNode: PoseLink, CachePoseName: string);
         LinkToCachingNode: PoseLink;
         CachePoseName: string;
@@ -23546,6 +24224,7 @@ declare module "ue" {
     }
     
     class AnchorData {
+        constructor();
         constructor(Offsets: Margin, Anchors: Anchors, Alignment: Vector2D);
         Offsets: Margin;
         Anchors: Anchors;
@@ -23669,6 +24348,7 @@ declare module "ue" {
     }
     
     class TableRowStyle extends SlateWidgetStyle {
+        constructor();
         constructor(SelectorFocusedBrush: SlateBrush, ActiveHoveredBrush: SlateBrush, ActiveBrush: SlateBrush, InactiveHoveredBrush: SlateBrush, InactiveBrush: SlateBrush, EvenRowBackgroundHoveredBrush: SlateBrush, EvenRowBackgroundBrush: SlateBrush, OddRowBackgroundHoveredBrush: SlateBrush, OddRowBackgroundBrush: SlateBrush, TextColor: SlateColor, SelectedTextColor: SlateColor, DropIndicator_Above: SlateBrush, DropIndicator_Onto: SlateBrush, DropIndicator_Below: SlateBrush, ActiveHighlightedBrush: SlateBrush, InactiveHighlightedBrush: SlateBrush);
         SelectorFocusedBrush: SlateBrush;
         ActiveHoveredBrush: SlateBrush;
@@ -23729,6 +24409,7 @@ declare module "ue" {
     enum EDynamicBoxType { Horizontal, Vertical, Wrap, VerticalWrap, Radial, Overlay, EDynamicBoxType_MAX}
     enum ESlateSizeRule { Automatic, Fill, ESlateSizeRule_MAX}
     class SlateChildSize {
+        constructor();
         constructor(Value: number, SizeRule: ESlateSizeRule);
         Value: number;
         SizeRule: ESlateSizeRule;
@@ -23736,6 +24417,7 @@ declare module "ue" {
     }
     
     class RadialBoxSettings {
+        constructor();
         constructor(bDistributeItemsEvenly: boolean, AngleBetweenItems: number, StartingAngle: number);
         bDistributeItemsEvenly: boolean;
         AngleBetweenItems: number;
@@ -23744,6 +24426,7 @@ declare module "ue" {
     }
     
     class UserWidgetPool {
+        constructor();
         constructor(ActiveWidgets: TArray<UserWidget>, InactiveWidgets: TArray<UserWidget>);
         ActiveWidgets: TArray<UserWidget>;
         InactiveWidgets: TArray<UserWidget>;
@@ -23785,6 +24468,7 @@ declare module "ue" {
     
     enum EVirtualKeyboardType { Default, Number, Web, Email, Password, AlphaNumeric, EVirtualKeyboardType_MAX}
     class VirtualKeyboardOptions {
+        constructor();
         constructor(bEnableAutocorrect: boolean);
         bEnableAutocorrect: boolean;
         static StaticClass(): Class;
@@ -23796,6 +24480,7 @@ declare module "ue" {
     enum ETextShapingMethod { Auto, KerningOnly, FullShaping, ETextShapingMethod_MAX}
     enum ETextFlowDirection { Auto, LeftToRight, RightToLeft, ETextFlowDirection_MAX}
     class ShapedTextOptions {
+        constructor();
         constructor(bOverride_TextShapingMethod: boolean, bOverride_TextFlowDirection: boolean, TextShapingMethod: ETextShapingMethod, TextFlowDirection: ETextFlowDirection);
         bOverride_TextShapingMethod: boolean;
         bOverride_TextFlowDirection: boolean;
@@ -23895,6 +24580,7 @@ declare module "ue" {
     }
     
     class ExpandableAreaStyle extends SlateWidgetStyle {
+        constructor();
         constructor(CollapsedImage: SlateBrush, ExpandedImage: SlateBrush, RolloutAnimationSeconds: number);
         CollapsedImage: SlateBrush;
         ExpandedImage: SlateBrush;
@@ -24261,6 +24947,7 @@ declare module "ue" {
     }
     
     class MovieScene2DTransformMask {
+        constructor();
         constructor(Mask: number);
         Mask: number;
         static StaticClass(): Class;
@@ -24287,6 +24974,7 @@ declare module "ue" {
     }
     
     class MovieScenePropertyBinding {
+        constructor();
         constructor(PropertyName: string, PropertyPath: string, bCanUseClassLookup: boolean);
         PropertyName: string;
         PropertyPath: string;
@@ -24761,6 +25449,7 @@ declare module "ue" {
     }
     
     class SlateMeshVertex {
+        constructor();
         constructor(Position: Vector2D, Color: Color, UV0: Vector2D, UV1: Vector2D, UV2: Vector2D, UV3: Vector2D, UV4: Vector2D, UV5: Vector2D);
         Position: Vector2D;
         Color: Color;
@@ -24788,6 +25477,7 @@ declare module "ue" {
     }
     
     class SliderStyle extends SlateWidgetStyle {
+        constructor();
         constructor(NormalBarImage: SlateBrush, HoveredBarImage: SlateBrush, DisabledBarImage: SlateBrush, NormalThumbImage: SlateBrush, HoveredThumbImage: SlateBrush, DisabledThumbImage: SlateBrush, BarThickness: number);
         NormalBarImage: SlateBrush;
         HoveredBarImage: SlateBrush;
@@ -25067,6 +25757,7 @@ declare module "ue" {
     }
     
     class BlueprintWidgetAnimationDelegateBinding {
+        constructor();
         constructor(Action: EWidgetAnimationEvent, AnimationToBind: string, FunctionNameToBind: string, UserTag: string);
         Action: EWidgetAnimationEvent;
         AnimationToBind: string;
@@ -25103,6 +25794,7 @@ declare module "ue" {
     
     enum EBindingKind { Function, Property, EBindingKind_MAX}
     class DelegateRuntimeBinding {
+        constructor();
         constructor(ObjectName: string, PropertyName: string, FunctionName: string, SourcePath: DynamicPropertyPath, Kind: EBindingKind);
         ObjectName: string;
         PropertyName: string;
@@ -25383,6 +26075,7 @@ declare module "ue" {
     }
     
     class PositionHistory {
+        constructor();
         constructor(Positions: TArray<Vector>, Range: number);
         Positions: TArray<Vector>;
         Range: number;
@@ -25529,6 +26222,7 @@ declare module "ue" {
     }
     
     class MovieSceneActorReferenceKey {
+        constructor();
         constructor(Object: MovieSceneObjectBindingID, ComponentName: string, SocketName: string);
         Object: MovieSceneObjectBindingID;
         ComponentName: string;
@@ -25537,6 +26231,7 @@ declare module "ue" {
     }
     
     class MovieSceneActorReferenceData extends MovieSceneChannel {
+        constructor();
         constructor(KeyTimes: TArray<FrameNumber>, KeyValues: TArray<MovieSceneActorReferenceKey>);
         KeyTimes: TArray<FrameNumber>;
         KeyValues: TArray<MovieSceneActorReferenceKey>;
@@ -25611,6 +26306,7 @@ declare module "ue" {
     }
     
     class MovieSceneByteChannel extends MovieSceneChannel {
+        constructor();
         constructor(Times: TArray<FrameNumber>, DefaultValue: number, bHasDefaultValue: boolean, Values: TArray<number>, Enum: Enum);
         Times: TArray<FrameNumber>;
         DefaultValue: number;
@@ -25637,6 +26333,7 @@ declare module "ue" {
     }
     
     class MovieSceneCameraAnimSectionData {
+        constructor();
         constructor(CameraAnim: CameraAnim, PlayRate: number, PlayScale: number, BlendInTime: number, BlendOutTime: number, bLooping: boolean);
         CameraAnim: CameraAnim;
         PlayRate: number;
@@ -25694,6 +26391,7 @@ declare module "ue" {
     }
     
     class MovieSceneTrackInstanceInput {
+        constructor();
         constructor(Section: MovieSceneSection);
         Section: MovieSceneSection;
         static StaticClass(): Class;
@@ -25718,6 +26416,7 @@ declare module "ue" {
     }
     
     class MovieSceneCameraShakeSectionData {
+        constructor();
         constructor(ShakeClass: Class, PlayScale: number, PlaySpace: ECameraShakePlaySpace, UserDefinedPlaySpace: Rotator);
         ShakeClass: Class;
         PlayScale: number;
@@ -25755,6 +26454,7 @@ declare module "ue" {
     }
     
     class MovieSceneCameraShakeSourceTrigger {
+        constructor();
         constructor(ShakeClass: Class, PlayScale: number, PlaySpace: ECameraShakePlaySpace, UserDefinedPlaySpace: Rotator);
         ShakeClass: Class;
         PlayScale: number;
@@ -25764,6 +26464,7 @@ declare module "ue" {
     }
     
     class MovieSceneCameraShakeSourceTriggerChannel extends MovieSceneChannel {
+        constructor();
         constructor(KeyTimes: TArray<FrameNumber>, KeyValues: TArray<MovieSceneCameraShakeSourceTrigger>);
         KeyTimes: TArray<FrameNumber>;
         KeyValues: TArray<MovieSceneCameraShakeSourceTrigger>;
@@ -25795,6 +26496,7 @@ declare module "ue" {
     }
     
     class MovieSceneSectionParameters {
+        constructor();
         constructor(StartFrameOffset: FrameNumber, bCanLoop: boolean, EndFrameOffset: FrameNumber, FirstLoopStartFrameOffset: FrameNumber, TimeScale: number, HierarchicalBias: number, StartOffset: number, PrerollTime: number, PostrollTime: number);
         StartFrameOffset: FrameNumber;
         bCanLoop: boolean;
@@ -25942,12 +26644,14 @@ declare module "ue" {
     }
     
     class MovieSceneEventPayloadVariable {
+        constructor();
         constructor(Value: string);
         Value: string;
         static StaticClass(): Class;
     }
     
     class MovieSceneEvent {
+        constructor();
         constructor(Ptrs: MovieSceneEventPtrs, PayloadVariables: TMap<string, MovieSceneEventPayloadVariable>, CompiledFunctionName: string, BoundObjectPinName: string, WeakEndpoint: TWeakObjectPtr<Object>, GraphGuid: Guid, NodeGuid: Guid, FunctionEntry: TWeakObjectPtr<Object>);
         Ptrs: MovieSceneEventPtrs;
         PayloadVariables: TMap<string, MovieSceneEventPayloadVariable>;
@@ -25969,6 +26673,7 @@ declare module "ue" {
     }
     
     class NameCurveKey {
+        constructor();
         constructor(Time: number, Value: string);
         Time: number;
         Value: string;
@@ -25976,6 +26681,7 @@ declare module "ue" {
     }
     
     class NameCurve extends IndexedCurve {
+        constructor();
         constructor(Keys: TArray<NameCurveKey>);
         Keys: TArray<NameCurveKey>;
         static StaticClass(): Class;
@@ -25987,6 +26693,7 @@ declare module "ue" {
     }
     
     class EventPayload {
+        constructor();
         constructor(EventName: string, Parameters: MovieSceneEventParameters);
         EventName: string;
         Parameters: MovieSceneEventParameters;
@@ -25994,6 +26701,7 @@ declare module "ue" {
     }
     
     class MovieSceneEventSectionData extends MovieSceneChannel {
+        constructor();
         constructor(Times: TArray<FrameNumber>, KeyValues: TArray<EventPayload>, KeyTimes: TArray<number>);
         Times: TArray<FrameNumber>;
         KeyValues: TArray<EventPayload>;
@@ -26051,6 +26759,7 @@ declare module "ue" {
     }
     
     class MovieSceneEventChannel extends MovieSceneChannel {
+        constructor();
         constructor(KeyTimes: TArray<FrameNumber>, KeyValues: TArray<MovieSceneEvent>);
         KeyTimes: TArray<FrameNumber>;
         KeyValues: TArray<MovieSceneEvent>;
@@ -26112,6 +26821,7 @@ declare module "ue" {
     }
     
     class MovieSceneIntegerChannel extends MovieSceneChannel {
+        constructor();
         constructor(Times: TArray<FrameNumber>, DefaultValue: number, bHasDefaultValue: boolean, Values: TArray<number>);
         Times: TArray<FrameNumber>;
         DefaultValue: number;
@@ -26188,6 +26898,7 @@ declare module "ue" {
     }
     
     class MovieSceneObjectPathChannelKeyValue {
+        constructor();
         constructor(SoftPtr: TSoftObjectPtr<Object>, HardPtr: Object);
         SoftPtr: TSoftObjectPtr<Object>;
         HardPtr: Object;
@@ -26195,6 +26906,7 @@ declare module "ue" {
     }
     
     class MovieSceneObjectPathChannel extends MovieSceneChannel {
+        constructor();
         constructor(PropertyClass: Class, Times: TArray<FrameNumber>, Values: TArray<MovieSceneObjectPathChannelKeyValue>, DefaultValue: MovieSceneObjectPathChannelKeyValue);
         PropertyClass: Class;
         Times: TArray<FrameNumber>;
@@ -26220,6 +26932,7 @@ declare module "ue" {
     }
     
     class MovieSceneBoolChannel extends MovieSceneChannel {
+        constructor();
         constructor(Times: TArray<FrameNumber>, DefaultValue: boolean, bHasDefaultValue: boolean, Values: TArray<boolean>);
         Times: TArray<FrameNumber>;
         DefaultValue: boolean;
@@ -26229,6 +26942,7 @@ declare module "ue" {
     }
     
     class BoolParameterNameAndCurve {
+        constructor();
         constructor(ParameterName: string, ParameterCurve: MovieSceneBoolChannel);
         ParameterName: string;
         ParameterCurve: MovieSceneBoolChannel;
@@ -26236,6 +26950,7 @@ declare module "ue" {
     }
     
     class ScalarParameterNameAndCurve {
+        constructor();
         constructor(ParameterName: string, ParameterCurve: MovieSceneFloatChannel);
         ParameterName: string;
         ParameterCurve: MovieSceneFloatChannel;
@@ -26243,6 +26958,7 @@ declare module "ue" {
     }
     
     class Vector2DParameterNameAndCurves {
+        constructor();
         constructor(ParameterName: string, XCurve: MovieSceneFloatChannel, YCurve: MovieSceneFloatChannel);
         ParameterName: string;
         XCurve: MovieSceneFloatChannel;
@@ -26251,6 +26967,7 @@ declare module "ue" {
     }
     
     class VectorParameterNameAndCurves {
+        constructor();
         constructor(ParameterName: string, XCurve: MovieSceneFloatChannel, YCurve: MovieSceneFloatChannel, ZCurve: MovieSceneFloatChannel);
         ParameterName: string;
         XCurve: MovieSceneFloatChannel;
@@ -26260,6 +26977,7 @@ declare module "ue" {
     }
     
     class ColorParameterNameAndCurves {
+        constructor();
         constructor(ParameterName: string, RedCurve: MovieSceneFloatChannel, GreenCurve: MovieSceneFloatChannel, BlueCurve: MovieSceneFloatChannel, AlphaCurve: MovieSceneFloatChannel);
         ParameterName: string;
         RedCurve: MovieSceneFloatChannel;
@@ -26270,6 +26988,7 @@ declare module "ue" {
     }
     
     class TransformParameterNameAndCurves {
+        constructor();
         constructor(ParameterName: string, Translation: FixSizeArray<MovieSceneFloatChannel>, Rotation: FixSizeArray<MovieSceneFloatChannel>, Scale: FixSizeArray<MovieSceneFloatChannel>);
         ParameterName: string;
         Translation: FixSizeArray<MovieSceneFloatChannel>;
@@ -26371,6 +27090,7 @@ declare module "ue" {
     }
     
     class MovieSceneSkeletalAnimationParams {
+        constructor();
         constructor(Animation: AnimSequenceBase, FirstLoopStartFrameOffset: FrameNumber, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number, bReverse: boolean, SlotName: string, Weight: MovieSceneFloatChannel, bSkipAnimNotifiers: boolean, bForceCustomMode: boolean, StartOffset: number, EndOffset: number);
         Animation: AnimSequenceBase;
         FirstLoopStartFrameOffset: FrameNumber;
@@ -26447,6 +27167,7 @@ declare module "ue" {
     }
     
     class MovieSceneStringChannel extends MovieSceneChannel {
+        constructor();
         constructor(Times: TArray<FrameNumber>, Values: TArray<string>, DefaultValue: string, bHasDefaultValue: boolean);
         Times: TArray<FrameNumber>;
         Values: TArray<string>;
@@ -26866,6 +27587,7 @@ declare module "ue" {
     enum EQuartzCommandDelegateSubType { CommandOnFailedToQueue, CommandOnQueued, CommandOnCanceled, CommandOnAboutToStart, CommandOnStarted, Count, EQuartzCommandDelegateSubType_MAX}
     enum EQuarztQuantizationReference { BarRelative, TransportRelative, CurrentTimeRelative, Count, EQuarztQuantizationReference_MAX}
     class QuartzQuantizationBoundary {
+        constructor();
         constructor(Quantization: EQuartzCommandQuantization, Multiplier: number, CountingReferencePoint: EQuarztQuantizationReference);
         Quantization: EQuartzCommandQuantization;
         Multiplier: number;
@@ -26901,6 +27623,7 @@ declare module "ue" {
     enum ESubmixEffectDynamicsPeakMode { MeanSquared, RootMeanSquared, Peak, Count, ESubmixEffectDynamicsPeakMode_MAX}
     enum ESubmixEffectDynamicsChannelLinkMode { Disabled, Average, Peak, Count, ESubmixEffectDynamicsChannelLinkMode_MAX}
     class SubmixEffectDynamicProcessorFilterSettings {
+        constructor();
         constructor(bEnabled: boolean, Cutoff: number, GainDb: number);
         bEnabled: boolean;
         Cutoff: number;
@@ -26909,6 +27632,7 @@ declare module "ue" {
     }
     
     class SubmixEffectDynamicsProcessorSettings {
+        constructor();
         constructor(DynamicsProcessorType: ESubmixEffectDynamicsProcessorType, PeakMode: ESubmixEffectDynamicsPeakMode, LinkMode: ESubmixEffectDynamicsChannelLinkMode, InputGainDb: number, ThresholdDb: number, Ratio: number, KneeBandwidthDb: number, LookAheadMsec: number, AttackTimeMsec: number, ReleaseTimeMsec: number, ExternalSubmix: SoundSubmix, bChannelLinked: boolean, bAnalogMode: boolean, bKeyAudition: boolean, KeyGainDb: number, OutputGainDb: number, KeyHighshelf: SubmixEffectDynamicProcessorFilterSettings, KeyLowshelf: SubmixEffectDynamicProcessorFilterSettings);
         DynamicsProcessorType: ESubmixEffectDynamicsProcessorType;
         PeakMode: ESubmixEffectDynamicsPeakMode;
@@ -26942,6 +27666,7 @@ declare module "ue" {
     }
     
     class SubmixEffectEQBand {
+        constructor();
         constructor(Frequency: number, Bandwidth: number, GainDb: number, bEnabled: boolean);
         Frequency: number;
         Bandwidth: number;
@@ -26951,6 +27676,7 @@ declare module "ue" {
     }
     
     class SubmixEffectSubmixEQSettings {
+        constructor();
         constructor(EQBands: TArray<SubmixEffectEQBand>);
         EQBands: TArray<SubmixEffectEQBand>;
         static StaticClass(): Class;
@@ -26966,6 +27692,7 @@ declare module "ue" {
     }
     
     class SubmixEffectReverbSettings {
+        constructor();
         constructor(bBypassEarlyReflections: boolean, ReflectionsDelay: number, GainHF: number, ReflectionsGain: number, bBypassLateReflections: boolean, LateDelay: number, DecayTime: number, Density: number, Diffusion: number, AirAbsorptionGainHF: number, DecayHFRatio: number, LateGain: number, Gain: number, WetLevel: number, DryLevel: number, bBypass: boolean);
         bBypassEarlyReflections: boolean;
         ReflectionsDelay: number;
@@ -27005,6 +27732,7 @@ declare module "ue" {
     
     enum EQuartzTimeSignatureQuantization { HalfNote, QuarterNote, EighthNote, SixteenthNote, ThirtySecondNote, Count, EQuartzTimeSignatureQuantization_MAX}
     class QuartzPulseOverrideStep {
+        constructor();
         constructor(NumberOfPulses: number, PulseDuration: EQuartzCommandQuantization);
         NumberOfPulses: number;
         PulseDuration: EQuartzCommandQuantization;
@@ -27012,6 +27740,7 @@ declare module "ue" {
     }
     
     class QuartzTimeSignature {
+        constructor();
         constructor(NumBeats: number, BeatType: EQuartzTimeSignatureQuantization, OptionalPulseOverride: TArray<QuartzPulseOverrideStep>);
         NumBeats: number;
         BeatType: EQuartzTimeSignatureQuantization;
@@ -27020,6 +27749,7 @@ declare module "ue" {
     }
     
     class QuartzClockSettings {
+        constructor();
         constructor(TimeSignature: QuartzTimeSignature, bIgnoreLevelChange: boolean);
         TimeSignature: QuartzTimeSignature;
         bIgnoreLevelChange: boolean;
@@ -27053,6 +27783,7 @@ declare module "ue" {
     }
     
     class AudioComponentParam {
+        constructor();
         constructor(ParamName: string, FloatParam: number, BoolParam: boolean, IntParam: number, SoundWaveParam: SoundWave);
         ParamName: string;
         FloatParam: number;
@@ -27065,6 +27796,7 @@ declare module "ue" {
     enum EAudioComponentPlayState { Playing, Stopped, Paused, FadingIn, FadingOut, Count, EAudioComponentPlayState_MAX}
     enum EAudioFaderCurve { Linear, Logarithmic, SCurve, Sin, Count, EAudioFaderCurve_MAX}
     class SoundWaveSpectralData {
+        constructor();
         constructor(FrequencyHz: number, Magnitude: number, NormalizedMagnitude: number);
         FrequencyHz: number;
         Magnitude: number;
@@ -27073,6 +27805,7 @@ declare module "ue" {
     }
     
     class SoundWaveSpectralDataPerSound {
+        constructor();
         constructor(SpectralData: TArray<SoundWaveSpectralData>, PlaybackTime: number, SoundWave: SoundWave);
         SpectralData: TArray<SoundWaveSpectralData>;
         PlaybackTime: number;
@@ -27081,6 +27814,7 @@ declare module "ue" {
     }
     
     class SoundWaveEnvelopeDataPerSound {
+        constructor();
         constructor(Envelope: number, PlaybackTime: number, SoundWave: SoundWave);
         Envelope: number;
         PlaybackTime: number;
@@ -27252,6 +27986,7 @@ declare module "ue" {
     }
     
     class MediaCaptureDevice {
+        constructor();
         constructor(DisplayName: string, Url: string);
         DisplayName: string;
         Url: string;
@@ -27292,6 +28027,7 @@ declare module "ue" {
     
     enum EMediaPlayerTrack { Audio, Caption, Metadata, Script, Subtitle, Text, Video, EMediaPlayerTrack_MAX}
     class MediaPlayerTrackOptions {
+        constructor();
         constructor(Audio: number, Caption: number, Metadata: number, Script: number, Subtitle: number, Text: number, Video: number);
         Audio: number;
         Caption: number;
@@ -27305,6 +28041,7 @@ declare module "ue" {
     
     enum EMediaPlayerOptionBooleanOverride { UseMediaPlayerSetting, Enabled, Disabled, EMediaPlayerOptionBooleanOverride_MAX}
     class MediaPlayerOptions {
+        constructor();
         constructor(Tracks: MediaPlayerTrackOptions, SeekTime: Timespan, PlayOnOpen: EMediaPlayerOptionBooleanOverride, Loop: EMediaPlayerOptionBooleanOverride);
         Tracks: MediaPlayerTrackOptions;
         SeekTime: Timespan;
@@ -27461,6 +28198,7 @@ declare module "ue" {
     enum EMediaSoundChannels { Mono, Stereo, Surround, EMediaSoundChannels_MAX}
     enum EMediaSoundComponentFFTSize { Min_64, Small_256, Medium_512, Large_1024, EMediaSoundComponentFFTSize_MAX}
     class MediaSoundComponentSpectralData {
+        constructor();
         constructor(FrequencyHz: number, Magnitude: number);
         FrequencyHz: number;
         Magnitude: number;
@@ -27542,6 +28280,7 @@ declare module "ue" {
     }
     
     class LevelSequenceAnimSequenceLinkItem {
+        constructor();
         constructor(SkelTrackGuid: Guid, PathToAnimSequence: SoftObjectPath, bExportTransforms: boolean, bExportCurves: boolean, bRecordInWorldSpace: boolean);
         SkelTrackGuid: Guid;
         PathToAnimSequence: SoftObjectPath;
@@ -28121,6 +28860,7 @@ declare module "ue" {
     }
     
     class IniStringValue {
+        constructor();
         constructor(Section: string, Key: string, Value: string, Filename: string);
         Section: string;
         Key: string;
@@ -28331,6 +29071,7 @@ declare module "ue" {
     }
     
     class ChunkDependency {
+        constructor();
         constructor(ChunkID: number, ParentChunkID: number);
         ChunkID: number;
         ParentChunkID: number;
@@ -28539,6 +29280,7 @@ declare module "ue" {
     
     enum ECSVImportType { ECSV_DataTable, ECSV_CurveTable, ECSV_CurveFloat, ECSV_CurveVector, ECSV_CurveLinearColor, ECSV_MAX}
     class CSVImportSettings {
+        constructor();
         constructor(ImportRowStruct: ScriptStruct, ImportType: ECSVImportType, ImportCurveInterpMode: ERichCurveInterpMode);
         ImportRowStruct: ScriptStruct;
         ImportType: ECSVImportType;
@@ -28736,6 +29478,7 @@ declare module "ue" {
     }
     
     class DFontParameters {
+        constructor();
         constructor(FontValue: Font, FontPage: number);
         FontValue: Font;
         FontPage: number;
@@ -28767,6 +29510,7 @@ declare module "ue" {
     }
     
     class ScalarParameterAtlasData {
+        constructor();
         constructor(bIsUsedAsAtlasPosition: boolean, Curve: TSoftObjectPtr<CurveLinearColor>, Atlas: TSoftObjectPtr<CurveLinearColorAtlas>);
         bIsUsedAsAtlasPosition: boolean;
         Curve: TSoftObjectPtr<CurveLinearColor>;
@@ -28784,6 +29528,7 @@ declare module "ue" {
     }
     
     class DComponentMaskParameter {
+        constructor();
         constructor(R: boolean, G: boolean, B: boolean, A: boolean);
         R: boolean;
         G: boolean;
@@ -29076,6 +29821,7 @@ declare module "ue" {
     }
     
     class StatColorMapEntry {
+        constructor();
         constructor(In: number, Out: Color);
         In: number;
         Out: Color;
@@ -29083,6 +29829,7 @@ declare module "ue" {
     }
     
     class StatColorMapping {
+        constructor();
         constructor(StatName: string, ColorMap: TArray<StatColorMapEntry>, DisableBlend: boolean);
         StatName: string;
         ColorMap: TArray<StatColorMapEntry>;
@@ -29091,6 +29838,7 @@ declare module "ue" {
     }
     
     class GameNameRedirect {
+        constructor();
         constructor(OldGameName: string, NewGameName: string);
         OldGameName: string;
         NewGameName: string;
@@ -29098,6 +29846,7 @@ declare module "ue" {
     }
     
     class ClassRedirect {
+        constructor();
         constructor(ObjectName: string, OldClassName: string, NewClassName: string, OldSubobjName: string, NewSubobjName: string, NewClassClass: string, NewClassPackage: string, InstanceOnly: boolean);
         ObjectName: string;
         OldClassName: string;
@@ -29111,6 +29860,7 @@ declare module "ue" {
     }
     
     class PluginRedirect {
+        constructor();
         constructor(OldPluginName: string, NewPluginName: string);
         OldPluginName: string;
         NewPluginName: string;
@@ -29118,6 +29868,7 @@ declare module "ue" {
     }
     
     class StructRedirect {
+        constructor();
         constructor(OldStructName: string, NewStructName: string);
         OldStructName: string;
         NewStructName: string;
@@ -29126,6 +29877,7 @@ declare module "ue" {
     
     enum ETransitionType { None, Paused, Loading, Saving, Connecting, Precaching, WaitingToConnect, MAX}
     class DropNoteInfo {
+        constructor();
         constructor(Location: Vector, Rotation: Rotator, Comment: string);
         Location: Vector;
         Rotation: Rotator;
@@ -29134,6 +29886,7 @@ declare module "ue" {
     }
     
     class NetDriverDefinition {
+        constructor();
         constructor(DefName: string, DriverClassName: string, DriverClassNameFallback: string);
         DefName: string;
         DriverClassName: string;
@@ -29523,6 +30276,7 @@ declare module "ue" {
     
     enum ELoadLevelAtStartup { None, ProjectDefault, LastOpened, ELoadLevelAtStartup_MAX}
     class AutoReimportWildcard {
+        constructor();
         constructor(Wildcard: string, bInclude: boolean);
         Wildcard: string;
         bInclude: boolean;
@@ -29530,6 +30284,7 @@ declare module "ue" {
     }
     
     class AutoReimportDirectoryConfig {
+        constructor();
         constructor(SourceDirectory: string, MountPoint: string, Wildcards: TArray<AutoReimportWildcard>);
         SourceDirectory: string;
         MountPoint: string;
@@ -29676,6 +30431,7 @@ declare module "ue" {
     
     enum ELevelEditor2DAxis { X, Y, Z, ELevelEditor2DAxis_MAX}
     class Mode2DLayer {
+        constructor();
         constructor(Name: string, Depth: number);
         Name: string;
         Depth: number;
@@ -29802,6 +30558,7 @@ declare module "ue" {
     
     enum EFBXAnimationLengthImportType { FBXALIT_ExportedTime, FBXALIT_AnimatedKey, FBXALIT_SetRange, FBXALIT_MAX}
     class Int32Interval {
+        constructor();
         constructor(Min: number, Max: number);
         Min: number;
         Max: number;
@@ -29836,6 +30593,7 @@ declare module "ue" {
     enum EFBXTestPlanActionType { Import, Reimport, AddLOD, ReimportLOD, ImportReload, EFBXTestPlanActionType_MAX}
     enum EFBXExpectedResultPreset { Error_Number, Warning_Number, Created_Staticmesh_Number, Created_Skeletalmesh_Number, Materials_Created_Number, Material_Slot_Imported_Name, Vertex_Number, Lod_Number, Vertex_Number_Lod, Mesh_Materials_Number, Mesh_LOD_Section_Number, Mesh_LOD_Section_Vertex_Number, Mesh_LOD_Section_Triangle_Number, Mesh_LOD_Section_Material_Name, Mesh_LOD_Section_Material_Index, Mesh_LOD_Section_Material_Imported_Name, Mesh_LOD_Vertex_Position, Mesh_LOD_Vertex_Normal, LOD_UV_Channel_Number, Bone_Number, Bone_Position, Animation_Frame_Number, Animation_Length, EFBXExpectedResultPreset_MAX}
     class FbxTestPlanExpectedResult {
+        constructor();
         constructor(ExpectedPresetsType: EFBXExpectedResultPreset, ExpectedPresetsDataInteger: TArray<number>, ExpectedPresetsDataFloat: TArray<number>, ExpectedPresetsDataDouble: TArray<number>, ExpectedPresetsDataString: TArray<string>);
         ExpectedPresetsType: EFBXExpectedResultPreset;
         ExpectedPresetsDataInteger: TArray<number>;
@@ -29849,6 +30607,7 @@ declare module "ue" {
     enum EFBXNormalImportMethod { FBXNIM_ComputeNormals, FBXNIM_ImportNormals, FBXNIM_ImportNormalsAndTangents, FBXNIM_MAX}
     enum EFBXNormalGenerationMethod { BuiltIn, MikkTSpace, EFBXNormalGenerationMethod_MAX}
     class ImportMeshLodSectionsData {
+        constructor();
         constructor(SectionOriginalMaterialName: TArray<string>);
         SectionOriginalMaterialName: TArray<string>;
         static StaticClass(): Class;
@@ -30502,6 +31261,7 @@ declare module "ue" {
     enum EPlayNetMode { PIE_Standalone, PIE_ListenServer, PIE_Client, PIE_MAX}
     enum NetworkEmulationTarget { Server, Client, Any, NetworkEmulationTarget_MAX}
     class NetworkEmulationPacketSettings {
+        constructor();
         constructor(MinLatency: number, MaxLatency: number, PacketLossPercentage: number);
         MinLatency: number;
         MaxLatency: number;
@@ -30510,6 +31270,7 @@ declare module "ue" {
     }
     
     class LevelEditorPlayNetworkEmulationSettings {
+        constructor();
         constructor(bIsNetworkEmulationEnabled: boolean, EmulationTarget: NetworkEmulationTarget, CurrentProfile: string, OutPackets: NetworkEmulationPacketSettings, InPackets: NetworkEmulationPacketSettings);
         bIsNetworkEmulationEnabled: boolean;
         EmulationTarget: NetworkEmulationTarget;
@@ -30523,6 +31284,7 @@ declare module "ue" {
     enum EPlayModeLocations { PlayLocation_CurrentCameraLocation, PlayLocation_DefaultPlayerStart, PlayLocation_MAX}
     enum EPlayModeType { PlayMode_InViewPort, PlayMode_InEditorFloating, PlayMode_InMobilePreview, PlayMode_InTargetedMobilePreview, PlayMode_InVulkanPreview, PlayMode_InNewProcess, PlayMode_InVR, PlayMode_Simulate, PlayMode_Count, PlayMode_MAX}
     class PlayScreenResolution {
+        constructor();
         constructor(Description: string, Width: number, Height: number, AspectRatio: string, bCanSwapAspectRatio: boolean, ProfileName: string, ScaleFactor: number, LogicalHeight: number, LogicalWidth: number);
         Description: string;
         Width: number;
@@ -30610,6 +31372,7 @@ declare module "ue" {
     enum ELandscapeFoliageEditorControlType { IgnoreCtrl, RequireCtrl, RequireNoCtrl, ELandscapeFoliageEditorControlType_MAX}
     enum EScrollGestureDirection { UseSystemSetting, Standard, Natural, EScrollGestureDirection_MAX}
     class SnapToSurfaceSettings {
+        constructor();
         constructor(bEnabled: boolean, SnapOffsetExtent: number, bSnapRotation: boolean);
         bEnabled: boolean;
         SnapOffsetExtent: number;
@@ -30622,6 +31385,7 @@ declare module "ue" {
     enum ELevelViewportType { LVT_OrthoXY, LVT_OrthoXZ, LVT_OrthoYZ, LVT_Perspective, LVT_OrthoFreelook, LVT_OrthoNegativeXY, LVT_OrthoNegativeXZ, LVT_OrthoNegativeYZ, LVT_MAX, LVT_None}
     enum EViewModeIndex { VMI_BrushWireframe, VMI_Wireframe, VMI_Unlit, VMI_Lit, VMI_Lit_DetailLighting, VMI_LightingOnly, VMI_LightComplexity, VMI_ShaderComplexity, VMI_LightmapDensity, VMI_LitLightmapDensity, VMI_ReflectionOverride, VMI_VisualizeBuffer, VMI_StationaryLightOverlap, VMI_CollisionPawn, VMI_CollisionVisibility, VMI_LODColoration, VMI_QuadOverdraw, VMI_PrimitiveDistanceAccuracy, VMI_MeshUVDensityAccuracy, VMI_ShaderComplexityWithQuadOverdraw, VMI_HLODColoration, VMI_GroupLODColoration, VMI_MaterialTextureScaleAccuracy, VMI_RequiredTextureResolution, VMI_PathTracing, VMI_RayTracingDebug, VMI_Max, VMI_Unknown, VMI_MAX}
     class ExposureSettings {
+        constructor();
         constructor(FixedEV100: number, bFixed: boolean);
         FixedEV100: number;
         bFixed: boolean;
@@ -30629,6 +31393,7 @@ declare module "ue" {
     }
     
     class LevelEditorViewportInstanceSettings {
+        constructor();
         constructor(ViewportType: ELevelViewportType, PerspViewModeIndex: EViewModeIndex, OrthoViewModeIndex: EViewModeIndex, EditorShowFlagsString: string, GameShowFlagsString: string, BufferVisualizationMode: string, RayTracingDebugVisualizationMode: string, ExposureSettings: ExposureSettings, FOVAngle: number, FarViewPlane: number, bIsRealtime: boolean, bShowFPS: boolean, bShowOnScreenStats: boolean, EnabledStats: TArray<string>, bShowFullToolbar: boolean);
         ViewportType: ELevelViewportType;
         PerspViewModeIndex: EViewModeIndex;
@@ -30649,6 +31414,7 @@ declare module "ue" {
     }
     
     class LevelEditorViewportInstanceSettingsKeyValuePair {
+        constructor();
         constructor(ConfigName: string, ConfigSettings: LevelEditorViewportInstanceSettings);
         ConfigName: string;
         ConfigSettings: LevelEditorViewportInstanceSettings;
@@ -30788,6 +31554,7 @@ declare module "ue" {
     }
     
     class LightmassDebugOptions {
+        constructor();
         constructor(bDebugMode: boolean, bStatsEnabled: boolean, bGatherBSPSurfacesAcrossComponents: boolean, CoplanarTolerance: number, bUseImmediateImport: boolean, bImmediateProcessMappings: boolean, bSortMappings: boolean, bDumpBinaryFiles: boolean, bDebugMaterials: boolean, bPadMappings: boolean, bDebugPaddings: boolean, bOnlyCalcDebugTexelMappings: boolean, bUseRandomColors: boolean, bColorBordersGreen: boolean, bColorByExecutionTime: boolean, ExecutionTimeDivisor: number);
         bDebugMode: boolean;
         bStatsEnabled: boolean;
@@ -30809,6 +31576,7 @@ declare module "ue" {
     }
     
     class SwarmDebugOptions {
+        constructor();
         constructor(bDistributionEnabled: boolean, bForceContentExport: boolean, bInitialized: boolean);
         bDistributionEnabled: boolean;
         bForceContentExport: boolean;
@@ -30860,6 +31628,7 @@ declare module "ue" {
     }
     
     class EditorParameterGroup {
+        constructor();
         constructor(GroupName: string, GroupAssociation: EMaterialParameterAssociation, Parameters: TArray<DEditorParameterValue>, GroupSortPriority: number);
         GroupName: string;
         GroupAssociation: EMaterialParameterAssociation;
@@ -30886,24 +31655,28 @@ declare module "ue" {
     }
     
     class LightmassParameterValue {
+        constructor();
         constructor(bOverride: boolean);
         bOverride: boolean;
         static StaticClass(): Class;
     }
     
     class LightmassBooleanParameterValue extends LightmassParameterValue {
+        constructor();
         constructor(ParameterValue: boolean);
         ParameterValue: boolean;
         static StaticClass(): Class;
     }
     
     class LightmassScalarParameterValue extends LightmassParameterValue {
+        constructor();
         constructor(ParameterValue: number);
         ParameterValue: number;
         static StaticClass(): Class;
     }
     
     class LightmassParameterizedMaterialSettings {
+        constructor();
         constructor(CastShadowAsMasked: LightmassBooleanParameterValue, EmissiveBoost: LightmassScalarParameterValue, DiffuseBoost: LightmassScalarParameterValue, ExportResolutionScale: LightmassScalarParameterValue);
         CastShadowAsMasked: LightmassBooleanParameterValue;
         EmissiveBoost: LightmassScalarParameterValue;
@@ -31224,6 +31997,7 @@ declare module "ue" {
     
     enum EAnimationViewportCameraFollowMode { None, Bounds, Bone, EAnimationViewportCameraFollowMode_MAX}
     class ViewportConfigOptions {
+        constructor();
         constructor(ViewModeIndex: EViewModeIndex, ViewFOV: number, CameraSpeedSetting: number, CameraSpeedScalar: number, CameraFollowMode: EAnimationViewportCameraFollowMode, CameraFollowBoneName: string);
         ViewModeIndex: EViewModeIndex;
         ViewFOV: number;
@@ -31235,6 +32009,7 @@ declare module "ue" {
     }
     
     class AssetEditorOptions {
+        constructor();
         constructor(Context: string, ViewportConfigs: FixSizeArray<ViewportConfigOptions>);
         Context: string;
         ViewportConfigs: FixSizeArray<ViewportConfigOptions>;
@@ -31346,6 +32121,7 @@ declare module "ue" {
     enum EPhysAssetFitGeomType { EFG_Box, EFG_Sphyl, EFG_Sphere, EFG_TaperedCapsule, EFG_SingleConvexHull, EFG_MultiConvexHull, EFG_MAX}
     enum EPhysAssetFitVertWeight { EVW_AnyWeight, EVW_DominantWeight, EVW_MAX}
     class PhysAssetCreateParams {
+        constructor();
         constructor(MinBoneSize: number, MinWeldSize: number, GeomType: EPhysAssetFitGeomType, VertWeight: EPhysAssetFitVertWeight, bAutoOrientToBone: boolean, bCreateConstraints: boolean, bWalkPastSmall: boolean, bBodyForAll: boolean, bDisableCollisionsByDefault: boolean, AngularConstraintMode: EAngularConstraintMotion, HullCount: number, MaxHullVerts: number);
         MinBoneSize: number;
         MinWeldSize: number;
@@ -31516,6 +32292,7 @@ declare module "ue" {
     enum PropertyEditorTestEnum { PropertyEditorTest_Enum1, PropertyEditorTest_Enum2, PropertyEditorTest_Enum3, PropertyEditorTest_Enum4, PropertyEditorTest_Enum5, PropertyEditorTest_Enum6, PropertyEditorTest_MAX}
     enum EditColor { Red, Orange, Yellow, Green, Blue, Indigo, Violet, Pink, Magenta, Cyan, EditColor_MAX}
     class PropertyEditorTestSubStruct {
+        constructor();
         constructor(FirstProperty: number, SecondProperty: number, CustomizedStructInsideUncustomizedStruct: LinearColor, CustomizedStructInsideUncustomizedStruct2: SoftObjectPath);
         FirstProperty: number;
         SecondProperty: number;
@@ -31525,6 +32302,7 @@ declare module "ue" {
     }
     
     class PropertyEditorTestBasicStruct {
+        constructor();
         constructor(IntPropertyInsideAStruct: number, FloatPropertyInsideAStruct: number, ObjectPropertyInsideAStruct: Object, InnerStruct: PropertyEditorTestSubStruct);
         IntPropertyInsideAStruct: number;
         FloatPropertyInsideAStruct: number;
@@ -31534,12 +32312,14 @@ declare module "ue" {
     }
     
     class PropertyEditorTestInstancedStruct {
+        constructor();
         constructor(Object: PropertyEditorTestInstancedObject);
         Object: PropertyEditorTestInstancedObject;
         static StaticClass(): Class;
     }
     
     class PropertyEditTestTextStruct {
+        constructor();
         constructor(NormalProperty: string);
         NormalProperty: string;
         static StaticClass(): Class;
@@ -31558,6 +32338,7 @@ declare module "ue" {
     }
     
     class PropertyEditorTestInlineEditCondition {
+        constructor();
         constructor(InlineEditCondition: boolean, HasInlineEditCondition: number);
         InlineEditCondition: boolean;
         HasInlineEditCondition: number;
@@ -32373,6 +33154,7 @@ declare module "ue" {
     }
     
     class ThumbnailRenderingInfo {
+        constructor();
         constructor(ClassNeedingThumbnailName: string, ClassNeedingThumbnail: Class, RendererClassName: string, Renderer: ThumbnailRenderer);
         ClassNeedingThumbnailName: string;
         ClassNeedingThumbnail: Class;
@@ -32432,6 +33214,7 @@ declare module "ue" {
     }
     
     class EditorCommandCategory {
+        constructor();
         constructor(Parent: string, Name: string);
         Parent: string;
         Name: string;
@@ -32439,6 +33222,7 @@ declare module "ue" {
     }
     
     class EditorCommand {
+        constructor();
         constructor(Parent: string, CommandName: string, ExecCommand: string, Description: string);
         Parent: string;
         CommandName: string;
@@ -32448,6 +33232,7 @@ declare module "ue" {
     }
     
     class EditorKeyBinding {
+        constructor();
         constructor(bCtrlDown: boolean, bAltDown: boolean, bShiftDown: boolean, Key: Key, CommandName: string);
         bCtrlDown: boolean;
         bAltDown: boolean;
@@ -32466,6 +33251,7 @@ declare module "ue" {
     }
     
     class ClassPickerDefaults {
+        constructor();
         constructor(ClassName: string, AssetClass: string);
         ClassName: string;
         AssetClass: string;
@@ -32497,6 +33283,7 @@ declare module "ue" {
     }
     
     class TemplateMapInfo {
+        constructor();
         constructor(ThumbnailTexture: Texture2D, Map: string);
         ThumbnailTexture: Texture2D;
         Map: string;
@@ -32544,6 +33331,7 @@ declare module "ue" {
     }
     
     class StructVariableDescription {
+        constructor();
         constructor(VarName: string, VarGuid: Guid, FriendlyName: string, DefaultValue: string, Category: string, SubCategory: string, SubCategoryObject: TSoftObjectPtr<Object>, PinValueType: EdGraphTerminalType, ContainerType: EPinContainerType, bIsArray: boolean, bIsSet: boolean, bIsMap: boolean, bInvalidMember: boolean, bDontEditOnInstance: boolean, bEnableSaveGame: boolean, bEnableMultiLineText: boolean, bEnable3dWidget: boolean, CurrentDefaultValue: string, ToolTip: string);
         VarName: string;
         VarGuid: Guid;
@@ -32647,6 +33435,7 @@ declare module "ue" {
     }
     
     class InstancedStaticMeshInstanceData {
+        constructor();
         constructor(Transform: Matrix);
         Transform: Matrix;
         static StaticClass(): Class;
@@ -32727,6 +33516,7 @@ declare module "ue" {
     
     enum EFoliageScaling { Uniform, Free, LockXY, LockXZ, LockYZ, EFoliageScaling_MAX}
     class FoliageVertexColorChannelMask {
+        constructor();
         constructor(UseMask: boolean, MaskThreshold: number, InvertMask: boolean);
         UseMask: boolean;
         MaskThreshold: number;
@@ -32920,6 +33710,7 @@ declare module "ue" {
     }
     
     class FoliageTypeObject {
+        constructor();
         constructor(FoliageTypeObject: Object, TypeInstance: FoliageType, bIsAsset: boolean, Type: Class);
         FoliageTypeObject: Object;
         TypeInstance: FoliageType;
@@ -32975,6 +33766,7 @@ declare module "ue" {
     }
     
     class ProceduralFoliageInstance {
+        constructor();
         constructor(Rotation: Quat, Location: Vector, Age: number, Normal: Vector, Scale: number, Type: FoliageType);
         Rotation: Quat;
         Location: Vector;
@@ -32995,6 +33787,7 @@ declare module "ue" {
     }
     
     class ImageWriteOptions {
+        constructor();
         constructor(Format: EDesiredImageFormat, OnComplete: $Delegate<(bSuccess: boolean) => void>, CompressionQuality: number, bOverwriteFile: boolean, bAsync: boolean);
         Format: EDesiredImageFormat;
         OnComplete: $Delegate<(bSuccess: boolean) => void>;
@@ -33030,6 +33823,7 @@ declare module "ue" {
     }
     
     class LandscapeSplineSegmentConnection {
+        constructor();
         constructor(ControlPoint: LandscapeSplineControlPoint, TangentLen: number, SocketName: string);
         ControlPoint: LandscapeSplineControlPoint;
         TangentLen: number;
@@ -33039,6 +33833,7 @@ declare module "ue" {
     
     enum LandscapeSplineMeshOrientation { LSMO_XUp, LSMO_YUp, LSMO_MAX}
     class LandscapeSplineMeshEntry {
+        constructor();
         constructor(Mesh: StaticMesh, MaterialOverrides: TArray<MaterialInterface>, bCenterH: boolean, CenterAdjust: Vector2D, bScaleToWidth: boolean, Scale: Vector, Orientation: LandscapeSplineMeshOrientation, ForwardAxis: ESplineMeshAxis, UpAxis: ESplineMeshAxis);
         Mesh: StaticMesh;
         MaterialOverrides: TArray<MaterialInterface>;
@@ -33053,6 +33848,7 @@ declare module "ue" {
     }
     
     class LandscapeSplineInterpPoint {
+        constructor();
         constructor(Center: Vector, Left: Vector, Right: Vector, FalloffLeft: Vector, FalloffRight: Vector, LayerLeft: Vector, LayerRight: Vector, LayerFalloffLeft: Vector, LayerFalloffRight: Vector, StartEndFalloff: number);
         Center: Vector;
         Left: Vector;
@@ -33105,6 +33901,7 @@ declare module "ue" {
     }
     
     class LandscapeSplineConnection {
+        constructor();
         constructor(Segment: LandscapeSplineSegment, End: boolean);
         Segment: LandscapeSplineSegment;
         End: boolean;
@@ -33160,6 +33957,7 @@ declare module "ue" {
     }
     
     class ForeignControlPointData {
+        constructor();
         constructor(ModificationKey: Guid, MeshComponent: ControlPointMeshComponent, Identifier: TLazyObjectPtr<LandscapeSplineControlPoint>);
         ModificationKey: Guid;
         MeshComponent: ControlPointMeshComponent;
@@ -33168,6 +33966,7 @@ declare module "ue" {
     }
     
     class ForeignSplineSegmentData {
+        constructor();
         constructor(ModificationKey: Guid, MeshComponents: TArray<SplineMeshComponent>, Identifier: TLazyObjectPtr<LandscapeSplineSegment>);
         ModificationKey: Guid;
         MeshComponents: TArray<SplineMeshComponent>;
@@ -33176,6 +33975,7 @@ declare module "ue" {
     }
     
     class ForeignWorldSplineData {
+        constructor();
         constructor(ForeignControlPointDataMap: TMap<TLazyObjectPtr<LandscapeSplineControlPoint>, ForeignControlPointData>, ForeignControlPointData: TArray<ForeignControlPointData>, ForeignSplineSegmentDataMap: TMap<TLazyObjectPtr<LandscapeSplineSegment>, ForeignSplineSegmentData>, ForeignSplineSegmentData: TArray<ForeignSplineSegmentData>);
         ForeignControlPointDataMap: TMap<TLazyObjectPtr<LandscapeSplineControlPoint>, ForeignControlPointData>;
         ForeignControlPointData: TArray<ForeignControlPointData>;
@@ -33204,6 +34004,7 @@ declare module "ue" {
     enum ELandscapeLODFalloff { Linear, SquareRoot, ELandscapeLODFalloff_MAX}
     enum ELandscapeLayerDisplayMode { Default, Alphabetical, UserSpecific, ELandscapeLayerDisplayMode_MAX}
     class LandscapeProxyMaterialOverride {
+        constructor();
         constructor(LODIndex: PerPlatformInt, Material: MaterialInterface);
         LODIndex: PerPlatformInt;
         Material: MaterialInterface;
@@ -33211,6 +34012,7 @@ declare module "ue" {
     }
     
     class LandscapeComponentMaterialOverride {
+        constructor();
         constructor(LODIndex: PerPlatformInt, Material: MaterialInterface);
         LODIndex: PerPlatformInt;
         Material: MaterialInterface;
@@ -33258,12 +34060,14 @@ declare module "ue" {
     }
     
     class HeightmapData {
+        constructor();
         constructor(Texture: Texture2D);
         Texture: Texture2D;
         static StaticClass(): Class;
     }
     
     class WeightmapLayerAllocationInfo {
+        constructor();
         constructor(LayerInfo: LandscapeLayerInfoObject, WeightmapTextureIndex: number, WeightmapTextureChannel: number);
         LayerInfo: LandscapeLayerInfoObject;
         WeightmapTextureIndex: number;
@@ -33281,6 +34085,7 @@ declare module "ue" {
     }
     
     class WeightmapData {
+        constructor();
         constructor(Textures: TArray<Texture2D>, LayerAllocations: TArray<WeightmapLayerAllocationInfo>, TextureUsages: TArray<LandscapeWeightmapUsage>);
         Textures: TArray<Texture2D>;
         LayerAllocations: TArray<WeightmapLayerAllocationInfo>;
@@ -33289,6 +34094,7 @@ declare module "ue" {
     }
     
     class LandscapeLayerComponentData {
+        constructor();
         constructor(HeightmapData: HeightmapData, WeightmapData: WeightmapData);
         HeightmapData: HeightmapData;
         WeightmapData: WeightmapData;
@@ -33303,6 +34109,7 @@ declare module "ue" {
     }
     
     class LandscapeEditToolRenderData {
+        constructor();
         constructor(ToolMaterial: MaterialInterface, GizmoMaterial: MaterialInterface, SelectedType: number, DebugChannelR: number, DebugChannelG: number, DebugChannelB: number, DataTexture: Texture2D, LayerContributionTexture: Texture2D, DirtyTexture: Texture2D);
         ToolMaterial: MaterialInterface;
         GizmoMaterial: MaterialInterface;
@@ -33379,6 +34186,7 @@ declare module "ue" {
     }
     
     class LandscapeEditorLayerSettings {
+        constructor();
         constructor(LayerInfoObj: LandscapeLayerInfoObject, ReimportLayerFilePath: string);
         LayerInfoObj: LandscapeLayerInfoObject;
         ReimportLayerFilePath: string;
@@ -33500,12 +34308,14 @@ declare module "ue" {
     }
     
     class LandscapeLayerBrush {
+        constructor();
         constructor(BlueprintBrush: LandscapeBlueprintBrushBase);
         BlueprintBrush: LandscapeBlueprintBrushBase;
         static StaticClass(): Class;
     }
     
     class LandscapeLayer {
+        constructor();
         constructor(Guid: Guid, Name: string, bVisible: boolean, bLocked: boolean, HeightmapAlpha: number, WeightmapAlpha: number, BlendMode: ELandscapeBlendMode, Brushes: TArray<LandscapeLayerBrush>, WeightmapLayerAllocationBlend: TMap<LandscapeLayerInfoObject, boolean>);
         Guid: Guid;
         Name: string;
@@ -33537,6 +34347,7 @@ declare module "ue" {
     }
     
     class LandscapeInfoLayerSettings {
+        constructor();
         constructor(LayerInfoObj: LandscapeLayerInfoObject, LayerName: string, ThumbnailMIC: MaterialInstanceConstant, Owner: LandscapeProxy, DebugColorChannel: number, bValid: boolean);
         LayerInfoObj: LandscapeLayerInfoObject;
         LayerName: string;
@@ -33625,6 +34436,7 @@ declare module "ue" {
     }
     
     class LandscapeMaterialTextureStreamingInfo {
+        constructor();
         constructor(TextureName: string, TexelFactor: number);
         TextureName: string;
         TexelFactor: number;
@@ -33692,6 +34504,7 @@ declare module "ue" {
     }
     
     class GrassInput {
+        constructor();
         constructor(Name: string, GrassType: LandscapeGrassType, Input: ExpressionInput);
         Name: string;
         GrassType: LandscapeGrassType;
@@ -33709,6 +34522,7 @@ declare module "ue" {
     
     enum ELandscapeLayerBlendType { LB_WeightBlend, LB_AlphaBlend, LB_HeightBlend, LB_MAX}
     class LayerBlendInput {
+        constructor();
         constructor(LayerName: string, BlendType: ELandscapeLayerBlendType, LayerInput: ExpressionInput, HeightInput: ExpressionInput, PreviewWeight: number, ConstLayerInput: Vector, ConstHeightInput: number);
         LayerName: string;
         BlendType: ELandscapeLayerBlendType;
@@ -33780,6 +34594,7 @@ declare module "ue" {
     }
     
     class PhysicalMaterialInput {
+        constructor();
         constructor(PhysicalMaterial: PhysicalMaterial, Input: ExpressionInput);
         PhysicalMaterial: PhysicalMaterial;
         Input: ExpressionInput;
@@ -33857,6 +34672,7 @@ declare module "ue" {
     }
     
     class CustomAttributeSetting {
+        constructor();
         constructor(Name: string, Meaning: string);
         Name: string;
         Meaning: string;
@@ -33885,6 +34701,7 @@ declare module "ue" {
     }
     
     class AnimBlueprintFunction {
+        constructor();
         constructor(Name: string, Group: string, OutputPoseNodeIndex: number, InputPoseNames: TArray<string>, InputPoseNodeIndices: TArray<number>, bImplemented: boolean);
         Name: string;
         Group: string;
@@ -34130,6 +34947,7 @@ declare module "ue" {
     }
     
     class AnimSetMeshLinkup {
+        constructor();
         constructor(BoneToTrackTable: TArray<number>);
         BoneToTrackTable: TArray<number>;
         static StaticClass(): Class;
@@ -34160,6 +34978,7 @@ declare module "ue" {
     }
     
     class RawAnimSequenceTrack {
+        constructor();
         constructor(PosKeys: TArray<Vector>, RotKeys: TArray<Quat>, ScaleKeys: TArray<Vector>);
         PosKeys: TArray<Vector>;
         RotKeys: TArray<Quat>;
@@ -34211,6 +35030,7 @@ declare module "ue" {
     
     enum EPrimaryAssetCookRule { Unknown, NeverCook, DevelopmentCook, DevelopmentAlwaysCook, AlwaysCook, EPrimaryAssetCookRule_MAX}
     class PrimaryAssetRules {
+        constructor();
         constructor(Priority: number, ChunkId: number, bApplyRecursively: boolean, CookRule: EPrimaryAssetCookRule);
         Priority: number;
         ChunkId: number;
@@ -34220,6 +35040,7 @@ declare module "ue" {
     }
     
     class PrimaryAssetTypeInfo {
+        constructor();
         constructor(PrimaryAssetType: string, AssetBaseClass: TSoftObjectPtr<Class>, AssetBaseClassLoaded: Class, bHasBlueprintClasses: boolean, bIsEditorOnly: boolean, Directories: TArray<DirectoryPath>, SpecificAssets: TArray<SoftObjectPath>, Rules: PrimaryAssetRules, AssetScanPaths: TArray<string>, bIsDynamicAsset: boolean, NumberOfAssets: number);
         PrimaryAssetType: string;
         AssetBaseClass: TSoftObjectPtr<Class>;
@@ -34236,12 +35057,14 @@ declare module "ue" {
     }
     
     class PrimaryAssetType {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
     }
     
     class PrimaryAssetId {
+        constructor();
         constructor(PrimaryAssetType: PrimaryAssetType, PrimaryAssetName: string);
         PrimaryAssetType: PrimaryAssetType;
         PrimaryAssetName: string;
@@ -34249,6 +35072,7 @@ declare module "ue" {
     }
     
     class PrimaryAssetRulesOverride {
+        constructor();
         constructor(PrimaryAssetId: PrimaryAssetId, Rules: PrimaryAssetRules);
         PrimaryAssetId: PrimaryAssetId;
         Rules: PrimaryAssetRules;
@@ -34256,6 +35080,7 @@ declare module "ue" {
     }
     
     class PrimaryAssetRulesCustomOverride {
+        constructor();
         constructor(PrimaryAssetType: PrimaryAssetType, FilterDirectory: DirectoryPath, FilterString: string, Rules: PrimaryAssetRules);
         PrimaryAssetType: PrimaryAssetType;
         FilterDirectory: DirectoryPath;
@@ -34265,6 +35090,7 @@ declare module "ue" {
     }
     
     class AssetManagerRedirect {
+        constructor();
         constructor(Old: string, New: string);
         Old: string;
         New: string;
@@ -34362,6 +35188,7 @@ declare module "ue" {
     }
     
     class AtmospherePrecomputeParameters {
+        constructor();
         constructor(DensityHeight: number, DecayHeight: number, MaxScatteringOrder: number, TransmittanceTexWidth: number, TransmittanceTexHeight: number, IrradianceTexWidth: number, IrradianceTexHeight: number, InscatterAltitudeSampleNum: number, InscatterMuNum: number, InscatterMuSNum: number, InscatterNuNum: number);
         DensityHeight: number;
         DecayHeight: number;
@@ -34427,6 +35254,7 @@ declare module "ue" {
     
     enum EVoiceSampleRate { Low16000Hz, Normal24000Hz, EVoiceSampleRate_MAX}
     class AudioQualitySettings {
+        constructor();
         constructor(DisplayName: string, MaxChannels: number);
         DisplayName: string;
         MaxChannels: number;
@@ -34465,6 +35293,7 @@ declare module "ue" {
     
     enum EAudioVolumeLocationState { InsideTheVolume, OutsideTheVolume, EAudioVolumeLocationState_MAX}
     class AudioVolumeSubmixSendSettings {
+        constructor();
         constructor(ListenerLocationState: EAudioVolumeLocationState, SourceLocationState: EAudioVolumeLocationState, SubmixSends: TArray<SoundSubmixSendInfo>);
         ListenerLocationState: EAudioVolumeLocationState;
         SourceLocationState: EAudioVolumeLocationState;
@@ -34473,6 +35302,7 @@ declare module "ue" {
     }
     
     class AudioVolumeSubmixOverrideSettings {
+        constructor();
         constructor(Submix: SoundSubmix, SubmixEffectChain: TArray<SoundEffectSubmixPreset>, CrossfadeTime: number);
         Submix: SoundSubmix;
         SubmixEffectChain: TArray<SoundEffectSubmixPreset>;
@@ -34510,6 +35340,7 @@ declare module "ue" {
     }
     
     class EditorMapPerformanceTestDefinition {
+        constructor();
         constructor(PerformanceTestmap: SoftObjectPath, TestTimer: number);
         PerformanceTestmap: SoftObjectPath;
         TestTimer: number;
@@ -34517,6 +35348,7 @@ declare module "ue" {
     }
     
     class ImportFactorySettingValues {
+        constructor();
         constructor(SettingName: string, Value: string);
         SettingName: string;
         Value: string;
@@ -34524,6 +35356,7 @@ declare module "ue" {
     }
     
     class EditorImportWorkflowDefinition {
+        constructor();
         constructor(ImportFilePath: FilePath, FactorySettings: TArray<ImportFactorySettingValues>);
         ImportFilePath: FilePath;
         FactorySettings: TArray<ImportFactorySettingValues>;
@@ -34531,6 +35364,7 @@ declare module "ue" {
     }
     
     class BuildPromotionImportWorkflowSettings {
+        constructor();
         constructor(Diffuse: EditorImportWorkflowDefinition, Normal: EditorImportWorkflowDefinition, StaticMesh: EditorImportWorkflowDefinition, ReimportStaticMesh: EditorImportWorkflowDefinition, BlendShapeMesh: EditorImportWorkflowDefinition, MorphMesh: EditorImportWorkflowDefinition, SkeletalMesh: EditorImportWorkflowDefinition, Animation: EditorImportWorkflowDefinition, Sound: EditorImportWorkflowDefinition, SurroundSound: EditorImportWorkflowDefinition, OtherAssetsToImport: TArray<EditorImportWorkflowDefinition>);
         Diffuse: EditorImportWorkflowDefinition;
         Normal: EditorImportWorkflowDefinition;
@@ -34547,6 +35381,7 @@ declare module "ue" {
     }
     
     class BuildPromotionOpenAssetSettings {
+        constructor();
         constructor(BlueprintAsset: FilePath, MaterialAsset: FilePath, ParticleSystemAsset: FilePath, SkeletalMeshAsset: FilePath, StaticMeshAsset: FilePath, TextureAsset: FilePath);
         BlueprintAsset: FilePath;
         MaterialAsset: FilePath;
@@ -34558,6 +35393,7 @@ declare module "ue" {
     }
     
     class BuildPromotionNewProjectSettings {
+        constructor();
         constructor(NewProjectFolderOverride: DirectoryPath, NewProjectNameOverride: string);
         NewProjectFolderOverride: DirectoryPath;
         NewProjectNameOverride: string;
@@ -34565,6 +35401,7 @@ declare module "ue" {
     }
     
     class BuildPromotionTestSettings {
+        constructor();
         constructor(DefaultStaticMeshAsset: FilePath, ImportWorkflow: BuildPromotionImportWorkflowSettings, OpenAssets: BuildPromotionOpenAssetSettings, NewProjectSettings: BuildPromotionNewProjectSettings, SourceControlMaterial: FilePath);
         DefaultStaticMeshAsset: FilePath;
         ImportWorkflow: BuildPromotionImportWorkflowSettings;
@@ -34575,6 +35412,7 @@ declare module "ue" {
     }
     
     class MaterialEditorPromotionSettings {
+        constructor();
         constructor(DefaultMaterialAsset: FilePath, DefaultDiffuseTexture: FilePath, DefaultNormalTexture: FilePath);
         DefaultMaterialAsset: FilePath;
         DefaultDiffuseTexture: FilePath;
@@ -34583,12 +35421,14 @@ declare module "ue" {
     }
     
     class ParticleEditorPromotionSettings {
+        constructor();
         constructor(DefaultParticleAsset: FilePath);
         DefaultParticleAsset: FilePath;
         static StaticClass(): Class;
     }
     
     class BlueprintEditorPromotionSettings {
+        constructor();
         constructor(FirstMeshPath: FilePath, SecondMeshPath: FilePath, DefaultParticleAsset: FilePath);
         FirstMeshPath: FilePath;
         SecondMeshPath: FilePath;
@@ -34597,6 +35437,7 @@ declare module "ue" {
     }
     
     class ExternalToolDefinition {
+        constructor();
         constructor(ToolName: string, ExecutablePath: FilePath, CommandLineOptions: string, WorkingDirectory: DirectoryPath, ScriptExtension: string, ScriptDirectory: DirectoryPath);
         ToolName: string;
         ExecutablePath: FilePath;
@@ -34608,6 +35449,7 @@ declare module "ue" {
     }
     
     class EditorImportExportTestDefinition {
+        constructor();
         constructor(ImportFilePath: FilePath, ExportFileExtension: string, bSkipExport: boolean, FactorySettings: TArray<ImportFactorySettingValues>);
         ImportFilePath: FilePath;
         ExportFileExtension: string;
@@ -34617,6 +35459,7 @@ declare module "ue" {
     }
     
     class LaunchOnTestSettings {
+        constructor();
         constructor(LaunchOnTestmap: FilePath, DeviceID: string);
         LaunchOnTestmap: FilePath;
         DeviceID: string;
@@ -34647,12 +35490,14 @@ declare module "ue" {
     }
     
     class BandwidthTestItem {
+        constructor();
         constructor(Kilobyte: TArray<number>);
         Kilobyte: TArray<number>;
         static StaticClass(): Class;
     }
     
     class BandwidthTestGenerator {
+        constructor();
         constructor(ReplicatedBuffers: TArray<BandwidthTestItem>);
         ReplicatedBuffers: TArray<BandwidthTestItem>;
         static StaticClass(): Class;
@@ -34990,6 +35835,7 @@ declare module "ue" {
     
     enum EPlatformInterfaceDataType { PIDT_None, PIDT_Int, PIDT_Float, PIDT_String, PIDT_Object, PIDT_Custom, PIDT_MAX}
     class PlatformInterfaceData {
+        constructor();
         constructor(DataName: string, Type: EPlatformInterfaceDataType, IntValue: number, FloatValue: number, StringValue: string, ObjectValue: Object);
         DataName: string;
         Type: EPlatformInterfaceDataType;
@@ -35001,6 +35847,7 @@ declare module "ue" {
     }
     
     class PlatformInterfaceDelegateResult {
+        constructor();
         constructor(bSuccessful: boolean, Data: PlatformInterfaceData);
         bSuccessful: boolean;
         Data: PlatformInterfaceData;
@@ -35008,6 +35855,7 @@ declare module "ue" {
     }
     
     class DelegateArray {
+        constructor();
         constructor(Delegates: TArray<$Delegate<(Result: PlatformInterfaceDelegateResult) => void>>);
         Delegates: TArray<$Delegate<(Result: PlatformInterfaceDelegateResult) => void>>;
         static StaticClass(): Class;
@@ -35031,6 +35879,7 @@ declare module "ue" {
     }
     
     class CollisionResponseTemplate {
+        constructor();
         constructor(Name: string, CollisionEnabled: ECollisionEnabled, bCanModify: boolean, ObjectTypeName: string, CustomResponses: TArray<ResponseChannel>, HelpMessage: string);
         Name: string;
         CollisionEnabled: ECollisionEnabled;
@@ -35042,6 +35891,7 @@ declare module "ue" {
     }
     
     class CustomChannelSetup {
+        constructor();
         constructor(Channel: ECollisionChannel, DefaultResponse: ECollisionResponse, bTraceType: boolean, bStaticObject: boolean, Name: string);
         Channel: ECollisionChannel;
         DefaultResponse: ECollisionResponse;
@@ -35052,6 +35902,7 @@ declare module "ue" {
     }
     
     class CustomProfile {
+        constructor();
         constructor(Name: string, CustomResponses: TArray<ResponseChannel>);
         Name: string;
         CustomResponses: TArray<ResponseChannel>;
@@ -35059,6 +35910,7 @@ declare module "ue" {
     }
     
     class Redirector {
+        constructor();
         constructor(OldName: string, NewName: string);
         OldName: string;
         NewName: string;
@@ -35078,6 +35930,7 @@ declare module "ue" {
     }
     
     class BlueprintComponentDelegateBinding {
+        constructor();
         constructor(ComponentPropertyName: string, DelegatePropertyName: string, FunctionNameToBind: string);
         ComponentPropertyName: string;
         DelegatePropertyName: string;
@@ -35172,6 +36025,7 @@ declare module "ue" {
     }
     
     class CullDistanceSizePair {
+        constructor();
         constructor(Size: number, CullDistance: number);
         Size: number;
         CullDistance: number;
@@ -35195,6 +36049,7 @@ declare module "ue" {
     }
     
     class AssetBundleEntry {
+        constructor();
         constructor(BundleScope: PrimaryAssetId, BundleName: string, BundleAssets: TArray<SoftObjectPath>);
         BundleScope: PrimaryAssetId;
         BundleName: string;
@@ -35203,6 +36058,7 @@ declare module "ue" {
     }
     
     class AssetBundleData {
+        constructor();
         constructor(Bundles: TArray<AssetBundleEntry>);
         Bundles: TArray<AssetBundleEntry>;
         static StaticClass(): Class;
@@ -35234,6 +36090,7 @@ declare module "ue" {
     }
     
     class DebugCameraControllerSettingsViewModeIndex {
+        constructor();
         constructor(ViewModeIndex: EViewModeIndex);
         ViewModeIndex: EViewModeIndex;
         static StaticClass(): Class;
@@ -35340,6 +36197,7 @@ declare module "ue" {
     }
     
     class TextureLODGroup {
+        constructor();
         constructor(Group: TextureGroup, LODBias: number, LODBias_Smaller: number, LODBias_Smallest: number, NumStreamedMips: number, MipGenSettings: TextureMipGenSettings, MinLODSize: number, MaxLODSize: number, MaxLODSize_Smaller: number, MaxLODSize_Smallest: number, OptionalLODBias: number, OptionalMaxLODSize: number, MinMagFilter: string, MipFilter: string, MipLoadOptions: ETextureMipLoadOptions, DuplicateNonOptionalMips: boolean, Downscale: number, DownscaleOptions: ETextureDownscaleOptions, VirtualTextureTileCountBias: number, VirtualTextureTileSizeBias: number);
         Group: TextureGroup;
         LODBias: number;
@@ -35418,6 +36276,7 @@ declare module "ue" {
     }
     
     class DialogueContext {
+        constructor();
         constructor(Speaker: DialogueVoice, Targets: TArray<DialogueVoice>);
         Speaker: DialogueVoice;
         Targets: TArray<DialogueVoice>;
@@ -35425,6 +36284,7 @@ declare module "ue" {
     }
     
     class DialogueContextMapping {
+        constructor();
         constructor(Context: DialogueContext, SoundWave: SoundWave, LocalizationKeyFormat: string, Proxy: DialogueSoundWaveProxy);
         Context: DialogueContext;
         SoundWave: SoundWave;
@@ -35470,6 +36330,7 @@ declare module "ue" {
     }
     
     class LightmassDirectionalLightSettings extends LightmassLightSettings {
+        constructor();
         constructor(LightSourceAngle: number);
         LightSourceAngle: number;
         static StaticClass(): Class;
@@ -35589,6 +36450,7 @@ declare module "ue" {
     }
     
     class InterpCurvePointVector2D {
+        constructor();
         constructor(InVal: number, OutVal: Vector2D, ArriveTangent: Vector2D, LeaveTangent: Vector2D, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: Vector2D;
@@ -35599,6 +36461,7 @@ declare module "ue" {
     }
     
     class InterpCurveVector2D {
+        constructor();
         constructor(Points: TArray<InterpCurvePointVector2D>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointVector2D>;
         bIsLooped: boolean;
@@ -35670,6 +36533,7 @@ declare module "ue" {
     }
     
     class TwoVectors {
+        constructor();
         constructor(v1: Vector, v2: Vector);
         v1: Vector;
         v2: Vector;
@@ -35677,6 +36541,7 @@ declare module "ue" {
     }
     
     class InterpCurvePointTwoVectors {
+        constructor();
         constructor(InVal: number, OutVal: TwoVectors, ArriveTangent: TwoVectors, LeaveTangent: TwoVectors, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: TwoVectors;
@@ -35687,6 +36552,7 @@ declare module "ue" {
     }
     
     class InterpCurveTwoVectors {
+        constructor();
         constructor(Points: TArray<InterpCurvePointTwoVectors>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointTwoVectors>;
         bIsLooped: boolean;
@@ -35708,6 +36574,7 @@ declare module "ue" {
     }
     
     class MaterialSpriteElement {
+        constructor();
         constructor(Material: MaterialInterface, DistanceToOpacityCurve: CurveFloat, bSizeIsInScreenSpace: boolean, BaseSizeX: number, BaseSizeY: number, DistanceToSizeCurve: CurveFloat);
         Material: MaterialInterface;
         DistanceToOpacityCurve: CurveFloat;
@@ -35829,6 +36696,7 @@ declare module "ue" {
     }
     
     class ExponentialHeightFogData {
+        constructor();
         constructor(FogDensity: number, FogHeightFalloff: number, FogHeightOffset: number);
         FogDensity: number;
         FogHeightFalloff: number;
@@ -35980,6 +36848,7 @@ declare module "ue" {
     enum ESuggestProjVelocityTraceOption { DoNotTrace, TraceFullPath, OnlyTraceWhileAscending, ESuggestProjVelocityTraceOption_MAX}
     enum EDrawDebugTrace { None, ForOneFrame, ForDuration, Persistent, EDrawDebugTrace_MAX}
     class PredictProjectilePathParams {
+        constructor();
         constructor(StartLocation: Vector, LaunchVelocity: Vector, bTraceWithCollision: boolean, ProjectileRadius: number, MaxSimTime: number, bTraceWithChannel: boolean, TraceChannel: ECollisionChannel, ObjectTypes: TArray<EObjectTypeQuery>, ActorsToIgnore: TArray<Actor>, SimFrequency: number, OverrideGravityZ: number, DrawDebugType: EDrawDebugTrace, DrawDebugTime: number, bTraceComplex: boolean);
         StartLocation: Vector;
         LaunchVelocity: Vector;
@@ -35999,6 +36868,7 @@ declare module "ue" {
     }
     
     class PredictProjectilePathPointData {
+        constructor();
         constructor(Location: Vector, Velocity: Vector, Time: number);
         Location: Vector;
         Velocity: Vector;
@@ -36007,6 +36877,7 @@ declare module "ue" {
     }
     
     class PredictProjectilePathResult {
+        constructor();
         constructor(PathData: TArray<PredictProjectilePathPointData>, LastTraceDestination: PredictProjectilePathPointData, HitResult: HitResult);
         PathData: TArray<PredictProjectilePathPointData>;
         LastTraceDestination: PredictProjectilePathPointData;
@@ -36182,6 +37053,7 @@ declare module "ue" {
     }
     
     class HapticFeedbackDetails_Curve {
+        constructor();
         constructor(Frequency: RuntimeFloatCurve, Amplitude: RuntimeFloatCurve);
         Frequency: RuntimeFloatCurve;
         Amplitude: RuntimeFloatCurve;
@@ -36222,6 +37094,7 @@ declare module "ue" {
     }
     
     class HLODISMComponentDesc {
+        constructor();
         constructor(StaticMesh: StaticMesh, Material: MaterialInterface, Instances: TArray<Transform>);
         StaticMesh: StaticMesh;
         Material: MaterialInterface;
@@ -36278,6 +37151,7 @@ declare module "ue" {
     }
     
     class HLODProxyMesh {
+        constructor();
         constructor(LODActor: TLazyObjectPtr<LODActor>, StaticMesh: StaticMesh, Key: string);
         LODActor: TLazyObjectPtr<LODActor>;
         StaticMesh: StaticMesh;
@@ -36297,6 +37171,7 @@ declare module "ue" {
     
     enum EImportanceWeight { Luminance, Red, Green, Blue, Alpha, EImportanceWeight_MAX}
     class ImportanceTexture {
+        constructor();
         constructor(Size: IntPoint, NumMips: number, MarginalCDF: TArray<number>, ConditionalCDF: TArray<number>, TextureData: TArray<Color>, Texture: TWeakObjectPtr<Texture2D>, Weighting: EImportanceWeight);
         Size: IntPoint;
         NumMips: number;
@@ -36349,6 +37224,7 @@ declare module "ue" {
     }
     
     class BlueprintInputDelegateBinding {
+        constructor();
         constructor(bConsumeInput: boolean, bExecuteWhenPaused: boolean, bOverrideParentBinding: boolean);
         bConsumeInput: boolean;
         bExecuteWhenPaused: boolean;
@@ -36357,6 +37233,7 @@ declare module "ue" {
     }
     
     class BlueprintInputActionDelegateBinding extends BlueprintInputDelegateBinding {
+        constructor();
         constructor(InputActionName: string, InputKeyEvent: EInputEvent, FunctionNameToBind: string);
         InputActionName: string;
         InputKeyEvent: EInputEvent;
@@ -36373,6 +37250,7 @@ declare module "ue" {
     }
     
     class BlueprintInputAxisDelegateBinding extends BlueprintInputDelegateBinding {
+        constructor();
         constructor(InputAxisName: string, FunctionNameToBind: string);
         InputAxisName: string;
         FunctionNameToBind: string;
@@ -36388,6 +37266,7 @@ declare module "ue" {
     }
     
     class BlueprintInputAxisKeyDelegateBinding extends BlueprintInputDelegateBinding {
+        constructor();
         constructor(AxisKey: Key, FunctionNameToBind: string);
         AxisKey: Key;
         FunctionNameToBind: string;
@@ -36403,6 +37282,7 @@ declare module "ue" {
     }
     
     class BlueprintInputKeyDelegateBinding extends BlueprintInputDelegateBinding {
+        constructor();
         constructor(InputChord: InputChord, InputKeyEvent: EInputEvent, FunctionNameToBind: string);
         InputChord: InputChord;
         InputKeyEvent: EInputEvent;
@@ -36419,6 +37299,7 @@ declare module "ue" {
     }
     
     class InputAxisProperties {
+        constructor();
         constructor(DeadZone: number, Sensitivity: number, Exponent: number, bInvert: boolean);
         DeadZone: number;
         Sensitivity: number;
@@ -36428,6 +37309,7 @@ declare module "ue" {
     }
     
     class InputAxisConfigEntry {
+        constructor();
         constructor(AxisKeyName: string, AxisProperties: InputAxisProperties);
         AxisKeyName: string;
         AxisProperties: InputAxisProperties;
@@ -36435,6 +37317,7 @@ declare module "ue" {
     }
     
     class InputActionKeyMapping {
+        constructor();
         constructor(ActionName: string, bShift: boolean, bCtrl: boolean, bAlt: boolean, bCmd: boolean, Key: Key);
         ActionName: string;
         bShift: boolean;
@@ -36446,6 +37329,7 @@ declare module "ue" {
     }
     
     class InputAxisKeyMapping {
+        constructor();
         constructor(AxisName: string, Scale: number, Key: Key);
         AxisName: string;
         Scale: number;
@@ -36454,6 +37338,7 @@ declare module "ue" {
     }
     
     class InputActionSpeechMapping {
+        constructor();
         constructor(ActionName: string, SpeechKeyword: string);
         ActionName: string;
         SpeechKeyword: string;
@@ -36506,6 +37391,7 @@ declare module "ue" {
     }
     
     class BlueprintInputTouchDelegateBinding extends BlueprintInputDelegateBinding {
+        constructor();
         constructor(InputKeyEvent: EInputEvent, FunctionNameToBind: string);
         InputKeyEvent: EInputEvent;
         FunctionNameToBind: string;
@@ -36580,6 +37466,7 @@ declare module "ue" {
     }
     
     class CameraPreviewInfo {
+        constructor();
         constructor(PawnClass: Class, AnimSeq: AnimSequence, Location: Vector, Rotation: Rotator, PawnInst: Pawn);
         PawnClass: Class;
         AnimSeq: AnimSequence;
@@ -36615,6 +37502,7 @@ declare module "ue" {
     
     enum EInterpToBehaviourType { OneShot, OneShot_Reverse, Loop_Reset, PingPong, EInterpToBehaviourType_MAX}
     class InterpControlPoint {
+        constructor();
         constructor(PositionControlPoint: Vector, bPositionIsRelative: boolean);
         PositionControlPoint: Vector;
         bPositionIsRelative: boolean;
@@ -36661,6 +37549,7 @@ declare module "ue" {
     }
     
     class AnimControlTrackKey {
+        constructor();
         constructor(StartTime: number, AnimSeq: AnimSequence, AnimStartOffset: number, AnimEndOffset: number, AnimPlayRate: number, bLooping: boolean, bReverse: boolean);
         StartTime: number;
         AnimSeq: AnimSequence;
@@ -36699,6 +37588,7 @@ declare module "ue" {
     }
     
     class BoolTrackKey {
+        constructor();
         constructor(Time: number, Value: boolean);
         Time: number;
         Value: boolean;
@@ -36730,6 +37620,7 @@ declare module "ue" {
     }
     
     class DirectorTrackCut {
+        constructor();
         constructor(Time: number, TransitionTime: number, TargetCamGroup: string, ShotNumber: number);
         Time: number;
         TransitionTime: number;
@@ -36749,6 +37640,7 @@ declare module "ue" {
     }
     
     class EventTrackKey {
+        constructor();
         constructor(Time: number, EventName: string);
         Time: number;
         EventName: string;
@@ -36885,6 +37777,7 @@ declare module "ue" {
     }
     
     class PrimitiveMaterialRef {
+        constructor();
         constructor(Primitive: PrimitiveComponent, Decal: DecalComponent, ElementIndex: number);
         Primitive: PrimitiveComponent;
         Decal: DecalComponent;
@@ -37002,6 +37895,7 @@ declare module "ue" {
     }
     
     class InterpCurvePointLinearColor {
+        constructor();
         constructor(InVal: number, OutVal: LinearColor, ArriveTangent: LinearColor, LeaveTangent: LinearColor, InterpMode: EInterpCurveMode);
         InVal: number;
         OutVal: LinearColor;
@@ -37012,6 +37906,7 @@ declare module "ue" {
     }
     
     class InterpCurveLinearColor {
+        constructor();
         constructor(Points: TArray<InterpCurvePointLinearColor>, bIsLooped: boolean, LoopKeyOffset: number);
         Points: TArray<InterpCurvePointLinearColor>;
         bIsLooped: boolean;
@@ -37047,6 +37942,7 @@ declare module "ue" {
     }
     
     class ParticleReplayTrackKey {
+        constructor();
         constructor(Time: number, Duration: number, ClipIDNumber: number);
         Time: number;
         Duration: number;
@@ -37072,6 +37968,7 @@ declare module "ue" {
     }
     
     class SoundTrackKey {
+        constructor();
         constructor(Time: number, Volume: number, Pitch: number, Sound: SoundBase);
         Time: number;
         Volume: number;
@@ -37094,6 +37991,7 @@ declare module "ue" {
     }
     
     class ToggleTrackKey {
+        constructor();
         constructor(Time: number, ToggleAction: ETrackToggleAction);
         Time: number;
         ToggleAction: ETrackToggleAction;
@@ -37123,6 +38021,7 @@ declare module "ue" {
     
     enum EVisibilityTrackCondition { EVTC_Always, EVTC_GoreEnabled, EVTC_GoreDisabled, EVTC_MAX}
     class VisibilityTrackKey {
+        constructor();
         constructor(Time: number, Action: EVisibilityTrackAction, ActiveCondition: EVisibilityTrackCondition);
         Time: number;
         Action: EVisibilityTrackAction;
@@ -37164,6 +38063,7 @@ declare module "ue" {
     }
     
     class RandomStream {
+        constructor();
         constructor(InitialSeed: number, Seed: number);
         InitialSeed: number;
         Seed: number;
@@ -38020,6 +38920,7 @@ declare module "ue" {
     }
     
     class DrawToRenderTargetContext {
+        constructor();
         constructor(RenderTarget: TextureRenderTarget2D);
         RenderTarget: TextureRenderTarget2D;
         static StaticClass(): Class;
@@ -38172,12 +39073,14 @@ declare module "ue" {
     }
     
     class UserActivity {
+        constructor();
         constructor(ActionName: string);
         ActionName: string;
         static StaticClass(): Class;
     }
     
     class GenericStruct {
+        constructor();
         constructor(Data: number);
         Data: number;
         static StaticClass(): Class;
@@ -38185,6 +39088,7 @@ declare module "ue" {
     
     enum EPropertyAccessChangeNotifyMode { Default, Never, Always, EPropertyAccessChangeNotifyMode_MAX}
     class CollisionProfileName {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
@@ -38193,12 +39097,14 @@ declare module "ue" {
     enum EQuitPreference { Quit, Background, EQuitPreference_MAX}
     enum EMoveComponentAction { Move, Stop, Return, EMoveComponentAction_MAX}
     class TimerHandle {
+        constructor();
         constructor(Handle: bigint);
         Handle: bigint;
         static StaticClass(): Class;
     }
     
     class DebugFloatHistory {
+        constructor();
         constructor(Samples: TArray<number>, MaxSamples: number, MinValue: number, MaxValue: number, bAutoAdjustMinMax: boolean);
         Samples: TArray<number>;
         MaxSamples: number;
@@ -38468,6 +39374,7 @@ declare module "ue" {
     }
     
     class PolyglotTextData {
+        constructor();
         constructor(Category: ELocalizedTextSourceCategory, NativeCulture: string, Namespace: string, Key: string, NativeString: string, LocalizedStrings: TMap<string, string>, bIsMinimalPatch: boolean, CachedText: string);
         Category: ELocalizedTextSourceCategory;
         NativeCulture: string;
@@ -38483,6 +39390,7 @@ declare module "ue" {
     enum EFormatArgumentType { Int, UInt, Float, Double, Text, Gender, EFormatArgumentType_MAX}
     enum ETextGender { Masculine, Feminine, Neuter, ETextGender_MAX}
     class FormatArgumentData {
+        constructor();
         constructor(ArgumentName: string, ArgumentValueType: EFormatArgumentType, ArgumentValue: string, ArgumentValueInt: number, ArgumentValueFloat: number, ArgumentValueGender: ETextGender);
         ArgumentName: string;
         ArgumentValueType: EFormatArgumentType;
@@ -38652,6 +39560,7 @@ declare module "ue" {
     
     enum ESyncOption { Drive, Passive, Disabled, ESyncOption_MAX}
     class ComponentSync {
+        constructor();
         constructor(Name: string, SyncOption: ESyncOption);
         Name: string;
         SyncOption: ESyncOption;
@@ -38659,6 +39568,7 @@ declare module "ue" {
     }
     
     class LODMappingData {
+        constructor();
         constructor(Mapping: TArray<number>, InverseMapping: TArray<number>);
         Mapping: TArray<number>;
         InverseMapping: TArray<number>;
@@ -39111,6 +40021,7 @@ declare module "ue" {
     
     enum ECustomMaterialOutputType { CMOT_Float1, CMOT_Float2, CMOT_Float3, CMOT_Float4, CMOT_MaterialAttributes, CMOT_MAX}
     class CustomInput {
+        constructor();
         constructor(InputName: string, Input: ExpressionInput);
         InputName: string;
         Input: ExpressionInput;
@@ -39118,6 +40029,7 @@ declare module "ue" {
     }
     
     class CustomOutput {
+        constructor();
         constructor(OutputName: string, OutputType: ECustomMaterialOutputType);
         OutputName: string;
         OutputType: ECustomMaterialOutputType;
@@ -39125,6 +40037,7 @@ declare module "ue" {
     }
     
     class CustomDefine {
+        constructor();
         constructor(DefineName: string, DefineValue: string);
         DefineName: string;
         DefineValue: string;
@@ -40641,6 +41554,7 @@ declare module "ue" {
     }
     
     class PurchaseInfo {
+        constructor();
         constructor(Identifier: string, DisplayName: string, DisplayDescription: string, DisplayPrice: string);
         Identifier: string;
         DisplayName: string;
@@ -40725,6 +41639,7 @@ declare module "ue" {
     }
     
     class NetworkEmulationProfileDescription {
+        constructor();
         constructor(ProfileName: string, ToolTip: string);
         ProfileName: string;
         ToolTip: string;
@@ -40949,6 +41864,7 @@ declare module "ue" {
     
     enum BeamModifierType { PEB2MT_Source, PEB2MT_Target, PEB2MT_MAX}
     class BeamModifierOptions {
+        constructor();
         constructor(bModify: boolean, bScale: boolean, bLock: boolean);
         bModify: boolean;
         bScale: boolean;
@@ -41121,6 +42037,7 @@ declare module "ue" {
     }
     
     class ParticleRandomSeedInfo {
+        constructor();
         constructor(ParameterName: string, bGetSeedFromInstance: boolean, bInstanceSeedIsIndex: boolean, bResetSeedOnEmitterLooping: boolean, bRandomlySelectSeedArray: boolean, RandomSeeds: TArray<number>);
         ParameterName: string;
         bGetSeedFromInstance: boolean;
@@ -41295,6 +42212,7 @@ declare module "ue" {
     
     enum ELocationBoneSocketSource { BONESOCKETSOURCE_Bones, BONESOCKETSOURCE_Sockets, BONESOCKETSOURCE_MAX}
     class LocationBoneSocketInfo {
+        constructor();
         constructor(BoneSocketName: string, Offset: Vector);
         BoneSocketName: string;
         Offset: Vector;
@@ -41561,6 +42479,7 @@ declare module "ue" {
     
     enum EEmitterDynamicParameterValue { EDPV_UserSet, EDPV_AutoSet, EDPV_VelocityX, EDPV_VelocityY, EDPV_VelocityZ, EDPV_VelocityMag, EDPV_MAX}
     class EmitterDynamicParameter {
+        constructor();
         constructor(ParamName: string, bUseEmitterTime: boolean, bSpawnTimeOnly: boolean, ValueMethod: EEmitterDynamicParameterValue, bScaleVelocityByParamValue: boolean, ParamValue: RawDistributionFloat);
         ParamName: string;
         bUseEmitterTime: boolean;
@@ -41838,6 +42757,7 @@ declare module "ue" {
     }
     
     class GPUSpriteLocalVectorFieldInfo {
+        constructor();
         constructor(Field: VectorField, Transform: Transform, MinInitialRotation: Rotator, MaxInitialRotation: Rotator, RotationRate: Rotator, Intensity: number, Tightness: number, bIgnoreComponentTransform: boolean, bTileX: boolean, bTileY: boolean, bTileZ: boolean, bUseFixDT: boolean);
         Field: VectorField;
         Transform: Transform;
@@ -41855,12 +42775,14 @@ declare module "ue" {
     }
     
     class FloatDistribution {
+        constructor();
         constructor(Table: DistributionLookupTable);
         Table: DistributionLookupTable;
         static StaticClass(): Class;
     }
     
     class GPUSpriteEmitterInfo {
+        constructor();
         constructor(RequiredModule: ParticleModuleRequired, SpawnModule: ParticleModuleSpawn, SpawnPerUnitModule: ParticleModuleSpawnPerUnit, SpawnModules: TArray<ParticleModule>, LocalVectorField: GPUSpriteLocalVectorFieldInfo, VectorFieldScale: FloatDistribution, DragCoefficient: FloatDistribution, PointAttractorStrength: FloatDistribution, Resilience: FloatDistribution, ConstantAcceleration: Vector, PointAttractorPosition: Vector, PointAttractorRadiusSq: number, OrbitOffsetBase: Vector, OrbitOffsetRange: Vector, InvMaxSize: Vector2D, InvRotationRateScale: number, MaxLifetime: number, MaxParticleCount: number, ScreenAlignment: EParticleScreenAlignment, LockAxisFlag: EParticleAxisLock, bEnableCollision: boolean, CollisionMode: EParticleCollisionMode, bRemoveHMDRoll: boolean, MinFacingCameraBlendDistance: number, MaxFacingCameraBlendDistance: number, DynamicColor: RawDistributionVector, DynamicAlpha: RawDistributionFloat, DynamicColorScale: RawDistributionVector, DynamicAlphaScale: RawDistributionFloat);
         RequiredModule: ParticleModuleRequired;
         SpawnModule: ParticleModuleSpawn;
@@ -41895,6 +42817,7 @@ declare module "ue" {
     }
     
     class GPUSpriteResourceData {
+        constructor();
         constructor(QuantizedColorSamples: TArray<Color>, QuantizedMiscSamples: TArray<Color>, QuantizedSimulationAttrSamples: TArray<Color>, ColorScale: Vector4, ColorBias: Vector4, MiscScale: Vector4, MiscBias: Vector4, SimulationAttrCurveScale: Vector4, SimulationAttrCurveBias: Vector4, SubImageSize: Vector4, SizeBySpeed: Vector4, ConstantAcceleration: Vector, OrbitOffsetBase: Vector, OrbitOffsetRange: Vector, OrbitFrequencyBase: Vector, OrbitFrequencyRange: Vector, OrbitPhaseBase: Vector, OrbitPhaseRange: Vector, GlobalVectorFieldScale: number, GlobalVectorFieldTightness: number, PerParticleVectorFieldScale: number, PerParticleVectorFieldBias: number, DragCoefficientScale: number, DragCoefficientBias: number, ResilienceScale: number, ResilienceBias: number, CollisionRadiusScale: number, CollisionRadiusBias: number, CollisionTimeBias: number, CollisionRandomSpread: number, CollisionRandomDistribution: number, OneMinusFriction: number, RotationRateScale: number, CameraMotionBlurAmount: number, ScreenAlignment: EParticleScreenAlignment, LockAxisFlag: EParticleAxisLock, PivotOffset: Vector2D, bRemoveHMDRoll: boolean, MinFacingCameraBlendDistance: number, MaxFacingCameraBlendDistance: number);
         QuantizedColorSamples: TArray<Color>;
         QuantizedMiscSamples: TArray<Color>;
@@ -42180,6 +43103,7 @@ declare module "ue" {
     }
     
     class ConstrainComponentPropName {
+        constructor();
         constructor(ComponentName: string);
         ComponentName: string;
         static StaticClass(): Class;
@@ -42276,6 +43200,7 @@ declare module "ue" {
     }
     
     class RigidBodyErrorCorrection {
+        constructor();
         constructor(PingExtrapolation: number, PingLimit: number, ErrorPerLinearDifference: number, ErrorPerAngularDifference: number, MaxRestoredStateError: number, MaxLinearHardSnapDistance: number, PositionLerp: number, AngleLerp: number, LinearVelocityCoefficient: number, AngularVelocityCoefficient: number, ErrorAccumulationSeconds: number, ErrorAccumulationDistanceSq: number, ErrorAccumulationSimilarity: number);
         PingExtrapolation: number;
         PingLimit: number;
@@ -42296,6 +43221,7 @@ declare module "ue" {
     enum ESettingsLockedAxis { None, X, Y, Z, Invalid, ESettingsLockedAxis_MAX}
     enum ESettingsDOF { Full3D, YZPlane, XZPlane, XYPlane, ESettingsDOF_MAX}
     class PhysicalSurfaceName {
+        constructor();
         constructor(Type: EPhysicalSurface, Name: string);
         Type: EPhysicalSurface;
         Name: string;
@@ -42306,6 +43232,7 @@ declare module "ue" {
     enum EChaosSolverTickMode { Fixed, Variable, VariableCapped, VariableCappedWithTarget, EChaosSolverTickMode_MAX}
     enum EChaosBufferMode { Double, Triple, Num, Invalid, EChaosBufferMode_MAX}
     class ChaosPhysicsSettings {
+        constructor();
         constructor(DefaultThreadingModel: EChaosThreadingMode, DedicatedThreadTickMode: EChaosSolverTickMode, DedicatedThreadBufferMode: EChaosBufferMode);
         DefaultThreadingModel: EChaosThreadingMode;
         DedicatedThreadTickMode: EChaosSolverTickMode;
@@ -42391,6 +43318,7 @@ declare module "ue" {
     enum ESceneCapturePrimitiveRenderMode { PRM_LegacySceneCapture, PRM_RenderScenePrimitives, PRM_UseShowOnlyList, PRM_MAX}
     enum ESceneCaptureSource { SCS_SceneColorHDR, SCS_SceneColorHDRNoAlpha, SCS_FinalColorLDR, SCS_SceneColorSceneDepth, SCS_SceneDepth, SCS_DeviceDepth, SCS_Normal, SCS_BaseColor, SCS_FinalColorHDR, SCS_FinalToneCurveHDR, SCS_MAX}
     class EngineShowFlagsSetting {
+        constructor();
         constructor(ShowFlagName: string, Enabled: boolean);
         ShowFlagName: string;
         Enabled: boolean;
@@ -42604,6 +43532,7 @@ declare module "ue" {
     }
     
     class PreviewMeshCollectionEntry {
+        constructor();
         constructor(SkeletalMesh: TSoftObjectPtr<SkeletalMesh>);
         SkeletalMesh: TSoftObjectPtr<SkeletalMesh>;
         static StaticClass(): Class;
@@ -42619,6 +43548,7 @@ declare module "ue" {
     }
     
     class CollectionReference {
+        constructor();
         constructor(CollectionName: string);
         CollectionName: string;
         static StaticClass(): Class;
@@ -42931,6 +43861,7 @@ declare module "ue" {
     }
     
     class VirtualTextureBuildSettings {
+        constructor();
         constructor(TileSize: number, TileBorderSize: number, bEnableCompressCrunch: boolean, bEnableCompressZlib: boolean);
         TileSize: number;
         TileBorderSize: number;
@@ -43099,6 +44030,7 @@ declare module "ue" {
     
     enum ESkyAtmosphereTransformMode { PlanetTopAtAbsoluteWorldOrigin, PlanetTopAtComponentTransform, PlanetCenterAtComponentTransform, ESkyAtmosphereTransformMode_MAX}
     class TentDistribution {
+        constructor();
         constructor(TipAltitude: number, TipValue: number, Width: number);
         TipAltitude: number;
         TipValue: number;
@@ -43169,6 +44101,7 @@ declare module "ue" {
     }
     
     class SoundGroup {
+        constructor();
         constructor(SoundGroup: ESoundGroup, DisplayName: string, bAlwaysDecompressOnLoad: boolean, DecompressedDuration: number);
         SoundGroup: ESoundGroup;
         DisplayName: string;
@@ -43228,6 +44161,7 @@ declare module "ue" {
     }
     
     class DialogueWaveParameter {
+        constructor();
         constructor(DialogueWave: DialogueWave, Context: DialogueContext);
         DialogueWave: DialogueWave;
         Context: DialogueContext;
@@ -43244,6 +44178,7 @@ declare module "ue" {
     }
     
     class DistanceDatum {
+        constructor();
         constructor(FadeInDistanceStart: number, FadeInDistanceEnd: number, FadeOutDistanceStart: number, FadeOutDistanceEnd: number, Volume: number);
         FadeInDistanceStart: number;
         FadeInDistanceEnd: number;
@@ -43337,6 +44272,7 @@ declare module "ue" {
     
     enum ModulationParamMode { MPM_Normal, MPM_Abs, MPM_Direct, MPM_MAX}
     class ModulatorContinuousParams {
+        constructor();
         constructor(ParameterName: string, Default: number, MinInput: number, MaxInput: number, MinOutput: number, MaxOutput: number, ParamMode: ModulationParamMode);
         ParameterName: string;
         Default: number;
@@ -43570,6 +44506,7 @@ declare module "ue" {
     }
     
     class EquirectProps {
+        constructor();
         constructor(LeftUVRect: Box2D, RightUVRect: Box2D, LeftScale: Vector2D, RightScale: Vector2D, LeftBias: Vector2D, RightBias: Vector2D);
         LeftUVRect: Box2D;
         RightUVRect: Box2D;
@@ -43718,6 +44655,7 @@ declare module "ue" {
     }
     
     class TimelineEventEntry {
+        constructor();
         constructor(Time: number, EventFunc: $Delegate<() => void>);
         Time: number;
         EventFunc: $Delegate<() => void>;
@@ -43725,6 +44663,7 @@ declare module "ue" {
     }
     
     class TimelineVectorTrack {
+        constructor();
         constructor(VectorCurve: CurveVector, InterpFunc: $Delegate<(Output: Vector) => void>, TrackName: string, VectorPropertyName: string);
         VectorCurve: CurveVector;
         InterpFunc: $Delegate<(Output: Vector) => void>;
@@ -43734,6 +44673,7 @@ declare module "ue" {
     }
     
     class TimelineFloatTrack {
+        constructor();
         constructor(FloatCurve: CurveFloat, InterpFunc: $Delegate<(Output: number) => void>, TrackName: string, FloatPropertyName: string);
         FloatCurve: CurveFloat;
         InterpFunc: $Delegate<(Output: number) => void>;
@@ -43743,6 +44683,7 @@ declare module "ue" {
     }
     
     class TimelineLinearColorTrack {
+        constructor();
         constructor(LinearColorCurve: CurveLinearColor, InterpFunc: $Delegate<(Output: LinearColor) => void>, TrackName: string, LinearColorPropertyName: string);
         LinearColorCurve: CurveLinearColor;
         InterpFunc: $Delegate<(Output: LinearColor) => void>;
@@ -43752,6 +44693,7 @@ declare module "ue" {
     }
     
     class Timeline {
+        constructor();
         constructor(LengthMode: ETimelineLengthMode, bLooping: boolean, bReversePlayback: boolean, bPlaying: boolean, Length: number, PlayRate: number, Position: number, Events: TArray<TimelineEventEntry>, InterpVectors: TArray<TimelineVectorTrack>, InterpFloats: TArray<TimelineFloatTrack>, InterpLinearColors: TArray<TimelineLinearColorTrack>, TimelinePostUpdateFunc: $Delegate<() => void>, TimelineFinishedFunc: $Delegate<() => void>, PropertySetObject: TWeakObjectPtr<Object>, DirectionPropertyName: string);
         LengthMode: ETimelineLengthMode;
         bLooping: boolean;
@@ -43888,6 +44830,7 @@ declare module "ue" {
     
     enum ERenderFocusRule { Always, NonPointer, NavigationOnly, Never, ERenderFocusRule_MAX}
     class HardwareCursorReference {
+        constructor();
         constructor(CursorPath: string, HotSpot: Vector2D);
         CursorPath: string;
         HotSpot: Vector2D;
@@ -44002,6 +44945,7 @@ declare module "ue" {
     }
     
     class VirtualTextureSpacePoolConfig {
+        constructor();
         constructor(MinTileSize: number, MaxTileSize: number, Formats: TArray<EPixelFormat>, SizeInMegabyte: number, bAllowSizeScale: boolean, ScalabilityGroup: number);
         MinTileSize: number;
         MaxTileSize: number;
@@ -44056,6 +45000,7 @@ declare module "ue" {
     }
     
     class VoiceSettings {
+        constructor();
         constructor(ComponentToAttachTo: SceneComponent, AttenuationSettings: SoundAttenuation, SourceEffectChain: SoundEffectSourcePresetChain);
         ComponentToAttachTo: SceneComponent;
         AttenuationSettings: SoundAttenuation;
@@ -44195,12 +45140,14 @@ declare module "ue" {
     }
     
     class SHAHashData {
+        constructor();
         constructor(Hash: FixSizeArray<number>);
         Hash: FixSizeArray<number>;
         static StaticClass(): Class;
     }
     
     class ChunkPartData {
+        constructor();
         constructor(Guid: Guid, Offset: number, Size: number);
         Guid: Guid;
         Offset: number;
@@ -44209,6 +45156,7 @@ declare module "ue" {
     }
     
     class FileManifestData {
+        constructor();
         constructor(Filename: string, FileHash: SHAHashData, FileChunkParts: TArray<ChunkPartData>, InstallTags: TArray<string>, bIsUnixExecutable: boolean, SymlinkTarget: string, bIsReadOnly: boolean, bIsCompressed: boolean);
         Filename: string;
         FileHash: SHAHashData;
@@ -44222,6 +45170,7 @@ declare module "ue" {
     }
     
     class ChunkInfoData {
+        constructor();
         constructor(Guid: Guid, Hash: bigint, ShaHash: SHAHashData, FileSize: bigint, GroupNumber: number);
         Guid: Guid;
         Hash: bigint;
@@ -44232,6 +45181,7 @@ declare module "ue" {
     }
     
     class CustomFieldData {
+        constructor();
         constructor(Key: string, Value: string);
         Key: string;
         Value: string;
@@ -44679,6 +45629,7 @@ declare module "ue" {
     }
     
     class GameplayDebuggerDebugActor {
+        constructor();
         constructor(Actor: Actor, ActorName: string, SyncCounter: number);
         Actor: Actor;
         ActorName: string;
@@ -44687,6 +45638,7 @@ declare module "ue" {
     }
     
     class GameplayDebuggerVisLogSync {
+        constructor();
         constructor(DeviceIDs: string);
         DeviceIDs: string;
         static StaticClass(): Class;
@@ -44719,6 +45671,7 @@ declare module "ue" {
     
     enum EGameplayDebuggerOverrideMode { Enable, Disable, UseDefault, EGameplayDebuggerOverrideMode_MAX}
     class GameplayDebuggerInputConfig {
+        constructor();
         constructor(ConfigName: string, Key: Key, bModShift: boolean, bModCtrl: boolean, bModAlt: boolean, bModCmd: boolean);
         ConfigName: string;
         Key: Key;
@@ -44730,6 +45683,7 @@ declare module "ue" {
     }
     
     class GameplayDebuggerCategoryConfig {
+        constructor();
         constructor(CategoryName: string, SlotIdx: number, ActiveInGame: EGameplayDebuggerOverrideMode, ActiveInSimulate: EGameplayDebuggerOverrideMode, Hidden: EGameplayDebuggerOverrideMode, bOverrideSlotIdx: boolean, InputHandlers: TArray<GameplayDebuggerInputConfig>);
         CategoryName: string;
         SlotIdx: number;
@@ -44742,6 +45696,7 @@ declare module "ue" {
     }
     
     class GameplayDebuggerExtensionConfig {
+        constructor();
         constructor(ExtensionName: string, UseExtension: EGameplayDebuggerOverrideMode, InputHandlers: TArray<GameplayDebuggerInputConfig>);
         ExtensionName: string;
         UseExtension: EGameplayDebuggerOverrideMode;
@@ -44777,6 +45732,7 @@ declare module "ue" {
     }
     
     class GameplayDebuggerPlayerData {
+        constructor();
         constructor(Controller: GameplayDebuggerLocalController, InputComponent: InputComponent, Replicator: GameplayDebuggerCategoryReplicator);
         Controller: GameplayDebuggerLocalController;
         InputComponent: InputComponent;
@@ -44899,6 +45855,7 @@ declare module "ue" {
     
     enum EPathFollowingResult { Success, Blocked, OffPath, Aborted, Skipped_DEPRECATED, Invalid, EPathFollowingResult_MAX}
     class AIRequestID {
+        constructor();
         constructor(RequestID: number);
         RequestID: number;
         static StaticClass(): Class;
@@ -44963,6 +45920,7 @@ declare module "ue" {
     
     enum EBTDecoratorLogic { Invalid, Test, And, Or, Not, EBTDecoratorLogic_MAX}
     class BTDecoratorLogic {
+        constructor();
         constructor(Operation: EBTDecoratorLogic, Number: number);
         Operation: EBTDecoratorLogic;
         Number: number;
@@ -44970,6 +45928,7 @@ declare module "ue" {
     }
     
     class BTCompositeChild {
+        constructor();
         constructor(ChildComposite: BTCompositeNode, ChildTask: BTTaskNode, Decorators: TArray<BTDecorator>, DecoratorOps: TArray<BTDecoratorLogic>);
         ChildComposite: BTCompositeNode;
         ChildTask: BTTaskNode;
@@ -44996,6 +45955,7 @@ declare module "ue" {
     }
     
     class BlackboardEntry {
+        constructor();
         constructor(EntryName: string, EntryDescription: string, KeyType: BlackboardKeyType, bInstanceSynced: boolean);
         EntryName: string;
         EntryDescription: string;
@@ -45053,6 +46013,7 @@ declare module "ue" {
     }
     
     class AIStimulus {
+        constructor();
         constructor(Age: number, ExpirationAge: number, Strength: number, StimulusLocation: Vector, ReceiverLocation: Vector, Tag: string, bSuccessfullySensed: boolean);
         Age: number;
         ExpirationAge: number;
@@ -45065,6 +46026,7 @@ declare module "ue" {
     }
     
     class ActorPerceptionUpdateInfo {
+        constructor();
         constructor(TargetId: number, Target: TWeakObjectPtr<Actor>, Stimulus: AIStimulus);
         TargetId: number;
         Target: TWeakObjectPtr<Actor>;
@@ -45073,6 +46035,7 @@ declare module "ue" {
     }
     
     class ActorPerceptionBlueprintInfo {
+        constructor();
         constructor(Target: Actor, LastSensedStimuli: TArray<AIStimulus>, bIsHostile: boolean);
         Target: Actor;
         LastSensedStimuli: TArray<AIStimulus>;
@@ -45125,12 +46088,14 @@ declare module "ue" {
     }
     
     class PawnActionStack {
+        constructor();
         constructor(TopAction: PawnAction);
         TopAction: PawnAction;
         static StaticClass(): Class;
     }
     
     class PawnActionEvent {
+        constructor();
         constructor(Action: PawnAction);
         Action: PawnAction;
         static StaticClass(): Class;
@@ -45325,6 +46290,7 @@ declare module "ue" {
     }
     
     class BehaviorTreeTemplateInfo {
+        constructor();
         constructor(Asset: BehaviorTree, Template: BTCompositeNode);
         Asset: BehaviorTree;
         Template: BTCompositeNode;
@@ -45376,6 +46342,7 @@ declare module "ue" {
     enum EEnvTestScoreOperator { AverageScore, MinScore, MaxScore, Multiply, EEnvTestScoreOperator_MAX}
     enum EEnvTestFilterType { Minimum, Maximum, Range, Match, EEnvTestFilterType_MAX}
     class AIDataProviderValue {
+        constructor();
         constructor(DataBinding: AIDataProvider, DataField: string);
         DataBinding: AIDataProvider;
         DataField: string;
@@ -45383,18 +46350,21 @@ declare module "ue" {
     }
     
     class AIDataProviderTypedValue extends AIDataProviderValue {
+        constructor();
         constructor(PropertyType: Class);
         PropertyType: Class;
         static StaticClass(): Class;
     }
     
     class AIDataProviderBoolValue extends AIDataProviderTypedValue {
+        constructor();
         constructor(DefaultValue: boolean);
         DefaultValue: boolean;
         static StaticClass(): Class;
     }
     
     class AIDataProviderFloatValue extends AIDataProviderTypedValue {
+        constructor();
         constructor(DefaultValue: number);
         DefaultValue: number;
         static StaticClass(): Class;
@@ -45449,6 +46419,7 @@ declare module "ue" {
     }
     
     class EnvQueryInstanceCache {
+        constructor();
         constructor(Template: EnvQuery);
         Template: EnvQuery;
         static StaticClass(): Class;
@@ -45620,6 +46591,7 @@ declare module "ue" {
     }
     
     class AIDamageEvent {
+        constructor();
         constructor(Amount: number, Location: Vector, HitLocation: Vector, DamagedActor: Actor, Instigator: Actor);
         Amount: number;
         Location: Vector;
@@ -45639,6 +46611,7 @@ declare module "ue" {
     }
     
     class AINoiseEvent {
+        constructor();
         constructor(NoiseLocation: Vector, Loudness: number, MaxRange: number, Instigator: Actor, Tag: string);
         NoiseLocation: Vector;
         Loudness: number;
@@ -45659,6 +46632,7 @@ declare module "ue" {
     }
     
     class AIPredictionEvent {
+        constructor();
         constructor(Requestor: Actor, PredictedActor: Actor);
         Requestor: Actor;
         PredictedActor: Actor;
@@ -45689,6 +46663,7 @@ declare module "ue" {
     }
     
     class AITeamStimulusEvent {
+        constructor();
         constructor(Broadcaster: Actor, Enemy: Actor);
         Broadcaster: Actor;
         Enemy: Actor;
@@ -45704,6 +46679,7 @@ declare module "ue" {
     }
     
     class AITouchEvent {
+        constructor();
         constructor(TouchReceiver: Actor, OtherActor: Actor);
         TouchReceiver: Actor;
         OtherActor: Actor;
@@ -45742,6 +46718,7 @@ declare module "ue" {
     }
     
     class AISenseAffiliationFilter {
+        constructor();
         constructor(bDetectEnemies: boolean, bDetectNeutrals: boolean, bDetectFriendlies: boolean);
         bDetectEnemies: boolean;
         bDetectNeutrals: boolean;
@@ -45836,6 +46813,7 @@ declare module "ue" {
     }
     
     class AIMoveRequest {
+        constructor();
         constructor(GoalActor: Actor);
         GoalActor: Actor;
         static StaticClass(): Class;
@@ -45985,6 +46963,7 @@ declare module "ue" {
     }
     
     class BlackboardKeySelector {
+        constructor();
         constructor(AllowedTypes: TArray<BlackboardKeyType>, SelectedKeyName: string, SelectedKeyType: Class, SelectedKeyID: number, bNoneIsAllowedValue: boolean);
         AllowedTypes: TArray<BlackboardKeyType>;
         SelectedKeyName: string;
@@ -46273,6 +47252,7 @@ declare module "ue" {
     
     enum EAIParamType { Float, Int, Bool, MAX}
     class AIDynamicParam {
+        constructor();
         constructor(ParamName: string, ParamType: EAIParamType, Value: number, BBKey: BlackboardKeySelector);
         ParamName: string;
         ParamType: EAIParamType;
@@ -46282,6 +47262,7 @@ declare module "ue" {
     }
     
     class EQSParametrizedQueryExecutionRequest {
+        constructor();
         constructor(QueryTemplate: EnvQuery, QueryConfig: TArray<AIDynamicParam>, EQSQueryBlackboardKey: BlackboardKeySelector, RunMode: EEnvQueryRunMode, bUseBBKeyForQueryTemplate: boolean);
         QueryTemplate: EnvQuery;
         QueryConfig: TArray<AIDynamicParam>;
@@ -46308,6 +47289,7 @@ declare module "ue" {
     }
     
     class IntervalCountdown {
+        constructor();
         constructor(Interval: number);
         Interval: number;
         static StaticClass(): Class;
@@ -46452,6 +47434,7 @@ declare module "ue" {
     }
     
     class EnvNamedValue {
+        constructor();
         constructor(ParamName: string, ParamType: EAIParamType, Value: number);
         ParamName: string;
         ParamType: EAIParamType;
@@ -46521,6 +47504,7 @@ declare module "ue" {
     }
     
     class CrowdAvoidanceConfig {
+        constructor();
         constructor(VelocityBias: number, DesiredVelocityWeight: number, CurrentVelocityWeight: number, SideBiasWeight: number, ImpactTimeWeight: number, ImpactTimeRange: number, CustomPatternIdx: number, AdaptiveDivisions: number, AdaptiveRings: number, AdaptiveDepth: number);
         VelocityBias: number;
         DesiredVelocityWeight: number;
@@ -46536,6 +47520,7 @@ declare module "ue" {
     }
     
     class CrowdAvoidanceSamplingPattern {
+        constructor();
         constructor(Angles: TArray<number>, Radii: TArray<number>);
         Angles: TArray<number>;
         Radii: TArray<number>;
@@ -46640,6 +47625,7 @@ declare module "ue" {
     enum EEnvTraceShape { Line, Box, Sphere, Capsule, EEnvTraceShape_MAX}
     enum EEnvQueryTrace { None, Navigation, Geometry, NavigationOverLedges, EEnvQueryTrace_MAX}
     class EnvTraceData {
+        constructor();
         constructor(VersionNum: number, NavigationFilter: Class, ProjectDown: number, ProjectUp: number, ExtentX: number, ExtentY: number, ExtentZ: number, PostProjectionVerticalOffset: number, TraceChannel: ETraceTypeQuery, SerializedChannel: ECollisionChannel, TraceShape: EEnvTraceShape, TraceMode: EEnvQueryTrace, bTraceComplex: boolean, bOnlyBlockingHits: boolean, bCanTraceOnNavMesh: boolean, bCanTraceOnGeometry: boolean, bCanDisableTrace: boolean, bCanProjectDown: boolean);
         VersionNum: number;
         NavigationFilter: Class;
@@ -46692,6 +47678,7 @@ declare module "ue" {
     }
     
     class AIDataProviderIntValue extends AIDataProviderTypedValue {
+        constructor();
         constructor(DefaultValue: number);
         DefaultValue: number;
         static StaticClass(): Class;
@@ -46699,6 +47686,7 @@ declare module "ue" {
     
     enum EEnvDirection { TwoPoints, Rotation, EEnvDirection_MAX}
     class EnvDirection {
+        constructor();
         constructor(LineFrom: Class, LineTo: Class, Rotation: Class, DirMode: EEnvDirection);
         LineFrom: Class;
         LineTo: Class;
@@ -46840,6 +47828,7 @@ declare module "ue" {
     
     enum EEnvOverlapShape { Box, Sphere, Capsule, EEnvOverlapShape_MAX}
     class EnvOverlapData {
+        constructor();
         constructor(ExtentX: number, ExtentY: number, ExtentZ: number, ShapeOffset: Vector, OverlapChannel: ECollisionChannel, OverlapShape: EEnvOverlapShape, bOnlyBlockingHits: boolean, bOverlapComplex: boolean, bSkipOverlapQuerier: boolean);
         ExtentX: number;
         ExtentY: number;
@@ -47111,7 +48100,30 @@ declare module "ue" {
         static Load(InName: string): VisualLoggerExtension;
     }
     
+    class NiagaraMergeable extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MergeId: Guid;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraMergeable;
+        static Load(InName: string): NiagaraMergeable;
+    }
+    
+    class NiagaraDataInterfaceBase extends NiagaraMergeable {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceBase;
+        static Load(InName: string): NiagaraDataInterfaceBase;
+    }
+    
+    class NiagaraScriptBase extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): NiagaraScriptBase;
+        static Load(InName: string): NiagaraScriptBase;
+    }
+    
     class VariantDependency {
+        constructor();
         constructor(VariantSet: TSoftObjectPtr<VariantSet>, Variant: TSoftObjectPtr<Variant>, bEnabled: boolean);
         VariantSet: TSoftObjectPtr<VariantSet>;
         Variant: TSoftObjectPtr<Variant>;
@@ -47120,6 +48132,7 @@ declare module "ue" {
     }
     
     class CapturedPropSegment {
+        constructor();
         constructor(PropertyName: string, PropertyIndex: number, ComponentName: string);
         PropertyName: string;
         PropertyIndex: number;
@@ -47149,6 +48162,7 @@ declare module "ue" {
     }
     
     class FunctionCaller {
+        constructor();
         constructor(FunctionName: string, FunctionEntry: TWeakObjectPtr<Object>, DisplayOrder: number);
         FunctionName: string;
         FunctionEntry: TWeakObjectPtr<Object>;
@@ -47375,6 +48389,7 @@ declare module "ue" {
     }
     
     class DatasmithAssetImportOptions {
+        constructor();
         constructor(PackagePath: string);
         PackagePath: string;
         static StaticClass(): Class;
@@ -47392,6 +48407,7 @@ declare module "ue" {
     enum EDatasmithImportLightmapMin { LIGHTMAP_16, LIGHTMAP_32, LIGHTMAP_64, LIGHTMAP_128, LIGHTMAP_256, LIGHTMAP_512, LIGHTMAP_MAX}
     enum EDatasmithImportLightmapMax { LIGHTMAP_64, LIGHTMAP_128, LIGHTMAP_256, LIGHTMAP_512, LIGHTMAP_1024, LIGHTMAP_2048, LIGHTMAP_4096, LIGHTMAP_MAX}
     class DatasmithStaticMeshImportOptions {
+        constructor();
         constructor(MinLightmapResolution: EDatasmithImportLightmapMin, MaxLightmapResolution: EDatasmithImportLightmapMax, bGenerateLightmapUVs: boolean, bRemoveDegenerates: boolean);
         MinLightmapResolution: EDatasmithImportLightmapMin;
         MaxLightmapResolution: EDatasmithImportLightmapMax;
@@ -47410,6 +48426,7 @@ declare module "ue" {
     
     enum EDatasmithCADStitchingTechnique { StitchingNone, StitchingHeal, StitchingSew, EDatasmithCADStitchingTechnique_MAX}
     class DatasmithTessellationOptions {
+        constructor();
         constructor(ChordTolerance: number, MaxEdgeLength: number, NormalTolerance: number, StitchingTechnique: EDatasmithCADStitchingTechnique);
         ChordTolerance: number;
         MaxEdgeLength: number;
@@ -47433,6 +48450,7 @@ declare module "ue" {
     
     enum EDatasmithImportScene { NewLevel, CurrentLevel, AssetsOnly, EDatasmithImportScene_MAX}
     class DatasmithImportBaseOptions {
+        constructor();
         constructor(SceneHandling: EDatasmithImportScene, bIncludeGeometry: boolean, bIncludeMaterial: boolean, bIncludeLight: boolean, bIncludeCamera: boolean, bIncludeAnimation: boolean, AssetOptions: DatasmithAssetImportOptions, StaticMeshOptions: DatasmithStaticMeshImportOptions);
         SceneHandling: EDatasmithImportScene;
         bIncludeGeometry: boolean;
@@ -47588,6 +48606,7 @@ declare module "ue" {
     }
     
     class DatasmithCameraLookatTrackingSettingsTemplate {
+        constructor();
         constructor(bEnableLookAtTracking: boolean, bAllowRoll: boolean, ActorToTrack: TSoftObjectPtr<Actor>);
         bEnableLookAtTracking: boolean;
         bAllowRoll: boolean;
@@ -47604,6 +48623,7 @@ declare module "ue" {
     }
     
     class DatasmithCameraFilmbackSettingsTemplate {
+        constructor();
         constructor(SensorWidth: number, SensorHeight: number);
         SensorWidth: number;
         SensorHeight: number;
@@ -47611,12 +48631,14 @@ declare module "ue" {
     }
     
     class DatasmithCameraLensSettingsTemplate {
+        constructor();
         constructor(MaxFStop: number);
         MaxFStop: number;
         static StaticClass(): Class;
     }
     
     class DatasmithCameraFocusSettingsTemplate {
+        constructor();
         constructor(FocusMethod: ECameraFocusMethod, ManualFocusDistance: number);
         FocusMethod: ECameraFocusMethod;
         ManualFocusDistance: number;
@@ -47624,6 +48646,7 @@ declare module "ue" {
     }
     
     class DatasmithPostProcessSettingsTemplate {
+        constructor();
         constructor(bOverride_WhiteTemp: boolean, bOverride_ColorSaturation: boolean, bOverride_VignetteIntensity: boolean, bOverride_FilmWhitePoint: boolean, bOverride_AutoExposureMethod: boolean, bOverride_CameraISO: boolean, bOverride_CameraShutterSpeed: boolean, bOverride_DepthOfFieldFstop: boolean, WhiteTemp: number, VignetteIntensity: number, FilmWhitePoint: LinearColor, ColorSaturation: Vector4, AutoExposureMethod: EAutoExposureMethod, CameraISO: number, CameraShutterSpeed: number, DepthOfFieldFstop: number);
         bOverride_WhiteTemp: boolean;
         bOverride_ColorSaturation: boolean;
@@ -47708,6 +48731,7 @@ declare module "ue" {
     enum EDatasmithImportActorPolicy { Update, Full, Ignore, EDatasmithImportActorPolicy_MAX}
     enum EDatasmithImportMaterialQuality { UseNoFresnelCurves, UseSimplifierFresnelCurves, UseRealFresnelCurves, EDatasmithImportMaterialQuality_MAX}
     class DatasmithReimportOptions {
+        constructor();
         constructor(bUpdateActors: boolean, bRespawnDeletedActors: boolean);
         bUpdateActors: boolean;
         bRespawnDeletedActors: boolean;
@@ -47760,6 +48784,7 @@ declare module "ue" {
     }
     
     class DatasmithStaticParameterSetTemplate {
+        constructor();
         constructor(StaticSwitchParameters: TMap<string, boolean>);
         StaticSwitchParameters: TMap<string, boolean>;
         static StaticClass(): Class;
@@ -47864,18 +48889,21 @@ declare module "ue" {
     }
     
     class DatasmithMeshSectionInfoTemplate {
+        constructor();
         constructor(MaterialIndex: number);
         MaterialIndex: number;
         static StaticClass(): Class;
     }
     
     class DatasmithMeshSectionInfoMapTemplate {
+        constructor();
         constructor(Map: TMap<number, DatasmithMeshSectionInfoTemplate>);
         Map: TMap<number, DatasmithMeshSectionInfoTemplate>;
         static StaticClass(): Class;
     }
     
     class DatasmithMeshBuildSettingsTemplate {
+        constructor();
         constructor(bUseMikkTSpace: boolean, bRecomputeNormals: boolean, bRecomputeTangents: boolean, bRemoveDegenerates: boolean, bBuildAdjacencyBuffer: boolean, bUseHighPrecisionTangentBasis: boolean, bUseFullPrecisionUVs: boolean, bGenerateLightmapUVs: boolean, MinLightmapResolution: number, SrcLightmapIndex: number, DstLightmapIndex: number);
         bUseMikkTSpace: boolean;
         bRecomputeNormals: boolean;
@@ -47892,6 +48920,7 @@ declare module "ue" {
     }
     
     class DatasmithStaticMaterialTemplate {
+        constructor();
         constructor(MaterialSlotName: string, MaterialInterface: MaterialInterface);
         MaterialSlotName: string;
         MaterialInterface: MaterialInterface;
@@ -47910,28 +48939,6 @@ declare module "ue" {
         static Load(InName: string): DatasmithStaticMeshTemplate;
     }
     
-    class NiagaraMergeable extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MergeId: Guid;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraMergeable;
-        static Load(InName: string): NiagaraMergeable;
-    }
-    
-    class NiagaraDataInterfaceBase extends NiagaraMergeable {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraDataInterfaceBase;
-        static Load(InName: string): NiagaraDataInterfaceBase;
-    }
-    
-    class NiagaraScriptBase extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): NiagaraScriptBase;
-        static Load(InName: string): NiagaraScriptBase;
-    }
-    
     enum EMagicLeapPrivilege { Invalid, BatteryInfo, CameraCapture, ComputerVision, WorldReconstruction, InAppPurchase, AudioCaptureMic, DrmCertificates, Occlusion, LowLatencyLightwear, Internet, IdentityRead, BackgroundDownload, BackgroundUpload, MediaDrm, Media, MediaMetadata, PowerInfo, LocalAreaNetwork, VoiceInput, Documents, ConnectBackgroundMusicService, RegisterBackgroundMusicService, PcfRead, PwFoundObjRead, NormalNotificationsUsage, MusicService, ControllerPose, GesturesSubscribe, GesturesConfig, AddressBookRead, AddressBookWrite, AddressBookBasicAccess, CoarseLocation, FineLocation, HandMesh, WifiStatusRead, SocialConnectionsInvitesAccess, SecureBrowserWindow, EMagicLeapPrivilege_MAX}
     class MagicLeapPrivilegesFunctionLibrary extends BlueprintFunctionLibrary {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -47945,6 +48952,7 @@ declare module "ue" {
     
     enum PurchaseType { Consumable, Nonconsumable, Undefined, PurchaseType_MAX}
     class PurchaseItemDetails {
+        constructor();
         constructor(Price: string, Name: string, Type: PurchaseType);
         Price: string;
         Name: string;
@@ -47953,6 +48961,7 @@ declare module "ue" {
     }
     
     class PurchaseConfirmation {
+        constructor();
         constructor(PackageName: string, Type: PurchaseType);
         PackageName: string;
         Type: PurchaseType;
@@ -48012,6 +49021,7 @@ declare module "ue" {
     enum EMagicLeapHeadTrackingMode { PositionAndOrientation, Unavailable, Unknown, EMagicLeapHeadTrackingMode_MAX}
     enum EMagicLeapHeadTrackingError { None, NotEnoughFeatures, LowLight, Unknown, EMagicLeapHeadTrackingError_MAX}
     class MagicLeapHeadTrackingState {
+        constructor();
         constructor(Mode: EMagicLeapHeadTrackingMode, Error: EMagicLeapHeadTrackingError, Confidence: number);
         Mode: EMagicLeapHeadTrackingMode;
         Error: EMagicLeapHeadTrackingError;
@@ -48021,6 +49031,7 @@ declare module "ue" {
     
     enum EMagicLeapHeadTrackingMapEvent { Lost, Recovered, RecoveryFailed, NewSession, EMagicLeapHeadTrackingMapEvent_MAX}
     class MagicLeapGraphicsClientPerformanceInfo {
+        constructor();
         constructor(FrameStartCPUCompAcquireCPUTimeMs: number, FrameStartCPUFrameEndGPUTimeMs: number, FrameStartCPUFrameStartCPUTimeMs: number, FrameDurationCPUTimeMs: number, FrameDurationGPUTimeMs: number, FrameInternalDurationCPUTimeMs: number, FrameInternalDurationGPUTimeMs: number);
         FrameStartCPUCompAcquireCPUTimeMs: number;
         FrameStartCPUFrameEndGPUTimeMs: number;
@@ -48060,6 +49071,7 @@ declare module "ue" {
     enum EMagicLeapMeshVertexColorMode { None, Confidence, Block, LOD, EMagicLeapMeshVertexColorMode_MAX}
     enum EMagicLeapMeshState { New, Updated, Deleted, Unchanged, EMagicLeapMeshState_MAX}
     class MagicLeapMeshBlockInfo {
+        constructor();
         constructor(BlockID: Guid, BlockPosition: Vector, BlockOrientation: Rotator, BlockDimensions: Vector, Timestamp: Timespan, BlockState: EMagicLeapMeshState);
         BlockID: Guid;
         BlockPosition: Vector;
@@ -48071,6 +49083,7 @@ declare module "ue" {
     }
     
     class MagicLeapTrackingMeshInfo {
+        constructor();
         constructor(Timestamp: Timespan, BlockData: TArray<MagicLeapMeshBlockInfo>);
         Timestamp: Timespan;
         BlockData: TArray<MagicLeapMeshBlockInfo>;
@@ -48078,6 +49091,7 @@ declare module "ue" {
     }
     
     class MagicLeapMeshBlockRequest {
+        constructor();
         constructor(BlockID: Guid, LevelOfDetail: EMagicLeapMeshLOD);
         BlockID: Guid;
         LevelOfDetail: EMagicLeapMeshLOD;
@@ -48135,6 +49149,7 @@ declare module "ue" {
     
     enum EMagicLeapRaycastResultState { RequestFailed, NoCollision, HitUnobserved, HitObserved, EMagicLeapRaycastResultState_MAX}
     class MagicLeapRaycastHitResult {
+        constructor();
         constructor(HitState: EMagicLeapRaycastResultState, HitPoint: Vector, Normal: Vector, Confidence: number, UserData: number);
         HitState: EMagicLeapRaycastResultState;
         HitPoint: Vector;
@@ -48145,6 +49160,7 @@ declare module "ue" {
     }
     
     class MagicLeapRaycastQueryParams {
+        constructor();
         constructor(Position: Vector, Direction: Vector, UpVector: Vector, Width: number, Height: number, HorizontalFovDegrees: number, CollideWithUnobserved: boolean, UserData: number);
         Position: Vector;
         Direction: Vector;
@@ -48259,6 +49275,7 @@ declare module "ue" {
     }
     
     class NamedInterface {
+        constructor();
         constructor(InterfaceName: string, InterfaceObject: Object);
         InterfaceName: string;
         InterfaceObject: Object;
@@ -48266,6 +49283,7 @@ declare module "ue" {
     }
     
     class NamedInterfaceDef {
+        constructor();
         constructor(InterfaceName: string, InterfaceClassName: string);
         InterfaceName: string;
         InterfaceClassName: string;
@@ -48402,6 +49420,7 @@ declare module "ue" {
     
     enum EInAppPurchaseState { Unknown, Success, Failed, Cancelled, Invalid, NotAllowed, Restored, AlreadyOwned, EInAppPurchaseState_MAX}
     class InAppPurchaseProductInfo {
+        constructor();
         constructor(Identifier: string, TransactionIdentifier: string, DisplayName: string, DisplayDescription: string, DisplayPrice: string, RawPrice: number, CurrencyCode: string, CurrencySymbol: string, DecimalSeparator: string, GroupingSeparator: string, ReceiptData: string);
         Identifier: string;
         TransactionIdentifier: string;
@@ -48418,6 +49437,7 @@ declare module "ue" {
     }
     
     class InAppPurchaseProductRequest {
+        constructor();
         constructor(ProductIdentifier: string, bIsConsumable: boolean);
         ProductIdentifier: string;
         bIsConsumable: boolean;
@@ -48436,6 +49456,7 @@ declare module "ue" {
     
     enum EInAppPurchaseStatus { Invalid, Failed, Deferred, Canceled, Purchased, Restored, EInAppPurchaseStatus_MAX}
     class InAppPurchaseReceiptInfo2 {
+        constructor();
         constructor(ItemName: string, ItemId: string, ValidationInfo: string);
         ItemName: string;
         ItemId: string;
@@ -48444,6 +49465,7 @@ declare module "ue" {
     }
     
     class InAppPurchaseProductRequest2 {
+        constructor();
         constructor(ProductIdentifier: string, bIsConsumable: boolean);
         ProductIdentifier: string;
         bIsConsumable: boolean;
@@ -48474,6 +49496,7 @@ declare module "ue" {
     
     enum EOnlineProxyStoreOfferDiscountType { NotOnSale, Percentage, DiscountAmount, PayAmount, EOnlineProxyStoreOfferDiscountType_MAX}
     class OnlineProxyStoreOffer {
+        constructor();
         constructor(OfferId: string, Title: string, Description: string, LongDescription: string, RegularPriceText: string, RegularPrice: number, PriceText: string, NumericPrice: number, CurrencyCode: string, ReleaseDate: DateTime, ExpirationDate: DateTime, DiscountType: EOnlineProxyStoreOfferDiscountType, DynamicFields: TMap<string, string>);
         OfferId: string;
         Title: string;
@@ -48502,6 +49525,7 @@ declare module "ue" {
     }
     
     class InAppPurchaseRestoreInfo {
+        constructor();
         constructor(Identifier: string, ReceiptData: string, TransactionIdentifier: string);
         Identifier: string;
         ReceiptData: string;
@@ -48520,6 +49544,7 @@ declare module "ue" {
     }
     
     class InAppPurchaseRestoreInfo2 {
+        constructor();
         constructor(ItemName: string, ItemId: string, ValidationInfo: string);
         ItemName: string;
         ItemId: string;
@@ -48660,6 +49685,7 @@ declare module "ue" {
     }
     
     class PIELoginSettingsInternal {
+        constructor();
         constructor(Id: string, Token: string, Type: string, TokenBytes: TArray<number>);
         Id: string;
         Token: string;
@@ -48687,6 +49713,7 @@ declare module "ue" {
     }
     
     class PlayerReservation {
+        constructor();
         constructor(UniqueId: UniqueNetIdRepl, ValidationStr: string, Platform: string, bAllowCrossplay: boolean, ElapsedTime: number);
         UniqueId: UniqueNetIdRepl;
         ValidationStr: string;
@@ -48697,6 +49724,7 @@ declare module "ue" {
     }
     
     class PartyReservation {
+        constructor();
         constructor(TeamNum: number, PartyLeader: UniqueNetIdRepl, PartyMembers: TArray<PlayerReservation>, RemovedPartyMembers: TArray<PlayerReservation>);
         TeamNum: number;
         PartyLeader: UniqueNetIdRepl;
@@ -48777,6 +49805,7 @@ declare module "ue" {
     }
     
     class SpectatorReservation {
+        constructor();
         constructor(SpectatorId: UniqueNetIdRepl, Spectator: PlayerReservation);
         SpectatorId: UniqueNetIdRepl;
         Spectator: PlayerReservation;
@@ -48935,6 +49964,7 @@ declare module "ue" {
     enum EColorSpace { Unknown, Unmanaged, Rec_2020, Rec_709, Rift_CV1, Rift_S, Quest, P3, Adobe_RGB, EColorSpace_MAX}
     enum ETrackedDeviceType { None, HMD, LTouch, RTouch, Touch, DeviceObjectZero, All, ETrackedDeviceType_MAX}
     class HmdUserProfileField {
+        constructor();
         constructor(FieldName: string, FieldValue: string);
         FieldName: string;
         FieldValue: string;
@@ -48942,6 +49972,7 @@ declare module "ue" {
     }
     
     class HmdUserProfile {
+        constructor();
         constructor(Name: string, Gender: string, PlayerHeight: number, EyeHeight: number, IPD: number, NeckToEyeDistance: Vector2D, ExtraFields: TArray<HmdUserProfileField>);
         Name: string;
         Gender: string;
@@ -48955,6 +49986,7 @@ declare module "ue" {
     
     enum EBoundaryType { Boundary_Outer, Boundary_PlayArea, Boundary_MAX}
     class GuardianTestResult {
+        constructor();
         constructor(IsTriggering: boolean, DeviceType: ETrackedDeviceType, ClosestDistance: number, ClosestPoint: Vector, ClosestPointNormal: Vector);
         IsTriggering: boolean;
         DeviceType: ETrackedDeviceType;
@@ -49011,6 +50043,7 @@ declare module "ue" {
     }
     
     class OculusSplashDesc {
+        constructor();
         constructor(TexturePath: SoftObjectPath, TransformInMeters: Transform, QuadSizeInMeters: Vector2D, DeltaRotation: Quat, TextureOffset: Vector2D, TextureScale: Vector2D, bNoAlphaChannel: boolean);
         TexturePath: SoftObjectPath;
         TransformInMeters: Transform;
@@ -49065,6 +50098,7 @@ declare module "ue" {
     }
     
     class ProcMeshTangent {
+        constructor();
         constructor(TangentX: Vector, bFlipTangentY: boolean);
         TangentX: Vector;
         bFlipTangentY: boolean;
@@ -49072,6 +50106,7 @@ declare module "ue" {
     }
     
     class ProcMeshVertex {
+        constructor();
         constructor(Position: Vector, Normal: Vector, Tangent: ProcMeshTangent, Color: Color, UV0: Vector2D, UV1: Vector2D, UV2: Vector2D, UV3: Vector2D);
         Position: Vector;
         Normal: Vector;
@@ -49085,6 +50120,7 @@ declare module "ue" {
     }
     
     class ProcMeshSection {
+        constructor();
         constructor(ProcVertexBuffer: TArray<ProcMeshVertex>, ProcIndexBuffer: TArray<number>, SectionLocalBox: Box, bEnableCollision: boolean, bSectionVisible: boolean);
         ProcVertexBuffer: TArray<ProcMeshVertex>;
         ProcIndexBuffer: TArray<number>;
@@ -49175,6 +50211,7 @@ declare module "ue" {
     }
     
     class SteamVRAction {
+        constructor();
         constructor(Name: string, Path: string);
         Name: string;
         Path: string;
@@ -49182,6 +50219,7 @@ declare module "ue" {
     }
     
     class SteamVRActionSet {
+        constructor();
         constructor(Path: string);
         Path: string;
         static StaticClass(): Class;
@@ -49189,6 +50227,7 @@ declare module "ue" {
     
     enum ESteamVRHand { VR_Left, VR_Right, VR_MAX}
     class SteamVRInputOriginInfo {
+        constructor();
         constructor(TrackedDeviceIndex: number, RenderModelComponentName: string, TrackedDeviceModel: string);
         TrackedDeviceIndex: number;
         RenderModelComponentName: string;
@@ -49198,6 +50237,7 @@ declare module "ue" {
     
     enum ESteamVRInputStringBits { VR_InputString_Hand, VR_InputString_ControllerType, VR_InputString_InputSource, VR_InputString_All, VR_InputString_MAX}
     class SteamVRInputBindingInfo {
+        constructor();
         constructor(DevicePathName: string, InputPathName: string, ModeName: string, SlotName: string);
         DevicePathName: string;
         InputPathName: string;
@@ -49207,6 +50247,7 @@ declare module "ue" {
     }
     
     class SteamVRSkeletonTransform {
+        constructor();
         constructor(Root: Transform, Wrist: Transform, Thumb_0: Transform, Thumb_1: Transform, Thumb_2: Transform, Thumb_3: Transform, Index_0: Transform, Index_1: Transform, Index_2: Transform, Index_3: Transform, Index_4: Transform, Middle_0: Transform, Middle_1: Transform, Middle_2: Transform, Middle_3: Transform, Middle_4: Transform, Ring_0: Transform, Ring_1: Transform, Ring_2: Transform, Ring_3: Transform, Ring_4: Transform, Pinky_0: Transform, Pinky_1: Transform, Pinky_2: Transform, Pinky_3: Transform, Pinky_4: Transform, Aux_Thumb: Transform, Aux_Index: Transform, Aux_Middle: Transform, Aux_Ring: Transform, Aux_Pinky: Transform);
         Root: Transform;
         Wrist: Transform;
@@ -49244,6 +50285,7 @@ declare module "ue" {
     
     enum EHand { VR_LeftHand, VR_RightHand, VR_MAX}
     class SteamVRFingerCurls {
+        constructor();
         constructor(Thumb: number, Index: number, Middle: number, Ring: number, Pinky: number);
         Thumb: number;
         Index: number;
@@ -49254,6 +50296,7 @@ declare module "ue" {
     }
     
     class SteamVRFingerSplays {
+        constructor();
         constructor(Thumb_Index: number, Index_Middle: number, Middle_Ring: number, Ring_Pinky: number);
         Thumb_Index: number;
         Index_Middle: number;
@@ -49316,6 +50359,7 @@ declare module "ue" {
     enum EDefaultGraphicsRHI { DefaultGraphicsRHI_Default, DefaultGraphicsRHI_DX11, DefaultGraphicsRHI_DX12, DefaultGraphicsRHI_Vulkan, DefaultGraphicsRHI_MAX}
     enum EMinimumSupportedOS { MSOS_Vista, MSOS_MAX}
     class PlatformRuntimeAudioCompressionOverrides {
+        constructor();
         constructor(bOverrideCompressionTimes: boolean, DurationThreshold: number, MaxNumRandomBranches: number, SoundCueQualityIndex: number);
         bOverrideCompressionTimes: boolean;
         DurationThreshold: number;
@@ -49408,6 +50452,7 @@ declare module "ue" {
     }
     
     class PropertyNameAndIndex {
+        constructor();
         constructor(Name: string, Index: number);
         Name: string;
         Index: number;
@@ -49415,6 +50460,7 @@ declare module "ue" {
     }
     
     class ComponentPropertyPath {
+        constructor();
         constructor(ParentOwningActor: TWeakObjectPtr<Actor>, LastResortComponentPtr: TWeakObjectPtr<ActorComponent>, PropertyChain: TArray<PropertyNameAndIndex>);
         ParentOwningActor: TWeakObjectPtr<Actor>;
         LastResortComponentPtr: TWeakObjectPtr<ActorComponent>;
@@ -49583,6 +50629,7 @@ declare module "ue" {
     }
     
     class EditorPropertyPathSegment {
+        constructor();
         constructor(Struct: Struct, MemberName: string, MemberGuid: Guid, IsProperty: boolean);
         Struct: Struct;
         MemberName: string;
@@ -49592,12 +50639,14 @@ declare module "ue" {
     }
     
     class EditorPropertyPath {
+        constructor();
         constructor(Segments: TArray<EditorPropertyPathSegment>);
         Segments: TArray<EditorPropertyPathSegment>;
         static StaticClass(): Class;
     }
     
     class DelegateEditorBinding {
+        constructor();
         constructor(ObjectName: string, PropertyName: string, FunctionName: string, SourceProperty: string, SourcePath: EditorPropertyPath, MemberGuid: Guid, Kind: EBindingKind);
         ObjectName: string;
         PropertyName: string;
@@ -49610,6 +50659,7 @@ declare module "ue" {
     }
     
     class WidgetAnimation_DEPRECATED {
+        constructor();
         constructor(MovieScene: MovieScene, AnimationBindings: TArray<WidgetAnimationBinding>);
         MovieScene: MovieScene;
         AnimationBindings: TArray<WidgetAnimationBinding>;
@@ -49663,6 +50713,7 @@ declare module "ue" {
     
     enum EPropertyBindingPermissionLevel { Allow, Prevent, PreventAndWarn, PreventAndError, EPropertyBindingPermissionLevel_MAX}
     class WidgetCompilerOptions {
+        constructor();
         constructor(bAllowBlueprintTick: boolean, bAllowBlueprintPaint: boolean, PropertyBindingRule: EPropertyBindingPermissionLevel, Rules: TArray<TSoftObjectPtr<Class>>);
         bAllowBlueprintTick: boolean;
         bAllowBlueprintPaint: boolean;
@@ -49672,6 +50723,7 @@ declare module "ue" {
     }
     
     class DirectoryWidgetCompilerOptions {
+        constructor();
         constructor(Directory: DirectoryPath, IgnoredWidgets: TArray<TSoftObjectPtr<WidgetBlueprint>>, Options: WidgetCompilerOptions);
         Directory: DirectoryPath;
         IgnoredWidgets: TArray<TSoftObjectPtr<WidgetBlueprint>>;
@@ -49680,6 +50732,7 @@ declare module "ue" {
     }
     
     class DebugResolution {
+        constructor();
         constructor(Width: number, Height: number, Description: string, Color: LinearColor);
         Width: number;
         Height: number;
@@ -49763,6 +50816,7 @@ declare module "ue" {
     }
     
     class AutomatedTestFilter {
+        constructor();
         constructor(Contains: string, MatchFromStart: boolean);
         Contains: string;
         MatchFromStart: boolean;
@@ -49770,6 +50824,7 @@ declare module "ue" {
     }
     
     class AutomatedTestGroup {
+        constructor();
         constructor(Name: string, Filters: TArray<AutomatedTestFilter>);
         Name: string;
         Filters: TArray<AutomatedTestFilter>;
@@ -49816,6 +50871,7 @@ declare module "ue" {
     }
     
     class ComparisonToleranceAmount {
+        constructor();
         constructor(Red: number, Green: number, Blue: number, Alpha: number, MinBrightness: number, MaxBrightness: number);
         Red: number;
         Green: number;
@@ -49827,6 +50883,7 @@ declare module "ue" {
     }
     
     class AutomationScreenshotOptions {
+        constructor();
         constructor(Resolution: Vector2D, Delay: number, bOverride_OverrideTimeTo: boolean, OverrideTimeTo: number, bDisableNoisyRenderingFeatures: boolean, bDisableTonemapping: boolean, ViewSettings: AutomationViewSettings, VisualizeBuffer: string, Tolerance: EComparisonTolerance, ToleranceAmount: ComparisonToleranceAmount, MaximumLocalError: number, MaximumGlobalError: number, bIgnoreAntiAliasing: boolean, bIgnoreColors: boolean);
         Resolution: Vector2D;
         Delay: number;
@@ -49846,6 +50903,7 @@ declare module "ue" {
     }
     
     class AutomationWaitForLoadingOptions {
+        constructor();
         constructor(WaitForReplicationToSettle: boolean);
         WaitForReplicationToSettle: boolean;
         static StaticClass(): Class;
@@ -49888,6 +50946,7 @@ declare module "ue" {
     enum EFunctionalTestResult { Default, Invalid, Error, Running, Failed, Succeeded, EFunctionalTestResult_MAX}
     enum EComparisonMethod { Equal_To, Not_Equal_To, Greater_Than_Or_Equal_To, Less_Than_Or_Equal_To, Greater_Than, Less_Than, EComparisonMethod_MAX}
     class TraceQueryTestNames {
+        constructor();
         constructor(ComponentName: string, PhysicalMaterialName: string, ActorName: string);
         ComponentName: string;
         PhysicalMaterialName: string;
@@ -49896,6 +50955,7 @@ declare module "ue" {
     }
     
     class TraceQueryTestResultsInnerMost {
+        constructor();
         constructor(SingleHit: HitResult, SingleNames: TraceQueryTestNames, bSingleResult: boolean, MultiHits: TArray<HitResult>, MultiNames: TArray<TraceQueryTestNames>, bMultiResult: boolean);
         SingleHit: HitResult;
         SingleNames: TraceQueryTestNames;
@@ -49907,6 +50967,7 @@ declare module "ue" {
     }
     
     class TraceQueryTestResultsInner {
+        constructor();
         constructor(LineResults: TraceQueryTestResultsInnerMost, SphereResults: TraceQueryTestResultsInnerMost, CapsuleResults: TraceQueryTestResultsInnerMost, BoxResults: TraceQueryTestResultsInnerMost);
         LineResults: TraceQueryTestResultsInnerMost;
         SphereResults: TraceQueryTestResultsInnerMost;
@@ -49916,6 +50977,7 @@ declare module "ue" {
     }
     
     class TraceChannelTestBatchOptions {
+        constructor();
         constructor(bLineTrace: boolean, bSphereTrace: boolean, bCapsuleTrace: boolean, bBoxTrace: boolean, bChannelTrace: boolean, bObjectsTrace: boolean, bProfileTrace: boolean);
         bLineTrace: boolean;
         bSphereTrace: boolean;
@@ -50004,12 +51066,14 @@ declare module "ue" {
     }
     
     class GenericTeamId {
+        constructor();
         constructor(TeamID: number);
         TeamID: number;
         static StaticClass(): Class;
     }
     
     class AITestSpawnInfo {
+        constructor();
         constructor(PawnClass: Class, ControllerClass: Class, TeamID: GenericTeamId, BehaviorTree: BehaviorTree, SpawnLocation: Actor, NumberToSpawn: number, SpawnDelay: number, PreSpawnDelay: number);
         PawnClass: Class;
         ControllerClass: Class;
@@ -50023,6 +51087,7 @@ declare module "ue" {
     }
     
     class AITestSpawnSet {
+        constructor();
         constructor(SpawnInfoContainer: TArray<AITestSpawnInfo>, Name: string, bEnabled: boolean, FallbackSpawnLocation: Actor);
         SpawnInfoContainer: TArray<AITestSpawnInfo>;
         Name: string;
@@ -50183,6 +51248,7 @@ declare module "ue" {
     }
     
     class GraphNodeClassData {
+        constructor();
         constructor(AssetName: string, GeneratedClassPackage: string, ClassName: string, Category: string);
         AssetName: string;
         GeneratedClassPackage: string;
@@ -50386,6 +51452,7 @@ declare module "ue" {
     }
     
     class OverlayItem {
+        constructor();
         constructor(StartTime: Timespan, EndTime: Timespan, Text: string, Position: Vector2D);
         StartTime: Timespan;
         EndTime: Timespan;
@@ -50452,6 +51519,7 @@ declare module "ue" {
     }
     
     class PaperSpriteSocket {
+        constructor();
         constructor(LocalTransform: Transform, SocketName: string);
         LocalTransform: Transform;
         SocketName: string;
@@ -50462,6 +51530,7 @@ declare module "ue" {
     enum ESpritePivotMode { Top_Left, Top_Center, Top_Right, Center_Left, Center_Center, Center_Right, Bottom_Left, Bottom_Center, Bottom_Right, Custom, ESpritePivotMode_MAX}
     enum ESpriteShapeType { Box, Circle, Polygon, ESpriteShapeType_MAX}
     class SpriteGeometryShape {
+        constructor();
         constructor(ShapeType: ESpriteShapeType, Vertices: TArray<Vector2D>, BoxSize: Vector2D, BoxPosition: Vector2D, Rotation: number, bNegativeWinding: boolean);
         ShapeType: ESpriteShapeType;
         Vertices: TArray<Vector2D>;
@@ -50474,6 +51543,7 @@ declare module "ue" {
     
     enum ESpritePolygonMode { SourceBoundingBox, TightBoundingBox, ShrinkWrapped, FullyCustom, Diced, ESpritePolygonMode_MAX}
     class SpriteGeometryCollection {
+        constructor();
         constructor(Shapes: TArray<SpriteGeometryShape>, GeometryType: ESpritePolygonMode, PixelsPerSubdivisionX: number, PixelsPerSubdivisionY: number, bAvoidVertexMerging: boolean, AlphaThreshold: number, DetailAmount: number, SimplifyEpsilon: number);
         Shapes: TArray<SpriteGeometryShape>;
         GeometryType: ESpritePolygonMode;
@@ -50488,6 +51558,7 @@ declare module "ue" {
     
     enum EPaperSpriteAtlasPadding { DilateBorder, PadWithZero, EPaperSpriteAtlasPadding_MAX}
     class PaperSpriteAtlasSlot {
+        constructor();
         constructor(SpriteRef: TSoftObjectPtr<PaperSprite>, AtlasIndex: number, X: number, Y: number, Width: number, Height: number);
         SpriteRef: TSoftObjectPtr<PaperSprite>;
         AtlasIndex: number;
@@ -50557,6 +51628,7 @@ declare module "ue" {
     }
     
     class PaperFlipbookKeyFrame {
+        constructor();
         constructor(Sprite: PaperSprite, FrameRun: number);
         Sprite: PaperSprite;
         FrameRun: number;
@@ -50641,6 +51713,7 @@ declare module "ue" {
     }
     
     class SpriteInstanceData {
+        constructor();
         constructor(Transform: Matrix, SourceSprite: PaperSprite, VertexColor: Color, MaterialIndex: number);
         Transform: Matrix;
         SourceSprite: PaperSprite;
@@ -50721,6 +51794,7 @@ declare module "ue" {
     }
     
     class PaperTerrainMaterialRule {
+        constructor();
         constructor(StartCap: PaperSprite, Body: TArray<PaperSprite>, EndCap: PaperSprite, MinimumAngle: number, MaximumAngle: number, bEnableCollision: boolean, CollisionOffset: number, DrawOrder: number, Description: string);
         StartCap: PaperSprite;
         Body: TArray<PaperSprite>;
@@ -50773,6 +51847,7 @@ declare module "ue" {
     }
     
     class IntMargin {
+        constructor();
         constructor(Left: number, Top: number, Right: number, Bottom: number);
         Left: number;
         Top: number;
@@ -50782,6 +51857,7 @@ declare module "ue" {
     }
     
     class PaperTileMetadata {
+        constructor();
         constructor(UserDataName: string, CollisionData: SpriteGeometryCollection, TerrainMembership: FixSizeArray<number>);
         UserDataName: string;
         CollisionData: SpriteGeometryCollection;
@@ -50790,6 +51866,7 @@ declare module "ue" {
     }
     
     class PaperTileSetTerrain {
+        constructor();
         constructor(TerrainName: string, CenterTileIndex: number);
         TerrainName: string;
         CenterTileIndex: number;
@@ -50821,6 +51898,7 @@ declare module "ue" {
     }
     
     class PaperTileInfo {
+        constructor();
         constructor(TileSet: PaperTileSet, PackedTileIndex: number);
         TileSet: PaperTileSet;
         PackedTileIndex: number;
@@ -51001,6 +52079,7 @@ declare module "ue" {
     }
     
     class LightPropagationVolumeSettings {
+        constructor();
         constructor(bOverride_LPVIntensity: boolean, bOverride_LPVDirectionalOcclusionIntensity: boolean, bOverride_LPVDirectionalOcclusionRadius: boolean, bOverride_LPVDiffuseOcclusionExponent: boolean, bOverride_LPVSpecularOcclusionExponent: boolean, bOverride_LPVDiffuseOcclusionIntensity: boolean, bOverride_LPVSpecularOcclusionIntensity: boolean, bOverride_LPVSize: boolean, bOverride_LPVSecondaryOcclusionIntensity: boolean, bOverride_LPVSecondaryBounceIntensity: boolean, bOverride_LPVGeometryVolumeBias: boolean, bOverride_LPVVplInjectionBias: boolean, bOverride_LPVEmissiveInjectionIntensity: boolean, LPVIntensity: number, LPVVplInjectionBias: number, LPVSize: number, LPVSecondaryOcclusionIntensity: number, LPVSecondaryBounceIntensity: number, LPVGeometryVolumeBias: number, LPVEmissiveInjectionIntensity: number, LPVDirectionalOcclusionIntensity: number, LPVDirectionalOcclusionRadius: number, LPVDiffuseOcclusionExponent: number, LPVSpecularOcclusionExponent: number, LPVDiffuseOcclusionIntensity: number, LPVSpecularOcclusionIntensity: number, LPVFadeRange: number, LPVDirectionalOcclusionFadeRange: number);
         bOverride_LPVIntensity: boolean;
         bOverride_LPVDirectionalOcclusionIntensity: boolean;
@@ -51040,117 +52119,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): LightPropagationVolumeBlendable;
         static Load(InName: string): LightPropagationVolumeBlendable;
-    }
-    
-    class EdGraph_ReferenceViewer extends EdGraph {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): EdGraph_ReferenceViewer;
-        static Load(InName: string): EdGraph_ReferenceViewer;
-    }
-    
-    class EdGraphNode_Reference extends EdGraphNode {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): EdGraphNode_Reference;
-        static Load(InName: string): EdGraphNode_Reference;
-    }
-    
-    class ReferenceViewerSchema extends EdGraphSchema {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ReferenceViewerSchema;
-        static Load(InName: string): ReferenceViewerSchema;
-    }
-    
-    class InternationalizationExportSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        CulturesToGenerate: TArray<string>;
-        CommandletClass: string;
-        SourcePath: string;
-        DestinationPath: string;
-        PortableObjectName: string;
-        ManifestName: string;
-        ArchiveName: string;
-        bExportLoc: boolean;
-        bImportLoc: boolean;
-        bUseCultureDirectory: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): InternationalizationExportSettings;
-        static Load(InName: string): InternationalizationExportSettings;
-    }
-    
-    class TranslationPickerSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        bSubmitTranslationPickerChangesToLocalizationService: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TranslationPickerSettings;
-        static Load(InName: string): TranslationPickerSettings;
-    }
-    
-    class TranslationChange {
-        constructor(Version: string, DateAndTime: DateTime, Source: string, Translation: string);
-        Version: string;
-        DateAndTime: DateTime;
-        Source: string;
-        Translation: string;
-        static StaticClass(): Class;
-    }
-    
-    class TranslationContextInfo {
-        constructor(Key: string, Context: string, Changes: TArray<TranslationChange>);
-        Key: string;
-        Context: string;
-        Changes: TArray<TranslationChange>;
-        static StaticClass(): Class;
-    }
-    
-    class TranslationUnit extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Namespace: string;
-        Key: string;
-        Source: string;
-        Translation: string;
-        Contexts: TArray<TranslationContextInfo>;
-        HasBeenReviewed: boolean;
-        TranslationBeforeImport: string;
-        LocresPath: string;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): TranslationUnit;
-        static Load(InName: string): TranslationUnit;
-    }
-    
-    class PixelInspectorView extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FinalColor: LinearColor;
-        SceneColor: LinearColor;
-        PreExposure: number;
-        Luminance: number;
-        HdrColor: LinearColor;
-        Normal: Vector;
-        PerObjectGBufferData: number;
-        Metallic: number;
-        Specular: number;
-        Roughness: number;
-        MaterialShadingModel: EMaterialShadingModel;
-        SelectiveOutputMask: number;
-        BaseColor: LinearColor;
-        IndirectIrradiance: number;
-        AmbientOcclusion: number;
-        SubSurfaceColor: LinearColor;
-        SubsurfaceProfile: Vector;
-        Opacity: number;
-        ClearCoat: number;
-        ClearCoatRoughness: number;
-        WorldNormal: Vector;
-        BackLit: number;
-        Cloth: number;
-        EyeTangent: Vector;
-        IrisMask: number;
-        IrisDistance: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): PixelInspectorView;
-        static Load(InName: string): PixelInspectorView;
     }
     
     class EditorUtilityObject extends Object {
@@ -51568,6 +52536,7 @@ declare module "ue" {
     }
     
     class AnimationSetup {
+        constructor();
         constructor(AnimSequence: AnimSequence, AnimBlueprint: Class, NumRandomizedInstances: PerPlatformInt, Enabled: PerPlatformBool);
         AnimSequence: AnimSequence;
         AnimBlueprint: Class;
@@ -51577,6 +52546,7 @@ declare module "ue" {
     }
     
     class AnimationStateEntry {
+        constructor();
         constructor(State: number, AnimationSetups: TArray<AnimationSetup>, bOnDemand: boolean, bAdditive: boolean, BlendTime: number, bReturnToPreviousState: boolean, bSetNextState: boolean, NextState: number, MaximumNumberOfConcurrentInstances: PerPlatformInt, WiggleTimePercentage: number, bRequiresCurves: boolean);
         State: number;
         AnimationSetups: TArray<AnimationSetup>;
@@ -51593,6 +52563,7 @@ declare module "ue" {
     }
     
     class PerSkeletonAnimationSharingSetup {
+        constructor();
         constructor(Skeleton: Skeleton, SkeletalMesh: SkeletalMesh, BlendAnimBlueprint: Class, AdditiveAnimBlueprint: Class, StateProcessorClass: Class, AnimationStates: TArray<AnimationStateEntry>);
         Skeleton: Skeleton;
         SkeletalMesh: SkeletalMesh;
@@ -51604,6 +52575,7 @@ declare module "ue" {
     }
     
     class AnimationSharingScalability {
+        constructor();
         constructor(UseBlendTransitions: PerPlatformBool, BlendSignificanceValue: PerPlatformFloat, MaximumNumberConcurrentBlends: PerPlatformInt, TickSignificanceValue: PerPlatformFloat);
         UseBlendTransitions: PerPlatformBool;
         BlendSignificanceValue: PerPlatformFloat;
@@ -51654,12 +52626,14 @@ declare module "ue" {
     }
     
     class NiagaraTypeDefinitionHandle {
+        constructor();
         constructor(RegisteredTypeIndex: number);
         RegisteredTypeIndex: number;
         static StaticClass(): Class;
     }
     
     class NiagaraTypeDefinition {
+        constructor();
         constructor(ClassStructOrEnum: Object, UnderlyingType: number, Struct: Struct, Enum: Enum);
         ClassStructOrEnum: Object;
         UnderlyingType: number;
@@ -51669,6 +52643,7 @@ declare module "ue" {
     }
     
     class NiagaraVariableBase {
+        constructor();
         constructor(Name: string, TypeDefHandle: NiagaraTypeDefinitionHandle, TypeDef: NiagaraTypeDefinition);
         Name: string;
         TypeDefHandle: NiagaraTypeDefinitionHandle;
@@ -51677,6 +52652,7 @@ declare module "ue" {
     }
     
     class NiagaraVariable extends NiagaraVariableBase {
+        constructor();
         constructor(VarData: TArray<number>);
         VarData: TArray<number>;
         static StaticClass(): Class;
@@ -51752,6 +52728,7 @@ declare module "ue" {
     enum ENiagaraModuleDependencyType { PreDependency, PostDependency, ENiagaraModuleDependencyType_MAX}
     enum ENiagaraModuleDependencyScriptConstraint { SameScript, AllScripts, ENiagaraModuleDependencyScriptConstraint_MAX}
     class NiagaraModuleDependency {
+        constructor();
         constructor(Id: string, Type: ENiagaraModuleDependencyType, ScriptConstraint: ENiagaraModuleDependencyScriptConstraint, Description: string);
         Id: string;
         Type: ENiagaraModuleDependencyType;
@@ -51762,6 +52739,7 @@ declare module "ue" {
     
     enum ENiagaraScriptLibraryVisibility { Invalid, Unexposed, Library, Hidden, ENiagaraScriptLibraryVisibility_MAX}
     class NiagaraVariableWithOffset extends NiagaraVariableBase {
+        constructor();
         constructor(Offset: number);
         Offset: number;
         static StaticClass(): Class;
@@ -51775,6 +52753,7 @@ declare module "ue" {
     }
     
     class NiagaraParameterStore {
+        constructor();
         constructor(Owner: Object, ParameterOffsets: TMap<NiagaraVariable, number>, SortedParameterOffsets: TArray<NiagaraVariableWithOffset>, ParameterData: TArray<number>, DataInterfaces: TArray<NiagaraDataInterface>, UObjects: TArray<Object>, DebugName: string);
         Owner: Object;
         ParameterOffsets: TMap<NiagaraVariable, number>;
@@ -51788,6 +52767,7 @@ declare module "ue" {
     
     enum ENiagaraNumericOutputTypeSelectionMode { None, Largest, Smallest, Scalar, ENiagaraNumericOutputTypeSelectionMode_MAX}
     class NiagaraScriptHighlight {
+        constructor();
         constructor(Color: LinearColor, DisplayName: string);
         Color: LinearColor;
         DisplayName: string;
@@ -51795,6 +52775,7 @@ declare module "ue" {
     }
     
     class NiagaraScriptExecutionPaddingInfo {
+        constructor();
         constructor(SrcOffset: number, DestOffset: number, SrcSize: number, DestSize: number);
         SrcOffset: number;
         DestOffset: number;
@@ -51804,6 +52785,7 @@ declare module "ue" {
     }
     
     class NiagaraScriptExecutionParameterStore extends NiagaraParameterStore {
+        constructor();
         constructor(ParameterSize: number, PaddedParameterSize: number, PaddingInfo: TArray<NiagaraScriptExecutionPaddingInfo>, bInitialized: boolean);
         ParameterSize: number;
         PaddedParameterSize: number;
@@ -51813,6 +52795,7 @@ declare module "ue" {
     }
     
     class NiagaraBoundParameter {
+        constructor();
         constructor(Parameter: NiagaraVariable, SrcOffset: number, DestOffset: number);
         Parameter: NiagaraVariable;
         SrcOffset: number;
@@ -51828,12 +52811,14 @@ declare module "ue" {
     }
     
     class NiagaraCompileHash {
+        constructor();
         constructor(DataHash: TArray<number>);
         DataHash: TArray<number>;
         static StaticClass(): Class;
     }
     
     class NiagaraVMExecutableDataId {
+        constructor();
         constructor(CompilerVersionID: Guid, ScriptUsageType: ENiagaraScriptUsage, ScriptUsageTypeID: Guid, AdditionalDefines: TArray<string>, bUsesRapidIterationParams: boolean, bInterpolatedSpawn: boolean, bRequiresPersistentIDs: boolean, BaseScriptID: Guid, BaseScriptCompileHash: NiagaraCompileHash, ReferencedCompileHashes: TArray<NiagaraCompileHash>);
         CompilerVersionID: Guid;
         ScriptUsageType: ENiagaraScriptUsage;
@@ -51849,18 +52834,21 @@ declare module "ue" {
     }
     
     class NiagaraParameters {
+        constructor();
         constructor(Parameters: TArray<NiagaraVariable>);
         Parameters: TArray<NiagaraVariable>;
         static StaticClass(): Class;
     }
     
     class NiagaraScriptDataUsageInfo {
+        constructor();
         constructor(bReadsAttributeData: boolean);
         bReadsAttributeData: boolean;
         static StaticClass(): Class;
     }
     
     class NiagaraFunctionSignature {
+        constructor();
         constructor(Name: string, Inputs: TArray<NiagaraVariable>, Outputs: TArray<NiagaraVariable>, OwnerName: string, bRequiresContext: boolean, bRequiresExecPin: boolean, bMemberFunction: boolean, bExperimental: boolean, ExperimentalMessage: string, FunctionVersion: number, bSupportsCPU: boolean, bSupportsGPU: boolean, bWriteFunction: boolean, bSoftDeprecatedFunction: boolean, ModuleUsageBitmask: number, ContextStageMinIndex: number, ContextStageMaxIndex: number, FunctionSpecifiers: TMap<string, string>, Description: string);
         Name: string;
         Inputs: TArray<NiagaraVariable>;
@@ -51885,6 +52873,7 @@ declare module "ue" {
     }
     
     class NiagaraScriptDataInterfaceCompileInfo {
+        constructor();
         constructor(Name: string, UserPtrIdx: number, Type: NiagaraTypeDefinition, RegisteredFunctions: TArray<NiagaraFunctionSignature>, RegisteredParameterMapRead: string, RegisteredParameterMapWrite: string, bIsPlaceholder: boolean);
         Name: string;
         UserPtrIdx: number;
@@ -51897,6 +52886,7 @@ declare module "ue" {
     }
     
     class VMFunctionSpecifier {
+        constructor();
         constructor(Key: string, Value: string);
         Key: string;
         Value: string;
@@ -51904,6 +52894,7 @@ declare module "ue" {
     }
     
     class VMExternalFunctionBindingInfo {
+        constructor();
         constructor(Name: string, OwnerName: string, InputParamLocations: TArray<boolean>, NumOutputs: number, FunctionSpecifiers: TArray<VMFunctionSpecifier>, Specifiers: TMap<string, string>);
         Name: string;
         OwnerName: string;
@@ -51916,6 +52907,7 @@ declare module "ue" {
     
     enum ENiagaraDataSetType { ParticleData, Shared, Event, ENiagaraDataSetType_MAX}
     class NiagaraDataSetID {
+        constructor();
         constructor(Name: string, Type: ENiagaraDataSetType);
         Name: string;
         Type: ENiagaraDataSetType;
@@ -51923,6 +52915,7 @@ declare module "ue" {
     }
     
     class NiagaraDataSetProperties {
+        constructor();
         constructor(ID: NiagaraDataSetID, Variables: TArray<NiagaraVariable>);
         ID: NiagaraDataSetID;
         Variables: TArray<NiagaraVariable>;
@@ -51930,6 +52923,7 @@ declare module "ue" {
     }
     
     class NiagaraStatScope {
+        constructor();
         constructor(FullName: string, FriendlyName: string);
         FullName: string;
         FriendlyName: string;
@@ -51942,6 +52936,7 @@ declare module "ue" {
     }
     
     class NiagaraDataInterfaceGPUParamInfo {
+        constructor();
         constructor(DataInterfaceHLSLSymbol: string, DIClassName: string, GeneratedFunctions: TArray<NiagaraDataInterfaceGeneratedFunction>);
         DataInterfaceHLSLSymbol: string;
         DIClassName: string;
@@ -51951,6 +52946,7 @@ declare module "ue" {
     
     enum ENiagaraScriptCompileStatus { NCS_Unknown, NCS_Dirty, NCS_Error, NCS_UpToDate, NCS_BeingCreated, NCS_UpToDateWithWarnings, NCS_ComputeUpToDateWithWarnings, NCS_MAX}
     class SimulationStageMetaData {
+        constructor();
         constructor(SimulationStageName: string, IterationSource: string, bSpawnOnly: boolean, bWritesParticles: boolean, bPartialParticleUpdate: boolean, OutputDestinations: TArray<string>, MinStage: number, MaxStage: number);
         SimulationStageName: string;
         IterationSource: string;
@@ -51965,6 +52961,7 @@ declare module "ue" {
     
     enum FNiagaraCompileEventSeverity { Log, Warning, Error, FNiagaraCompileEventSeverity_MAX}
     class NiagaraCompileEvent {
+        constructor();
         constructor(Severity: FNiagaraCompileEventSeverity, Message: string, NodeGuid: Guid, PinGuid: Guid, StackGuids: TArray<Guid>);
         Severity: FNiagaraCompileEventSeverity;
         Message: string;
@@ -51975,6 +52972,7 @@ declare module "ue" {
     }
     
     class NiagaraVMExecutableData {
+        constructor();
         constructor(ByteCode: TArray<number>, OptimizedByteCode: TArray<number>, NumTempRegisters: number, NumUserPtrs: number, Parameters: NiagaraParameters, InternalParameters: NiagaraParameters, ScriptLiterals: TArray<number>, Attributes: TArray<NiagaraVariable>, DataUsage: NiagaraScriptDataUsageInfo, DataSetToParameters: TMap<string, NiagaraParameters>, AdditionalExternalFunctions: TArray<NiagaraFunctionSignature>, DataInterfaceInfo: TArray<NiagaraScriptDataInterfaceCompileInfo>, CalledVMExternalFunctions: TArray<VMExternalFunctionBindingInfo>, ReadDataSets: TArray<NiagaraDataSetID>, WriteDataSets: TArray<NiagaraDataSetProperties>, StatScopes: TArray<NiagaraStatScope>, LastHlslTranslation: string, LastHlslTranslationGPU: string, LastAssemblyTranslation: string, LastOpCount: number, DIParamInfo: TArray<NiagaraDataInterfaceGPUParamInfo>, ParameterCollectionPaths: TArray<string>, LastCompileStatus: ENiagaraScriptCompileStatus, SimulationStageMetaData: TArray<SimulationStageMetaData>, bReadsAttributeData: boolean, ErrorMsg: string, CompileTime: number, LastCompileEvents: TArray<NiagaraCompileEvent>, bReadsSignificanceIndex: boolean);
         ByteCode: TArray<number>;
         OptimizedByteCode: TArray<number>;
@@ -52047,6 +53045,7 @@ declare module "ue" {
     }
     
     class NiagaraScriptDataInterfaceInfo {
+        constructor();
         constructor(DataInterface: NiagaraDataInterface, Name: string, UserPtrIdx: number, Type: NiagaraTypeDefinition, RegisteredParameterMapRead: string, RegisteredParameterMapWrite: string);
         DataInterface: NiagaraDataInterface;
         Name: string;
@@ -52099,6 +53098,7 @@ declare module "ue" {
     }
     
     class NiagaraSystemUpdateContext {
+        constructor();
         constructor(ComponentsToReset: TArray<NiagaraComponent>, ComponentsToReInit: TArray<NiagaraComponent>, ComponentsToNotifySimDestroy: TArray<NiagaraComponent>, SystemSimsToDestroy: TArray<NiagaraSystem>);
         ComponentsToReset: TArray<NiagaraComponent>;
         ComponentsToReInit: TArray<NiagaraComponent>;
@@ -52117,6 +53117,7 @@ declare module "ue" {
     }
     
     class NiagaraDeviceProfileStateEntry {
+        constructor();
         constructor(ProfileName: string, QualityLevelMask: number, SetQualityLevelMask: number);
         ProfileName: string;
         QualityLevelMask: number;
@@ -52125,6 +53126,7 @@ declare module "ue" {
     }
     
     class NiagaraPlatformSetCVarCondition {
+        constructor();
         constructor(CVarName: string, Value: boolean, MinInt: number, MaxInt: number, MinFloat: number, MaxFloat: number, bUseMinInt: boolean, bUseMaxInt: boolean, bUseMinFloat: boolean, bUseMaxFloat: boolean);
         CVarName: string;
         Value: boolean;
@@ -52140,6 +53142,7 @@ declare module "ue" {
     }
     
     class NiagaraPlatformSet {
+        constructor();
         constructor(QualityLevelMask: number, DeviceProfileStates: TArray<NiagaraDeviceProfileStateEntry>, CVarConditions: TArray<NiagaraPlatformSetCVarCondition>);
         QualityLevelMask: number;
         DeviceProfileStates: TArray<NiagaraDeviceProfileStateEntry>;
@@ -52148,6 +53151,7 @@ declare module "ue" {
     }
     
     class NiagaraSystemScalabilitySettings {
+        constructor();
         constructor(Platforms: NiagaraPlatformSet, bCullByDistance: boolean, bCullMaxInstanceCount: boolean, bCullPerSystemMaxInstanceCount: boolean, bCullByMaxTimeWithoutRender: boolean, MaxDistance: number, MaxInstances: number, MaxSystemInstances: number, MaxTimeWithoutRender: number);
         Platforms: NiagaraPlatformSet;
         bCullByDistance: boolean;
@@ -52162,12 +53166,14 @@ declare module "ue" {
     }
     
     class NiagaraSystemScalabilitySettingsArray {
+        constructor();
         constructor(Settings: TArray<NiagaraSystemScalabilitySettings>);
         Settings: TArray<NiagaraSystemScalabilitySettings>;
         static StaticClass(): Class;
     }
     
     class NiagaraEmitterScalabilitySettings {
+        constructor();
         constructor(Platforms: NiagaraPlatformSet, bScaleSpawnCount: boolean, SpawnCountScale: number);
         Platforms: NiagaraPlatformSet;
         bScaleSpawnCount: boolean;
@@ -52176,6 +53182,7 @@ declare module "ue" {
     }
     
     class NiagaraEmitterScalabilitySettingsArray {
+        constructor();
         constructor(Settings: TArray<NiagaraEmitterScalabilitySettings>);
         Settings: TArray<NiagaraEmitterScalabilitySettings>;
         static StaticClass(): Class;
@@ -52195,6 +53202,7 @@ declare module "ue" {
     }
     
     class NiagaraSystemScalabilityOverride extends NiagaraSystemScalabilitySettings {
+        constructor();
         constructor(bOverrideDistanceSettings: boolean, bOverrideInstanceCountSettings: boolean, bOverridePerSystemInstanceCountSettings: boolean, bOverrideTimeSinceRendererSettings: boolean);
         bOverrideDistanceSettings: boolean;
         bOverrideInstanceCountSettings: boolean;
@@ -52204,6 +53212,7 @@ declare module "ue" {
     }
     
     class NiagaraSystemScalabilityOverrides {
+        constructor();
         constructor(Overrides: TArray<NiagaraSystemScalabilityOverride>);
         Overrides: TArray<NiagaraSystemScalabilityOverride>;
         static StaticClass(): Class;
@@ -52211,6 +53220,7 @@ declare module "ue" {
     
     enum EParticleAllocationMode { AutomaticEstimate, ManualEstimate, EParticleAllocationMode_MAX}
     class NiagaraEventReceiverProperties {
+        constructor();
         constructor(Name: string, SourceEventGenerator: string, SourceEmitter: string);
         Name: string;
         SourceEventGenerator: string;
@@ -52219,6 +53229,7 @@ declare module "ue" {
     }
     
     class NiagaraTypeLayoutInfo {
+        constructor();
         constructor(FloatComponentByteOffsets: TArray<number>, FloatComponentRegisterOffsets: TArray<number>, Int32ComponentByteOffsets: TArray<number>, Int32ComponentRegisterOffsets: TArray<number>, HalfComponentByteOffsets: TArray<number>, HalfComponentRegisterOffsets: TArray<number>);
         FloatComponentByteOffsets: TArray<number>;
         FloatComponentRegisterOffsets: TArray<number>;
@@ -52230,6 +53241,7 @@ declare module "ue" {
     }
     
     class NiagaraVariableLayoutInfo {
+        constructor();
         constructor(FloatComponentStart: number, Int32ComponentStart: number, HalfComponentStart: number, LayoutInfo: NiagaraTypeLayoutInfo);
         FloatComponentStart: number;
         Int32ComponentStart: number;
@@ -52240,6 +53252,7 @@ declare module "ue" {
     
     enum ENiagaraSimTarget { CPUSim, GPUComputeSim, ENiagaraSimTarget_MAX}
     class NiagaraDataSetCompiledData {
+        constructor();
         constructor(Variables: TArray<NiagaraVariable>, VariableLayouts: TArray<NiagaraVariableLayoutInfo>, ID: NiagaraDataSetID, TotalFloatComponents: number, TotalInt32Components: number, TotalHalfComponents: number, bRequiresPersistentIDs: boolean, SimTarget: ENiagaraSimTarget);
         Variables: TArray<NiagaraVariable>;
         VariableLayouts: TArray<NiagaraVariableLayoutInfo>;
@@ -52253,6 +53266,7 @@ declare module "ue" {
     }
     
     class NiagaraEventGeneratorProperties {
+        constructor();
         constructor(MaxEventsPerFrame: number, ID: string, DataSetCompiledData: NiagaraDataSetCompiledData);
         MaxEventsPerFrame: number;
         ID: string;
@@ -52261,6 +53275,7 @@ declare module "ue" {
     }
     
     class NiagaraEmitterScriptProperties {
+        constructor();
         constructor(Script: NiagaraScript, EventReceivers: TArray<NiagaraEventReceiverProperties>, EventGenerators: TArray<NiagaraEventGeneratorProperties>);
         Script: NiagaraScript;
         EventReceivers: TArray<NiagaraEventReceiverProperties>;
@@ -52269,6 +53284,7 @@ declare module "ue" {
     }
     
     class NiagaraDetailsLevelScaleOverrides {
+        constructor();
         constructor(Low: number, Medium: number, High: number, Epic: number, Cine: number);
         Low: number;
         Medium: number;
@@ -52279,12 +53295,14 @@ declare module "ue" {
     }
     
     class NiagaraEmitterScalabilityOverride extends NiagaraEmitterScalabilitySettings {
+        constructor();
         constructor(bOverrideSpawnCountScale: boolean);
         bOverrideSpawnCountScale: boolean;
         static StaticClass(): Class;
     }
     
     class NiagaraEmitterScalabilityOverrides {
+        constructor();
         constructor(Overrides: TArray<NiagaraEmitterScalabilityOverride>);
         Overrides: TArray<NiagaraEmitterScalabilityOverride>;
         static StaticClass(): Class;
@@ -52310,6 +53328,7 @@ declare module "ue" {
     
     enum EScriptExecutionMode { EveryParticle, SpawnedParticles, SingleParticle, EScriptExecutionMode_MAX}
     class NiagaraEventScriptProperties extends NiagaraEmitterScriptProperties {
+        constructor();
         constructor(ExecutionMode: EScriptExecutionMode, SpawnNumber: number, MaxEventsPerFrame: number, SourceEmitterID: Guid, SourceEventName: string, bRandomSpawnNumber: boolean, MinSpawnNumber: number);
         ExecutionMode: EScriptExecutionMode;
         SpawnNumber: number;
@@ -52397,6 +53416,7 @@ declare module "ue" {
     }
     
     class NiagaraEmitterHandle {
+        constructor();
         constructor(Id: Guid, IdName: string, bIsEnabled: boolean, Name: string, Source: NiagaraEmitter, LastMergedSource: NiagaraEmitter, Instance: NiagaraEmitter);
         Id: Guid;
         IdName: string;
@@ -52409,12 +53429,14 @@ declare module "ue" {
     }
     
     class NiagaraSystemCompileRequest {
+        constructor();
         constructor(RootObjects: TArray<Object>);
         RootObjects: TArray<Object>;
         static StaticClass(): Class;
     }
     
     class NiagaraParameterDataSetBinding {
+        constructor();
         constructor(ParameterOffset: number, DataSetComponentOffset: number);
         ParameterOffset: number;
         DataSetComponentOffset: number;
@@ -52422,6 +53444,7 @@ declare module "ue" {
     }
     
     class NiagaraParameterDataSetBindingCollection {
+        constructor();
         constructor(FloatOffsets: TArray<NiagaraParameterDataSetBinding>, Int32Offsets: TArray<NiagaraParameterDataSetBinding>);
         FloatOffsets: TArray<NiagaraParameterDataSetBinding>;
         Int32Offsets: TArray<NiagaraParameterDataSetBinding>;
@@ -52429,6 +53452,7 @@ declare module "ue" {
     }
     
     class NiagaraSystemCompiledData {
+        constructor();
         constructor(InstanceParamStore: NiagaraParameterStore, DataSetCompiledData: NiagaraDataSetCompiledData, SpawnInstanceParamsDataSetCompiledData: NiagaraDataSetCompiledData, UpdateInstanceParamsDataSetCompiledData: NiagaraDataSetCompiledData, SpawnInstanceGlobalBinding: NiagaraParameterDataSetBindingCollection, SpawnInstanceSystemBinding: NiagaraParameterDataSetBindingCollection, SpawnInstanceOwnerBinding: NiagaraParameterDataSetBindingCollection, SpawnInstanceEmitterBindings: TArray<NiagaraParameterDataSetBindingCollection>, UpdateInstanceGlobalBinding: NiagaraParameterDataSetBindingCollection, UpdateInstanceSystemBinding: NiagaraParameterDataSetBindingCollection, UpdateInstanceOwnerBinding: NiagaraParameterDataSetBindingCollection, UpdateInstanceEmitterBindings: TArray<NiagaraParameterDataSetBindingCollection>);
         InstanceParamStore: NiagaraParameterStore;
         DataSetCompiledData: NiagaraDataSetCompiledData;
@@ -52446,6 +53470,7 @@ declare module "ue" {
     }
     
     class NiagaraUserRedirectionParameterStore extends NiagaraParameterStore {
+        constructor();
         constructor(UserParameterRedirects: TMap<NiagaraVariable, NiagaraVariable>);
         UserParameterRedirects: TMap<NiagaraVariable, NiagaraVariable>;
         static StaticClass(): Class;
@@ -52498,6 +53523,7 @@ declare module "ue" {
     enum ENiagaraTickBehavior { UsePrereqs, UseComponentTickGroup, ForceTickFirst, ForceTickLast, ENiagaraTickBehavior_MAX}
     enum ENiagaraVariantMode { None, Object, DataInterface, Bytes, ENiagaraVariantMode_MAX}
     class NiagaraVariant {
+        constructor();
         constructor(Object: Object, DataInterface: NiagaraDataInterface, Bytes: TArray<number>, CurrentMode: ENiagaraVariantMode);
         Object: Object;
         DataInterface: NiagaraDataInterface;
@@ -52507,6 +53533,7 @@ declare module "ue" {
     }
     
     class NiagaraMaterialOverride {
+        constructor();
         constructor(Material: MaterialInterface, MaterialSubIndex: number, EmitterRendererProperty: NiagaraRendererProperties);
         Material: MaterialInterface;
         MaterialSubIndex: number;
@@ -52611,12 +53638,14 @@ declare module "ue" {
     }
     
     class NCPoolElement {
+        constructor();
         constructor(Component: NiagaraComponent);
         Component: NiagaraComponent;
         static StaticClass(): Class;
     }
     
     class NCPool {
+        constructor();
         constructor(FreeElements: TArray<NCPoolElement>, InUseComponents_Auto: TArray<NiagaraComponent>, InUseComponents_Manual: TArray<NiagaraComponent>);
         FreeElements: TArray<NCPoolElement>;
         InUseComponents_Auto: TArray<NiagaraComponent>;
@@ -52634,6 +53663,7 @@ declare module "ue" {
     
     enum ENiagaraBindingSource { ImplicitFromSource, ExplicitParticles, ExplicitEmitter, ExplicitSystem, ExplicitUser, MaxBindingSource, ENiagaraBindingSource_MAX}
     class NiagaraVariableAttributeBinding {
+        constructor();
         constructor(ParamMapVariable: NiagaraVariableBase, DataSetVariable: NiagaraVariable, RootVariable: NiagaraVariable, BoundVariable: NiagaraVariable, CachedDisplayName: string, BindingSourceMode: ENiagaraBindingSource, bBindingExistsOnSource: boolean, bIsCachedParticleValue: boolean);
         ParamMapVariable: NiagaraVariableBase;
         DataSetVariable: NiagaraVariable;
@@ -52647,6 +53677,7 @@ declare module "ue" {
     }
     
     class NiagaraComponentPropertyBinding {
+        constructor();
         constructor(AttributeBinding: NiagaraVariableAttributeBinding, PropertyName: string, PropertyType: NiagaraTypeDefinition, MetadataSetterName: string, WritableValue: NiagaraVariable);
         AttributeBinding: NiagaraVariableAttributeBinding;
         PropertyName: string;
@@ -52672,6 +53703,7 @@ declare module "ue" {
     }
     
     class NiagaraEmitterNameSettingsRef {
+        constructor();
         constructor(SystemName: string, EmitterName: string);
         SystemName: string;
         EmitterName: string;
@@ -52906,6 +53938,7 @@ declare module "ue" {
     }
     
     class BasicParticleData {
+        constructor();
         constructor(Position: Vector, Size: number, Velocity: Vector);
         Position: Vector;
         Size: number;
@@ -52922,6 +53955,7 @@ declare module "ue" {
     }
     
     class NiagaraUserParameterBinding {
+        constructor();
         constructor(Parameter: NiagaraVariable);
         Parameter: NiagaraVariable;
         static StaticClass(): Class;
@@ -53139,6 +54173,7 @@ declare module "ue" {
     
     enum ENDIStaticMesh_SourceMode { Default, Source, AttachParent, DefaultMeshOnly, ENDIStaticMesh_MAX}
     class NDIStaticMeshSectionFilter {
+        constructor();
         constructor(AllowedMaterialSlots: TArray<number>);
         AllowedMaterialSlots: TArray<number>;
         static StaticClass(): Class;
@@ -53281,6 +54316,7 @@ declare module "ue" {
     
     enum ENiagaraSortMode { None, ViewDepth, ViewDistance, CustomAscending, CustomDecending, ENiagaraSortMode_MAX}
     class NiagaraMeshMaterialOverride {
+        constructor();
         constructor(ExplicitMat: MaterialInterface, UserParamBinding: NiagaraUserParameterBinding);
         ExplicitMat: MaterialInterface;
         UserParamBinding: NiagaraUserParameterBinding;
@@ -53448,6 +54484,7 @@ declare module "ue" {
     enum ENiagaraRibbonUVEdgeMode { SmoothTransition, Locked, ENiagaraRibbonUVEdgeMode_MAX}
     enum ENiagaraRibbonUVDistributionMode { ScaledUniformly, ScaledUsingRibbonSegmentLength, TiledOverRibbonLength, ENiagaraRibbonUVDistributionMode_MAX}
     class NiagaraRibbonUVSettings {
+        constructor();
         constructor(LeadingEdgeMode: ENiagaraRibbonUVEdgeMode, TrailingEdgeMode: ENiagaraRibbonUVEdgeMode, DistributionMode: ENiagaraRibbonUVDistributionMode, TilingLength: number, Offset: Vector2D, Scale: Vector2D, bEnablePerParticleUOverride: boolean, bEnablePerParticleVRangeOverride: boolean);
         LeadingEdgeMode: ENiagaraRibbonUVEdgeMode;
         TrailingEdgeMode: ENiagaraRibbonUVEdgeMode;
@@ -53526,6 +54563,7 @@ declare module "ue" {
     
     enum ENiagaraIterationSource { Particles, DataInterface, ENiagaraIterationSource_MAX}
     class NiagaraVariableDataInterfaceBinding {
+        constructor();
         constructor(BoundVariable: NiagaraVariable);
         BoundVariable: NiagaraVariable;
         static StaticClass(): Class;
@@ -53547,6 +54585,7 @@ declare module "ue" {
     enum ENiagaraSpriteAlignment { Unaligned, VelocityAligned, CustomAlignment, ENiagaraSpriteAlignment_MAX}
     enum ENiagaraSpriteFacingMode { FaceCamera, FaceCameraPlane, CustomFacingVector, FaceCameraPosition, FaceCameraDistanceBlend, ENiagaraSpriteFacingMode_MAX}
     class NiagaraMaterialAttributeBinding {
+        constructor();
         constructor(MaterialParameterName: string, NiagaraVariable: NiagaraVariableBase, ResolvedNiagaraVariable: NiagaraVariableBase, NiagaraChildVariable: NiagaraVariableBase);
         MaterialParameterName: string;
         NiagaraVariable: NiagaraVariableBase;
@@ -53670,6 +54709,7 @@ declare module "ue" {
     }
     
     class NiagaraPropagatedVariable {
+        constructor();
         constructor(SwitchParameter: NiagaraVariable, PropagatedName: string);
         SwitchParameter: NiagaraVariable;
         PropagatedName: string;
@@ -53733,12 +54773,14 @@ declare module "ue" {
     
     enum ENiagaraDefaultMode { Value, Binding, Custom, ENiagaraDefaultMode_MAX}
     class NiagaraScriptVariableBinding {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
     }
     
     class NiagaraInputConditionMetadata {
+        constructor();
         constructor(InputName: string, TargetValues: TArray<string>);
         InputName: string;
         TargetValues: TArray<string>;
@@ -53747,6 +54789,7 @@ declare module "ue" {
     
     enum ENiagaraScriptParameterUsage { Input, Output, Local, InputOutput, InitialValueInput, None, Num, ENiagaraScriptParameterUsage_MAX}
     class NiagaraVariableMetaData {
+        constructor();
         constructor(Description: string, CategoryName: string, bAdvancedDisplay: boolean, EditorSortPriority: number, bInlineEditConditionToggle: boolean, EditCondition: NiagaraInputConditionMetadata, VisibleCondition: NiagaraInputConditionMetadata, PropertyMetaData: TMap<string, string>, ParentAttribute: string, ScopeName: string, Usage: ENiagaraScriptParameterUsage, bIsStaticSwitch: boolean, StaticSwitchDefaultValue: number, bAddedToNodeGraphDeepCopy: boolean, bOutputIsPersistent: boolean, CachedNamespacelessVariableName: string, bCreatedInSystemEditor: boolean, bUseLegacyNameString: boolean);
         Description: string;
         CategoryName: string;
@@ -53823,6 +54866,7 @@ declare module "ue" {
     }
     
     class NiagaraSpawnShortcut {
+        constructor();
         constructor(Name: string, Input: InputChord);
         Name: string;
         Input: InputChord;
@@ -53830,6 +54874,7 @@ declare module "ue" {
     }
     
     class NiagaraNewAssetDialogConfig {
+        constructor();
         constructor(SelectedOptionIndex: number, WindowSize: Vector2D);
         SelectedOptionIndex: number;
         WindowSize: Vector2D;
@@ -53838,6 +54883,7 @@ declare module "ue" {
     
     enum ENiagaraNamespaceMetadataOptions { HideInScript, HideInSystem, AdvancedInScript, AdvancedInSystem, PreventEditingNamespace, PreventEditingNamespaceModifier, PreventEditingName, PreventCreatingInSystemEditor, ENiagaraNamespaceMetadataOptions_MAX}
     class NiagaraNamespaceMetadata {
+        constructor();
         constructor(Namespaces: TArray<string>, RequiredNamespaceModifier: string, DisplayName: string, DisplayNameLong: string, Description: string, BackgroundColor: LinearColor, ForegroundStyle: string, SortId: number, OptionalNamespaceModifiers: TArray<string>, Options: TArray<ENiagaraNamespaceMetadataOptions>);
         Namespaces: TArray<string>;
         RequiredNamespaceModifier: string;
@@ -53911,6 +54957,7 @@ declare module "ue" {
     }
     
     class NiagaraCompileHashVisitorDebugInfo {
+        constructor();
         constructor(Object: string, PropertyKeys: TArray<string>, PropertyValues: TArray<string>);
         Object: string;
         PropertyKeys: TArray<string>;
@@ -53919,6 +54966,7 @@ declare module "ue" {
     }
     
     class NiagaraGraphScriptUsageInfo {
+        constructor();
         constructor(BaseId: Guid, UsageType: ENiagaraScriptUsage, UsageId: Guid, CompileHash: NiagaraCompileHash, CompileHashFromGraph: NiagaraCompileHash, CompileLastObjects: TArray<NiagaraCompileHashVisitorDebugInfo>, Traversal: TArray<NiagaraNode>, DataHash: TArray<number>, GeneratedCompileId: Guid);
         BaseId: Guid;
         UsageType: ENiagaraScriptUsage;
@@ -53933,6 +54981,7 @@ declare module "ue" {
     }
     
     class NiagaraGraphParameterReference {
+        constructor();
         constructor(Key: Guid, Value: TWeakObjectPtr<Object>);
         Key: Guid;
         Value: TWeakObjectPtr<Object>;
@@ -53940,6 +54989,7 @@ declare module "ue" {
     }
     
     class NiagaraGraphParameterReferenceCollection {
+        constructor();
         constructor(ParameterReferences: TArray<NiagaraGraphParameterReference>, Graph: NiagaraGraph, bCreated: boolean);
         ParameterReferences: TArray<NiagaraGraphParameterReference>;
         Graph: NiagaraGraph;
@@ -53985,6 +55035,7 @@ declare module "ue" {
     }
     
     class NiagaraConvertConnection {
+        constructor();
         constructor(SourcePinId: Guid, SourcePath: TArray<string>, DestinationPinId: Guid, DestinationPath: TArray<string>);
         SourcePinId: Guid;
         SourcePath: TArray<string>;
@@ -53994,6 +55045,7 @@ declare module "ue" {
     }
     
     class NiagaraConvertPinRecord {
+        constructor();
         constructor(PinId: Guid, Path: TArray<string>);
         PinId: Guid;
         Path: TArray<string>;
@@ -54045,6 +55097,7 @@ declare module "ue" {
     }
     
     class PinGuidsForPath {
+        constructor();
         constructor(OutputPinGuid: Guid, InputAPinGuid: Guid, InputBPinGuid: Guid);
         OutputPinGuid: Guid;
         InputAPinGuid: Guid;
@@ -54064,6 +55117,7 @@ declare module "ue" {
     
     enum ENiagaraInputNodeUsage { Undefined, Parameter, Attribute, SystemConstant, TranslatorConstant, RapidIterationParameter, ENiagaraInputNodeUsage_MAX}
     class NiagaraInputExposureOptions {
+        constructor();
         constructor(bExposed: boolean, bRequired: boolean, bCanAutoBind: boolean, bHidden: boolean);
         bExposed: boolean;
         bRequired: boolean;
@@ -54085,6 +55139,7 @@ declare module "ue" {
     }
     
     class AddedPinData {
+        constructor();
         constructor(PinType: EdGraphPinType, PinName: string);
         PinType: EdGraphPinType;
         PinName: string;
@@ -54172,6 +55227,7 @@ declare module "ue" {
     
     enum ENiagaraStaticSwitchType { Bool, Integer, Enum, ENiagaraStaticSwitchType_MAX}
     class StaticSwitchTypeData {
+        constructor();
         constructor(SwitchType: ENiagaraStaticSwitchType, MaxIntCount: number, Enum: Enum, SwitchConstant: string);
         SwitchType: ENiagaraStaticSwitchType;
         MaxIntCount: number;
@@ -54590,6 +55646,7 @@ declare module "ue" {
     }
     
     class NiagaraGraphViewSettings {
+        constructor();
         constructor(Location: Vector2D, Zoom: number, bIsValid: boolean);
         Location: Vector2D;
         Zoom: number;
@@ -54679,6 +55736,7 @@ declare module "ue" {
     enum EMagicLeapPlaneQueryFlags { Vertical, Horizontal, Arbitrary, OrientToGravity, PreferInner, Ceiling, Floor, Wall, Polygons, EMagicLeapPlaneQueryFlags_MAX}
     enum EMagicLeapPlaneQueryType { Bulk, Delta, EMagicLeapPlaneQueryType_MAX}
     class MagicLeapPlaneResult {
+        constructor();
         constructor(PlanePosition: Vector, PlaneOrientation: Rotator, ContentOrientation: Rotator, PlaneDimensions: Vector2D, PlaneFlags: TArray<EMagicLeapPlaneQueryFlags>, ID: Guid, InnerID: Guid);
         PlanePosition: Vector;
         PlaneOrientation: Rotator;
@@ -54691,12 +55749,14 @@ declare module "ue" {
     }
     
     class MagicLeapPolygon {
+        constructor();
         constructor(Vertices: TArray<Vector>);
         Vertices: TArray<Vector>;
         static StaticClass(): Class;
     }
     
     class MagicLeapPlaneBoundary {
+        constructor();
         constructor(Polygon: MagicLeapPolygon, Holes: TArray<MagicLeapPolygon>);
         Polygon: MagicLeapPolygon;
         Holes: TArray<MagicLeapPolygon>;
@@ -54704,6 +55764,7 @@ declare module "ue" {
     }
     
     class MagicLeapPlaneBoundaries {
+        constructor();
         constructor(ID: Guid, Boundaries: TArray<MagicLeapPlaneBoundary>);
         ID: Guid;
         Boundaries: TArray<MagicLeapPlaneBoundary>;
@@ -54728,6 +55789,7 @@ declare module "ue" {
     }
     
     class MagicLeapPlanesQuery {
+        constructor();
         constructor(Flags: TArray<EMagicLeapPlaneQueryFlags>, SearchVolume: BoxComponent, MaxResults: number, MinHoleLength: number, MinPlaneArea: number, SearchVolumePosition: Vector, SearchVolumeOrientation: Quat, SearchVolumeExtents: Vector, SimilarityThreshold: number, bSearchVolumeTrackingSpace: boolean, bResultTrackingSpace: boolean);
         Flags: TArray<EMagicLeapPlaneQueryFlags>;
         SearchVolume: BoxComponent;
@@ -54770,6 +55832,7 @@ declare module "ue" {
     }
     
     class MagicLeapLightEstimationColorTemperatureState {
+        constructor();
         constructor(ColorTemperatureKelvin: number, AmbientColor: LinearColor, Timestamp: Timespan);
         ColorTemperatureKelvin: number;
         AmbientColor: LinearColor;
@@ -54778,6 +55841,7 @@ declare module "ue" {
     }
     
     class MagicLeapLightEstimationAmbientGlobalState {
+        constructor();
         constructor(AmbientIntensityNits: TArray<number>, Timestamp: Timespan);
         AmbientIntensityNits: TArray<number>;
         Timestamp: Timespan;
@@ -54810,6 +55874,7 @@ declare module "ue" {
     }
     
     class MagicLeapARPinState {
+        constructor();
         constructor(Confidence: number, ValidRadius: number, RotationError: number, TranslationError: number, PinType: EMagicLeapARPinType);
         Confidence: number;
         ValidRadius: number;
@@ -54857,6 +55922,7 @@ declare module "ue" {
     }
     
     class MagicLeapARPinQuery {
+        constructor();
         constructor(Types: TSet<EMagicLeapARPinType>, MaxResults: number, TargetPoint: Vector, Radius: number, bSorted: boolean);
         Types: TSet<EMagicLeapARPinType>;
         MaxResults: number;
@@ -54926,6 +55992,7 @@ declare module "ue" {
     }
     
     class MagicLeapARPinObjectIdList {
+        constructor();
         constructor(ObjectIdList: TSet<string>);
         ObjectIdList: TSet<string>;
         static StaticClass(): Class;
@@ -55081,6 +56148,7 @@ declare module "ue" {
     enum EMagicLeapTouchpadGestureType { None, Tap, ForceTapDown, ForceTapUp, ForceDwell, SecondForceDown, LongHold, RadialScroll, Swipe, Scroll, Pinch, EMagicLeapTouchpadGestureType_MAX}
     enum EMagicLeapTouchpadGestureDirection { None, Up, Down, Left, Right, In, Out, Clockwise, CounterClockwise, EMagicLeapTouchpadGestureDirection_MAX}
     class MagicLeapTouchpadGesture {
+        constructor();
         constructor(Hand: EControllerHand, MotionSource: string, Type: EMagicLeapTouchpadGestureType, Direction: EMagicLeapTouchpadGestureDirection, PositionAndForce: Vector, Speed: number, Distance: number, FingerGap: number, Radius: number, Angle: number);
         Hand: EControllerHand;
         MotionSource: string;
@@ -55107,6 +56175,7 @@ declare module "ue" {
     }
     
     class EyeTrackerStereoGazeData {
+        constructor();
         constructor(LeftEyeOrigin: Vector, LeftEyeDirection: Vector, RightEyeOrigin: Vector, RightEyeDirection: Vector, FixationPoint: Vector, ConfidenceValue: number);
         LeftEyeOrigin: Vector;
         LeftEyeDirection: Vector;
@@ -55118,6 +56187,7 @@ declare module "ue" {
     }
     
     class EyeTrackerGazeData {
+        constructor();
         constructor(GazeOrigin: Vector, GazeDirection: Vector, FixationPoint: Vector, ConfidenceValue: number);
         GazeOrigin: Vector;
         GazeDirection: Vector;
@@ -55139,6 +56209,7 @@ declare module "ue" {
     }
     
     class MagicLeapEyeBlinkState {
+        constructor();
         constructor(LeftEyeBlinked: boolean, RightEyeBlinked: boolean);
         LeftEyeBlinked: boolean;
         RightEyeBlinked: boolean;
@@ -55198,6 +56269,7 @@ declare module "ue" {
     enum EMagicLeapIdentityError { Ok, InvalidParam, AllocFailed, PrivilegeDenied, FailedToConnectToLocalService, FailedToConnectToCloudService, CloudAuthentication, InvalidInformationFromCloud, NotLoggedIn, ExpiredCredentials, FailedToGetUserProfile, Unauthorized, CertificateError, RejectedByCloud, AlreadyLoggedIn, ModifyIsNotSupported, NetworkError, UnspecifiedFailure, EMagicLeapIdentityError_MAX}
     enum EMagicLeapIdentityKey { GivenName, FamilyName, Email, Bio, PhoneNumber, Avatar2D, Avatar3D, Unknown, EMagicLeapIdentityKey_MAX}
     class MagicLeapIdentityAttribute {
+        constructor();
         constructor(Attribute: EMagicLeapIdentityKey, Value: string);
         Attribute: EMagicLeapIdentityKey;
         Value: string;
@@ -55269,55 +56341,6 @@ declare module "ue" {
         static Load(InName: string): MagicLeapHandMeshingFunctionLibrary;
     }
     
-    enum EActorSequenceObjectReferenceType { ContextActor, ExternalActor, Component, EActorSequenceObjectReferenceType_MAX}
-    class ActorSequenceObjectReference {
-        constructor(Type: EActorSequenceObjectReferenceType, ActorId: Guid, PathToComponent: string);
-        Type: EActorSequenceObjectReferenceType;
-        ActorId: Guid;
-        PathToComponent: string;
-        static StaticClass(): Class;
-    }
-    
-    class ActorSequenceObjectReferences {
-        constructor(Array: TArray<ActorSequenceObjectReference>);
-        Array: TArray<ActorSequenceObjectReference>;
-        static StaticClass(): Class;
-    }
-    
-    class ActorSequenceObjectReferenceMap {
-        constructor(BindingIds: TArray<Guid>, References: TArray<ActorSequenceObjectReferences>);
-        BindingIds: TArray<Guid>;
-        References: TArray<ActorSequenceObjectReferences>;
-        static StaticClass(): Class;
-    }
-    
-    class ActorSequence extends MovieSceneSequence {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MovieScene: MovieScene;
-        ObjectReferences: ActorSequenceObjectReferenceMap;
-        bHasBeenInitialized: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ActorSequence;
-        static Load(InName: string): ActorSequence;
-    }
-    
-    class ActorSequencePlayer extends MovieSceneSequencePlayer {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ActorSequencePlayer;
-        static Load(InName: string): ActorSequencePlayer;
-    }
-    
-    class ActorSequenceComponent extends ActorComponent {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        PlaybackSettings: MovieSceneSequencePlaybackSettings;
-        Sequence: ActorSequence;
-        SequencePlayer: ActorSequencePlayer;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ActorSequenceComponent;
-        static Load(InName: string): ActorSequenceComponent;
-    }
-    
     class TcpMessagingSettings extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         EnableTransport: boolean;
@@ -55349,6 +56372,58 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): UdpMessagingSettings;
         static Load(InName: string): UdpMessagingSettings;
+    }
+    
+    enum EActorSequenceObjectReferenceType { ContextActor, ExternalActor, Component, EActorSequenceObjectReferenceType_MAX}
+    class ActorSequenceObjectReference {
+        constructor();
+        constructor(Type: EActorSequenceObjectReferenceType, ActorId: Guid, PathToComponent: string);
+        Type: EActorSequenceObjectReferenceType;
+        ActorId: Guid;
+        PathToComponent: string;
+        static StaticClass(): Class;
+    }
+    
+    class ActorSequenceObjectReferences {
+        constructor();
+        constructor(Array: TArray<ActorSequenceObjectReference>);
+        Array: TArray<ActorSequenceObjectReference>;
+        static StaticClass(): Class;
+    }
+    
+    class ActorSequenceObjectReferenceMap {
+        constructor();
+        constructor(BindingIds: TArray<Guid>, References: TArray<ActorSequenceObjectReferences>);
+        BindingIds: TArray<Guid>;
+        References: TArray<ActorSequenceObjectReferences>;
+        static StaticClass(): Class;
+    }
+    
+    class ActorSequence extends MovieSceneSequence {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MovieScene: MovieScene;
+        ObjectReferences: ActorSequenceObjectReferenceMap;
+        bHasBeenInitialized: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ActorSequence;
+        static Load(InName: string): ActorSequence;
+    }
+    
+    class ActorSequencePlayer extends MovieSceneSequencePlayer {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ActorSequencePlayer;
+        static Load(InName: string): ActorSequencePlayer;
+    }
+    
+    class ActorSequenceComponent extends ActorComponent {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        PlaybackSettings: MovieSceneSequencePlaybackSettings;
+        Sequence: ActorSequence;
+        SequencePlayer: ActorSequencePlayer;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ActorSequenceComponent;
+        static Load(InName: string): ActorSequenceComponent;
     }
     
     class AudioAnalyzerAsset extends Object {
@@ -55468,6 +56543,7 @@ declare module "ue" {
     
     enum ELocationAccuracy { LA_ThreeKilometers, LA_OneKilometer, LA_HundredMeters, LA_TenMeters, LA_Best, LA_Navigation, LA_MAX}
     class LocationServicesData {
+        constructor();
         constructor(Timestamp: number, Longitude: number, Latitude: number, HorizontalAccuracy: number, VerticalAccuracy: number, Altitude: number);
         Timestamp: number;
         Longitude: number;
@@ -55501,6 +56577,7 @@ declare module "ue" {
     }
     
     class WheelSetup {
+        constructor();
         constructor(WheelClass: Class, BoneName: string, AdditionalOffset: Vector, bDisableSteering: boolean);
         WheelClass: Class;
         BoneName: string;
@@ -55510,6 +56587,7 @@ declare module "ue" {
     }
     
     class TireConfigMaterialFriction {
+        constructor();
         constructor(PhysicalMaterial: PhysicalMaterial, FrictionScale: number);
         PhysicalMaterial: PhysicalMaterial;
         FrictionScale: number;
@@ -55572,6 +56650,7 @@ declare module "ue" {
     }
     
     class ReplicatedVehicleState {
+        constructor();
         constructor(SteeringInput: number, ThrottleInput: number, BrakeInput: number, HandbrakeInput: number, CurrentGear: number);
         SteeringInput: number;
         ThrottleInput: number;
@@ -55582,6 +56661,7 @@ declare module "ue" {
     }
     
     class VehicleInputRate {
+        constructor();
         constructor(RiseRate: number, FallRate: number);
         RiseRate: number;
         FallRate: number;
@@ -55698,6 +56778,7 @@ declare module "ue" {
     }
     
     class VehicleEngineData {
+        constructor();
         constructor(TorqueCurve: RuntimeFloatCurve, MaxRPM: number, MOI: number, DampingRateFullThrottle: number, DampingRateZeroThrottleClutchEngaged: number, DampingRateZeroThrottleClutchDisengaged: number);
         TorqueCurve: RuntimeFloatCurve;
         MaxRPM: number;
@@ -55710,6 +56791,7 @@ declare module "ue" {
     
     enum EVehicleDifferential4W { LimitedSlip_4W, LimitedSlip_FrontDrive, LimitedSlip_RearDrive, Open_4W, Open_FrontDrive, Open_RearDrive, EVehicleDifferential4W_MAX}
     class VehicleDifferential4WData {
+        constructor();
         constructor(DifferentialType: EVehicleDifferential4W, FrontRearSplit: number, FrontLeftRightSplit: number, RearLeftRightSplit: number, CentreBias: number, FrontBias: number, RearBias: number);
         DifferentialType: EVehicleDifferential4W;
         FrontRearSplit: number;
@@ -55722,6 +56804,7 @@ declare module "ue" {
     }
     
     class VehicleGearData {
+        constructor();
         constructor(Ratio: number, DownRatio: number, UpRatio: number);
         Ratio: number;
         DownRatio: number;
@@ -55730,6 +56813,7 @@ declare module "ue" {
     }
     
     class VehicleTransmissionData {
+        constructor();
         constructor(bUseGearAutoBox: boolean, GearSwitchTime: number, GearAutoBoxLatency: number, FinalRatio: number, ForwardGears: TArray<VehicleGearData>, ReverseGearRatio: number, NeutralGearUpRatio: number, ClutchStrength: number);
         bUseGearAutoBox: boolean;
         GearSwitchTime: number;
@@ -55773,6 +56857,119 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): AmbisonicsEncodingSettings;
         static Load(InName: string): AmbisonicsEncodingSettings;
+    }
+    
+    class EdGraph_ReferenceViewer extends EdGraph {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): EdGraph_ReferenceViewer;
+        static Load(InName: string): EdGraph_ReferenceViewer;
+    }
+    
+    class EdGraphNode_Reference extends EdGraphNode {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): EdGraphNode_Reference;
+        static Load(InName: string): EdGraphNode_Reference;
+    }
+    
+    class ReferenceViewerSchema extends EdGraphSchema {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ReferenceViewerSchema;
+        static Load(InName: string): ReferenceViewerSchema;
+    }
+    
+    class InternationalizationExportSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        CulturesToGenerate: TArray<string>;
+        CommandletClass: string;
+        SourcePath: string;
+        DestinationPath: string;
+        PortableObjectName: string;
+        ManifestName: string;
+        ArchiveName: string;
+        bExportLoc: boolean;
+        bImportLoc: boolean;
+        bUseCultureDirectory: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): InternationalizationExportSettings;
+        static Load(InName: string): InternationalizationExportSettings;
+    }
+    
+    class TranslationPickerSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        bSubmitTranslationPickerChangesToLocalizationService: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TranslationPickerSettings;
+        static Load(InName: string): TranslationPickerSettings;
+    }
+    
+    class TranslationChange {
+        constructor();
+        constructor(Version: string, DateAndTime: DateTime, Source: string, Translation: string);
+        Version: string;
+        DateAndTime: DateTime;
+        Source: string;
+        Translation: string;
+        static StaticClass(): Class;
+    }
+    
+    class TranslationContextInfo {
+        constructor();
+        constructor(Key: string, Context: string, Changes: TArray<TranslationChange>);
+        Key: string;
+        Context: string;
+        Changes: TArray<TranslationChange>;
+        static StaticClass(): Class;
+    }
+    
+    class TranslationUnit extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Namespace: string;
+        Key: string;
+        Source: string;
+        Translation: string;
+        Contexts: TArray<TranslationContextInfo>;
+        HasBeenReviewed: boolean;
+        TranslationBeforeImport: string;
+        LocresPath: string;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): TranslationUnit;
+        static Load(InName: string): TranslationUnit;
+    }
+    
+    class PixelInspectorView extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FinalColor: LinearColor;
+        SceneColor: LinearColor;
+        PreExposure: number;
+        Luminance: number;
+        HdrColor: LinearColor;
+        Normal: Vector;
+        PerObjectGBufferData: number;
+        Metallic: number;
+        Specular: number;
+        Roughness: number;
+        MaterialShadingModel: EMaterialShadingModel;
+        SelectiveOutputMask: number;
+        BaseColor: LinearColor;
+        IndirectIrradiance: number;
+        AmbientOcclusion: number;
+        SubSurfaceColor: LinearColor;
+        SubsurfaceProfile: Vector;
+        Opacity: number;
+        ClearCoat: number;
+        ClearCoatRoughness: number;
+        WorldNormal: Vector;
+        BackLit: number;
+        Cloth: number;
+        EyeTangent: Vector;
+        IrisMask: number;
+        IrisDistance: number;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): PixelInspectorView;
+        static Load(InName: string): PixelInspectorView;
     }
     
     class DynamicDelegateProxy extends Object {
@@ -56009,6 +57206,7 @@ declare module "ue" {
     }
     
     class PaintTexture2DData {
+        constructor();
         constructor(PaintingTexture2D: Texture2D, PaintingTexture2DDuplicate: Texture2D, PaintRenderTargetTexture: TextureRenderTarget2D, CloneRenderTargetTexture: TextureRenderTarget2D, PaintingMaterials: TArray<MaterialInterface>);
         PaintingTexture2D: Texture2D;
         PaintingTexture2DDuplicate: Texture2D;
@@ -56187,6 +57385,7 @@ declare module "ue" {
     
     enum ETutorialContent { None, Text, UDNExcerpt, RichText, ETutorialContent_MAX}
     class TutorialContent {
+        constructor();
         constructor(Type: ETutorialContent, Content: string, ExcerptName: string, Text: string);
         Type: ETutorialContent;
         Content: string;
@@ -56197,6 +57396,7 @@ declare module "ue" {
     
     enum ETutorialAnchorIdentifier { None, NamedWidget, Asset, ETutorialAnchorIdentifier_MAX}
     class TutorialContentAnchor {
+        constructor();
         constructor(Type: ETutorialAnchorIdentifier, WrapperIdentifier: string, Asset: SoftObjectPath, bDrawHighlight: boolean, TabToFocusOrOpen: string, FriendlyName: string, GUIDString: string, OuterName: string);
         Type: ETutorialAnchorIdentifier;
         WrapperIdentifier: string;
@@ -56210,6 +57410,7 @@ declare module "ue" {
     }
     
     class TutorialWidgetContent {
+        constructor();
         constructor(Content: TutorialContent, WidgetAnchor: TutorialContentAnchor, HorizontalAlignment: EHorizontalAlignment, VerticalAlignment: EVerticalAlignment, Offset: Vector2D, ContentWidth: number, bAutoFocus: boolean);
         Content: TutorialContent;
         WidgetAnchor: TutorialContentAnchor;
@@ -56222,6 +57423,7 @@ declare module "ue" {
     }
     
     class TutorialStage {
+        constructor();
         constructor(Name: string, Content: TutorialContent, WidgetContent: TArray<TutorialWidgetContent>, NextButtonText: string, BackButtonText: string, PlatformsToTest: TArray<string>, bInvertPlatformTest: boolean);
         Name: string;
         Content: TutorialContent;
@@ -56280,6 +57482,7 @@ declare module "ue" {
     }
     
     class TutorialCategory {
+        constructor();
         constructor(Identifier: string, Title: string, SortOrder: number, Description: string, Icon: string, Texture: SoftObjectPath);
         Identifier: string;
         Title: string;
@@ -56291,6 +57494,7 @@ declare module "ue" {
     }
     
     class TutorialContext {
+        constructor();
         constructor(Context: string, BrowserFilter: string, AttractTutorial: SoftClassPath, LaunchTutorial: SoftClassPath);
         Context: string;
         BrowserFilter: string;
@@ -56320,6 +57524,7 @@ declare module "ue" {
     }
     
     class TutorialProgress {
+        constructor();
         constructor(Tutorial: SoftClassPath, CurrentStage: number, bUserDismissed: boolean);
         Tutorial: SoftClassPath;
         CurrentStage: number;
@@ -56498,6 +57703,7 @@ declare module "ue" {
     }
     
     class TileSetImportMapping {
+        constructor();
         constructor(SourceName: string, ImportedTileSet: TWeakObjectPtr<PaperTileSet>, ImportedTexture: TWeakObjectPtr<Texture>);
         SourceName: string;
         ImportedTileSet: TWeakObjectPtr<PaperTileSet>;
@@ -56602,6 +57808,7 @@ declare module "ue" {
     }
     
     class CryptoEncryptionKey {
+        constructor();
         constructor(Guid: Guid, Name: string, Key: string);
         Guid: Guid;
         Name: string;
@@ -56640,6 +57847,7 @@ declare module "ue" {
     }
     
     class CurveEditorRetimeAnchor {
+        constructor();
         constructor(ValueInSeconds: number, bIsSelected: boolean);
         ValueInSeconds: number;
         bIsSelected: boolean;
@@ -56730,6 +57938,7 @@ declare module "ue" {
     }
     
     class MyPluginStruct {
+        constructor();
         constructor(TestString: string);
         TestString: string;
         static StaticClass(): Class;
@@ -56802,74 +58011,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): MagicLeapAudioFunctionLibrary;
         static Load(InName: string): MagicLeapAudioFunctionLibrary;
-    }
-    
-    class MagicLeapSharedWorldSharedData {
-        constructor(PinIDs: TArray<Guid>);
-        PinIDs: TArray<Guid>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldPinData {
-        constructor(PinID: Guid, PinState: MagicLeapARPinState);
-        PinID: Guid;
-        PinState: MagicLeapARPinState;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldLocalData {
-        constructor(LocalPins: TArray<MagicLeapSharedWorldPinData>);
-        LocalPins: TArray<MagicLeapSharedWorldPinData>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldAlignmentTransforms {
-        constructor(AlignmentTransforms: TArray<Transform>);
-        AlignmentTransforms: TArray<Transform>;
-        static StaticClass(): Class;
-    }
-    
-    class MagicLeapSharedWorldPlayerController extends PlayerController {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
-        ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
-        IsChosenOne(): boolean;
-        ClientSetChosenOne(bChosenOne: boolean): void;
-        ClientMarkReadyForSendingLocalData(): void;
-        CanSendLocalDataToServer(): boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldPlayerController;
-        static Load(InName: string): MagicLeapSharedWorldPlayerController;
-    }
-    
-    class MagicLeapSharedWorldGameMode extends GameMode {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SharedWorldData: MagicLeapSharedWorldSharedData;
-        OnNewLocalDataFromClients: $MulticastDelegate<() => void>;
-        PinSelectionConfidenceThreshold: number;
-        ChosenOne: MagicLeapSharedWorldPlayerController;
-        SendSharedWorldDataToClients(): boolean;
-        SelectChosenOne(): void;
-        MagicLeapOnNewLocalDataFromClients__DelegateSignature(): void;
-        DetermineSharedWorldData(NewSharedWorldData: $Ref<MagicLeapSharedWorldSharedData>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameMode;
-        static Load(InName: string): MagicLeapSharedWorldGameMode;
-    }
-    
-    class MagicLeapSharedWorldGameState extends GameState {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        SharedWorldData: MagicLeapSharedWorldSharedData;
-        AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
-        OnSharedWorldDataUpdated: $MulticastDelegate<() => void>;
-        OnAlignmentTransformsUpdated: $MulticastDelegate<() => void>;
-        OnReplicate_SharedWorldData(): void;
-        OnReplicate_AlignmentTransforms(): void;
-        MagicLeapSharedWorldEvent__DelegateSignature(): void;
-        CalculateXRCameraRootTransform(): Transform;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameState;
-        static Load(InName: string): MagicLeapSharedWorldGameState;
     }
     
     class GeometryCacheTrack extends Object {
@@ -57002,6 +58143,7 @@ declare module "ue" {
     
     enum EAlembicSamplingType { PerFrame, PerXFrames, PerTimeStep, EAlembicSamplingType_MAX}
     class AbcSamplingSettings {
+        constructor();
         constructor(SamplingType: EAlembicSamplingType, FrameSteps: number, TimeSteps: number, FrameStart: number, FrameEnd: number, bSkipEmpty: boolean);
         SamplingType: EAlembicSamplingType;
         FrameSteps: number;
@@ -57023,6 +58165,7 @@ declare module "ue" {
     
     enum EAlembicImportType { StaticMesh, GeometryCache, Skeletal, EAlembicImportType_MAX}
     class AbcNormalGenerationSettings {
+        constructor();
         constructor(bForceOneSmoothingGroupPerObject: boolean, HardEdgeAngleThreshold: number, bRecomputeNormals: boolean, bIgnoreDegenerateTriangles: boolean, bSkipComputingTangents: boolean);
         bForceOneSmoothingGroupPerObject: boolean;
         HardEdgeAngleThreshold: number;
@@ -57033,6 +58176,7 @@ declare module "ue" {
     }
     
     class AbcMaterialSettings {
+        constructor();
         constructor(bCreateMaterials: boolean, bFindMaterials: boolean);
         bCreateMaterials: boolean;
         bFindMaterials: boolean;
@@ -57041,6 +58185,7 @@ declare module "ue" {
     
     enum EBaseCalculationType { None, PercentageBased, FixedNumber, NoCompression, EBaseCalculationType_MAX}
     class AbcCompressionSettings {
+        constructor();
         constructor(bMergeMeshes: boolean, bBakeMatrixAnimation: boolean, BaseCalculationType: EBaseCalculationType, PercentageOfTotalBases: number, MaxNumberOfBases: number, MinimumNumberOfVertexInfluencePercentage: number);
         bMergeMeshes: boolean;
         bBakeMatrixAnimation: boolean;
@@ -57052,6 +58197,7 @@ declare module "ue" {
     }
     
     class AbcStaticMeshSettings {
+        constructor();
         constructor(bMergeMeshes: boolean, bPropagateMatrixTransformations: boolean, bGenerateLightmapUVs: boolean);
         bMergeMeshes: boolean;
         bPropagateMatrixTransformations: boolean;
@@ -57061,6 +58207,7 @@ declare module "ue" {
     
     enum EAbcGeometryCacheMotionVectorsImport { NoMotionVectors, ImportAbcVelocitiesAsMotionVectors, CalculateMotionVectorsDuringImport, EAbcGeometryCacheMotionVectorsImport_MAX}
     class AbcGeometryCacheSettings {
+        constructor();
         constructor(bFlattenTracks: boolean, bApplyConstantTopologyOptimizations: boolean, bCalculateMotionVectorsDuringImport: boolean, MotionVectors: EAbcGeometryCacheMotionVectorsImport, bOptimizeIndexBuffers: boolean, CompressedPositionPrecision: number, CompressedTextureCoordinatesNumberOfBits: number);
         bFlattenTracks: boolean;
         bApplyConstantTopologyOptimizations: boolean;
@@ -57074,6 +58221,7 @@ declare module "ue" {
     
     enum EAbcConversionPreset { Maya, Max, Custom, EAbcConversionPreset_MAX}
     class AbcConversionSettings {
+        constructor();
         constructor(Preset: EAbcConversionPreset, bFlipU: boolean, bFlipV: boolean, Scale: Vector, Rotation: Vector);
         Preset: EAbcConversionPreset;
         bFlipU: boolean;
@@ -57128,6 +58276,78 @@ declare module "ue" {
         static Load(InName: string): GeometryCacheThumbnailRenderer;
     }
     
+    class MagicLeapSharedWorldSharedData {
+        constructor();
+        constructor(PinIDs: TArray<Guid>);
+        PinIDs: TArray<Guid>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldPinData {
+        constructor();
+        constructor(PinID: Guid, PinState: MagicLeapARPinState);
+        PinID: Guid;
+        PinState: MagicLeapARPinState;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldLocalData {
+        constructor();
+        constructor(LocalPins: TArray<MagicLeapSharedWorldPinData>);
+        LocalPins: TArray<MagicLeapSharedWorldPinData>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldAlignmentTransforms {
+        constructor();
+        constructor(AlignmentTransforms: TArray<Transform>);
+        AlignmentTransforms: TArray<Transform>;
+        static StaticClass(): Class;
+    }
+    
+    class MagicLeapSharedWorldPlayerController extends PlayerController {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
+        ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
+        IsChosenOne(): boolean;
+        ClientSetChosenOne(bChosenOne: boolean): void;
+        ClientMarkReadyForSendingLocalData(): void;
+        CanSendLocalDataToServer(): boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldPlayerController;
+        static Load(InName: string): MagicLeapSharedWorldPlayerController;
+    }
+    
+    class MagicLeapSharedWorldGameMode extends GameMode {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SharedWorldData: MagicLeapSharedWorldSharedData;
+        OnNewLocalDataFromClients: $MulticastDelegate<() => void>;
+        PinSelectionConfidenceThreshold: number;
+        ChosenOne: MagicLeapSharedWorldPlayerController;
+        SendSharedWorldDataToClients(): boolean;
+        SelectChosenOne(): void;
+        MagicLeapOnNewLocalDataFromClients__DelegateSignature(): void;
+        DetermineSharedWorldData(NewSharedWorldData: $Ref<MagicLeapSharedWorldSharedData>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameMode;
+        static Load(InName: string): MagicLeapSharedWorldGameMode;
+    }
+    
+    class MagicLeapSharedWorldGameState extends GameState {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        SharedWorldData: MagicLeapSharedWorldSharedData;
+        AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
+        OnSharedWorldDataUpdated: $MulticastDelegate<() => void>;
+        OnAlignmentTransformsUpdated: $MulticastDelegate<() => void>;
+        OnReplicate_SharedWorldData(): void;
+        OnReplicate_AlignmentTransforms(): void;
+        MagicLeapSharedWorldEvent__DelegateSignature(): void;
+        CalculateXRCameraRootTransform(): Transform;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MagicLeapSharedWorldGameState;
+        static Load(InName: string): MagicLeapSharedWorldGameState;
+    }
+    
     class AutomationUtilsBlueprintLibrary extends BlueprintFunctionLibrary {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static TakeGameplayAutomationScreenshot(ScreenshotName: string, MaxGlobalError?: number /* = 0.020000 */, MaxLocalError?: number /* = 0.120000 */, MapNameOverride?: string /* = "" */): void;
@@ -57158,6 +58378,7 @@ declare module "ue" {
     }
     
     class ChaosHandlerSet {
+        constructor();
         constructor(ChaosHandlers: TSet<Object>);
         ChaosHandlers: TSet<Object>;
         static StaticClass(): Class;
@@ -57185,6 +58406,7 @@ declare module "ue" {
     }
     
     class ChaosPhysicsCollisionInfo {
+        constructor();
         constructor(Component: PrimitiveComponent, OtherComponent: PrimitiveComponent, Location: Vector, Normal: Vector, AccumulatedImpulse: Vector, Velocity: Vector, OtherVelocity: Vector, AngularVelocity: Vector, OtherAngularVelocity: Vector, Mass: number, OtherMass: number);
         Component: PrimitiveComponent;
         OtherComponent: PrimitiveComponent;
@@ -57217,6 +58439,7 @@ declare module "ue" {
     
     enum EClusterConnectionTypeEnum { Chaos_PointImplicit, Chaos_DelaunayTriangulation, Chaos_MinimalSpanningSubsetDelaunayTriangulation, Chaos_PointImplicitAugmentedWithMinimalDelaunay, Chaos_None, Chaos_EClsuterCreationParameters_Max, Chaos_MAX}
     class ChaosDebugSubstepControl {
+        constructor();
         constructor(bPause: boolean, bSubstep: boolean, bStep: boolean);
         bPause: boolean;
         bSubstep: boolean;
@@ -57606,38 +58829,9 @@ declare module "ue" {
         static Load(InName: string): NiagaraDataInterfaceFieldSystem;
     }
     
-    class MovieSceneGeometryCacheParams {
-        constructor(GeometryCacheAsset: GeometryCache, FirstLoopStartFrameOffset: FrameNumber, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number, bReverse: boolean, StartOffset: number, EndOffset: number, GeometryCache: SoftObjectPath);
-        GeometryCacheAsset: GeometryCache;
-        FirstLoopStartFrameOffset: FrameNumber;
-        StartFrameOffset: FrameNumber;
-        EndFrameOffset: FrameNumber;
-        PlayRate: number;
-        bReverse: boolean;
-        StartOffset: number;
-        EndOffset: number;
-        GeometryCache: SoftObjectPath;
-        static StaticClass(): Class;
-    }
-    
-    class MovieSceneGeometryCacheSection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Params: MovieSceneGeometryCacheParams;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheSection;
-        static Load(InName: string): MovieSceneGeometryCacheSection;
-    }
-    
-    class MovieSceneGeometryCacheTrack extends MovieSceneNameableTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationSections: TArray<MovieSceneSection>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheTrack;
-        static Load(InName: string): MovieSceneGeometryCacheTrack;
-    }
-    
     enum EChaosCollisionSortMethod { SortNone, SortByHighestMass, SortByHighestSpeed, SortByHighestImpulse, SortByNearestFirst, Count, EChaosCollisionSortMethod_MAX}
     class ChaosCollisionEventRequestSettings {
+        constructor();
         constructor(MaxNumberResults: number, MinMass: number, MinSpeed: number, MinImpulse: number, MaxDistance: number, SortMethod: EChaosCollisionSortMethod);
         MaxNumberResults: number;
         MinMass: number;
@@ -57650,6 +58844,7 @@ declare module "ue" {
     
     enum EChaosBreakingSortMethod { SortNone, SortByHighestMass, SortByHighestSpeed, SortByNearestFirst, Count, EChaosBreakingSortMethod_MAX}
     class ChaosBreakingEventRequestSettings {
+        constructor();
         constructor(MaxNumberOfResults: number, MinRadius: number, MinSpeed: number, MinMass: number, MaxDistance: number, SortMethod: EChaosBreakingSortMethod);
         MaxNumberOfResults: number;
         MinRadius: number;
@@ -57662,6 +58857,7 @@ declare module "ue" {
     
     enum EChaosTrailingSortMethod { SortNone, SortByHighestMass, SortByHighestSpeed, SortByNearestFirst, Count, EChaosTrailingSortMethod_MAX}
     class ChaosTrailingEventRequestSettings {
+        constructor();
         constructor(MaxNumberOfResults: number, MinMass: number, MinSpeed: number, MinAngularSpeed: number, MaxDistance: number, SortMethod: EChaosTrailingSortMethod);
         MaxNumberOfResults: number;
         MinMass: number;
@@ -57673,6 +58869,7 @@ declare module "ue" {
     }
     
     class GeometryCollectionSource {
+        constructor();
         constructor(SourceGeometryObject: SoftObjectPath, LocalTransform: Transform, SourceMaterial: TArray<MaterialInterface>);
         SourceGeometryObject: SoftObjectPath;
         LocalTransform: Transform;
@@ -57683,6 +58880,7 @@ declare module "ue" {
     enum ECollisionTypeEnum { Chaos_Volumetric, Chaos_Surface_Volumetric, Chaos_Max, Chaos_MAX}
     enum EImplicitTypeEnum { Chaos_Implicit_Box, Chaos_Implicit_Sphere, Chaos_Implicit_Capsule, Chaos_Implicit_LevelSet, Chaos_Implicit_None, Chaos_Max, Chaos_MAX}
     class GeometryCollectionSizeSpecificData {
+        constructor();
         constructor(MaxSize: number, CollisionType: ECollisionTypeEnum, ImplicitType: EImplicitTypeEnum, MinLevelSetResolution: number, MaxLevelSetResolution: number, MinClusterLevelSetResolution: number, MaxClusterLevelSetResolution: number, CollisionObjectReductionPercentage: number, CollisionParticlesFraction: number, MaximumCollisionParticles: number);
         MaxSize: number;
         CollisionType: ECollisionTypeEnum;
@@ -57729,6 +58927,7 @@ declare module "ue" {
     enum EInitialVelocityTypeEnum { Chaos_Initial_Velocity_User_Defined, Chaos_Initial_Velocity_None, Chaos_Max, Chaos_MAX}
     enum EGeometryCollectionCacheType { None, Record, Play, RecordAndPlay, EGeometryCollectionCacheType_MAX}
     class SolverCollisionData {
+        constructor();
         constructor(Location: Vector, AccumulatedImpulse: Vector, Normal: Vector, Velocity1: Vector, Velocity2: Vector, AngularVelocity1: Vector, AngularVelocity2: Vector, Mass1: number, Mass2: number, ParticleIndex: number, LevelsetIndex: number, ParticleIndexMesh: number, LevelsetIndexMesh: number);
         Location: Vector;
         AccumulatedImpulse: Vector;
@@ -57747,6 +58946,7 @@ declare module "ue" {
     }
     
     class SolverBreakingData {
+        constructor();
         constructor(Location: Vector, Velocity: Vector, AngularVelocity: Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
         Location: Vector;
         Velocity: Vector;
@@ -57758,6 +58958,7 @@ declare module "ue" {
     }
     
     class SolverTrailingData {
+        constructor();
         constructor(Location: Vector, Velocity: Vector, AngularVelocity: Vector, Mass: number, ParticleIndex: number, ParticleIndexMesh: number);
         Location: Vector;
         Velocity: Vector;
@@ -57769,6 +58970,7 @@ declare module "ue" {
     }
     
     class RecordedFrame {
+        constructor();
         constructor(Transforms: TArray<Transform>, TransformIndices: TArray<number>, PreviousTransformIndices: TArray<number>, DisabledFlags: TArray<boolean>, Collisions: TArray<SolverCollisionData>, Breakings: TArray<SolverBreakingData>, Trailings: TSet<SolverTrailingData>, Timestamp: number);
         Transforms: TArray<Transform>;
         TransformIndices: TArray<number>;
@@ -57782,6 +58984,7 @@ declare module "ue" {
     }
     
     class RecordedTransformTrack {
+        constructor();
         constructor(Records: TArray<RecordedFrame>);
         Records: TArray<RecordedFrame>;
         static StaticClass(): Class;
@@ -57798,6 +59001,7 @@ declare module "ue" {
     }
     
     class GeomComponentCacheParameters {
+        constructor();
         constructor(CacheMode: EGeometryCollectionCacheType, TargetCache: GeometryCollectionCache, ReverseCacheBeginTime: number, SaveCollisionData: boolean, DoGenerateCollisionData: boolean, CollisionDataSizeMax: number, DoCollisionDataSpatialHash: boolean, CollisionDataSpatialHashRadius: number, MaxCollisionPerCell: number, SaveBreakingData: boolean, DoGenerateBreakingData: boolean, BreakingDataSizeMax: number, DoBreakingDataSpatialHash: boolean, BreakingDataSpatialHashRadius: number, MaxBreakingPerCell: number, SaveTrailingData: boolean, DoGenerateTrailingData: boolean, TrailingDataSizeMax: number, TrailingMinSpeedThreshold: number, TrailingMinVolumeThreshold: number);
         CacheMode: EGeometryCollectionCacheType;
         TargetCache: GeometryCollectionCache;
@@ -57823,6 +59027,7 @@ declare module "ue" {
     }
     
     class ChaosBreakEvent {
+        constructor();
         constructor(Component: PrimitiveComponent, Location: Vector, Velocity: Vector, AngularVelocity: Vector, Mass: number);
         Component: PrimitiveComponent;
         Location: Vector;
@@ -57895,6 +59100,7 @@ declare module "ue" {
     }
     
     class GeometryCollectionDebugDrawActorSelectedRigidBody {
+        constructor();
         constructor(Id: number, Solver: ChaosSolverActor, GeometryCollection: GeometryCollectionActor);
         Id: number;
         Solver: ChaosSolverActor;
@@ -58004,6 +59210,7 @@ declare module "ue" {
     }
     
     class ChaosCollisionEventData {
+        constructor();
         constructor(Location: Vector, Normal: Vector, Velocity1: Vector, Velocity2: Vector, Mass1: number, Mass2: number, Impulse: Vector);
         Location: Vector;
         Normal: Vector;
@@ -58016,6 +59223,7 @@ declare module "ue" {
     }
     
     class ChaosBreakingEventData {
+        constructor();
         constructor(Location: Vector, Velocity: Vector, Mass: number);
         Location: Vector;
         Velocity: Vector;
@@ -58024,6 +59232,7 @@ declare module "ue" {
     }
     
     class ChaosTrailingEventData {
+        constructor();
         constructor(Location: Vector, Velocity: Vector, AngularVelocity: Vector, Mass: number, ParticleIndex: number);
         Location: Vector;
         Velocity: Vector;
@@ -58164,31 +59373,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): GeometryCollectionThumbnailRenderer;
         static Load(InName: string): GeometryCollectionThumbnailRenderer;
-    }
-    
-    class MovieSceneGeometryCollectionParams {
-        constructor(GeometryCollectionCache: SoftObjectPath, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number);
-        GeometryCollectionCache: SoftObjectPath;
-        StartFrameOffset: FrameNumber;
-        EndFrameOffset: FrameNumber;
-        PlayRate: number;
-        static StaticClass(): Class;
-    }
-    
-    class MovieSceneGeometryCollectionSection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        Params: MovieSceneGeometryCollectionParams;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionSection;
-        static Load(InName: string): MovieSceneGeometryCollectionSection;
-    }
-    
-    class MovieSceneGeometryCollectionTrack extends MovieSceneNameableTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        AnimationSections: TArray<MovieSceneSection>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionTrack;
-        static Load(InName: string): MovieSceneGeometryCollectionTrack;
     }
     
     class AutoClusterFractureCommand extends Object {
@@ -58394,7 +59578,134 @@ declare module "ue" {
         static Load(InName: string): FractureToolUniform;
     }
     
+    class MovieSceneGeometryCacheParams {
+        constructor();
+        constructor(GeometryCacheAsset: GeometryCache, FirstLoopStartFrameOffset: FrameNumber, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number, bReverse: boolean, StartOffset: number, EndOffset: number, GeometryCache: SoftObjectPath);
+        GeometryCacheAsset: GeometryCache;
+        FirstLoopStartFrameOffset: FrameNumber;
+        StartFrameOffset: FrameNumber;
+        EndFrameOffset: FrameNumber;
+        PlayRate: number;
+        bReverse: boolean;
+        StartOffset: number;
+        EndOffset: number;
+        GeometryCache: SoftObjectPath;
+        static StaticClass(): Class;
+    }
+    
+    class MovieSceneGeometryCacheSection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Params: MovieSceneGeometryCacheParams;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheSection;
+        static Load(InName: string): MovieSceneGeometryCacheSection;
+    }
+    
+    class MovieSceneGeometryCacheTrack extends MovieSceneNameableTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationSections: TArray<MovieSceneSection>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCacheTrack;
+        static Load(InName: string): MovieSceneGeometryCacheTrack;
+    }
+    
+    class MovieSceneGeometryCollectionParams {
+        constructor();
+        constructor(GeometryCollectionCache: SoftObjectPath, StartFrameOffset: FrameNumber, EndFrameOffset: FrameNumber, PlayRate: number);
+        GeometryCollectionCache: SoftObjectPath;
+        StartFrameOffset: FrameNumber;
+        EndFrameOffset: FrameNumber;
+        PlayRate: number;
+        static StaticClass(): Class;
+    }
+    
+    class MovieSceneGeometryCollectionSection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        Params: MovieSceneGeometryCollectionParams;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionSection;
+        static Load(InName: string): MovieSceneGeometryCollectionSection;
+    }
+    
+    class MovieSceneGeometryCollectionTrack extends MovieSceneNameableTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        AnimationSections: TArray<MovieSceneSection>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneGeometryCollectionTrack;
+        static Load(InName: string): MovieSceneGeometryCollectionTrack;
+    }
+    
+    class ImgMediaSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        DefaultFrameRate: FrameRate;
+        CacheBehindPercentage: number;
+        CacheSizeGB: number;
+        CacheThreads: number;
+        CacheThreadStackSizeKB: number;
+        GlobalCacheSizeGB: number;
+        UseGlobalCache: boolean;
+        ExrDecoderThreads: number;
+        DefaultProxy: string;
+        UseDefaultProxy: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSettings;
+        static Load(InName: string): ImgMediaSettings;
+    }
+    
+    class ImgMediaSource extends BaseMediaSource {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        FrameRateOverride: FrameRate;
+        ProxyOverride: string;
+        SequencePath: DirectoryPath;
+        SetSequencePath(Path: string): void;
+        GetSequencePath(): string;
+        GetProxies(OutProxies: $Ref<TArray<string>>): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSource;
+        static Load(InName: string): ImgMediaSource;
+    }
+    
+    class MovieSceneMediaPlayerPropertySection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MediaSource: MediaSource;
+        bLoop: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaPlayerPropertySection;
+        static Load(InName: string): MovieSceneMediaPlayerPropertySection;
+    }
+    
+    class MovieSceneMediaPlayerPropertyTrack extends MovieScenePropertyTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaPlayerPropertyTrack;
+        static Load(InName: string): MovieSceneMediaPlayerPropertyTrack;
+    }
+    
+    class MovieSceneMediaSection extends MovieSceneSection {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MediaSource: MediaSource;
+        bLooping: boolean;
+        StartFrameOffset: FrameNumber;
+        MediaTexture: MediaTexture;
+        MediaSoundComponent: MediaSoundComponent;
+        bUseExternalMediaPlayer: boolean;
+        ExternalMediaPlayer: MediaPlayer;
+        ThumbnailReferenceOffset: number;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaSection;
+        static Load(InName: string): MovieSceneMediaSection;
+    }
+    
+    class MovieSceneMediaTrack extends MovieSceneNameableTrack {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MediaSections: TArray<MovieSceneSection>;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaTrack;
+        static Load(InName: string): MovieSceneMediaTrack;
+    }
+    
     class GrainTableEntry {
+        constructor();
         constructor(SampleIndex: number, RPM: number, AnalysisSampleIndex: number);
         SampleIndex: number;
         RPM: number;
@@ -58440,6 +59751,7 @@ declare module "ue" {
     }
     
     class MotoSynthRuntimeSettings {
+        constructor();
         constructor(bSynthToneEnabled: boolean, SynthToneVolume: number, SynthToneFilterFrequency: number, SynthOctaveShift: number, bGranularEngineEnabled: boolean, GranularEngineVolume: number, GranularEnginePitchScale: number, NumSamplesToCrossfadeBetweenGrains: number, NumGrainTableEntriesPerGrain: number, GrainTableRandomOffsetForConstantRPMs: number, GrainCrossfadeSamplesForConstantRPMs: number, AccelerationSource: MotoSynthSource, DecelerationSource: MotoSynthSource, bStereoWidenerEnabled: boolean, StereoDelayMsec: number, StereoFeedback: number, StereoWidenerWetlevel: number, StereoWidenerDryLevel: number, StereoWidenerDelayRatio: number, bStereoWidenerFilterEnabled: boolean, StereoWidenerFilterFrequency: number, StereoWidenerFilterQ: number);
         bSynthToneEnabled: boolean;
         SynthToneVolume: number;
@@ -58505,45 +59817,6 @@ declare module "ue" {
         static Load(InName: string): MotoSynthSourceFactory;
     }
     
-    class MovieSceneMediaPlayerPropertySection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MediaSource: MediaSource;
-        bLoop: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaPlayerPropertySection;
-        static Load(InName: string): MovieSceneMediaPlayerPropertySection;
-    }
-    
-    class MovieSceneMediaPlayerPropertyTrack extends MovieScenePropertyTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaPlayerPropertyTrack;
-        static Load(InName: string): MovieSceneMediaPlayerPropertyTrack;
-    }
-    
-    class MovieSceneMediaSection extends MovieSceneSection {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MediaSource: MediaSource;
-        bLooping: boolean;
-        StartFrameOffset: FrameNumber;
-        MediaTexture: MediaTexture;
-        MediaSoundComponent: MediaSoundComponent;
-        bUseExternalMediaPlayer: boolean;
-        ExternalMediaPlayer: MediaPlayer;
-        ThumbnailReferenceOffset: number;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaSection;
-        static Load(InName: string): MovieSceneMediaSection;
-    }
-    
-    class MovieSceneMediaTrack extends MovieSceneNameableTrack {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MediaSections: TArray<MovieSceneSection>;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): MovieSceneMediaTrack;
-        static Load(InName: string): MovieSceneMediaTrack;
-    }
-    
     class TemplateSequence extends MovieSceneSequence {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         MovieScene: MovieScene;
@@ -58605,6 +59878,7 @@ declare module "ue" {
     }
     
     class TemplateSequenceBindingOverrideData {
+        constructor();
         constructor(Object: TWeakObjectPtr<Object>, bOverridesDefault: boolean);
         Object: TWeakObjectPtr<Object>;
         bOverridesDefault: boolean;
@@ -58648,37 +59922,8 @@ declare module "ue" {
         static Load(InName: string): TemplateSequenceTrack;
     }
     
-    class ImgMediaSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        DefaultFrameRate: FrameRate;
-        CacheBehindPercentage: number;
-        CacheSizeGB: number;
-        CacheThreads: number;
-        CacheThreadStackSizeKB: number;
-        GlobalCacheSizeGB: number;
-        UseGlobalCache: boolean;
-        ExrDecoderThreads: number;
-        DefaultProxy: string;
-        UseDefaultProxy: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSettings;
-        static Load(InName: string): ImgMediaSettings;
-    }
-    
-    class ImgMediaSource extends BaseMediaSource {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        FrameRateOverride: FrameRate;
-        ProxyOverride: string;
-        SequencePath: DirectoryPath;
-        SetSequencePath(Path: string): void;
-        GetSequencePath(): string;
-        GetProxies(OutProxies: $Ref<TArray<string>>): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSource;
-        static Load(InName: string): ImgMediaSource;
-    }
-    
     class ActorLayer {
+        constructor();
         constructor(Name: string);
         Name: string;
         static StaticClass(): Class;
@@ -58712,6 +59957,7 @@ declare module "ue" {
     }
     
     class AppleImageUtilsImageConversionResult {
+        constructor();
         constructor(Error: string, ImageData: TArray<number>);
         Error: string;
         ImageData: TArray<number>;
@@ -58830,6 +60076,7 @@ declare module "ue" {
     }
     
     class AudioCaptureDeviceInfo {
+        constructor();
         constructor(DeviceName: string, NumInputChannels: number, SampleRate: number);
         DeviceName: string;
         NumInputChannels: number;
@@ -58865,6 +60112,7 @@ declare module "ue" {
     }
     
     class ComponentReference {
+        constructor();
         constructor(OtherActor: Actor, ComponentProperty: string, PathToComponent: string);
         OtherActor: Actor;
         ComponentProperty: string;
@@ -58913,6 +60161,7 @@ declare module "ue" {
     }
     
     class CustomMeshTriangle {
+        constructor();
         constructor(Vertex0: Vector, Vertex1: Vector, Vertex2: Vector);
         Vertex0: Vector;
         Vertex1: Vector;
@@ -58951,6 +60200,7 @@ declare module "ue" {
     enum EMeshModificationType { FirstInterim, Interim, Final, EMeshModificationType_MAX}
     enum EMeshTopologyChange { NoTopologyChange, TopologyChange, EMeshTopologyChange_MAX}
     class VertexPair {
+        constructor();
         constructor(VertexID0: VertexID, VertexID1: VertexID);
         VertexID0: VertexID;
         VertexID1: VertexID;
@@ -58958,6 +60208,7 @@ declare module "ue" {
     }
     
     class PolygonToSplit {
+        constructor();
         constructor(PolygonID: PolygonID, VertexPairsToSplitAt: TArray<VertexPair>);
         PolygonID: PolygonID;
         VertexPairsToSplitAt: TArray<VertexPair>;
@@ -58970,6 +60221,7 @@ declare module "ue" {
     }
     
     class MeshElementAttributeData {
+        constructor();
         constructor(AttributeName: string, AttributeIndex: number, AttributeValue: MeshElementAttributeValue);
         AttributeName: string;
         AttributeIndex: number;
@@ -58978,12 +60230,14 @@ declare module "ue" {
     }
     
     class MeshElementAttributeList {
+        constructor();
         constructor(Attributes: TArray<MeshElementAttributeData>);
         Attributes: TArray<MeshElementAttributeData>;
         static StaticClass(): Class;
     }
     
     class AttributesForVertex {
+        constructor();
         constructor(VertexID: VertexID, VertexAttributes: MeshElementAttributeList);
         VertexID: VertexID;
         VertexAttributes: MeshElementAttributeList;
@@ -58991,6 +60245,7 @@ declare module "ue" {
     }
     
     class AttributesForVertexInstance {
+        constructor();
         constructor(VertexInstanceID: VertexInstanceID, VertexInstanceAttributes: MeshElementAttributeList);
         VertexInstanceID: VertexInstanceID;
         VertexInstanceAttributes: MeshElementAttributeList;
@@ -58998,12 +60253,14 @@ declare module "ue" {
     }
     
     class VertexAttributesForPolygonHole {
+        constructor();
         constructor(VertexAttributeList: TArray<MeshElementAttributeList>);
         VertexAttributeList: TArray<MeshElementAttributeList>;
         static StaticClass(): Class;
     }
     
     class VertexAttributesForPolygon {
+        constructor();
         constructor(PolygonID: PolygonID, PerimeterVertexAttributeLists: TArray<MeshElementAttributeList>, VertexAttributeListsForEachHole: TArray<VertexAttributesForPolygonHole>);
         PolygonID: PolygonID;
         PerimeterVertexAttributeLists: TArray<MeshElementAttributeList>;
@@ -59012,6 +60269,7 @@ declare module "ue" {
     }
     
     class AttributesForEdge {
+        constructor();
         constructor(EdgeID: EdgeID, EdgeAttributes: MeshElementAttributeList);
         EdgeID: EdgeID;
         EdgeAttributes: MeshElementAttributeList;
@@ -59019,6 +60277,7 @@ declare module "ue" {
     }
     
     class VertexToMove {
+        constructor();
         constructor(VertexID: VertexID, NewVertexPosition: Vector);
         VertexID: VertexID;
         NewVertexPosition: Vector;
@@ -59027,6 +60286,7 @@ declare module "ue" {
     
     enum EInsetPolygonsMode { All, CenterPolygonOnly, SidePolygonsOnly, EInsetPolygonsMode_MAX}
     class SubdividedQuadVertex {
+        constructor();
         constructor(VertexPositionIndex: number, TextureCoordinate0: Vector2D, TextureCoordinate1: Vector2D, VertexColor: Color, VertexNormal: Vector, VertexTangent: Vector, VertexBinormalSign: number);
         VertexPositionIndex: number;
         TextureCoordinate0: Vector2D;
@@ -59039,6 +60299,7 @@ declare module "ue" {
     }
     
     class SubdividedQuad {
+        constructor();
         constructor(QuadVertex0: SubdividedQuadVertex, QuadVertex1: SubdividedQuadVertex, QuadVertex2: SubdividedQuadVertex, QuadVertex3: SubdividedQuadVertex);
         QuadVertex0: SubdividedQuadVertex;
         QuadVertex1: SubdividedQuadVertex;
@@ -59048,12 +60309,14 @@ declare module "ue" {
     }
     
     class SubdivisionLimitSection {
+        constructor();
         constructor(SubdividedQuads: TArray<SubdividedQuad>);
         SubdividedQuads: TArray<SubdividedQuad>;
         static StaticClass(): Class;
     }
     
     class SubdividedWireEdge {
+        constructor();
         constructor(EdgeVertex0PositionIndex: number, EdgeVertex1PositionIndex: number);
         EdgeVertex0PositionIndex: number;
         EdgeVertex1PositionIndex: number;
@@ -59061,6 +60324,7 @@ declare module "ue" {
     }
     
     class SubdivisionLimitData {
+        constructor();
         constructor(VertexPositions: TArray<Vector>, Sections: TArray<SubdivisionLimitSection>, SubdividedWireEdges: TArray<SubdividedWireEdge>);
         VertexPositions: TArray<Vector>;
         Sections: TArray<SubdivisionLimitSection>;
@@ -59069,6 +60333,7 @@ declare module "ue" {
     }
     
     class VertexToCreate {
+        constructor();
         constructor(VertexAttributes: MeshElementAttributeList, OriginalVertexID: VertexID);
         VertexAttributes: MeshElementAttributeList;
         OriginalVertexID: VertexID;
@@ -59076,6 +60341,7 @@ declare module "ue" {
     }
     
     class VertexInstanceToCreate {
+        constructor();
         constructor(VertexID: VertexID, VertexInstanceAttributes: MeshElementAttributeList, OriginalVertexInstanceID: VertexInstanceID);
         VertexID: VertexID;
         VertexInstanceAttributes: MeshElementAttributeList;
@@ -59084,6 +60350,7 @@ declare module "ue" {
     }
     
     class VertexAndAttributes {
+        constructor();
         constructor(VertexInstanceID: VertexInstanceID, VertexID: VertexID, PolygonVertexAttributes: MeshElementAttributeList);
         VertexInstanceID: VertexInstanceID;
         VertexID: VertexID;
@@ -59093,6 +60360,7 @@ declare module "ue" {
     
     enum EPolygonEdgeHardness { NewEdgesSoft, NewEdgesHard, AllEdgesSoft, AllEdgesHard, EPolygonEdgeHardness_MAX}
     class PolygonToCreate {
+        constructor();
         constructor(PolygonGroupID: PolygonGroupID, PerimeterVertices: TArray<VertexAndAttributes>, OriginalPolygonID: PolygonID, PolygonEdgeHardness: EPolygonEdgeHardness);
         PolygonGroupID: PolygonGroupID;
         PerimeterVertices: TArray<VertexAndAttributes>;
@@ -59102,6 +60370,7 @@ declare module "ue" {
     }
     
     class PolygonGroupToCreate {
+        constructor();
         constructor(PolygonGroupAttributes: MeshElementAttributeList, OriginalPolygonGroupID: PolygonGroupID);
         PolygonGroupAttributes: MeshElementAttributeList;
         OriginalPolygonGroupID: PolygonGroupID;
@@ -59109,6 +60378,7 @@ declare module "ue" {
     }
     
     class EdgeToCreate {
+        constructor();
         constructor(VertexID0: VertexID, VertexID1: VertexID, EdgeAttributes: MeshElementAttributeList, OriginalEdgeID: EdgeID);
         VertexID0: VertexID;
         VertexID1: VertexID;
@@ -59118,6 +60388,7 @@ declare module "ue" {
     }
     
     class VertexIndexAndInstanceID {
+        constructor();
         constructor(ContourIndex: number, VertexInstanceID: VertexInstanceID);
         ContourIndex: number;
         VertexInstanceID: VertexInstanceID;
@@ -59125,12 +60396,14 @@ declare module "ue" {
     }
     
     class VertexInstancesForPolygonHole {
+        constructor();
         constructor(VertexIndicesAndInstanceIDs: TArray<VertexIndexAndInstanceID>);
         VertexIndicesAndInstanceIDs: TArray<VertexIndexAndInstanceID>;
         static StaticClass(): Class;
     }
     
     class ChangeVertexInstancesForPolygon {
+        constructor();
         constructor(PolygonID: PolygonID, PerimeterVertexIndicesAndInstanceIDs: TArray<VertexIndexAndInstanceID>, VertexIndicesAndInstanceIDsForEachHole: TArray<VertexInstancesForPolygonHole>);
         PolygonID: PolygonID;
         PerimeterVertexIndicesAndInstanceIDs: TArray<VertexIndexAndInstanceID>;
@@ -59139,6 +60412,7 @@ declare module "ue" {
     }
     
     class PolygonGroupForPolygon {
+        constructor();
         constructor(PolygonID: PolygonID, PolygonGroupID: PolygonGroupID);
         PolygonID: PolygonID;
         PolygonGroupID: PolygonGroupID;
@@ -59377,6 +60651,7 @@ declare module "ue" {
     enum ESynth1PatchSource { LFO1, LFO2, Envelope, BiasEnvelope, Count, ESynth1PatchSource_MAX}
     enum ESynth1PatchDestination { Osc1Gain, Osc1Frequency, Osc1Pulsewidth, Osc2Gain, Osc2Frequency, Osc2Pulsewidth, FilterFrequency, FilterQ, Gain, Pan, LFO1Frequency, LFO1Gain, LFO2Frequency, LFO2Gain, Count, ESynth1PatchDestination_MAX}
     class Synth1PatchCable {
+        constructor();
         constructor(Depth: number, Destination: ESynth1PatchDestination);
         Depth: number;
         Destination: ESynth1PatchDestination;
@@ -59384,6 +60659,7 @@ declare module "ue" {
     }
     
     class EpicSynth1Patch {
+        constructor();
         constructor(PatchSource: ESynth1PatchSource, PatchCables: TArray<Synth1PatchCable>);
         PatchSource: ESynth1PatchSource;
         PatchCables: TArray<Synth1PatchCable>;
@@ -59391,6 +60667,7 @@ declare module "ue" {
     }
     
     class ModularSynthPreset extends TableRowBase {
+        constructor();
         constructor(bEnablePolyphony: boolean, Osc1Type: ESynth1OscType, Osc1Gain: number, Osc1Octave: number, Osc1Semitones: number, Osc1Cents: number, Osc1PulseWidth: number, Osc2Type: ESynth1OscType, Osc2Gain: number, Osc2Octave: number, Osc2Semitones: number, Osc2Cents: number, Osc2PulseWidth: number, Portamento: number, bEnableUnison: boolean, bEnableOscillatorSync: boolean, Spread: number, Pan: number, LFO1Frequency: number, LFO1Gain: number, LFO1Type: ESynthLFOType, LFO1Mode: ESynthLFOMode, LFO1PatchType: ESynthLFOPatchType, LFO2Frequency: number, LFO2Gain: number, LFO2Type: ESynthLFOType, LFO2Mode: ESynthLFOMode, LFO2PatchType: ESynthLFOPatchType, GainDb: number, AttackTime: number, DecayTime: number, SustainGain: number, ReleaseTime: number, ModEnvPatchType: ESynthModEnvPatch, ModEnvBiasPatchType: ESynthModEnvBiasPatch, bInvertModulationEnvelope: boolean, bInvertModulationEnvelopeBias: boolean, ModulationEnvelopeDepth: number, ModulationEnvelopeAttackTime: number, ModulationEnvelopeDecayTime: number, ModulationEnvelopeSustainGain: number, ModulationEnvelopeReleaseTime: number, bLegato: boolean, bRetrigger: boolean, FilterFrequency: number, FilterQ: number, FilterType: ESynthFilterType, FilterAlgorithm: ESynthFilterAlgorithm, bStereoDelayEnabled: boolean, StereoDelayMode: ESynthStereoDelayMode, StereoDelayTime: number, StereoDelayFeedback: number, StereoDelayWetlevel: number, StereoDelayRatio: number, bChorusEnabled: boolean, ChorusDepth: number, ChorusFeedback: number, ChorusFrequency: number, Patches: TArray<EpicSynth1Patch>);
         bEnablePolyphony: boolean;
         Osc1Type: ESynth1OscType;
@@ -59455,6 +60732,7 @@ declare module "ue" {
     }
     
     class ModularSynthPresetBankEntry {
+        constructor();
         constructor(PresetName: string, Preset: ModularSynthPreset);
         PresetName: string;
         Preset: ModularSynthPreset;
@@ -59478,6 +60756,7 @@ declare module "ue" {
     }
     
     class PatchId {
+        constructor();
         constructor(Id: number);
         Id: number;
         static StaticClass(): Class;
@@ -59551,6 +60830,7 @@ declare module "ue" {
     }
     
     class SourceEffectBitCrusherSettings {
+        constructor();
         constructor(CrushedSampleRate: number, SampleRateModulation: SoundModulationDestinationSettings, CrushedBits: number, BitModulation: SoundModulationDestinationSettings);
         CrushedSampleRate: number;
         SampleRateModulation: SoundModulationDestinationSettings;
@@ -59560,6 +60840,7 @@ declare module "ue" {
     }
     
     class SourceEffectBitCrusherBaseSettings {
+        constructor();
         constructor(SampleRate: number, BitDepth: number);
         SampleRate: number;
         BitDepth: number;
@@ -59581,6 +60862,7 @@ declare module "ue" {
     }
     
     class SourceEffectChorusSettings {
+        constructor();
         constructor(Depth: number, Frequency: number, Feedback: number, WetLevel: number, DryLevel: number, Spread: number, DepthModulation: SoundModulationDestinationSettings, FrequencyModulation: SoundModulationDestinationSettings, FeedbackModulation: SoundModulationDestinationSettings, WetModulation: SoundModulationDestinationSettings, DryModulation: SoundModulationDestinationSettings, SpreadModulation: SoundModulationDestinationSettings);
         Depth: number;
         Frequency: number;
@@ -59598,6 +60880,7 @@ declare module "ue" {
     }
     
     class SourceEffectChorusBaseSettings {
+        constructor();
         constructor(Depth: number, Frequency: number, Feedback: number, WetLevel: number, DryLevel: number, Spread: number);
         Depth: number;
         Frequency: number;
@@ -59633,6 +60916,7 @@ declare module "ue" {
     enum ESourceEffectDynamicsProcessorType { Compressor, Limiter, Expander, Gate, Count, ESourceEffectDynamicsProcessorType_MAX}
     enum ESourceEffectDynamicsPeakMode { MeanSquared, RootMeanSquared, Peak, Count, ESourceEffectDynamicsPeakMode_MAX}
     class SourceEffectDynamicsProcessorSettings {
+        constructor();
         constructor(DynamicsProcessorType: ESourceEffectDynamicsProcessorType, PeakMode: ESourceEffectDynamicsPeakMode, LookAheadMsec: number, AttackTimeMsec: number, ReleaseTimeMsec: number, ThresholdDb: number, Ratio: number, KneeBandwidthDb: number, InputGainDb: number, OutputGainDb: number, bStereoLinked: boolean, bAnalogMode: boolean);
         DynamicsProcessorType: ESourceEffectDynamicsProcessorType;
         PeakMode: ESourceEffectDynamicsPeakMode;
@@ -59668,6 +60952,7 @@ declare module "ue" {
     
     enum EEnvelopeFollowerPeakMode { MeanSquared, RootMeanSquared, Peak, Count, EEnvelopeFollowerPeakMode_MAX}
     class SourceEffectEnvelopeFollowerSettings {
+        constructor();
         constructor(AttackTime: number, ReleaseTime: number, PeakMode: EEnvelopeFollowerPeakMode, bIsAnalogMode: boolean);
         AttackTime: number;
         ReleaseTime: number;
@@ -59688,6 +60973,7 @@ declare module "ue" {
     }
     
     class SourceEffectEQBand {
+        constructor();
         constructor(Frequency: number, Bandwidth: number, GainDb: number, bEnabled: boolean);
         Frequency: number;
         Bandwidth: number;
@@ -59697,6 +60983,7 @@ declare module "ue" {
     }
     
     class SourceEffectEQSettings {
+        constructor();
         constructor(EQBands: TArray<SourceEffectEQBand>);
         EQBands: TArray<SourceEffectEQBand>;
         static StaticClass(): Class;
@@ -59715,6 +61002,7 @@ declare module "ue" {
     enum ESourceEffectFilterType { LowPass, HighPass, BandPass, BandStop, Count, ESourceEffectFilterType_MAX}
     enum ESourceEffectFilterParam { FilterFrequency, FilterResonance, Count, ESourceEffectFilterParam_MAX}
     class SourceEffectFilterAudioBusModulationSettings {
+        constructor();
         constructor(AudioBus: AudioBus, EnvelopeFollowerAttackTimeMsec: number, EnvelopeFollowerReleaseTimeMsec: number, EnvelopeGainMultiplier: number, FilterParam: ESourceEffectFilterParam, MinFrequencyModulation: number, MaxFrequencyModulation: number, MinResonanceModulation: number, MaxResonanceModulation: number);
         AudioBus: AudioBus;
         EnvelopeFollowerAttackTimeMsec: number;
@@ -59729,6 +61017,7 @@ declare module "ue" {
     }
     
     class SourceEffectFilterSettings {
+        constructor();
         constructor(FilterCircuit: ESourceEffectFilterCircuit, FilterType: ESourceEffectFilterType, CutoffFrequency: number, FilterQ: number, AudioBusModulation: TArray<SourceEffectFilterAudioBusModulationSettings>);
         FilterCircuit: ESourceEffectFilterCircuit;
         FilterType: ESourceEffectFilterType;
@@ -59748,6 +61037,7 @@ declare module "ue" {
     }
     
     class SourceEffectFoldbackDistortionSettings {
+        constructor();
         constructor(InputGainDb: number, ThresholdDb: number, OutputGainDb: number);
         InputGainDb: number;
         ThresholdDb: number;
@@ -59766,6 +61056,7 @@ declare module "ue" {
     
     enum EStereoChannelMode { MidSide, LeftRight, count, EStereoChannelMode_MAX}
     class SourceEffectMidSideSpreaderSettings {
+        constructor();
         constructor(SpreadAmount: number, InputMode: EStereoChannelMode, OutputMode: EStereoChannelMode, bEqualPower: boolean);
         SpreadAmount: number;
         InputMode: EStereoChannelMode;
@@ -59784,6 +61075,7 @@ declare module "ue" {
     }
     
     class SourceEffectPannerSettings {
+        constructor();
         constructor(Spread: number, Pan: number);
         Spread: number;
         Pan: number;
@@ -59801,6 +61093,7 @@ declare module "ue" {
     
     enum EPhaserLFOType { Sine, UpSaw, DownSaw, Square, Triangle, Exponential, RandomSampleHold, Count, EPhaserLFOType_MAX}
     class SourceEffectPhaserSettings {
+        constructor();
         constructor(WetLevel: number, Frequency: number, Feedback: number, LFOType: EPhaserLFOType, UseQuadraturePhase: boolean);
         WetLevel: number;
         Frequency: number;
@@ -59821,6 +61114,7 @@ declare module "ue" {
     
     enum ERingModulatorTypeSourceEffect { Sine, Saw, Triangle, Square, Count, ERingModulatorTypeSourceEffect_MAX}
     class SourceEffectRingModulationSettings {
+        constructor();
         constructor(ModulatorType: ERingModulatorTypeSourceEffect, Frequency: number, Depth: number, DryLevel: number, WetLevel: number, AudioBusModulator: AudioBus);
         ModulatorType: ERingModulatorTypeSourceEffect;
         Frequency: number;
@@ -59841,6 +61135,7 @@ declare module "ue" {
     }
     
     class SourceEffectSimpleDelaySettings {
+        constructor();
         constructor(SpeedOfSound: number, DelayAmount: number, DryAmount: number, WetAmount: number, Feedback: number, bDelayBasedOnDistance: boolean);
         SpeedOfSound: number;
         DelayAmount: number;
@@ -59863,6 +61158,7 @@ declare module "ue" {
     enum EStereoDelaySourceEffect { Normal, Cross, PingPong, Count, EStereoDelaySourceEffect_MAX}
     enum EStereoDelayFiltertype { Lowpass, Highpass, Bandpass, Notch, Count, EStereoDelayFiltertype_MAX}
     class SourceEffectStereoDelaySettings {
+        constructor();
         constructor(DelayMode: EStereoDelaySourceEffect, DelayTimeMsec: number, Feedback: number, DelayRatio: number, WetLevel: number, DryLevel: number, bFilterEnabled: boolean, FilterType: EStereoDelayFiltertype, FilterFrequency: number, FilterQ: number);
         DelayMode: EStereoDelaySourceEffect;
         DelayTimeMsec: number;
@@ -59887,6 +61183,7 @@ declare module "ue" {
     }
     
     class SourceEffectWaveShaperSettings {
+        constructor();
         constructor(Amount: number, OutputGainDb: number);
         Amount: number;
         OutputGainDb: number;
@@ -59916,6 +61213,7 @@ declare module "ue" {
     }
     
     class SubmixEffectConvolutionReverbSettings {
+        constructor();
         constructor(NormalizationVolumeDb: number, bBypass: boolean, bMixInputChannelFormatToImpulseResponseFormat: boolean, bMixReverbOutputToOutputChannelFormat: boolean, SurroundRearChannelBleedDb: number, bInvertRearChannelBleedPhase: boolean, bSurroundRearChannelFlip: boolean, SurroundRearChannelBleedAmount: number, ImpulseResponse: AudioImpulseResponse, AllowHardwareAcceleration: boolean);
         NormalizationVolumeDb: number;
         bBypass: boolean;
@@ -59945,6 +61243,7 @@ declare module "ue" {
     }
     
     class SubmixEffectDelaySettings {
+        constructor();
         constructor(MaximumDelayLength: number, InterpolationTime: number, DelayLength: number);
         MaximumDelayLength: number;
         InterpolationTime: number;
@@ -59968,6 +61267,7 @@ declare module "ue" {
     enum ESubmixFilterType { LowPass, HighPass, BandPass, BandStop, Count, ESubmixFilterType_MAX}
     enum ESubmixFilterAlgorithm { OnePole, StateVariable, Ladder, Count, ESubmixFilterAlgorithm_MAX}
     class SubmixEffectFilterSettings {
+        constructor();
         constructor(FilterType: ESubmixFilterType, FilterAlgorithm: ESubmixFilterAlgorithm, FilterFrequency: number, FilterQ: number);
         FilterType: ESubmixFilterType;
         FilterAlgorithm: ESubmixFilterAlgorithm;
@@ -59992,6 +61292,7 @@ declare module "ue" {
     }
     
     class SubmixEffectFlexiverbSettings {
+        constructor();
         constructor(PreDelay: number, DecayTime: number, RoomDampening: number, Complexity: number);
         PreDelay: number;
         DecayTime: number;
@@ -60010,6 +61311,7 @@ declare module "ue" {
     }
     
     class DynamicsBandSettings {
+        constructor();
         constructor(CrossoverTopFrequency: number, AttackTimeMsec: number, ReleaseTimeMsec: number, ThresholdDb: number, Ratio: number, KneeBandwidthDb: number, InputGainDb: number, OutputGainDb: number);
         CrossoverTopFrequency: number;
         AttackTimeMsec: number;
@@ -60023,6 +61325,7 @@ declare module "ue" {
     }
     
     class SubmixEffectMultibandCompressorSettings {
+        constructor();
         constructor(DynamicsProcessorType: ESubmixEffectDynamicsProcessorType, PeakMode: ESubmixEffectDynamicsPeakMode, LookAheadMsec: number, bLinkChannels: boolean, bAnalogMode: boolean, bFourPole: boolean, Bands: TArray<DynamicsBandSettings>);
         DynamicsProcessorType: ESubmixEffectDynamicsProcessorType;
         PeakMode: ESubmixEffectDynamicsPeakMode;
@@ -60044,6 +61347,7 @@ declare module "ue" {
     }
     
     class SubmixEffectStereoDelaySettings {
+        constructor();
         constructor(DelayMode: EStereoDelaySourceEffect, DelayTimeMsec: number, Feedback: number, DelayRatio: number, WetLevel: number, DryLevel: number, bFilterEnabled: boolean, FilterType: EStereoDelayFiltertype, FilterFrequency: number, FilterQ: number);
         DelayMode: EStereoDelaySourceEffect;
         DelayTimeMsec: number;
@@ -60069,6 +61373,7 @@ declare module "ue" {
     
     enum ETapLineMode { SendToChannel, Panning, Disabled, ETapLineMode_MAX}
     class TapDelayInfo {
+        constructor();
         constructor(TapLineMode: ETapLineMode, DelayLength: number, Gain: number, OutputChannel: number, PanInDegrees: number, TapId: number);
         TapLineMode: ETapLineMode;
         DelayLength: number;
@@ -60080,6 +61385,7 @@ declare module "ue" {
     }
     
     class SubmixEffectTapDelaySettings {
+        constructor();
         constructor(MaximumDelayLength: number, InterpolationTime: number, Taps: TArray<TapDelayInfo>);
         MaximumDelayLength: number;
         InterpolationTime: number;
@@ -60104,6 +61410,7 @@ declare module "ue" {
     }
     
     class Synth2DSliderStyle extends SlateWidgetStyle {
+        constructor();
         constructor(NormalThumbImage: SlateBrush, DisabledThumbImage: SlateBrush, NormalBarImage: SlateBrush, DisabledBarImage: SlateBrush, BackgroundImage: SlateBrush, BarThickness: number);
         NormalThumbImage: SlateBrush;
         DisabledThumbImage: SlateBrush;
@@ -60283,6 +61590,7 @@ declare module "ue" {
     
     enum ESynthKnobSize { Medium, Large, Count, ESynthKnobSize_MAX}
     class SynthKnobStyle extends SlateWidgetStyle {
+        constructor();
         constructor(LargeKnob: SlateBrush, LargeKnobOverlay: SlateBrush, MediumKnob: SlateBrush, MediumKnobOverlay: SlateBrush, MinValueAngle: number, MaxValueAngle: number, KnobSize: ESynthKnobSize);
         LargeKnob: SlateBrush;
         LargeKnobOverlay: SlateBrush;
@@ -60384,6 +61692,7 @@ declare module "ue" {
     }
     
     class OculusMR_PlaneMeshTriangle {
+        constructor();
         constructor(Vertex0: Vector, UV0: Vector2D, Vertex1: Vector, UV1: Vector2D, Vertex2: Vector, UV2: Vector2D);
         Vertex0: Vector;
         UV0: Vector2D;
@@ -60441,6 +61750,7 @@ declare module "ue" {
     }
     
     class TrackedCamera {
+        constructor();
         constructor(Index: number, Name: string, UpdateTime: number, FieldOfView: number, SizeX: number, SizeY: number, AttachedTrackedDevice: ETrackedDeviceType, CalibratedRotation: Rotator, CalibratedOffset: Vector, UserRotation: Rotator, UserOffset: Vector, RawRotation: Rotator, RawOffset: Vector);
         Index: number;
         Name: string;
@@ -60512,6 +61822,7 @@ declare module "ue" {
     enum ESystemGestureBehavior { None, SwapMaterial, ESystemGestureBehavior_MAX}
     enum EBone { Wrist_Root, Hand_Start, Forearm_Stub, Thumb_0, Thumb_1, Thumb_2, Thumb_3, Index_1, Index_2, Index_3, Middle_1, Middle_2, Middle_3, Ring_1, Ring_2, Ring_3, Pinky_0, Pinky_1, Pinky_2, Pinky_3, Thumb_Tip, Max_Skinnable, Index_Tip, Middle_Tip, Ring_Tip, Pinky_Tip, Hand_End, Bone_Max, Invalid, EBone_MAX}
     class OculusCapsuleCollider {
+        constructor();
         constructor(Capsule: CapsuleComponent, BoneId: EBone);
         Capsule: CapsuleComponent;
         BoneId: EBone;
@@ -60560,6 +61871,7 @@ declare module "ue" {
     enum EOculusMobileDevice { Quest, Quest2, EOculusMobileDevice_MAX}
     enum EGoogleVRCaps { Cardboard, Daydream33, Daydream63, Daydream66, EGoogleVRCaps_MAX}
     class GooglePlayAchievementMapping {
+        constructor();
         constructor(Name: string, AchievementID: string);
         Name: string;
         AchievementID: string;
@@ -60567,6 +61879,7 @@ declare module "ue" {
     }
     
     class GooglePlayLeaderboardMapping {
+        constructor();
         constructor(Name: string, LeaderboardID: string);
         Name: string;
         LeaderboardID: string;
@@ -60703,6 +62016,7 @@ declare module "ue" {
     }
     
     class RedistPackage {
+        constructor();
         constructor(Included: boolean, Name: string, Id: string);
         Included: boolean;
         Name: string;
@@ -60714,6 +62028,7 @@ declare module "ue" {
     enum EOculusGamepadEmulation { Off, Twinstick, RightDPad, LeftDPad, Length, EOculusGamepadEmulation_MAX}
     enum EOculusAssetType { Default, Store, Language_Pack, Length, EOculusAssetType_MAX}
     class AssetConfig {
+        constructor();
         constructor(AssetType: EOculusAssetType, Required: boolean, Name: string, Sku: string);
         AssetType: EOculusAssetType;
         Required: boolean;
@@ -60723,6 +62038,7 @@ declare module "ue" {
     }
     
     class AssetConfigArray {
+        constructor();
         constructor(ConfigArray: TArray<AssetConfig>);
         ConfigArray: TArray<AssetConfig>;
         static StaticClass(): Class;
@@ -60779,6 +62095,7 @@ declare module "ue" {
     }
     
     class PEGraphPinType {
+        constructor();
         constructor(PinCategory: string, PinSubCategoryObject: Object, PinContainerType: number, bIsReference: boolean);
         PinCategory: string;
         PinSubCategoryObject: Object;
@@ -60788,6 +62105,7 @@ declare module "ue" {
     }
     
     class PEGraphTerminalType {
+        constructor();
         constructor(PinCategory: string, PinSubCategoryObject: Object);
         PinCategory: string;
         PinSubCategoryObject: Object;
@@ -61013,6 +62331,7 @@ declare module "ue" {
     
     enum EPinnedCommandListType { Command, CustomWidget, EPinnedCommandListType_MAX}
     class PinnedCommandListCommand {
+        constructor();
         constructor(Name: string, Binding: string, Type: EPinnedCommandListType);
         Name: string;
         Binding: string;
@@ -61021,6 +62340,7 @@ declare module "ue" {
     }
     
     class PinnedCommandListContext {
+        constructor();
         constructor(Name: string, Commands: TArray<PinnedCommandListCommand>);
         Name: string;
         Commands: TArray<PinnedCommandListCommand>;
@@ -61123,6 +62443,7 @@ declare module "ue" {
     
     enum EMeshInstancingReplacementMethod { RemoveOriginalActors, KeepOriginalActorsAsEditorOnly, EMeshInstancingReplacementMethod_MAX}
     class MeshInstancingSettings {
+        constructor();
         constructor(ActorClassToUse: Class, InstanceReplacementThreshold: number, MeshReplacementMethod: EMeshInstancingReplacementMethod, bSkipMeshesWithVertexColors: boolean, bUseHLODVolumes: boolean, ISMComponentToUse: Class);
         ActorClassToUse: Class;
         InstanceReplacementThreshold: number;
@@ -61166,12 +62487,14 @@ declare module "ue" {
     
     enum EIOSCloudKitSyncStrategy { None, OnlyAtGameStart, Always, EIOSCloudKitSyncStrategy_MAX}
     class IOSBuildResourceDirectory {
+        constructor();
         constructor(Path: string);
         Path: string;
         static StaticClass(): Class;
     }
     
     class IOSBuildResourceFilePath {
+        constructor();
         constructor(FilePath: string);
         FilePath: string;
         static StaticClass(): Class;
@@ -61275,6 +62598,7 @@ declare module "ue" {
     
     enum ELuminFrameTimingHint { Unspecified, Maximum, FPS_60, FPS_120, ELuminFrameTimingHint_MAX}
     class LocalizedIconInfo {
+        constructor();
         constructor(LanguageCode: string, IconModelPath: DirectoryPath, IconPortalPath: DirectoryPath);
         LanguageCode: string;
         IconModelPath: DirectoryPath;
@@ -61283,6 +62607,7 @@ declare module "ue" {
     }
     
     class LocalizedIconInfos {
+        constructor();
         constructor(IconData: TArray<LocalizedIconInfo>);
         IconData: TArray<LocalizedIconInfo>;
         static StaticClass(): Class;
@@ -61291,6 +62616,7 @@ declare module "ue" {
     enum ELuminPrivilege { Invalid, BatteryInfo, CameraCapture, ComputerVision, WorldReconstruction, InAppPurchase, AudioCaptureMic, DrmCertificates, Occlusion, LowLatencyLightwear, Internet, IdentityRead, BackgroundDownload, BackgroundUpload, MediaDrm, Media, MediaMetadata, PowerInfo, LocalAreaNetwork, VoiceInput, Documents, ConnectBackgroundMusicService, RegisterBackgroundMusicService, PcfRead, PwFoundObjRead, NormalNotificationsUsage, MusicService, ControllerPose, GesturesSubscribe, GesturesConfig, AddressBookRead, AddressBookWrite, AddressBookBasicAccess, CoarseLocation, FineLocation, HandMesh, WifiStatusRead, SocialConnectionsInvitesAccess, SocialConnectionsSelectAccess, SecureBrowserWindow, BluetoothAdapterExternalApp, BluetoothAdapterUser, BluetoothGattWrite, ELuminPrivilege_MAX}
     enum ELuminComponentSubElementType { FileExtension, MimeType, Mode, MusicAttribute, Schema, ELuminComponentSubElementType_MAX}
     class LuminComponentSubElement {
+        constructor();
         constructor(ElementType: ELuminComponentSubElementType, Value: string);
         ElementType: ELuminComponentSubElementType;
         Value: string;
@@ -61299,6 +62625,7 @@ declare module "ue" {
     
     enum ELuminComponentType { Universe, Fullscreen, SearchProvider, MusicService, Console, SystemUI, ELuminComponentType_MAX}
     class LuminComponentElement {
+        constructor();
         constructor(Name: string, VisibleName: string, ExecutableName: string, ComponentType: ELuminComponentType, ExtraComponentSubElements: TArray<LuminComponentSubElement>);
         Name: string;
         VisibleName: string;
@@ -61309,6 +62636,7 @@ declare module "ue" {
     }
     
     class LocalizedAppName {
+        constructor();
         constructor(LanguageCode: string, AppName: string);
         LanguageCode: string;
         AppName: string;
@@ -61375,6 +62703,7 @@ declare module "ue" {
     }
     
     class CategoryFilter {
+        constructor();
         constructor(CategoryName: string, LogVerbosity: number, Enabled: boolean);
         CategoryName: string;
         LogVerbosity: number;
@@ -61383,6 +62712,7 @@ declare module "ue" {
     }
     
     class VisualLoggerFiltersData {
+        constructor();
         constructor(SearchBoxFilter: string, ObjectNameFilter: string, Categories: TArray<CategoryFilter>, SelectedClasses: TArray<string>);
         SearchBoxFilter: string;
         ObjectNameFilter: string;
@@ -61500,6 +62830,7 @@ declare module "ue" {
     enum ETextureWeightTypes { AlphaLerp, RGB, ARGB, OneMinusARGB, ETextureWeightTypes_MAX}
     enum ETexturePaintIndex { TextureOne, TextureTwo, TextureThree, TextureFour, TextureFive, ETexturePaintIndex_MAX}
     class VertexPaintSettings {
+        constructor();
         constructor(MeshPaintMode: EMeshPaintMode, PaintColor: LinearColor, EraseColor: LinearColor, bWriteRed: boolean, bWriteGreen: boolean, bWriteBlue: boolean, bWriteAlpha: boolean, TextureWeightType: ETextureWeightTypes, PaintTextureWeightIndex: ETexturePaintIndex, EraseTextureWeightIndex: ETexturePaintIndex, bPaintOnSpecificLOD: boolean, LODIndex: number);
         MeshPaintMode: EMeshPaintMode;
         PaintColor: LinearColor;
@@ -61517,6 +62848,7 @@ declare module "ue" {
     }
     
     class TexturePaintSettings {
+        constructor();
         constructor(PaintColor: LinearColor, EraseColor: LinearColor, bWriteRed: boolean, bWriteGreen: boolean, bWriteBlue: boolean, bWriteAlpha: boolean, UVChannel: number, bEnableSeamPainting: boolean, PaintTexture: Texture2D);
         PaintColor: LinearColor;
         EraseColor: LinearColor;
@@ -61553,6 +62885,7 @@ declare module "ue" {
     enum ELandscapeToolNoiseMode { Invalid, Both, Add, Sub, ELandscapeToolNoiseMode_MAX}
     enum ELandscapeToolPasteMode { Invalid, Both, Raise, Lower, ELandscapeToolPasteMode_MAX}
     class GizmoImportLayer {
+        constructor();
         constructor(LayerFilename: string, LayerName: string, bNoImport: boolean);
         LayerFilename: string;
         LayerName: string;
@@ -61565,6 +62898,7 @@ declare module "ue" {
     enum ELandscapeImportResult { Success, Warning, Error, ELandscapeImportResult_MAX}
     enum ELandscapeImportAlphamapType { Additive, Layered, ELandscapeImportAlphamapType_MAX}
     class LandscapeImportLayerInfo {
+        constructor();
         constructor(LayerName: string, LayerInfo: LandscapeLayerInfoObject, SourceFilePath: string);
         LayerName: string;
         LayerInfo: LandscapeLayerInfoObject;
@@ -61573,6 +62907,7 @@ declare module "ue" {
     }
     
     class LandscapeImportLayer extends LandscapeImportLayerInfo {
+        constructor();
         constructor(ThumbnailMIC: LandscapeMaterialInstanceConstant, ImportResult: ELandscapeImportResult, ErrorMessage: string);
         ThumbnailMIC: LandscapeMaterialInstanceConstant;
         ImportResult: ELandscapeImportResult;
@@ -61581,6 +62916,7 @@ declare module "ue" {
     }
     
     class LandscapePatternBrushWorldSpaceSettings {
+        constructor();
         constructor(Origin: Vector2D, Rotation: number, bCenterTextureOnOrigin: boolean, RepeatSize: number);
         Origin: Vector2D;
         Rotation: number;
@@ -61936,94 +63272,24 @@ declare module "ue" {
         static Load(InName: string): AvfMediaSettings;
     }
     
-    class SequencerChannelProxy {
-        constructor(ChannelName: string, Section: MovieSceneSection);
-        ChannelName: string;
-        Section: MovieSceneSection;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceEditorBlueprintLibrary extends BlueprintFunctionLibrary {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static SetLockLevelSequence(bLock: boolean): void;
-        static SetCurrentTime(NewFrame: number): void;
-        static SelectTracks(Tracks: TArray<MovieSceneTrack>): void;
-        static SelectSections(Sections: TArray<MovieSceneSection>): void;
-        static SelectObjects(ObjectBinding: TArray<Guid>): void;
-        static SelectFolders(Folders: TArray<MovieSceneFolder>): void;
-        static SelectChannels(Channels: TArray<SequencerChannelProxy>): void;
-        static RefreshCurrentLevelSequence(): void;
-        static Play(): void;
-        static Pause(): void;
-        static OpenLevelSequence(LevelSequence: LevelSequence): boolean;
-        static IsPlaying(): boolean;
-        static IsLevelSequenceLocked(): boolean;
-        static GetSelectedTracks(): TArray<MovieSceneTrack>;
-        static GetSelectedSections(): TArray<MovieSceneSection>;
-        static GetSelectedObjects(): TArray<Guid>;
-        static GetSelectedFolders(): TArray<MovieSceneFolder>;
-        static GetSelectedChannels(): TArray<SequencerChannelProxy>;
-        static GetCurrentTime(): number;
-        static GetCurrentLevelSequence(): LevelSequence;
-        static GetBoundObjects(ObjectBinding: MovieSceneObjectBindingID): TArray<Object>;
-        static EmptySelection(): void;
-        static CloseLevelSequence(): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorBlueprintLibrary;
-        static Load(InName: string): LevelSequenceEditorBlueprintLibrary;
-    }
-    
-    class LevelSequencePropertyTrackSettings {
-        constructor(ComponentPath: string, PropertyPath: string);
-        ComponentPath: string;
-        PropertyPath: string;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceTrackSettings {
-        constructor(MatchingActorClass: SoftClassPath, DefaultTracks: TArray<SoftClassPath>, ExcludeDefaultTracks: TArray<SoftClassPath>, DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>, ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>);
-        MatchingActorClass: SoftClassPath;
-        DefaultTracks: TArray<SoftClassPath>;
-        ExcludeDefaultTracks: TArray<SoftClassPath>;
-        DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
-        ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
-        static StaticClass(): Class;
-    }
-    
-    class LevelSequenceEditorSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        TrackSettings: TArray<LevelSequenceTrackSettings>;
-        bAutoBindToPIE: boolean;
-        bAutoBindToSimulate: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorSettings;
-        static Load(InName: string): LevelSequenceEditorSettings;
-    }
-    
-    class LevelSequenceMasterSequenceSettings extends Object {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        MasterSequenceName: string;
-        MasterSequenceSuffix: string;
-        MasterSequenceBasePath: DirectoryPath;
-        MasterSequenceNumShots: number;
-        MasterSequenceLevelSequenceToDuplicate: TLazyObjectPtr<LevelSequence>;
-        SubSequenceNames: TArray<string>;
-        bInstanceSubSequences: boolean;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceMasterSequenceSettings;
-        static Load(InName: string): LevelSequenceMasterSequenceSettings;
-    }
-    
-    class LevelSequenceFactoryNew extends Factory {
+    class ImgMediaSourceFactory extends Factory {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelSequenceFactoryNew;
-        static Load(InName: string): LevelSequenceFactoryNew;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactory;
+        static Load(InName: string): ImgMediaSourceFactory;
+    }
+    
+    class ImgMediaSourceFactoryNew extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactoryNew;
+        static Load(InName: string): ImgMediaSourceFactoryNew;
     }
     
     enum EMediaPlayerRecordingNumerationStyle { AppendFrameNumber, AppendSampleTime, EMediaPlayerRecordingNumerationStyle_MAX}
     enum EMediaPlayerRecordingImageFormat { PNG, JPEG, BMP, EXR, EMediaPlayerRecordingImageFormat_MAX}
     class MediaPlayerRecordingSettings {
+        constructor();
         constructor(bActive: boolean, bRecordMediaFrame: boolean, BaseFilename: string, NumerationStyle: EMediaPlayerRecordingNumerationStyle, ImageFormat: EMediaPlayerRecordingImageFormat, CompressionQuality: number, bResetAlpha: boolean);
         bActive: boolean;
         bRecordMediaFrame: boolean;
@@ -62115,6 +63381,108 @@ declare module "ue" {
         static Load(InName: string): StreamMediaSourceFactoryNew;
     }
     
+    class WebMPlatFileMediaSourceFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): WebMPlatFileMediaSourceFactory;
+        static Load(InName: string): WebMPlatFileMediaSourceFactory;
+    }
+    
+    class WmfFileMediaSourceFactory extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): WmfFileMediaSourceFactory;
+        static Load(InName: string): WmfFileMediaSourceFactory;
+    }
+    
+    class SequencerChannelProxy {
+        constructor();
+        constructor(ChannelName: string, Section: MovieSceneSection);
+        ChannelName: string;
+        Section: MovieSceneSection;
+        static StaticClass(): Class;
+    }
+    
+    class LevelSequenceEditorBlueprintLibrary extends BlueprintFunctionLibrary {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static SetLockLevelSequence(bLock: boolean): void;
+        static SetCurrentTime(NewFrame: number): void;
+        static SelectTracks(Tracks: TArray<MovieSceneTrack>): void;
+        static SelectSections(Sections: TArray<MovieSceneSection>): void;
+        static SelectObjects(ObjectBinding: TArray<Guid>): void;
+        static SelectFolders(Folders: TArray<MovieSceneFolder>): void;
+        static SelectChannels(Channels: TArray<SequencerChannelProxy>): void;
+        static RefreshCurrentLevelSequence(): void;
+        static Play(): void;
+        static Pause(): void;
+        static OpenLevelSequence(LevelSequence: LevelSequence): boolean;
+        static IsPlaying(): boolean;
+        static IsLevelSequenceLocked(): boolean;
+        static GetSelectedTracks(): TArray<MovieSceneTrack>;
+        static GetSelectedSections(): TArray<MovieSceneSection>;
+        static GetSelectedObjects(): TArray<Guid>;
+        static GetSelectedFolders(): TArray<MovieSceneFolder>;
+        static GetSelectedChannels(): TArray<SequencerChannelProxy>;
+        static GetCurrentTime(): number;
+        static GetCurrentLevelSequence(): LevelSequence;
+        static GetBoundObjects(ObjectBinding: MovieSceneObjectBindingID): TArray<Object>;
+        static EmptySelection(): void;
+        static CloseLevelSequence(): void;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorBlueprintLibrary;
+        static Load(InName: string): LevelSequenceEditorBlueprintLibrary;
+    }
+    
+    class LevelSequencePropertyTrackSettings {
+        constructor();
+        constructor(ComponentPath: string, PropertyPath: string);
+        ComponentPath: string;
+        PropertyPath: string;
+        static StaticClass(): Class;
+    }
+    
+    class LevelSequenceTrackSettings {
+        constructor();
+        constructor(MatchingActorClass: SoftClassPath, DefaultTracks: TArray<SoftClassPath>, ExcludeDefaultTracks: TArray<SoftClassPath>, DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>, ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>);
+        MatchingActorClass: SoftClassPath;
+        DefaultTracks: TArray<SoftClassPath>;
+        ExcludeDefaultTracks: TArray<SoftClassPath>;
+        DefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
+        ExcludeDefaultPropertyTracks: TArray<LevelSequencePropertyTrackSettings>;
+        static StaticClass(): Class;
+    }
+    
+    class LevelSequenceEditorSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        TrackSettings: TArray<LevelSequenceTrackSettings>;
+        bAutoBindToPIE: boolean;
+        bAutoBindToSimulate: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceEditorSettings;
+        static Load(InName: string): LevelSequenceEditorSettings;
+    }
+    
+    class LevelSequenceMasterSequenceSettings extends Object {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        MasterSequenceName: string;
+        MasterSequenceSuffix: string;
+        MasterSequenceBasePath: DirectoryPath;
+        MasterSequenceNumShots: number;
+        MasterSequenceLevelSequenceToDuplicate: TLazyObjectPtr<LevelSequence>;
+        SubSequenceNames: TArray<string>;
+        bInstanceSubSequences: boolean;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceMasterSequenceSettings;
+        static Load(InName: string): LevelSequenceMasterSequenceSettings;
+    }
+    
+    class LevelSequenceFactoryNew extends Factory {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelSequenceFactoryNew;
+        static Load(InName: string): LevelSequenceFactoryNew;
+    }
+    
     class CameraAnimationSequenceFactoryNew extends Factory {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         static StaticClass(): Class;
@@ -62136,34 +63504,6 @@ declare module "ue" {
         static Load(InName: string): TemplateSequenceFactoryNew;
     }
     
-    class WebMPlatFileMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): WebMPlatFileMediaSourceFactory;
-        static Load(InName: string): WebMPlatFileMediaSourceFactory;
-    }
-    
-    class WmfFileMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): WmfFileMediaSourceFactory;
-        static Load(InName: string): WmfFileMediaSourceFactory;
-    }
-    
-    class ImgMediaSourceFactory extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactory;
-        static Load(InName: string): ImgMediaSourceFactory;
-    }
-    
-    class ImgMediaSourceFactoryNew extends Factory {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): ImgMediaSourceFactoryNew;
-        static Load(InName: string): ImgMediaSourceFactoryNew;
-    }
-    
     class GooglePADRuntimeSettings extends Object {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         bEnablePlugin: boolean;
@@ -62177,6 +63517,7 @@ declare module "ue" {
     enum EMotionRange { VR_WithoutController, VR_WithController, VR_MAX}
     enum EHandSkeleton { VR_SteamVRHandSkeleton, VR_UE4HandSkeleton, VR_MAX}
     class UE4RetargettingRefs {
+        constructor();
         constructor(bIsInitialized: boolean, bIsRightHanded: boolean, KnuckleAverageMS_UE4: Vector, WristSideDirectionLS_UE4: Vector, WristForwardLS_UE4: Vector);
         bIsInitialized: boolean;
         bIsRightHanded: boolean;
@@ -62187,6 +63528,7 @@ declare module "ue" {
     }
     
     class AnimNode_SteamVRInputAnimPose extends AnimNode_Base {
+        constructor();
         constructor(MotionRange: EMotionRange, Hand: EHand, HandSkeleton: EHandSkeleton, Mirror: boolean, SteamVRSkeletalTransform: SteamVRSkeletonTransform, UE4RetargettingRefs: UE4RetargettingRefs);
         MotionRange: EMotionRange;
         Hand: EHand;
@@ -62206,6 +63548,7 @@ declare module "ue" {
     }
     
     class AnimNode_SteamVRSetWristTransform extends AnimNode_Base {
+        constructor();
         constructor(ReferencePose: PoseLink, HandSkeleton: EHandSkeleton, TargetPose: PoseLink);
         ReferencePose: PoseLink;
         HandSkeleton: EHandSkeleton;
@@ -62252,6 +63595,13 @@ declare module "ue" {
         static Load(InName: string): DmgTypeBP_Environmental_C;
     }
     
+    class LevelEditorAttract_C extends EditorTutorial {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): LevelEditorAttract_C;
+        static Load(InName: string): LevelEditorAttract_C;
+    }
+    
     class PointerToUberGraphFrame {
         constructor();
         static StaticClass(): Class;
@@ -62287,13 +63637,6 @@ declare module "ue" {
         static Load(InName: string): MagicLeapARPinInfoActor_C;
     }
     
-    class LevelEditorAttract_C extends EditorTutorial {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): LevelEditorAttract_C;
-        static Load(InName: string): LevelEditorAttract_C;
-    }
-    
     class BP_GameMode_C extends GameModeBase {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         DefaultSceneRoot: SceneComponent;
@@ -62319,35 +63662,12 @@ declare module "ue" {
         static Load(InName: string): LevelEditorOverview_C;
     }
     
-    class PROTO_BP_Blueprint_0_C extends Actor {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        DefaultSceneRoot: SceneComponent;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): PROTO_BP_Blueprint_0_C;
-        static Load(InName: string): PROTO_BP_Blueprint_0_C;
-    }
-    
-    class BlueprintEditorTutorial_C extends EditorTutorial {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): BlueprintEditorTutorial_C;
-        static Load(InName: string): BlueprintEditorTutorial_C;
-    }
-    
     class BP_LoginPage_C extends UserWidget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         loginBtn: Button;
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): BP_LoginPage_C;
         static Load(InName: string): BP_LoginPage_C;
-    }
-    
-    class BagGridWidget_C extends UserWidget {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        BagGridPanel: UniformGridPanel;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): BagGridWidget_C;
-        static Load(InName: string): BagGridWidget_C;
     }
     
     class BagGridItemWidget_C extends UserWidget {
@@ -62360,6 +63680,14 @@ declare module "ue" {
         static Load(InName: string): BagGridItemWidget_C;
     }
     
+    class BagGridWidget_C extends UserWidget {
+        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+        BagGridPanel: UniformGridPanel;
+        static StaticClass(): Class;
+        static Find(OrigInName: string, Outer?: Object): BagGridWidget_C;
+        static Load(InName: string): BagGridWidget_C;
+    }
+    
     class BagWidget_C extends UserWidget {
         constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
         BagItemWidget: BagGridWidget_C;
@@ -62370,17 +63698,6 @@ declare module "ue" {
         static StaticClass(): Class;
         static Find(OrigInName: string, Outer?: Object): BagWidget_C;
         static Load(InName: string): BagWidget_C;
-    }
-    
-    class PROTO_BP_AnimBlueprint_0_C extends AnimInstance {
-        constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
-        UberGraphFrame: PointerToUberGraphFrame;
-        AnimGraphNode_Root: AnimNode_Root;
-        AnimGraph(AnimGraph: $Ref<PoseLink>): void;
-        ExecuteUbergraph_PROTO_BP_AnimBlueprint_0(EntryPoint: number): void;
-        static StaticClass(): Class;
-        static Find(OrigInName: string, Outer?: Object): PROTO_BP_AnimBlueprint_0_C;
-        static Load(InName: string): PROTO_BP_AnimBlueprint_0_C;
     }
     
     class TS_Player_C extends Character {

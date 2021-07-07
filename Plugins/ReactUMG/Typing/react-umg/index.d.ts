@@ -1309,15 +1309,15 @@ declare module "react-umg" {
 
     class BP_LoginPage_C extends React.Component<BP_LoginPage_CProps> {}
 
-    interface BagGridWidget_CProps extends UserWidgetProps {
-    }
-
-    class BagGridWidget_C extends React.Component<BagGridWidget_CProps> {}
-
     interface BagGridItemWidget_CProps extends UserWidgetProps {
     }
 
     class BagGridItemWidget_C extends React.Component<BagGridItemWidget_CProps> {}
+
+    interface BagGridWidget_CProps extends UserWidgetProps {
+    }
+
+    class BagGridWidget_C extends React.Component<BagGridWidget_CProps> {}
 
     interface BagWidget_CProps extends UserWidgetProps {
     }

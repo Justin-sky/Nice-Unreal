@@ -61,6 +61,7 @@ class GameMain{
        
 
         bag.AddToViewport();
+      
     }
 }
 

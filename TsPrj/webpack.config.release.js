@@ -3,7 +3,6 @@ const path = require('path');
 /** 忽略编辑的第三方库 */
 const externals = {
 	'ue': 'commonjs2 ue',
-	'react-umg': 'commonjs2 react-umg',
 	'puerts': 'commonjs2 puerts',
 };
 
