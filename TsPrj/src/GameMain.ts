@@ -34,11 +34,33 @@ class GameMain{
 
         //let bagGridPanel = bagItem.find
 
+//同步加载 
+// LoadObject
+// LoadClass
+// LoadPackage
+// FSoftObjectPath::TryLoad
+// FStreamableManager::RequestSyncLoad
+// FStreamableManager::LoadSynchronous
+// FlushAsyncLoading（异步转同步）
+
+//异步加载
+// LoadPackageAsync
+// FStreamableManager::RequestAsyncLoad
+
+//判断加载状态
+// GIsSavingPackage  判断引擎当前是否在保存Package。
+// IsGarbageCollectingOnGameThread 判断引擎当前是否在gc
+// IsLoading 判断引擎当前是否正在加载
+// GetNumAsyncPackages 返回当前正在加载的包
+// GetAsyncLoadPercentage  获取指定资源加载进度
+// FStreamableManager::IsAsyncLoadComplete 判断指定的FSoftObjectPath对应的资源是否已经加载完成
+
+
         let icon1 = UE.Object.Load("Texture2D'/Game/Asset/UIAsset/Bag/i_s_yy_1.i_s_yy_1'");
         let icon2 = UE.Object.Load("Texture2D'/Game/Asset/UIAsset/Bag/i_s_yysz_2.i_s_yysz_2'");
         let icon3 = UE.Object.Load("Texture2D'/Game/Asset/UIAsset/Bag/i_s_yzhu_1.i_s_yzhu_1'");
         let icons = [icon1, icon2, icon3];
-        
+      
 
         let bagClass = UE.Class.Load("WidgetBlueprint'/Game/Blueprints/UI/Bag/BagWidget.BagWidget_C'");
         let bag = UE.UMGManager.CreateWidget(world, bagClass) as UE.BagWidget_C;
